@@ -158,3 +158,12 @@ monster zombie = {"Zombie",22,22,0,0,0,0,1,0,8};
 monster skeleton = {"Skeleton",13,13,0,0,0,0,1,0,13};
 monster giant_bat = {"Giant Bat",22,22,0,0,0,0,1,0,13};
 monster giant_boar = {"Giant Boar",42,42,0,0,0,0,1,0,12};
+
+
+// Hero Initial Creation
+player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 2, 0, 1, 2 };
+weapon hero_weapon = hands;
+armor hero_armor = tunic;
+
+// Game Settings
+int intro_sequence = 1;

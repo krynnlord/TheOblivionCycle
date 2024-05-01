@@ -17,11 +17,7 @@
 #include "createhero.h"
 #include "levelup.h"
 #include "battle.h"
-
-player hero_player = {"Player", 100, 100, 0, 0, 0, 0, 1, 2, 0, 1, 2};
-weapon hero_weapon = hands;
-armor hero_armor = tunic;
-
+#include "intro.h"
 
 /////////////////////////////
 //// ADVENTURE MENU /////////
@@ -132,9 +128,14 @@ void adventure()
 /////////////////////////////
 int main() 
 {
-  // Loads Game
+    
+    // Loads Game
     load_game();
 
+    // Check for Intro Enabled or Disables
+    if (intro_sequence == 1) { intro(); }
+    
+    
     int i = 0;
     string ans = "";
     while (i==0) 
@@ -188,7 +189,7 @@ int main()
         { 
             cout << "\nDice Roll 2d6> ";
             cout << diceroller(3,8,19,2); // number, sides, luck ,mod
-            Sleep(1); 
+            Sleep(2000); 
         }
 
         if (ans == "b" or ans == "B")
@@ -203,7 +204,7 @@ int main()
     string test = "Thank you for playing The Oblivion Cycle!";
     typer(test,25); cout << endl;
     ShowConsoleCursor(true);
-
+    
     return 0; // EXIT CODE
 
 }

@@ -34,8 +34,9 @@ txtOut << hero_armor.name << endl;
 txtOut << hero_armor.type << endl;
 txtOut << hero_armor.cost << endl;
 txtOut << hero_armor.armorclass << endl;
-txtOut << hero_armor.description;
-
+txtOut << hero_armor.description << endl;
+txtOut << "*** GAME SETTINGS ***" << endl;
+txtOut << intro_sequence;
 txtOut.close();
 
 };
@@ -77,6 +78,8 @@ getline(txtIn,emptyline); istringstream s17(emptyline); s17 >> hero_armor.type;
 getline(txtIn,emptyline); istringstream s18(emptyline); s18 >> hero_armor.cost;
 getline(txtIn,emptyline); istringstream s19(emptyline); s19 >> hero_armor.armorclass;
 getline(txtIn,hero_armor.description);
+getline(txtIn, emptyline);
+getline(txtIn, emptyline); istringstream s20(emptyline); s20 >> intro_sequence;
 
 txtIn.close();
 
