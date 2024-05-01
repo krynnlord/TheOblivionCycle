@@ -1,0 +1,85 @@
+extern player hero_player;
+extern weapon hero_weapon;
+extern armor hero_armor;
+
+// SAVE GAME
+void save_game()
+{
+
+ofstream txtOut("TOC1.sav");
+
+txtOut << "*** HERO ***" << endl;
+txtOut << hero_player.name << endl;
+txtOut << hero_player.hp << endl;
+txtOut << hero_player.hp_max << endl;
+txtOut << hero_player.luck << endl;
+txtOut << hero_player.DEF_m << endl;
+txtOut << hero_player.DEF_s << endl;
+txtOut << hero_player.DEF_b << endl;
+txtOut << hero_player.level << endl;
+txtOut << hero_player.mod << endl;
+txtOut << hero_player.exp << endl;
+txtOut << hero_player.stat << endl;
+txtOut << hero_player.gold << endl;
+txtOut << "*** WEAPON ***" << endl;
+txtOut << hero_weapon.id << endl;
+txtOut << hero_weapon.name << endl;
+txtOut << hero_weapon.type << endl;
+txtOut << hero_weapon.cost << endl;
+txtOut << hero_weapon.damage << endl;
+txtOut << hero_weapon.description << endl;
+txtOut << "*** ARMOR ***" << endl;
+txtOut << hero_armor.id << endl;
+txtOut << hero_armor.name << endl;
+txtOut << hero_armor.type << endl;
+txtOut << hero_armor.cost << endl;
+txtOut << hero_armor.armorclass << endl;
+txtOut << hero_armor.description;
+
+txtOut.close();
+
+};
+
+// LOAD GAME
+void load_game()
+{
+
+string emptyline;
+string filename = "TOC1.sav";
+ifstream txtIn(filename);
+if (txtIn) 
+{
+
+getline(txtIn,emptyline);
+getline(txtIn,hero_player.name);
+getline(txtIn,emptyline); istringstream s1(emptyline); s1 >> hero_player.hp;
+getline(txtIn,emptyline); istringstream s2(emptyline); s2 >> hero_player.hp_max;
+getline(txtIn,emptyline); istringstream s3(emptyline); s3 >> hero_player.luck;
+getline(txtIn,emptyline); istringstream s4(emptyline); s4 >> hero_player.DEF_m;
+getline(txtIn,emptyline); istringstream s5(emptyline); s5 >> hero_player.DEF_s;
+getline(txtIn,emptyline); istringstream s6(emptyline); s6 >> hero_player.DEF_b;
+getline(txtIn,emptyline); istringstream s7(emptyline); s7 >> hero_player.level;
+getline(txtIn,emptyline); istringstream s8(emptyline); s8 >> hero_player.mod;
+getline(txtIn,emptyline); istringstream s9(emptyline); s9 >> hero_player.exp;
+getline(txtIn,emptyline); istringstream s10(emptyline); s10 >> hero_player.stat;
+getline(txtIn,emptyline); istringstream s11(emptyline); s11 >> hero_player.gold;
+getline(txtIn,emptyline);
+getline(txtIn,emptyline); istringstream s12(emptyline); s12 >> hero_weapon.id;
+getline(txtIn,hero_weapon.name);
+getline(txtIn,emptyline); istringstream s13(emptyline); s13 >> hero_weapon.type;
+getline(txtIn,emptyline); istringstream s14(emptyline); s14 >> hero_weapon.cost;
+getline(txtIn,emptyline); istringstream s15(emptyline); s15 >> hero_weapon.damage;
+getline(txtIn,hero_weapon.description);
+getline(txtIn,emptyline);
+getline(txtIn,emptyline); istringstream s16(emptyline); s16 >> hero_armor.id;
+getline(txtIn,hero_armor.name);
+getline(txtIn,emptyline); istringstream s17(emptyline); s17 >> hero_armor.type;
+getline(txtIn,emptyline); istringstream s18(emptyline); s18 >> hero_armor.cost;
+getline(txtIn,emptyline); istringstream s19(emptyline); s19 >> hero_armor.armorclass;
+getline(txtIn,hero_armor.description);
+
+txtIn.close();
+
+}
+
+};
