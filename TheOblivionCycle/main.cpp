@@ -15,6 +15,7 @@
 #include "diceroller.h"
 #include "savegameSystem.h"
 #include "createhero.h"
+#include "levelup.h"
 
 player hero_player = {"Player", 100, 100, 0, 0, 0, 0, 1, 2, 0, 1, 2};
 weapon hero_weapon = hands;

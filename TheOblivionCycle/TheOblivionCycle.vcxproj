@@ -135,6 +135,7 @@
     <ClInclude Include="diceroller.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="inn.h" />
+    <ClInclude Include="levelup.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="printgraphics.h" />
     <ClInclude Include="provisioner.h" />

@@ -66,6 +66,9 @@
     <ClInclude Include="vars.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="levelup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
