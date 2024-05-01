@@ -15,64 +15,64 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="blacksmith.h">
+    <ClInclude Include="headers\blacksmith.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="castle.h">
+    <ClInclude Include="headers\castle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="circle.h">
+    <ClInclude Include="headers\circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="colors.h">
+    <ClInclude Include="headers\colors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="createhero.h">
+    <ClInclude Include="headers\createhero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="diceroller.h">
+    <ClInclude Include="headers\diceroller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header.h">
+    <ClInclude Include="headers\header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inn.h">
+    <ClInclude Include="headers\inn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="options.h">
+    <ClInclude Include="headers\options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="printgraphics.h">
+    <ClInclude Include="headers\printgraphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="provisioner.h">
+    <ClInclude Include="headers\provisioner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="savegameSystem.h">
+    <ClInclude Include="headers\savegameSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="statbar.h">
+    <ClInclude Include="headers\statbar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="temple.h">
+    <ClInclude Include="headers\temple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="togglecursor.h">
+    <ClInclude Include="headers\togglecursor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="typer.h">
+    <ClInclude Include="headers\typer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vars.h">
+    <ClInclude Include="headers\vars.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levelup.h">
+    <ClInclude Include="headers\levelup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="battle.h">
+    <ClInclude Include="headers\battle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="intro.h">
+    <ClInclude Include="headers\intro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
