@@ -10,7 +10,7 @@ string sides; sides = weapondice.damage[2]; sides_i = stoi(sides); // # of sides
 }
 
 
-int diceroller(int numdice, int sides, int luck, int mod)
+int diceroller(int numdice, int sides, int luck, int prof)
 {
     int total = 0;
 
@@ -18,7 +18,7 @@ int diceroller(int numdice, int sides, int luck, int mod)
     int	crit = 0;
     srand(time(NULL));
     int critroll = (rand() % 20) + 1;
-    if (critroll == 20) { crit = 1;} //crit
+    if (critroll >= 20-luck) { crit = 1;} //crit
     else if (critroll == 1) { crit = 2;} //miss
     else { crit = 0;} // normal
     
@@ -37,7 +37,7 @@ int diceroller(int numdice, int sides, int luck, int mod)
     // add modifiers
     if (crit == 1)
     {   
-        total = (final * mod) * 2 ;
+        total = (final * prof) * 2 ;
         cout << "CRIT ";
     }
     else if (crit == 2)
@@ -47,7 +47,7 @@ int diceroller(int numdice, int sides, int luck, int mod)
     }
     else 
     {
-        total = (final * mod);
+        total = (final * prof);
     }
 
 	return total;

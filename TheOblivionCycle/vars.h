@@ -9,7 +9,7 @@ class player
         int DEF_s;
         int DEF_b;
         int level;
-        int mod;
+        int prof;
         int exp;
         int stat;
         int gold;
@@ -26,7 +26,7 @@ class monster
         int DEF_s;
         int DEF_b;
         int level;
-        int mod;
+        int prof;
         int ac;
 };
 
@@ -161,7 +161,7 @@ monster giant_boar = {"Giant Boar",42,42,0,0,0,0,1,0,12};
 
 
 // Hero Initial Creation
-player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 2, 0, 1, 2 };
+player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
 
