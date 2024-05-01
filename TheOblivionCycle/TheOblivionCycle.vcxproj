@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="battle.h" />
     <ClInclude Include="blacksmith.h" />
     <ClInclude Include="castle.h" />
     <ClInclude Include="circle.h" />

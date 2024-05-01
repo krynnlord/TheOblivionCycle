@@ -16,6 +16,7 @@
 #include "savegameSystem.h"
 #include "createhero.h"
 #include "levelup.h"
+#include "battle.h"
 
 player hero_player = {"Player", 100, 100, 0, 0, 0, 0, 1, 2, 0, 1, 2};
 weapon hero_weapon = hands;
@@ -188,6 +189,11 @@ int main()
             cout << "\nDice Roll 2d6> ";
             cout << diceroller(3,8,19,2); // number, sides, luck ,mod
             Sleep(1); 
+        }
+
+        if (ans == "b" or ans == "B")
+        {
+            battle_sim();
         }
     }
 
