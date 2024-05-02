@@ -10,6 +10,8 @@
 #include <time.h>
 #include <stdlib.h>
 #include <sstream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 

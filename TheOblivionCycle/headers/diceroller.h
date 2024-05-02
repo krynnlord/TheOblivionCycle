@@ -16,7 +16,7 @@ void diceroller(int numdice, int sides, int luck, int prof, int& hero_total_atk)
 
     // Crit role
     int	crit = 0;
-    srand(time(NULL));
+    srand((unsigned) time(NULL));
     int critroll = (rand() % 20) + 1;
     if (critroll >= 20-luck) { crit = 1;} //crit
     else if (critroll == 1) { crit = 2;} //miss
@@ -24,7 +24,7 @@ void diceroller(int numdice, int sides, int luck, int prof, int& hero_total_atk)
     
     // Dice Roll
     int final=0;
-    srand(time(NULL));
+    srand((unsigned)time(NULL));
     for (int i=0; i < numdice; ++i)
     { 
         

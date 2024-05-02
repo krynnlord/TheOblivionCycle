@@ -28,6 +28,7 @@ class monster
         int level;
         int prof;
         int ac;
+        string damage;
 };
 
 class spell
@@ -154,10 +155,11 @@ armor plate_armor = {7, "Plate Armor", "Heavy", 3000, 18, ""};
 /////////////////////////////////////////
 // Monsters /////////////////////////////
 /////////////////////////////////////////
-monster zombie = {"Zombie",22,22,0,0,0,0,1,0,8};
-monster skeleton = {"Skeleton",13,13,0,0,0,0,1,0,13};
-monster giant_bat = {"Giant Bat",22,22,0,0,0,0,1,0,13};
-monster giant_boar = {"Giant Boar",42,42,0,0,0,0,1,0,12};
+monster zombie = {"Zombie",22,22,0,0,0,0,1,0,8,"1d2"};
+monster zombie2 = { "Zombie",200,200,0,0,0,0,1,0,8,"2d3"}; //test unit
+monster skeleton = {"Skeleton",13,13,0,0,0,0,1,0,13,"1d2"};
+monster giant_bat = {"Giant Bat",22,22,0,0,0,0,1,0,13,"1d2"};
+monster giant_boar = {"Giant Boar",42,42,0,0,0,0,1,0,12,"1d2"};
 
 
 // Hero Initial Creation
