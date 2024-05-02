@@ -5,8 +5,7 @@ void spellbook()
     int c21 = greater_heal.qty; int c22 = barrier.qty; int c23 = escape.qty; int c24 = fireball.qty;
     int c31 = regeneration.qty; int c32 = holy_ground.qty; int c33 = doubleme.qty; int c34 = immolation.qty;
     
-    system("cls");
-    cout << " SPELLBOOK" << endl;
+    print_spellbook();
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
     cout << "   1ST CIR            2ND CIR             3RD CIR       " << endl;
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;

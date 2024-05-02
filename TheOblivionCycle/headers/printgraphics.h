@@ -189,3 +189,20 @@ string line6 =R"(|_|  \_\______|_|  |_| |_|   |_|  \___/ \__,_|\__,_|\___|\__|_|
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
 Color(7);
 }
+
+void print_spellbook()
+{
+    system("cls");
+    Color(3);
+
+    string line1 = R"(  _____ _____  ______ _      _      ____   ____   ____  _  __)";
+    string line2 = R"( / ____|  __ \|  ____| |    | |    |  _ \ / __ \ / __ \| |/ /)";
+    string line3 = R"(| (___ | |__) | |__  | |    | |    | |_) | |  | | |  | | ' /)";
+    string line4 = R"( \___ \|  ___/|  __| | |    | |    |  _ <| |  | | |  | |  <)";
+    string line5 = R"( ____) | |    | |____| |____| |____| |_) | |__| | |__| | . \)";
+    string line6 = R"(|_____/|_|    |______|______|______|____/ \____/ \____/|_|\_\)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    Color(7);
+
+}
