@@ -186,7 +186,7 @@ int main()
 
         if (ans == "b" or ans == "B")
         {
-            battle_sim();
+            battle_sim(zombie2);
         }
     }
 

@@ -1,11 +1,11 @@
-void battle_sim()
+void battle_sim(monster enemy)
 {
 	// Battle Strings
 	string hero_combat_string = "Ready for combat.";
 	string enemy_combat_string = "Ready for combat.";
 
 	// Define Enemy
-	monster enemy = zombie;
+	// monster enemy = zombie;
 
 	// Combat Active
 	bool endcombat = false;
@@ -98,8 +98,8 @@ void battle_sim()
 		for (int a = 0; a < 70; a++) { cout << "-"; }
 
 		cout << endl;
-		Color(2); cout << hero_player.name << ": "; Color(7); cout << " " << hero_combat_string << endl;
-		Color(4); cout << enemy.name << ": "; Color(7); cout << " " << enemy_combat_string << endl << endl;
+		Color(2); cout << hero_player.name << ": "; Color(7); cout <<  hero_combat_string << endl;
+		Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl << endl;
 
 		if (endcombat == true) 
 		{ 
@@ -258,7 +258,7 @@ void battle_sim()
 			if (hero_player.hp <= 0)
 			{
 				hero_player.hp = 0;
-				enemy_combat_string = "hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage, and kills you!";
+				enemy_combat_string = "hits you for " + to_string(enemy_total_atk) + " damage, and kills you!";
 				endcombat = true;
 			}
 			else
@@ -266,15 +266,15 @@ void battle_sim()
 
 				if (crit == 1)
 				{
-					enemy_combat_string = "hits *Critical* " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
+					enemy_combat_string = "hits *Critical* you for " + to_string(enemy_total_atk) + " damage.";
 				}
 				if (crit == 0)
 				{
-					enemy_combat_string = "hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
+					enemy_combat_string = "hits you for " + to_string(enemy_total_atk) + " damage.";
 				}
 				if (crit == 2)
 				{
-					enemy_combat_string = "misses " + hero_player.name + ".";
+					enemy_combat_string = "misses you.";
 				}
 
 			}
