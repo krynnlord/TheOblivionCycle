@@ -27,8 +27,8 @@ void battle_sim()
 	int enemy_total_atk = 0;
 
 	// Battle Loop
-	int i = 0;
-	while (i != 1)
+	int loop = 0;
+	while (loop != 1)
 	{
 		system("cls");
 
@@ -40,24 +40,28 @@ void battle_sim()
 		cout << "Weapon: " << hero_weapon.name << "    " << "Armor: " << hero_armor.name << endl;
 
 		hppercent = static_cast<int>(100 * round(hero_player.hp) / round(hero_player.hp_max));
-		
-		if (hppercent >= 75) { Color(2); cout << hppercent << "%"; Color(7); cout << "    "; }
-		if (hppercent < 75 and hppercent > 40) { Color(14); cout << hppercent << "%"; Color(7); cout << "    ";}
-		if (hppercent <= 40) { Color(4); cout << hppercent << "%"; Color(7); cout << "    "; }
-		cout << "HP: " << hero_player.hp << '/' << hero_player.hp_max << endl << endl;
 
+		cout << left << setw(4); cout << "HP: " << right << setw(4); cout << hero_player.hp << "/" 
+			 << left << setw(4); cout << hero_player.hp_max << "[";
+		
 		// Print Hero HPbar
-		//hp_bar = "";
-		//bar_ticks = ((hero_player.hp / hero_player.hp_max) * 100) / 4;
-		//while (bar_ticks > 0)
-		//{
-		//	hp_bar += ":";
-		//	bar_ticks -= 1;
-		//}
-		//hero_line2 = hp_bar;
-		//if (hppercent >= 75) { Color(2); cout << hero_line2; Color(7); }
-		//if (hppercent < 75 and hppercent >40) {Color(14); cout << hero_line2; Color(7);}
-		//if (hppercent <= 40) { Color(4); cout << hero_line2; Color(7); cout << endl; }
+		hp_bar = "";
+		bar_ticks += hppercent / 4;
+		while (bar_ticks > 0)
+		{
+			hp_bar += ":";
+			bar_ticks -= 1;
+		}
+		hero_line2 = hp_bar;
+		if (hppercent >= 75) { Color(2); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
+		if (hppercent < 75 and hppercent >40) { Color(14); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
+		if (hppercent <= 40) { Color(4); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
+
+		if (hppercent >= 75) { Color(2); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
+		if (hppercent < 75 and hppercent > 40) { Color(14); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
+		if (hppercent <= 40) { Color(4); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
+
+		cout << endl << endl;
 
 		//Enemy Display
 		cout << "Enemy" << endl;
@@ -67,25 +71,27 @@ void battle_sim()
 
 		hppercent_e = static_cast<int>(100 * round(enemy.hp) / round(enemy.hp_max));
 
-		if (hppercent_e >= 75) { Color(2); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-		if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-		if (hppercent_e <= 40) { Color(4); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-		cout << "HP: " << enemy.hp << '/' << enemy.hp_max << endl << endl;
-		
-		// Print Enemy HPbar
-		
-		//ehp_bar = "";
-		//ebar_ticks = ((enemy.hp / enemy.hp_max) * 100) / 4; //here
-		//while (ebar_ticks > 0)
-		//{
-		//	ehp_bar += ":";
-		//	ebar_ticks -= 1;
-		//}
-		//enemy_line2 = ehp_bar;
-		//if (hppercent_e >= 75) { Color(2); cout << enemy_line2; Color(7); }
-		//if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << enemy_line2; Color(7); }
-		//if (hppercent_e <= 40) { Color(4); cout << enemy_line2; Color(7); cout << endl; }
+		cout << left << setw(4); cout << "HP: " << right << setw(4); cout << enemy.hp << "/"
+			<< left << setw(4); cout << enemy.hp_max << "[";
 
+		// Print Enemy HPbar
+		ehp_bar = "";
+		ebar_ticks += hppercent_e / 4;
+		while (ebar_ticks > 0)
+		{
+			ehp_bar += ":";
+			ebar_ticks -= 1;
+		}
+		enemy_line2 = ehp_bar;
+		if (hppercent_e >= 75) { Color(2); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
+		if (hppercent_e < 75 and hppercent_e >40) { Color(14); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
+		if (hppercent_e <= 40) { Color(4); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
+		
+		if (hppercent_e >= 75) { Color(2); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
+		if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
+		if (hppercent_e <= 40) { Color(4); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
+
+		cout << endl << endl;
 
 		// Battle Log
 		cout << "Battle Log" << endl;
@@ -95,14 +101,24 @@ void battle_sim()
 		Color(2); cout << hero_player.name << ": "; Color(7); cout << " " << hero_combat_string << endl;
 		Color(4); cout << enemy.name << ": "; Color(7); cout << " " << enemy_combat_string << endl << endl;
 
-		cout << "Actions:" << endl << "1) Attack" << endl << "2) Spellbook" << endl << "3) Inventory" << endl << "4) Run" << endl;
+		if (endcombat == true) 
+		{ 
+			cout << "Press any key to return..." << endl;
+			loop = 1; 
+		}
+
+		else
+		{
+			cout << "Actions:" << endl << "1) Attack" << endl << "2) Spellbook" << endl << "3) Inventory" << endl << "4) Run" << endl;
+		}
+		
 
 		string ans;
 		ans = _getch();
 
 		if (ans == "4")
 		{
-			i = 1;
+			loop = 1;
 		}
 
 		//if (ans == "3")
@@ -166,19 +182,18 @@ void battle_sim()
 			if (enemy.hp <= 0)
 			{
 				enemy.hp = 0;
-				hero_combat_string = "Hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
-				i = 1;
+				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
 			}
 			else
 			{
 				
 				if (crit == 1)
 				{
-					hero_combat_string = "Hits[CRIT] " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+					hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
 				}
 				if (crit == 0)
 				{
-					hero_combat_string = "Hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+					hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
 				}
 				if (crit == 2)
 				{
@@ -188,6 +203,13 @@ void battle_sim()
 			}
 
 			// ENEMY TURN
+			
+			if (enemy.hp == 0) 
+			{
+				enemy_combat_string = "has been killed.";
+				endcombat = true;
+			}
+			
 			dice = enemy.damage[0]; dice_i = stoi(dice); // # of dice
 			sides = enemy.damage[2]; sides_i = stoi(sides); // # of sides
 
@@ -236,19 +258,19 @@ void battle_sim()
 			if (hero_player.hp <= 0)
 			{
 				hero_player.hp = 0;
-				enemy_combat_string = "Hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage, and kills you!";
-				i = 1;
+				enemy_combat_string = "hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage, and kills you!";
+				endcombat = true;
 			}
 			else
 			{
 
 				if (crit == 1)
 				{
-					enemy_combat_string = "Hits[CRIT] " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
+					enemy_combat_string = "hits *Critical* " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
 				}
 				if (crit == 0)
 				{
-					enemy_combat_string = "Hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
+					enemy_combat_string = "hits " + hero_player.name + " for " + to_string(enemy_total_atk) + " damage.";
 				}
 				if (crit == 2)
 				{
@@ -261,42 +283,7 @@ void battle_sim()
 		}
 
 
-
 	}
-
-	
 
 	return;
 }
-
-
-
-
-
-//# Enemy Turn
-//atk_value = random.randrange(0, 15)
-//hero1['HP'] -= atk_value
-//if endcombat == True:
-//atk_value = 0
-//if hero1['HP'] <= 0 :
-//    hero1['HP'] = 0
-//    enemy_combat_string = enemy_current['name'] + " has killed you."
-//    endcombat = True
-//else:
-//if atk_value >= 1 :
-//    enemy_combat_string = "Hits " + hero1['name'] + " for " + str(atk_value) + " damage."
-//else :
-//    if endcombat == True :
-//        enemy_combat_string = "Dead."
-//    else :
-//        enemy_combat_string = "misses " + hero1['name'] + "."
-//
-//        if ans == '2' :
-//            l.spellbook()
-//            hitmiss = 4
-//            if ans == '3' :
-//                l.inventory()
-//                hitmiss = 4
-//                if ans == '4' :
-//                    endcombat = True
-//                    hitmiss = 4
