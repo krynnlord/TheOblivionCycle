@@ -167,3 +167,6 @@ armor hero_armor = tunic;
 
 // Game Settings
 int intro_sequence = 1;
+
+//Battle Seq
+int crit_result = 0;

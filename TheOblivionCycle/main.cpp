@@ -185,13 +185,6 @@ int main()
             i=1; 
         }
 
-        if (ans == "d" or ans =="D") 
-        { 
-            cout << "\nDice Roll 2d6> ";
-            cout << diceroller(3,8,19,2); // number, sides, luck ,mod
-            Sleep(2000); 
-        }
-
         if (ans == "b" or ans == "B")
         {
             battle_sim();

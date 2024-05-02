@@ -11,6 +11,21 @@ void battle_sim()
 	bool endcombat = false;
 	int i = 0;
 	
+	int hppercent;
+	string hp_bar = "";
+	string hero_line2 = "";
+	int bar_ticks = 0;
+	int hppercent_e;
+	string ehp_bar = "";
+	string enemy_line2 = "";
+	int ebar_ticks = 0;
+
+	// Hero Turn
+	int dice_i = 0;
+	int sides_i = 0;
+	int hero_total_atk = 0;
+	
+
 	// Battle Loop
 	while (i != 1)
 	{
@@ -23,7 +38,7 @@ void battle_sim()
 		cout << "\nName: " << hero_player.name << "    " << "Level: " << hero_player.level << "    ";
 		cout << "Weapon: " << hero_weapon.name << "    " << "Armor: " << hero_armor.name << endl;
 
-		int hppercent = 100 * round(hero_player.hp) / round(hero_player.hp_max);
+		hppercent = 100 * round(hero_player.hp) / round(hero_player.hp_max);
 		
 		if (hppercent >= 75) { Color(2); cout << hppercent << "%"; Color(7); cout << "    "; }
 		if (hppercent < 75 and hppercent > 40) { Color(14); cout << hppercent << "%"; Color(7); cout << "    ";}
@@ -31,19 +46,15 @@ void battle_sim()
 		cout << "HP: " << hero_player.hp << '/' << hero_player.hp_max << endl;
 
 		// Print Hero HPbar
-		string hp_bar = "";
-		string hero_line2 = "";
-		int bar_ticks = 0;
 
-		if (hero_player.hp_max == 0) { bar_ticks = 0; }
-		else { bar_ticks = ((hero_player.hp / hero_player.hp_max) * 100) / 4; }
-
+		hp_bar = "";
+		bar_ticks = ((hero_player.hp / hero_player.hp_max) * 100) / 4;
 		while (bar_ticks > 0)
 		{
 			hp_bar += ":";
 			bar_ticks -= 1;
-			hero_line2 = hp_bar;
 		}
+		hero_line2 = hp_bar;
 		if (hppercent >= 75) { Color(2); cout << hero_line2; Color(7); }
 		if (hppercent < 75 and hppercent >40) {Color(14); cout << hero_line2; Color(7);}
 		if (hppercent <= 40) { Color(4); cout << hero_line2; Color(7); cout << endl; }
@@ -57,7 +68,7 @@ void battle_sim()
 		cout << "\nName: " << enemy.name << "    " << "Level: " << enemy.level << endl;
 		
 
-		int hppercent_e = 100 * round(enemy.hp) / round(enemy.hp_max);
+		hppercent_e = 100 * round(enemy.hp) / round(enemy.hp_max);
 
 		if (hppercent_e >= 75) { Color(2); cout << hppercent_e << "%"; Color(7); cout << "    "; }
 		if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << hppercent_e << "%"; Color(7); cout << "    "; }
@@ -65,21 +76,18 @@ void battle_sim()
 		cout << "HP: " << enemy.hp << '/' << enemy.hp_max << endl;
 		
 		// Print Enemy HPbar
-		string ehp_bar = "";
-		string enemy_line2 = "";
-		int ebar_ticks = 0;
 
-		if (enemy.hp_max == 0) { ebar_ticks = 0; }
-		else { ebar_ticks = ((enemy.hp / enemy.hp_max) * 100) / 4; }
 
+		ehp_bar = "";
+		ebar_ticks = ((enemy.hp / enemy.hp_max) * 100) / 4;
 		while (ebar_ticks > 0)
 		{
 			ehp_bar += ":";
 			ebar_ticks -= 1;
-			enemy_line2 = hp_bar;
 		}
+		enemy_line2 = ehp_bar;
 		if (hppercent_e >= 75) { Color(2); cout << enemy_line2; Color(7); }
-		if (hppercent_e < 75 and hppercent_e >40) { Color(14); cout << enemy_line2; Color(7); }
+		if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << enemy_line2; Color(7); }
 		if (hppercent_e <= 40) { Color(4); cout << enemy_line2; Color(7); cout << endl; }
 		
 		// Battle Log
@@ -102,6 +110,51 @@ void battle_sim()
 		{
 			i = 1;
 		}
+
+		//if (ans == "3")
+		//{
+		//	inventory();
+		//}
+		//
+		//if (ans == "2")
+		//{
+		//	spellbook();
+		//}
+
+		if (ans == "1") // Round Start
+		{
+			// HERO TURN
+			WeaponDice(hero_weapon,dice_i,sides_i);
+			diceroller(dice_i, sides_i, hero_player.luck, hero_player.prof, hero_total_atk);
+			enemy.hp -= hero_total_atk;
+			
+			if (enemy.hp <= 0)
+			{
+				enemy.hp = 0;
+				hero_combat_string = "Hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
+				i = 1;
+			}
+			else
+			{
+				
+				if (crit_result == 1)
+				{
+					hero_combat_string = "*CRITICAL* Hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+				}
+				if (crit_result == 0)
+				{
+					hero_combat_string = "Hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+				}
+				if (crit_result == 2)
+				{
+					hero_combat_string = "misses " + enemy.name + ".";
+				}
+
+			}
+		}
+
+
+
 	}
 
 	
@@ -112,38 +165,7 @@ void battle_sim()
 
 
 
-//ans = input('\nCommand > ')
-//if ans == '1' or ' ':
-//
-//# Hero Turn
-//atk_value = random.randrange(0, 20)
-//modifier_value = 0
-//hero_crit = 0
-//luckmod = random.randrange(hero1['luck'], 20)
-//if luckmod >= 16:
-//modifier_value = round((atk_value * hero1['luck']) * 1.1)
-//hero_crit = 1
-//if hero_crit == 1 :
-//    enemy_current['HP'] -= atk_value + modifier_value
-//else :
-//    enemy_current['HP'] -= atk_value
-//    if enemy_current['HP'] <= 0 :
-//        enemy_current['HP'] = 0
-//        hero_combat_string = "Hits " + enemy_current['name'] + " with " + hero_equip['weapon'] + " for " + str(atk_value) + " damage, and kills it!"
-//        hitmiss = 2
-//        endcombat = True
-//    else:
-//if atk_value >= 1 :
-//    if hero_crit == 1 :
-//        hero_combat_string = "*CRITICAL* Hits " + enemy_current['name'] + " with " + hero_equip['weapon'] + " for " + str(atk_value + modifier_value) + " damage."
-//        hitmiss = 3
-//    else :
-//        hero_combat_string = "Hits " + enemy_current['name'] + " with " + hero_equip['weapon'] + " for " + str(atk_value) + " damage."
-//        hitmiss = 1
-//else:
-//hero_combat_string = "misses " + enemy_current['name'] + "."
-//hitmiss = 0
-//
+
 //# Enemy Turn
 //atk_value = random.randrange(0, 15)
 //hero1['HP'] -= atk_value

@@ -10,7 +10,7 @@ string sides; sides = weapondice.damage[2]; sides_i = stoi(sides); // # of sides
 }
 
 
-int diceroller(int numdice, int sides, int luck, int prof)
+void diceroller(int numdice, int sides, int luck, int prof, int& hero_total_atk)
 {
     int total = 0;
 
@@ -38,17 +38,17 @@ int diceroller(int numdice, int sides, int luck, int prof)
     if (crit == 1)
     {   
         total = (final * prof) * 2 ;
-        cout << "CRIT ";
+        //cout << "CRIT ";
     }
     else if (crit == 2)
     {
         total = 0;
-        cout << "MISS ";
+        //cout << "MISS ";
     }
     else 
     {
         total = (final * prof);
     }
 
-	return total;
+    hero_total_atk = total;
 };
