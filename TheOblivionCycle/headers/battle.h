@@ -5,7 +5,7 @@ void battle_sim()
 	string enemy_combat_string = "Ready for combat.";
 
 	// Define Enemy
-	monster enemy = zombie2;
+	monster enemy = zombie;
 
 	// Combat Active
 	bool endcombat = false;

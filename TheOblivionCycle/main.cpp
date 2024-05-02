@@ -12,7 +12,6 @@
 #include "headers/statbar.h"
 #include "headers/printgraphics.h"
 #include "headers/options.h"
-#include "headers/diceroller.h"
 #include "headers/savegameSystem.h"
 #include "headers/createhero.h"
 #include "headers/levelup.h"

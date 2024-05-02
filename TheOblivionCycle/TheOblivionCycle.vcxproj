@@ -149,7 +149,6 @@
     <ClInclude Include="headers\circle.h" />
     <ClInclude Include="headers\colors.h" />
     <ClInclude Include="headers\createhero.h" />
-    <ClInclude Include="headers\diceroller.h" />
     <ClInclude Include="headers\header.h" />
     <ClInclude Include="headers\inn.h" />
     <ClInclude Include="headers\intro.h" />
