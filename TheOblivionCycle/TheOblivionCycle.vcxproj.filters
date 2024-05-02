@@ -75,6 +75,9 @@
     <ClInclude Include="headers\score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\spellbook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -1,7 +1,8 @@
 #include "headers/header.h"
+#include "headers/colors.h"
 #include "headers/vars.h"
 #include "headers/score.h"
-#include "headers/colors.h"
+#include "headers/spellbook.h"
 #include "headers/togglecursor.h"
 #include "headers/typer.h"
 #include "headers/circle.h"
@@ -122,6 +123,10 @@ void adventure()
         }
 
         if (ans == "s" or ans == "S")
+        {
+            spellbook();
+        }
+        if (ans == "c" or ans == "C")
         {
             player_score(hero_player);
         }

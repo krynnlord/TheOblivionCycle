@@ -132,11 +132,11 @@ void battle_sim(monster enemy)
 		//	inventory();
 		//}
 		//
-		//if (ans == "2")
-		//{
-		//	spellbook();
-		//}
-		if (ans == "s" or ans == "S")
+		if (ans == "s" or ans=="S")
+		{
+			spellbook();
+		}
+		if (ans == "c" or ans == "C")
 		{
 			player_score(hero_player);
 		}

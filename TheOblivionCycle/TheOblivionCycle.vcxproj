@@ -158,6 +158,7 @@
     <ClInclude Include="headers\provisioner.h" />
     <ClInclude Include="headers\savegameSystem.h" />
     <ClInclude Include="headers\score.h" />
+    <ClInclude Include="headers\spellbook.h" />
     <ClInclude Include="headers\statbar.h" />
     <ClInclude Include="headers\temple.h" />
     <ClInclude Include="headers\togglecursor.h" />
