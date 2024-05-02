@@ -109,7 +109,12 @@ void battle_sim(monster enemy)
 
 		else
 		{
-			cout << "Actions:" << endl << "1) Attack" << endl << "2) Spellbook" << endl << "3) Inventory" << endl << "4) Run" << endl;
+			cout << "Actions:" << endl;
+			for (int a = 0; a < 53; a++) { cout << "-"; } cout << endl;
+			cout << "| [1] Attack  [2] Cast      [3] Inventory  [4] Run  |" << endl;
+			cout << "| [S] Score   [B] Spellbook [I] Inventory  [H] Help |" << endl;
+			for (int a = 0; a < 53; a++) { cout << "-"; }
+			cout << endl;
 		}
 		
 
@@ -121,6 +126,7 @@ void battle_sim(monster enemy)
 			loop = 1;
 		}
 
+
 		//if (ans == "3")
 		//{
 		//	inventory();
@@ -130,6 +136,11 @@ void battle_sim(monster enemy)
 		//{
 		//	spellbook();
 		//}
+		if (ans == "s" or ans == "S")
+		{
+			player_score(hero_player);
+		}
+
 
 		if (ans == "1") // Round Start
 		{
@@ -141,7 +152,6 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			int	crit = 0;
-			//srand((unsigned)time(NULL));
 			int critroll = (rand() % 20) + 1;
 			if (critroll >= 20 - hero_player.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
@@ -149,7 +159,6 @@ void battle_sim(monster enemy)
 
 			// Dice Roll
 			int final = 0;
-			//srand((unsigned)time(NULL));
 			for (int i = 0; i < dice_i; ++i)
 			{
 
@@ -163,12 +172,10 @@ void battle_sim(monster enemy)
 			if (crit == 1)
 			{
 				total = (final * hero_player.prof) * 2;
-				//cout << "CRIT ";
 			}
 			else if (crit == 2)
 			{
 				total = 0;
-				//cout << "MISS ";
 			}
 			else
 			{
@@ -217,7 +224,6 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			crit = 0;
-			//srand((unsigned)time(NULL));
 			critroll = (rand() % 20) + 1;
 			if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
@@ -225,7 +231,6 @@ void battle_sim(monster enemy)
 
 			// Dice Roll
 			final = 0;
-			//srand((unsigned)time(NULL));
 			for (int i = 0; i < dice_i; ++i)
 			{
 
@@ -239,12 +244,10 @@ void battle_sim(monster enemy)
 			if (crit == 1)
 			{ 
 				total = (final * enemy.prof) * 2;
-				//cout << "CRIT ";
 			}
 			else if (crit == 2)
 			{
 				total = 0;
-				//cout << "MISS ";
 			}
 			else
 			{

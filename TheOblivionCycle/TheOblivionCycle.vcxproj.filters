@@ -30,9 +30,6 @@
     <ClInclude Include="headers\createhero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\diceroller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="headers\header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -73,6 +70,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\intro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

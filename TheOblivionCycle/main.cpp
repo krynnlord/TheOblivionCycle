@@ -1,5 +1,6 @@
 #include "headers/header.h"
 #include "headers/vars.h"
+#include "headers/score.h"
 #include "headers/colors.h"
 #include "headers/togglecursor.h"
 #include "headers/typer.h"
@@ -17,6 +18,7 @@
 #include "headers/levelup.h"
 #include "headers/battle.h"
 #include "headers/intro.h"
+
 
 /////////////////////////////
 //// ADVENTURE MENU /////////
@@ -117,6 +119,11 @@ void adventure()
         if (ans == "7") 
         { 
             cout << "\nReturning to Main Menu!" << endl; Sleep(1); i = 1;
+        }
+
+        if (ans == "s" or ans == "S")
+        {
+            player_score(hero_player);
         }
 
     }
