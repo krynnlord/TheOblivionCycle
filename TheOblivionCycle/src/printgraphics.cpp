@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 void print_village()
 {
     system("cls");    

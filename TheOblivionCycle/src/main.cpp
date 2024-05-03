@@ -1,25 +1,10 @@
-#include "headers/header.h"
-#include "headers/colors.h"
-#include "headers/vars.h"
-#include "headers/printgraphics.h"
-#include "headers/score.h"
-#include "headers/spellbook.h"
-#include "headers/inventory.h"
-#include "headers/togglecursor.h"
-#include "headers/typer.h"
-#include "headers/circle.h"
-#include "headers/blacksmith.h"
-#include "headers/castle.h"
-#include "headers/inn.h"
-#include "headers/provisioner.h"
-#include "headers/temple.h"
-#include "headers/statbar.h"
-#include "headers/options.h"
-#include "headers/savegameSystem.h"
-#include "headers/createhero.h"
-#include "headers/levelup.h"
-#include "headers/battle.h"
-#include "headers/intro.h"
+#include "../headers/functions.h"
+
+// Game Settings
+int intro_sequence = 1;
+
+//Battle Seq
+int crit_result = 0;
 
 
 /////////////////////////////
@@ -127,10 +112,12 @@ void adventure()
         {
             spellbook();
         }
+
         if (ans == "i" or ans == "I")
         {
             inventory();
         }
+
         if (ans == "c" or ans == "C")
         {
             player_score(hero_player);
@@ -179,7 +166,7 @@ int main()
         if (ans == "2") 
         { 
             
-            print_createhero();      
+            print_createhero();
             CreateHero();
             
         }

@@ -1,3 +1,4 @@
+#include "../headers/functions.h"
 
 void spellbook()
 {

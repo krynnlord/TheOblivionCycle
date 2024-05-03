@@ -1,10 +1,12 @@
-int blacksmith(int i)
+#include "../headers/functions.h"
+
+int inn(int i)
 {
 
 
     // Print Menu Options
-    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Buy Weapons" << endl;
-    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Buy Armor" << endl;
+    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Rest" << endl;
+    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Wardrobe" << endl;
     cout << "("; Color(6); cout << "3"; Color(7); cout << ") Back" << endl;
 
     // Input Selection
@@ -12,14 +14,14 @@ int blacksmith(int i)
     ShowConsoleCursor(false);
     ans = _getch();
 
-    
+
     if (ans == "3")
         { 
             return 1; 
         }
-    
-    else {return 0;}
 
+    else {return 0;}
+    
     return 1;
 
 }

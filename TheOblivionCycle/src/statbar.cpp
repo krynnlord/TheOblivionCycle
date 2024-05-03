@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 void show_statbar(string name, int level, int exp, string weapon, string armor)
 {
     

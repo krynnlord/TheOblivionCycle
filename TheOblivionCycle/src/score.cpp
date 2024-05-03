@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 void player_score(player hero_player)
 {
     print_score();

@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 int castle(int i)
 {
 

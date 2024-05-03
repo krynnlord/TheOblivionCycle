@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 void inventory()
 {
 	print_inventory();

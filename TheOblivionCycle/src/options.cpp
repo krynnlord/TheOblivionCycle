@@ -1,3 +1,7 @@
+#include "../headers/functions.h"
+
+extern int intro_sequence;
+
 int options(int i)
 {
 

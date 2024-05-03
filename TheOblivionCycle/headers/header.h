@@ -1,6 +1,3 @@
-#ifndef HEADER_H
-#define HEADER_H
-
 #include <iostream> 
 #include <string>
 #include <windows.h>
@@ -15,5 +12,3 @@
 #include <iomanip>
 
 using namespace std;
-
-#endif

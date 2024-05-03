@@ -1,3 +1,5 @@
+#include "../headers/functions.h"
+
 void battle_sim(monster enemy)
 {
 	// Battle Strings
@@ -127,17 +129,12 @@ void battle_sim(monster enemy)
 		{
 			loop = 1;
 		}
-		
+
 		if (ans == "i" or ans == "I")
 		{
 			inventory();
 		}
 
-		//if (ans == "3")
-		//{
-		//	inventory();
-		//}
-		//
 		if (ans == "s" or ans=="S")
 		{
 			spellbook();

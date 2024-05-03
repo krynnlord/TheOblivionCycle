@@ -1,6 +1,9 @@
+#include "../headers/functions.h"
+
 extern player hero_player;
 extern weapon hero_weapon;
 extern armor hero_armor;
+extern int intro_sequence;
 
 // SAVE GAME
 void save_game()

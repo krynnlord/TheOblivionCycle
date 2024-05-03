@@ -1,3 +1,5 @@
+#include "../headers/header.h"
+
 void typer(std::string& str, int speed)
 {   
     int i;

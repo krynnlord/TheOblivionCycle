@@ -143,31 +143,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="headers\battle.h" />
-    <ClInclude Include="headers\blacksmith.h" />
-    <ClInclude Include="headers\castle.h" />
-    <ClInclude Include="headers\circle.h" />
-    <ClInclude Include="headers\colors.h" />
-    <ClInclude Include="headers\createhero.h" />
+    <ClInclude Include="headers\classes.h" />
+    <ClInclude Include="headers\functions.h" />
     <ClInclude Include="headers\header.h" />
-    <ClInclude Include="headers\inn.h" />
-    <ClInclude Include="headers\intro.h" />
-    <ClInclude Include="headers\inventory.h" />
-    <ClInclude Include="headers\levelup.h" />
-    <ClInclude Include="headers\options.h" />
-    <ClInclude Include="headers\printgraphics.h" />
-    <ClInclude Include="headers\provisioner.h" />
-    <ClInclude Include="headers\savegameSystem.h" />
-    <ClInclude Include="headers\score.h" />
-    <ClInclude Include="headers\spellbook.h" />
-    <ClInclude Include="headers\statbar.h" />
-    <ClInclude Include="headers\temple.h" />
-    <ClInclude Include="headers\togglecursor.h" />
-    <ClInclude Include="headers\typer.h" />
-    <ClInclude Include="headers\vars.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\battle.cpp" />
+    <ClCompile Include="src\blacksmith.cpp" />
+    <ClCompile Include="src\castle.cpp" />
+    <ClCompile Include="src\circle.cpp" />
+    <ClCompile Include="src\colors.cpp" />
+    <ClCompile Include="src\createhero.cpp" />
+    <ClCompile Include="src\inn.cpp" />
+    <ClCompile Include="src\intro.cpp" />
+    <ClCompile Include="src\inventory.cpp" />
+    <ClCompile Include="src\levelup.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\options.cpp" />
+    <ClCompile Include="src\printgraphics.cpp" />
+    <ClCompile Include="src\provisioner.cpp" />
+    <ClCompile Include="src\savegameSystem.cpp" />
+    <ClCompile Include="src\score.cpp" />
+    <ClCompile Include="src\spellbook.cpp" />
+    <ClCompile Include="src\statbar.cpp" />
+    <ClCompile Include="src\temple.cpp" />
+    <ClCompile Include="src\togglecursor.cpp" />
+    <ClCompile Include="src\typer.cpp" />
+    <ClCompile Include="src\vars.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

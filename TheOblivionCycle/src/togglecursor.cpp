@@ -1,3 +1,5 @@
+#include "../headers/header.h"
+
 void ShowConsoleCursor(bool showFlag)
 {
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
