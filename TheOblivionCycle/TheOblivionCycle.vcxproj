@@ -152,6 +152,7 @@
     <ClInclude Include="headers\header.h" />
     <ClInclude Include="headers\inn.h" />
     <ClInclude Include="headers\intro.h" />
+    <ClInclude Include="headers\inventory.h" />
     <ClInclude Include="headers\levelup.h" />
     <ClInclude Include="headers\options.h" />
     <ClInclude Include="headers\printgraphics.h" />

@@ -127,7 +127,11 @@ void battle_sim(monster enemy)
 		{
 			loop = 1;
 		}
-
+		
+		if (ans == "i" or ans == "I")
+		{
+			inventory();
+		}
 
 		//if (ans == "3")
 		//{

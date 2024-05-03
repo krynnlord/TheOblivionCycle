@@ -238,3 +238,18 @@ void print_score()
     Color(7);
 }
 
+void print_inventory()
+{
+
+    system("cls");
+    Color(10);
+
+    string line1 = R"( ___ _   ___     _______ _   _ _____ ___  ______   __   (-))";
+    string line2 = R"(|_ _| \ | \ \   / / ____| \ | |_   _/ _ \|  _ \ \ / / .-'-'-.)";
+    string line3 = R"( | ||  \| |\ \ / /|  _| |  \| | | || | | | |_) \ V /  |-...-|)";
+    string line4 = R"( | || |\  | \ V / | |___| |\  | | || |_| |  _ < | |   |___|_|)";
+    string line5 = R"(|___|_| \_|  \_/  |_____|_| \_| |_| \___/|_| \_\|_|   `-...-')";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    Color(7);
+}

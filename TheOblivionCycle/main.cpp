@@ -4,6 +4,7 @@
 #include "headers/printgraphics.h"
 #include "headers/score.h"
 #include "headers/spellbook.h"
+#include "headers/inventory.h"
 #include "headers/togglecursor.h"
 #include "headers/typer.h"
 #include "headers/circle.h"
@@ -125,6 +126,10 @@ void adventure()
         if (ans == "s" or ans == "S")
         {
             spellbook();
+        }
+        if (ans == "i" or ans == "I")
+        {
+            inventory();
         }
         if (ans == "c" or ans == "C")
         {
