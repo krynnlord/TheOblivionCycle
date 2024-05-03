@@ -23,6 +23,8 @@ void battle_sim(monster enemy)
 	// DICE Vars
 	int dice_i = 0;
 	int sides_i = 0;
+	int hero_final = 0;
+	int hero_crit = 0;
 	int hero_total_atk = 0;
 	int enemy_total_atk = 0;
 
@@ -109,11 +111,11 @@ void battle_sim(monster enemy)
 
 		else
 		{
-			cout << "Actions:" << endl;
-			for (int a = 0; a < 53; a++) { cout << "-"; } cout << endl;
-			cout << "| [1] Attack  [2] Cast      [3] Inventory  [4] Run  |" << endl;
-			cout << "| [S] Score   [B] Spellbook [I] Inventory  [H] Help |" << endl;
-			for (int a = 0; a < 53; a++) { cout << "-"; }
+			cout << "Actions" << endl;
+			
+			cout << "[1] Attack  [2] Cast      [3] Use Item   [4] Run" << endl;
+			cout << "[C] Score   [S] Spellbook [I] Inventory  [H] Help" << endl;
+			
 			cout << endl;
 		}
 		
@@ -181,7 +183,8 @@ void battle_sim(monster enemy)
 			{
 				total = (final * hero_player.prof);
 			}
-
+			hero_final = final;
+			hero_crit = crit;
 			hero_total_atk = total;
 
 			enemy.hp -= hero_total_atk;

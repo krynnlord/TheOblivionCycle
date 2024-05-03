@@ -7,7 +7,7 @@ void spellbook()
     
     print_spellbook();
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
-    cout << "   1ST CIR            2ND CIR             3RD CIR       " << endl;
+    cout << "1ST CIRCLE         2ND CIRCLE          3RD CIRCLE       " << endl;
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
     cout << "["; Color(6); cout << c11; Color(7);cout << "]HEAL";
     cout << "            ["; Color(6); cout << c21; Color(7); cout << "]GREATER HEAL";

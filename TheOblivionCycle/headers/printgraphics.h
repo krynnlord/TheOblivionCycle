@@ -195,14 +195,46 @@ void print_spellbook()
     system("cls");
     Color(3);
 
-    string line1 = R"(  _____ _____  ______ _      _      ____   ____   ____  _  __)";
-    string line2 = R"( / ____|  __ \|  ____| |    | |    |  _ \ / __ \ / __ \| |/ /)";
-    string line3 = R"(| (___ | |__) | |__  | |    | |    | |_) | |  | | |  | | ' /)";
-    string line4 = R"( \___ \|  ___/|  __| | |    | |    |  _ <| |  | | |  | |  <)";
-    string line5 = R"( ____) | |    | |____| |____| |____| |_) | |__| | |__| | . \)";
-    string line6 = R"(|_____/|_|    |______|______|______|____/ \____/ \____/|_|\_\)";
+    string line1 = R"(     __)";
+    string line2 = R"(    (`/\)";
+    string line3 = R"(    `=\/\ __...--~~~~~-._   _.-~~~~~--...__)";
+    string line4 = R"(     `=\/\     SPELL     \ /     BOOK      \\)";
+    string line5 = R"(      `=\/                V                 \\)";
+    string line6 = R"(      //_\___--~~~~~~-._  |  _.-~~~~~~--...__\\)";
+    string line7 = R"(     //  ) (..----~~~~._\ | /_.~~~~----.....__\\)";
+    string line8 = R"(    ===(     )==========\\|//====================)";
+    string line9 = R"(        \___/           `---`)";
+
+
+
 
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    cout << line7 << endl << line8 << endl << line9 << endl;
     Color(7);
 
 }
+
+void print_score()
+{
+    
+    system("cls");
+    Color(10);
+    
+    string line1 = R"(      ,)";
+    string line2 = R"(  ,   |\ ,__)";
+    string line3 = R"(  | \  \ /  `.       _    _ ______ _____   ____)";
+    string line4 = R"(   \ `-.:.    `\    | |  | |  ____| __  \ / __ \)";
+    string line5 = R"(    `-.__`\=====|   | |__| | |__  | |__) | |  | |)";
+    string line6 = R"(      /=`'/  ^ _\   |  __  |  __| |  _  /| |  | |)";
+    string line7 = R"(    .'   /\    .=)  | |  | | |____| | \ \| |__| | )";
+    string line8 = R"(   .-'  ' | '-(/_|  |_|  |_|______|_|  \_\\____/)";
+    string line9 = R"( .'  __(  \  .'`)";
+    string line10 = R"(/_.'`  `.  |`)";
+    string line11 = R"(         \ |)";
+    string line12 = R"(          |/)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
+    Color(7);
+}
+
