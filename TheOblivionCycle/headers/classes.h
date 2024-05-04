@@ -2,6 +2,8 @@
 #pragma once
 
 extern int intro_sequence; // Game Settings
+extern int music_setting; // 1-on 0-off
+extern int music_vol; //0 mut 100 full
 extern int crit_result0; //Battle Seq
 
 // Classes

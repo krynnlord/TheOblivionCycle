@@ -2,6 +2,8 @@
 
 // Game Settings
 int intro_sequence = 1;
+int music_setting = 1;
+int music_vol = 100;
 
 //Battle Seq
 int crit_result = 0;
@@ -124,7 +126,8 @@ void adventure()
 /////////////////////////////
 int main() 
 {
-    
+    int music_setting = 1;
+    int music_vol = 100;
     // Loads Game
     load_game();
 
@@ -138,7 +141,7 @@ int main()
     {
 
         print_title();
-        string subtitle = "                          Chapter I: The Shimmering Gate";    
+        string subtitle = "                          Part I: The Shimmering Gate";    
         // typer(subtitle,50); cout << endl; sleep(1);
         cout<< (subtitle) << endl;
 

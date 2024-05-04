@@ -4,6 +4,8 @@ extern player hero_player;
 extern weapon hero_weapon;
 extern armor hero_armor;
 extern int intro_sequence;
+extern int music_setting; // 1-on 0-off
+extern int music_vol; //0 mut 100 full
 
 // SAVE GAME
 void save_game()
@@ -39,7 +41,9 @@ txtOut << hero_armor.cost << endl;
 txtOut << hero_armor.armorclass << endl;
 txtOut << hero_armor.description << endl;
 txtOut << "*** GAME SETTINGS ***" << endl;
-txtOut << intro_sequence;
+txtOut << intro_sequence << endl;
+txtOut << music_setting << endl;
+txtOut << music_vol; 
 txtOut.close();
 
 };
@@ -83,7 +87,8 @@ getline(txtIn,emptyline); istringstream s19(emptyline); s19 >> hero_armor.armorc
 getline(txtIn,hero_armor.description);
 getline(txtIn, emptyline);
 getline(txtIn, emptyline); istringstream s20(emptyline); s20 >> intro_sequence;
-
+getline(txtIn, emptyline); istringstream s21(emptyline); s21 >> music_setting;
+getline(txtIn, emptyline); istringstream s22(emptyline); s22 >> music_vol;
 txtIn.close();
 
 }
