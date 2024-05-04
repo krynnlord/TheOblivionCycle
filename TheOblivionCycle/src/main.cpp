@@ -141,10 +141,7 @@ int main()
     {
 
         print_title();
-        string subtitle = "                          Part I: The Shimmering Gate";    
-        // typer(subtitle,50); cout << endl; sleep(1);
-        cout<< (subtitle) << endl;
-
+       
         // Print Choices
         cout << "("; Color(6); cout << "1"; Color(7); cout << ") Play Game" << endl;
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") New Game" << endl; //To be NewGame

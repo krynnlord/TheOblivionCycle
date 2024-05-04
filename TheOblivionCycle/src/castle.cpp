@@ -13,7 +13,13 @@ int castle(int i)
     ShowConsoleCursor(false);
     ans = _getch();
 
-    
+    if (ans == "1")
+    {
+        print_king();
+        cout << "Random Quest Text!";
+        Sleep(4000);
+    }
+
     if (ans == "2")
         { 
             return 1; 

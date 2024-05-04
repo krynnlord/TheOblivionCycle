@@ -137,7 +137,7 @@ void info_screen()
 
         if (ans == "6")
         {
-
+            help_screen();
         }
 
         if (ans == "7")
@@ -163,6 +163,16 @@ void info_screen()
     }
 
 
+
+
+}
+
+void help_screen()
+{
+    print_help();
+
+    string ans;
+    ans = _getch();
 
 
 }

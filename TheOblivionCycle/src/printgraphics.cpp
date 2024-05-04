@@ -117,15 +117,25 @@ void print_title()
     system("cls");    
     Color(4); 
     
-string line1 =R"( _____ _             ___  _     _ _       _                ____           _)";
-string line2 =R"(|_   _| |__   ___   / _ \| |__ | (_)_   _(_) ___  _ __    / ___|   _  ___| | ___)";
-string line3 =R"(  | | | '_ \ / _ \ | | | | '_ \| | \ \ / / |/ _ \| '_ \  | |  | | | |/ __| |/ _ \)";
-string line4 =R"(  | | | | | |  __/ | |_| | |_) | | |\ V /| | (_) | | | | | |__| |_| | (__| |  __/)";
-string line5 =R"(  |_| |_| |_|\___|  \___/|_.__/|_|_| \_/ |_|\___/|_| |_|  \____\__, |\___|_|\___|)";
-string line6 =R"(                                                               |___/)";
+string line1  =R"( _____ _             ___  _     _ _       _                ____           _)";
+string line2  =R"(|_   _| |__   ___   / _ \| |__ | (_)_   _(_) ___  _ __    / ___|   _  ___| | ___)";
+string line3  =R"(  | | | '_ \ / _ \ | | | | '_ \| | \ \ / / |/ _ \| '_ \  | |  | | | |/ __| |/ _ \)";
+string line4  =R"(  | | | | | |  __/ | |_| | |_) | | |\ V /| | (_) | | | | | |__| |_| | (__| |  __/)";
+string line5  =R"(  |_| |_| |_|\___|  \___/|_.__/|_|_| \_/ |_|\___/|_| |_|  \____\__, |\___|_|\___|)";
+string line6 = R"(                                                               |___ /)";
+string line7 = R"(                   _       ,)";
+string line8 = R"(                  / \_    / \_                      /\'__)";
+string line9 = R"(                 /    \  /    \,                  _/  /  \)";
+string line10  =R"(                /\/\  /\/ :' __ \_             _^/  ^/    `--.)";
+string line11  =R"(               /    \/  \  _/  \-'\           /.' ^_   \_   .'\)";
+string line12  =R"(              /\  .-   `. \/     \ /==~=-=~=-=-;.  _/ \ -. `_/   \)";
+string line13 =R"(             /  `-.__ ^   / .-'.--\ =-=~_=-=~=^/  _ `--./ .-'  `-)";
+string line14 =R"(            /        `.  / /       `.~-^=-=~=^=.-'      '-._ `._)";
 
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
-Color(7);
+Color(7); cout << "                          Part I: The Shimmering Gate" << endl;
+cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
+cout << line13 << endl << line14 << endl << endl;
 }
 
 void print_options()
@@ -347,4 +357,72 @@ void print_preparecombat()
     cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
     cout << line16 << endl; Color(7); cout << line17 << endl;
     
+}
+
+void print_help()
+{
+
+    system("cls");
+    
+    string line1  = R"(  ________________________________________________)";
+    string line2  = R"( /              THE OBLIVION CYCLE                \)";
+    string line3  = R"(|    _________________________________________     |)";
+    string line4  = R"(|   |                                         |    |)";
+    string line5  = R"(|   |               HELP SCREEN               |    |)";
+    string line6  = R"(|   |                                         |    |)";
+    string line7  = R"(|   |                                         |    |)";
+    string line8  = R"(|   |           [1] Character Stats           |    |)";
+    string line9  = R"(|   |           [2] Magic System              |    |)";
+    string line10 = R"(|   |           [3] Healing Flask             |    |)";
+    string line11 = R"(|   |           [4] Enemy Types               |    |)";
+    string line12 = R"(|   |           [5] Quests                    |    |)";
+    string line13 = R"(|   |           [6] Items                     |    |)";
+    string line14 = R"(|   |                                         |    |)";
+    string line15 = R"(|   |          [ESC] Return                   |    |)";
+    string line16 = R"(|   |                                         |    |)";
+    string line17 = R"(|   |_________________________________________|    |)";
+    string line18 = R"(|            PART I: THE SHIMMERING ISLE           |)";
+    string line19 = R"(\_________________________________________________/)";
+    string line20 = R"(       \___________________________________/)";
+
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
+    cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
+    cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
+
+}
+
+void print_king()
+{
+
+    system("cls");
+    Color(6);
+    string line1  = R"(                    .)";
+    string line2  = R"(                   / \)";
+    string line3  = R"(                  _\ /_)";
+    string line4  = R"(        .     .  (,'v`.)  .     .)";
+    string line5  = R"(        \)   ( )  ,' `.  ( )   (/)";
+    string line6  = R"(         \`. / `-'     `-' \ ,'/)";
+    string line7  = R"(          : '    _______    ' :)";
+    string line8  = R"(          |  _,-'  ,-.  `-._  |)";
+    string line9  = R"(          |,' ( )__`-'__( ) `.|)";
+    string line10 = R"(          (|,-,'-._   _.-`.-.|))";
+    string line11 = R"(          /  /<( o)> <( o)>\  \)";
+    string line12 = R"(          :  :     | |     :  :)";
+    string line13 = R"(          |  |     ; :     |  |)";
+    string line14 = R"(          |  |    (.-.)    |  |)";
+    string line15 = R"(          |  |  ,' ___ `.  |  |)";
+    string line16 = R"(          ;  |)/ ,'---'. \(|  :)";
+    string line17 = R"(      _,-/   |/\(       )/\|   \-._)";
+    string line18 = R"(_..--'.-(    |   `-'''-'   |    )-.`--.._)";
+    string line19 = R"(         `.  ;`._________,':  ,')";
+    string line20 = R"(        ,' `/               \'`.)";
+
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
+    cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
+    cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
+    Color(7);
 }
