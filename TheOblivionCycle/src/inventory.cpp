@@ -2,47 +2,23 @@
 
 void inventory()
 {
-    int ab = 0;
-    while (ab == 0)
-    {
+   
+    
         print_inventory();
         cout << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
         cout << " ["; Color(14); cout << right << setw(3) << setfill('0'); cout << potion.qty; Color(7); cout << setfill(' '); cout << "]POTION" << endl;
         cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-        cout << " [1]Weapons [2]Armor [3]Spells [4]Score [5]Exit" << endl;
+        cout << " Press any key to return" << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
 
         string ansr;
         ansr = _getch();
 
 
-        if (ansr == "1")
-        {
-            weapons_display();
-        }
-
-        if (ansr == "2")
-        {
-            armor_display();
-        }
-
-        if (ansr == "3")
-        {
-            spellbook();
-        }
-
-        if (ansr == "4")
-        {
-            player_score();
-        }
-
-        if (ansr == "5")
-        {
-            ab = 1;
-        }
-    }
+        
+  
 }
 
 void weapons_display()

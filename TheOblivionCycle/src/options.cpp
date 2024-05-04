@@ -40,3 +40,69 @@ int options(int i)
     return 0;
 
 }
+
+
+void info_screen()
+{
+    
+    int zz = 0;
+    while (zz == 0)
+    {
+        print_infoscreen();
+
+        string ans;
+        ans = _getch();
+
+        if (ans == "1")
+        {
+            player_score();
+        }
+
+        if (ans == "2")
+        {
+            inventory();
+        }
+
+        if (ans == "3")
+        {
+            spellbook();
+        }
+
+        if (ans == "4")
+        {
+            weapons_display();
+        }
+
+        if (ans == "5")
+        {
+            armor_display();
+        }
+
+        if (ans == "6")
+        {
+
+        }
+
+        if (ans == "7")
+        {
+            int b = 1;
+            print_options();
+            cout << endl;
+            options(b);
+        }
+
+        if (ans == "8")
+        {
+
+        }
+
+        if (ans == "0" or ans == "\033")
+        {
+            zz = 1;
+        }
+    }
+
+
+
+
+}

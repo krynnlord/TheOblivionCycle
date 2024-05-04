@@ -115,8 +115,8 @@ void battle_sim(monster enemy)
 		{
 			cout << "Actions" << endl;
 			
-			cout << "[1] Attack  [2] Cast      [3] Use Item   [4] Run" << endl;
-			cout << "[C] Score   [S] Spellbook [I] Inventory  [H] Help" << endl;
+			cout << "[1] Attack  [2] Cast  [3] Use Item  [4] Run" << endl;
+			cout << "[ESC] Menu" << endl;
 			
 			cout << endl;
 		}
@@ -130,20 +130,10 @@ void battle_sim(monster enemy)
 			loop = 1;
 		}
 
-		if (ans == "i" or ans == "I")
+		if (ans == "\033")
 		{
-			inventory();
+			info_screen();
 		}
-
-		if (ans == "s" or ans=="S")
-		{
-			spellbook();
-		}
-		if (ans == "c" or ans == "C")
-		{
-			player_score();
-		}
-
 
 		if (ans == "1") // Round Start
 		{

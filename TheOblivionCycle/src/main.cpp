@@ -31,7 +31,8 @@ void adventure()
         cout << "("; Color(6); cout << "4"; Color(7); cout << ") The Blacksmith" << endl;
         cout << "("; Color(6); cout << "5"; Color(7); cout << ") The Provisioner" << endl;
         cout << "("; Color(6); cout << "6"; Color(7); cout << ") The Inn" << endl;
-        cout << "("; Color(6); cout << "7"; Color(7); cout << ") Quit to Main Menu" << endl;
+        cout << "("; Color(6); cout << "7"; Color(7); cout << ") Quit to Main Menu" << endl << endl;
+        cout << "("; Color(6); cout << "ESC"; Color(7); cout << ") Menu" << endl;
 
         // Input Selection
         ShowConsoleCursor(false);
@@ -108,20 +109,12 @@ void adventure()
             cout << "\nReturning to Main Menu!" << endl; Sleep(1); i = 1;
         }
 
-        if (ans == "s" or ans == "S")
+        if (ans == "\033")
         {
-            spellbook();
+            info_screen();
         }
 
-        if (ans == "i" or ans == "I")
-        {
-            inventory();
-        }
-
-        if (ans == "c" or ans == "C")
-        {
-            player_score();
-        }
+     
 
     }
 }
