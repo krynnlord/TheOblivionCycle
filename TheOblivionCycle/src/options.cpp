@@ -142,10 +142,13 @@ void info_screen()
 
         if (ans == "7")
         {
-            int b = 1;
-            print_options();
-            cout << endl;
-            options(b);
+            int i = 0;
+            while (i == 0)
+            {
+                print_options();
+                cout << endl;
+                i = options(i);
+            }
         }
 
         if (ans == "8")

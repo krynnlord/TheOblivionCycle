@@ -3,8 +3,7 @@
 void battle_sim(monster enemy)
 {
 	print_preparecombat();
-	string ansb;
-	ansb = _getch();
+	Sleep(2000);
 	
 	system("cls");
 	// Battle Strings
