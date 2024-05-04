@@ -1,6 +1,6 @@
 #include "../headers/functions.h"
 
-void player_score(player hero_player)
+void player_score()
 {
     print_score();
     cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;

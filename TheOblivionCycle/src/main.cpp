@@ -120,7 +120,7 @@ void adventure()
 
         if (ans == "c" or ans == "C")
         {
-            player_score(hero_player);
+            player_score();
         }
 
     }

@@ -141,7 +141,7 @@ void battle_sim(monster enemy)
 		}
 		if (ans == "c" or ans == "C")
 		{
-			player_score(hero_player);
+			player_score();
 		}
 
 

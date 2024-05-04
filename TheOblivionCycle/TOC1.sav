@@ -1,5 +1,5 @@
 *** HERO ***
-Avatar
+Player
 100
 100
 0
@@ -7,7 +7,7 @@ Avatar
 0
 0
 1
-2
+1
 0
 1
 2
@@ -16,7 +16,7 @@ Avatar
 Hands
 blunt
 0
-2d3
+1d2
 Your bare hands
 *** ARMOR ***
 1

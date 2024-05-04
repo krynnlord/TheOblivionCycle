@@ -255,3 +255,35 @@ void print_inventory()
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
     Color(7);
 }
+
+void print_weapons()
+{
+
+    system("cls");
+    Color(12);
+
+    string line1 = R"(__        _______    _    ____   ___  _   _ ____     (__)";
+    string line2 = R"(\ \      / / ____|  / \  |  _ \ / _ \| \ | / ___|   __) \)";
+    string line3 = R"( \ \ /\ / /|  _|   / _ \ | |_) | | | |  \| \___ \  ( __=-|)";
+    string line4 = R"(  \ V  V / | |___ / ___ \|  __/| |_| | |\  |___) |  \\ `)/ )";
+    string line5 = R"(   \_/\_/  |_____/_/   \_\_|    \___/|_| \_|____/    \\ ()";
+    
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    Color(7);
+}
+
+void print_armor()
+{
+
+    system("cls");
+    Color(5);
+
+    string line1 = R"(    _    ____  __  __  ___  ____    |`-._/\_.-`|)";
+    string line2 = R"(   / \  |  _ \|  \/  |/ _ \|  _ \   |    ||    |)";
+    string line3 = R"(  / _ \ | |_) | |\/| | | | | |_) |  |___o()o___|)";
+    string line4 = R"( / ___ \|  _ <| |  | | |_| |  _ <   \   o\/o   /)";
+    string line5 = R"(/_/   \_\_| \_\_|  |_|\___/|_| \_\   \   ||   /)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    Color(7);
+}
