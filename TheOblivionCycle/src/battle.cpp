@@ -2,6 +2,11 @@
 
 void battle_sim(monster enemy)
 {
+	print_preparecombat();
+	string ansb;
+	ansb = _getch();
+	
+	system("cls");
 	// Battle Strings
 	string hero_combat_string = "Ready for combat.";
 	string enemy_combat_string = "Ready for combat.";
@@ -145,6 +150,7 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			int	crit = 0;
+			srand((unsigned)time(NULL));
 			int critroll = (rand() % 20) + 1;
 			if (critroll >= 20 - hero_player.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
@@ -154,7 +160,7 @@ void battle_sim(monster enemy)
 			int final = 0;
 			for (int i = 0; i < dice_i; ++i)
 			{
-
+				srand((unsigned)time(NULL));
 				int roll = (rand() % sides_i) + 1;
 				cout << roll << " ";
 				final += roll;
@@ -218,6 +224,7 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			crit = 0;
+			srand((unsigned)time(NULL));
 			critroll = (rand() % 20) + 1;
 			if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
@@ -227,7 +234,7 @@ void battle_sim(monster enemy)
 			final = 0;
 			for (int i = 0; i < dice_i; ++i)
 			{
-
+				srand((unsigned)time(NULL));
 				int roll = (rand() % sides_i) + 1;
 				cout << roll << " ";
 				final += roll;

@@ -186,7 +186,16 @@ int main()
 
         if (ans == "b" or ans == "B")
         {
-            battle_sim(zombie2);
+            // Random Monster Battle
+            int rand_monster = 0;
+            srand((unsigned)time(NULL));
+            rand_monster = (rand() % 20) + 1;
+            int monster_to_send = 0;
+            if (rand_monster > 1 and rand_monster <= 5) { battle_sim(zombie); }
+            if (rand_monster > 5 and rand_monster <= 10) { battle_sim(skeleton); }
+            if (rand_monster > 10 and rand_monster <= 15) { battle_sim(giant_bat); }
+            if (rand_monster > 15 and rand_monster <= 20) { battle_sim(giant_boar); }
+
         }
     }
 

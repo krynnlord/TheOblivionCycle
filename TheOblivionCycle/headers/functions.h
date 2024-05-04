@@ -50,3 +50,4 @@ void print_inventory();
 void print_weapons();
 void print_armor();
 void print_infoscreen();
+void print_preparecombat();
