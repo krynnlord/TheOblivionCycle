@@ -202,6 +202,22 @@ cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line
 Color(7);
 }
 
+void print_gambling()
+{
+    system("cls");
+    Color(6);
+
+    string line1 = R"(  ____    _    __  __ ____  _     ___ _   _  ____            _)";
+    string line2 = R"( / ___|  / \  |  \/  | __ )| |   |_ _| \ | |/ ___|         _( )__)";
+    string line3 = R"(| |  _  / _ \ | |\/| |  _ \| |    | ||  \| | |  _         /_    /)";
+    string line4 = R"(| |_| |/ ___ \| |  | | |_) | |___ | || |\  | |_| |    ___m/I_ //_____)";
+    string line5 = R"( \____/_/   \_\_|  |_|____/|_____|___|_| \_|\____|   /    3 CARD     \)";
+
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    Color(7);
+}
+
 void print_spellbook()
 {
     system("cls");

@@ -148,6 +148,7 @@
     <ClInclude Include="headers\header.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\3card.cpp" />
     <ClCompile Include="src\battle.cpp" />
     <ClCompile Include="src\blacksmith.cpp" />
     <ClCompile Include="src\castle.cpp" />
