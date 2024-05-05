@@ -53,14 +53,16 @@ public:
     int levelreq;
 };
 
-class item
+class trinket
 {
 public:
+    int id;
     string name;
-    string type;
-    int value;
-    int qty;
     string desc;
+    int mod_type; //(1)Attack (2)Defense (3)Luck
+    int mod_value;
+    int equipped; //(0) No (1) Yes
+    int have; //(0) No (1) Yes
 };
 
 class weapon
@@ -88,9 +90,10 @@ public:
 // Variables
 
 /////////////////////////////////////////
-// Items ////////////////////////////////
+// Trinkets /////////////////////////////
 /////////////////////////////////////////
-extern item potion;
+extern trinket rabbit_foot;
+extern trinket azure_neclace;
 
 /////////////////////////////////////////
 // Spells ///////////////////////////////

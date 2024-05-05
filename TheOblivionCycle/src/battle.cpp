@@ -119,7 +119,7 @@ void battle_sim(monster enemy)
 		{
 			cout << "Actions" << endl;
 			
-			cout << "[1] Attack  [2] Cast  [3] Use Item  [4] Run" << endl;
+			cout << "[1] Attack  [2] Cast  [3] Run" << endl;
 			cout << "[ESC] Menu" << endl;
 			
 			cout << endl;
@@ -129,7 +129,7 @@ void battle_sim(monster enemy)
 		string ans;
 		ans = _getch();
 
-		if (ans == "4")
+		if (ans == "3")
 		{
 			loop = 1;
 		}

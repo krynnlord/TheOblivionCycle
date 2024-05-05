@@ -117,7 +117,7 @@ void info_screen()
 
         if (ans == "2")
         {
-            inventory();
+            trinkets();
         }
 
         if (ans == "3")

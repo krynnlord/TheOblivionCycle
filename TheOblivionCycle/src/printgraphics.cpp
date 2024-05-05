@@ -89,7 +89,7 @@ string line1 =R"(|_|      ||       |_|      ||      |_|       ||        |_||/|)"
 string line2 =R"(|_|     /  \      |_|      ||      |_|      /  \       |_|/||)";
 string line3 =R"(|_|    /    \     |_|     [||]     |_|     /    \      |_||/|)";
 string line4 =R"(|_|   (______)    |_|      ||      |_|    (______)     |_|/||)";
-string line5 =R"(|_|____ ITEMS ____|_|      ||      |_|____ POTION _____|_||/|)";
+string line5 =R"(|_|___ TRINKET ___|_|      ||      |_|____ AMULETS ____|_||/|)";
 string line6 =R"(|_|_|_|_|_|_|_|_|_|_|______||______|_|_|_|_|_|_|_|_|_|_|_|/||)";
 
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
@@ -266,17 +266,17 @@ void print_score()
     Color(7);
 }
 
-void print_inventory()
+void print_trinkets()
 {
 
     system("cls");
     Color(10);
 
-    string line1 = R"( ___ _   ___     _______ _   _ _____ ___  ______   __   (-))";
-    string line2 = R"(|_ _| \ | \ \   / / ____| \ | |_   _/ _ \|  _ \ \ / / .-'-'-.)";
-    string line3 = R"( | ||  \| |\ \ / /|  _| |  \| | | || | | | |_) \ V /  |-...-|)";
-    string line4 = R"( | || |\  | \ V / | |___| |\  | | || |_| |  _ < | |   |___|_|)";
-    string line5 = R"(|___|_| \_|  \_/  |_____|_| \_| |_| \___/|_| \_\|_|   `-...-')";
+    string line1 = R"( _____ ____  ___ _   _ _  _______ _____ ____      o   .)";
+    string line2 = R"(|_   _|  _ \|_ _| \ | | |/ / ____|_   _/ ___|   _________)";
+    string line3 = R"(  | | | |_) || ||  \| | ' /|  _|   | | \___ \ c(`       ')o)";
+    string line4 = R"(  | | |  _ < | || |\  | . \| |___  | |  ___) |  \.     ,/)";
+    string line5 = R"(  |_| |_| \_\___|_| \_|_|\_\_____| |_| |____/  _//^---^\\_)";
 
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
     Color(7);
@@ -328,7 +328,7 @@ void print_infoscreen()
     string line7  = R"(  ||||                    :                    ||||)";
     string line8  = R"(  ||||                    :                    ||||)";
     string line9  = R"(  ||||   [1] CHARACTER    :     [6] HELP       ||||)";
-    string line10 = R"(  ||||   [2] INVENTORY    :     [7] OPTIONS    ||||)";
+    string line10 = R"(  ||||   [2] TRINKETS     :     [7] OPTIONS    ||||)";
     string line11 = R"(  ||||   [3] SPELLBOOK    :     [8] EXIT GAME  ||||)";
     string line12 = R"(  ||||   [4] WEAPONS      :                    ||||)";
     string line13 = R"(  ||||   [5] ARMOR        :    [ESC] BACK      ||||)";
@@ -392,7 +392,7 @@ void print_help()
     string line10 = R"(|   |           [3] Healing Flask             |    |)";
     string line11 = R"(|   |           [4] Enemy Types               |    |)";
     string line12 = R"(|   |           [5] Quests                    |    |)";
-    string line13 = R"(|   |           [6] Items                     |    |)";
+    string line13 = R"(|   |           [6] Trinkets                  |    |)";
     string line14 = R"(|   |                                         |    |)";
     string line15 = R"(|   |          [ESC] Return                   |    |)";
     string line16 = R"(|   |                                         |    |)";

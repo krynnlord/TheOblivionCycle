@@ -3,9 +3,10 @@
 // Variables
 
 /////////////////////////////////////////
-// Items ////////////////////////////////
+// Trinkets /////////////////////////////
 /////////////////////////////////////////
-item potion = { "Potion of Healing", "potion", 500, 5, "" }; // 2d4 + 2 of healing, takes an action
+trinket rabbit_foot = { 1, "RABBIT FOOT", "Rabbit Foot on a chain", 3, 1, 1, 1};
+trinket azure_neclace = { 2, "AZURE NECKLACE", "A necklace of power", 1, 1, 0, 1 };
 
 /////////////////////////////////////////
 // Spells ///////////////////////////////

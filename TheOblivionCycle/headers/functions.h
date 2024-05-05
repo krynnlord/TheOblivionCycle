@@ -24,7 +24,7 @@ void save_game();
 void info_screen();
 void player_score();
 void spellbook();
-void inventory();
+void trinkets();
 void help_screen();
 void weapons_display();
 void armor_display();
@@ -33,6 +33,7 @@ void gambling();
 void show_statbar(string name, int level, int exp, string weapon, string armor);
 void ShowConsoleCursor(bool showFlag);
 void typer(std::string& str, int speed);
+void trinket_checker(trinket temp_trinket);
 
 // Print Images
 void print_blacksmith();
@@ -49,7 +50,7 @@ void print_stones();
 void print_temple();
 void print_title();
 void print_village();
-void print_inventory();
+void print_trinkets();
 void print_weapons();
 void print_armor();
 void print_infoscreen();

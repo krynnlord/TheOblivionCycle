@@ -1,14 +1,35 @@
 #include "../headers/functions.h"
 
-void inventory()
+void trinket_checker(trinket temp_trinket)
+{
+    if (temp_trinket.have == 1)
+    {
+        cout << " ["; Color(14);
+        if (temp_trinket.equipped == 1)
+        {
+            cout << "E"; Color(7); cout << "] " << temp_trinket.name << endl;
+        }
+        else
+        {
+            cout << " "; Color(7); cout << "] " << temp_trinket.name << endl;
+        }
+    }
+
+}
+
+void trinkets()
 {
    
     
-        print_inventory();
+        print_trinkets();
         cout << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-        cout << " ["; Color(14); cout << right << setw(3) << setfill('0'); cout << potion.qty; Color(7); cout << setfill(' '); cout << "]POTION" << endl;
-        cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+        if (rabbit_foot.have == 1)
+        {
+            trinket_checker(rabbit_foot);
+            trinket_checker(azure_neclace);
+        }
+            cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
         cout << " Press any key to return" << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
