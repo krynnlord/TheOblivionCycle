@@ -57,3 +57,4 @@ void print_preparecombat();
 void print_help();
 void print_king();
 void print_gambling();
+void print_flask();

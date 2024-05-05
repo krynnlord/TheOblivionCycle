@@ -442,3 +442,27 @@ void print_king()
     cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
     Color(7);
 }
+
+void print_flask()
+{
+
+    system("cls");
+
+    string line1 = R"(    ___)";
+    string line2 = R"(   (___))";
+    string line3 = R"(    | |)";
+    string line4 = R"(    ) ()";
+    string line5 = R"(   /   \)";
+    string line6 = R"(  /     \)";
+    string line7 = R"( /       \)";
+    string line8 = R"(:         :)";
+    string line9 = R"(|..~^-^~. |)";
+    string line10 = R"(:         :)";
+    string line11 = R"(|         | )";
+    string line12 = R"(\_________/ )";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
+    cout << line11 << endl << line12 << endl;
+
+}
