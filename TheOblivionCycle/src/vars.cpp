@@ -77,6 +77,6 @@ monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2" };
 monster giant_boar = { "Giant Boar",42,42,0,0,0,0,1,1,12,"1d2" };
 
 // Hero Initial Creation
-player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2 };
+player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;

@@ -34,7 +34,11 @@ void show_statbar(string name, int level, int exp, string weapon, string armor);
 void ShowConsoleCursor(bool showFlag);
 void typer(std::string& str, int speed);
 void trinket_checker(trinket temp_trinket);
-int trinket_run(int hero_total_atk, int trinket);
+int master_damage_roller(int dice_i, int sides_i);
+int trinket_run(int hero_total_atk);
+int crit_roller();
+int baseDamage_roller(int dice_i, int sides_i);
+int final_calculations(int crit, int final);
 
 // Print Images
 void print_blacksmith();

@@ -23,6 +23,7 @@ public:
     int exp;
     int stat;
     int gold;
+    int trinket;
 };
 
 class monster
