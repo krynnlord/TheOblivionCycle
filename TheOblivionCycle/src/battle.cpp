@@ -183,6 +183,8 @@ void battle_sim(monster enemy)
 			hero_crit = crit;
 			hero_total_atk = total;
 
+			//trinket_run(hero_total_atk, hero_trinket);
+
 			enemy.hp -= hero_total_atk;
 			
 			if (enemy.hp <= 0)

@@ -95,5 +95,8 @@
     <ClCompile Include="src\3card.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\damageCalc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

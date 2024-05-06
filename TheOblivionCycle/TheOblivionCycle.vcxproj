@@ -155,6 +155,7 @@
     <ClCompile Include="src\circle.cpp" />
     <ClCompile Include="src\colors.cpp" />
     <ClCompile Include="src\createhero.cpp" />
+    <ClCompile Include="src\damageCalc.cpp" />
     <ClCompile Include="src\inn.cpp" />
     <ClCompile Include="src\intro.cpp" />
     <ClCompile Include="src\inventory.cpp" />
