@@ -176,5 +176,15 @@ void help_screen()
     string ans;
     ans = _getch();
 
-
+    if (ans == "1")
+    {
+        system("cls");
+        cout << "Character Stats" << endl;
+        cout << "----------------" << endl;
+        cout << "The player character has these major stats:" << endl << endl;
+        cout << "[HP] Numeric value of current life" << endl;
+        cout << "[LUCK] - This value is the amount of extra damage a player hits their opponent" << endl << endl;
+    
+        ans = _getch();
+    }
 }
