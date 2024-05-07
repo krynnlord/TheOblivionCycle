@@ -15,7 +15,8 @@ void battle_sim(monster enemy)
 
 	// Combat Active
 	bool endcombat = false;
-
+	extern int exit_mode;
+	exit_mode = 0;
 	// VARS for Battle System
 	int hppercent;
 	int hppercent_e;
@@ -38,6 +39,7 @@ void battle_sim(monster enemy)
 	int loop = 0;
 	while (loop != 1)
 	{
+		if (exit_mode == 1) { return; }
 		system("cls");
 
 		//Hero Display
@@ -119,9 +121,10 @@ void battle_sim(monster enemy)
 		{
 			cout << "Actions" << endl;
 			
-			cout << "[1] Attack  [2] Cast  [3] Run" << endl;
-			cout << "[ESC] Menu" << endl;
-			
+			cout << "[1] Attack" << endl;
+			cout << "[2] Cast" << endl;
+			cout << "[3] Run" << endl;
+						
 			cout << endl;
 		}
 		
@@ -161,7 +164,6 @@ void battle_sim(monster enemy)
 			{
 				srand((unsigned)time(NULL));
 				int roll = (rand() % sides_i) + 1;
-				cout << roll << " ";
 				final += roll;
 				roll = 0;
 			}
@@ -237,7 +239,6 @@ void battle_sim(monster enemy)
 			{
 				srand((unsigned)time(NULL));
 				int roll = (rand() % sides_i) + 1;
-				cout << roll << " ";
 				final += roll;
 				roll = 0;
 			}
