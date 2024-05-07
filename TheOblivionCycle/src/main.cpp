@@ -129,15 +129,16 @@ void adventure()
 /////////////////////////////
 int main() 
 {
-    int music_setting = 1;
-    int music_vol = 100;
-    // Loads Game
+     // Loads Game
     load_game();
 
-    // Check for Intro Enabled or Disables
+    // Check for Intro Enabled or Disabled
     if (intro_sequence == 1) { intro(); }
     
-    
+    // Check for Sound Enabled or Disabled
+    if (music_setting == 1) 
+    { }
+        
     int i = 0;
     string ans = "";
     while (i==0) 
