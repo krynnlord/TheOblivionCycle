@@ -65,7 +65,7 @@
     <ClCompile Include="src\printgraphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\provisioner.cpp">
+    <ClCompile Include="src\mystic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\savegameSystem.cpp">

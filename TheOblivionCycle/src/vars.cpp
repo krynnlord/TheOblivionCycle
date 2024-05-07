@@ -5,8 +5,15 @@
 /////////////////////////////////////////
 // Trinkets /////////////////////////////
 /////////////////////////////////////////
-trinket rabbit_foot = { 1, "RABBIT FOOT", "Rabbit Foot on a chain", 3, 1, 1, 1};
-trinket azure_neclace = { 2, "AZURE NECKLACE", "A necklace of power", 1, 1, 0, 1 };
+ 
+// OFFENSIVE
+trinket rabbit_foot = { 1, "RABBIT FOOT", "A rabbit foot on a chain", 1, 1, 1};
+trinket dragon_talon = { 2, "DRAGON TALON", "A dark talon of a dragon", 1, 0, 0 };
+
+//DEFENSIVE
+trinket azure_neclace = { 4, "AZURE NECKLACE", "A blue necklace of divine power", 2, 0, 1 };
+trinket witch_effegy = { 5, "WITCH EFFEGY", "A crude stick figure shaped like a man", 2, 0, 0 };
+trinket vail_blood = { 5, "VAIL OF BLOOD", "A small vial filled with blood", 2, 0, 0 };
 
 /////////////////////////////////////////
 // Spells ///////////////////////////////

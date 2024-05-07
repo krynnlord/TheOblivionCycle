@@ -8,17 +8,20 @@ int music_vol = 100;
 //Battle Seq
 int crit_result = 0;
 
+int exit_mode = 0;
 
 /////////////////////////////
 //// ADVENTURE MENU /////////
 /////////////////////////////
 void adventure()
 {
-    
-    int i =0;
+    exit_mode = 0;
+    int i = 0;
     string ans = "";
     while (i==0) 
     {
+        if (exit_mode == 1) { return; }
+        
         system("cls");
 
         print_village();
@@ -31,9 +34,9 @@ void adventure()
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") The Castle" << endl;
         cout << "("; Color(6); cout << "3"; Color(7); cout << ") The Temple" << endl;
         cout << "("; Color(6); cout << "4"; Color(7); cout << ") The Blacksmith" << endl;
-        cout << "("; Color(6); cout << "5"; Color(7); cout << ") The Provisioner" << endl;
-        cout << "("; Color(6); cout << "6"; Color(7); cout << ") The Inn" << endl;
-        cout << "("; Color(6); cout << "7"; Color(7); cout << ") Quit to Main Menu" << endl << endl;
+        cout << "("; Color(6); cout << "5"; Color(7); cout << ") The Mystic" << endl;
+        cout << "("; Color(6); cout << "6"; Color(7); cout << ") The Inn" << endl << endl;
+        //cout << "("; Color(6); cout << "7"; Color(7); cout << ") Quit to Main Menu" << endl << endl;
         cout << "("; Color(6); cout << "ESC"; Color(7); cout << ") Menu" << endl;
 
         // Input Selection
@@ -89,9 +92,9 @@ void adventure()
             int i = 0;
             while (i==0) 
             {    
-                print_provisions();
+                print_mystic();
                 show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
-                i = provisioner(i);
+                i = mystic(i);
             } 
         }
 
@@ -106,10 +109,10 @@ void adventure()
             } 
         }
 
-        if (ans == "7") 
-        { 
-            cout << "\nReturning to Main Menu!" << endl; Sleep(1); i = 1;
-        }
+        //if (ans == "7") 
+        //{ 
+        //   cout << "\nReturning to Main Menu!" << endl; Sleep(1); i = 1;
+        //}
 
         if (ans == "\033")
         {

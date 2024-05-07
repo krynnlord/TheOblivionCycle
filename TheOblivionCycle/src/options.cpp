@@ -3,6 +3,7 @@
 extern int intro_sequence;
 extern int music_setting; // 1-on 0-off
 extern int music_vol; //0 mut 100 full
+extern int exit_mode; // leave game via main menu
 
 int options(int i)
 {
@@ -153,7 +154,8 @@ void info_screen()
 
         if (ans == "8")
         {
-
+            exit_mode = 1;
+            return;
         }
 
         if (ans == "0" or ans == "\033")

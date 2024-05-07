@@ -60,8 +60,7 @@ public:
     int id;
     string name;
     string desc;
-    int mod_type; //(1)Attack (2)Defense (3)Luck
-    int mod_value;
+    int mod_type; //(1)Attack (2)Defense
     int equipped; //(0) No (1) Yes
     int have; //(0) No (1) Yes
 };

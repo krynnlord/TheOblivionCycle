@@ -9,7 +9,7 @@ int castle(int i);
 int circleofstones(int i);
 int inn(int i);
 void adventure();
-int provisioner(int i);
+int mystic(int i);
 int temple(int i);
 
 // Utilities
@@ -47,7 +47,7 @@ void print_createhero();
 void print_gameinfo();
 void print_inn();
 void print_options();
-void print_provisions();
+void print_mystic();
 void print_rlm();
 void print_score();
 void print_spellbook();

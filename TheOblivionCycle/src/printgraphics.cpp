@@ -80,19 +80,18 @@ cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line
 Color(7);
 }
 
-void print_provisions()
+void print_mystic()
 {
     system("cls");    
     Color(6); 
     
-string line1 =R"(|_|      ||       |_|      ||      |_|       ||        |_||/|)";
-string line2 =R"(|_|     /  \      |_|      ||      |_|      /  \       |_|/||)";
-string line3 =R"(|_|    /    \     |_|     [||]     |_|     /    \      |_||/|)";
-string line4 =R"(|_|   (______)    |_|      ||      |_|    (______)     |_|/||)";
-string line5 =R"(|_|___ TRINKET ___|_|      ||      |_|____ AMULETS ____|_||/|)";
-string line6 =R"(|_|_|_|_|_|_|_|_|_|_|______||______|_|_|_|_|_|_|_|_|_|_|_|/||)";
+string line1 =R"(   ~-^-~     __  ____   ______ _____ ___ ____)";
+string line2 =R"(  /{o o}\   |  \/  \ \ / / ___|_   _|_ _/ ___|)";
+string line3 =R"(  _-/-\-_   | |\/| |\ V /\___ \ | |  | | |)";
+string line4 =R"( /  (*)  \  | |  | | | |  ___) || |  | | |___)";
+string line5 =R"(/-|  | |- \ |_|  |_| |_| |____/ |_| |___\____|)";
 
-cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
+cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
 Color(7);
 }
 
@@ -123,19 +122,10 @@ string line3  =R"(  | | | '_ \ / _ \ | | | | '_ \| | \ \ / / |/ _ \| '_ \  | |  
 string line4  =R"(  | | | | | |  __/ | |_| | |_) | | |\ V /| | (_) | | | | | |__| |_| | (__| |  __/)";
 string line5  =R"(  |_| |_| |_|\___|  \___/|_.__/|_|_| \_/ |_|\___/|_| |_|  \____\__, |\___|_|\___|)";
 string line6 = R"(                                                               |___ /)";
-string line7 = R"(                   _       ,)";
-string line8 = R"(                  / \_    / \_                      /\'__)";
-string line9 = R"(                 /    \  /    \,                  _/  /  \)";
-string line10  =R"(                /\/\  /\/ :' __ \_             _^/  ^/    `--.)";
-string line11  =R"(               /    \/  \  _/  \-'\           /.' ^_   \_   .'\)";
-string line12  =R"(              /\  .-   `. \/     \ /==~=-=~=-=-;.  _/ \ -. `_/   \)";
-string line13 =R"(             /  `-.__ ^   / .-'.--\ =-=~_=-=~=^/  _ `--./ .-'  `-)";
-string line14 =R"(            /        `.  / /       `.~-^=-=~=^=.-'      '-._ `._)";
 
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
-Color(7); cout << "                          Part I: The Shimmering Gate" << endl;
-cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
-cout << line13 << endl << line14 << endl << endl;
+Color(7); cout << "                          Part I: The Shimmering Gate" << endl << endl << endl;
+
 }
 
 void print_options()

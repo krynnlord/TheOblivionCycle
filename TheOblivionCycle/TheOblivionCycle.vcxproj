@@ -163,7 +163,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\options.cpp" />
     <ClCompile Include="src\printgraphics.cpp" />
-    <ClCompile Include="src\provisioner.cpp" />
+    <ClCompile Include="src\mystic.cpp" />
     <ClCompile Include="src\savegameSystem.cpp" />
     <ClCompile Include="src\score.cpp" />
     <ClCompile Include="src\spellbook.cpp" />
