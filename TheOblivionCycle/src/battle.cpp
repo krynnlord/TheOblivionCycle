@@ -39,7 +39,11 @@ void battle_sim(monster enemy)
 	int loop = 0;
 	while (loop != 1)
 	{
-		if (exit_mode == 1) { return; }
+		if (exit_mode == 1) 
+		{ 
+			cout << endl << "You can not exit during a battle!" << endl;
+			Sleep(2000);
+		}
 		system("cls");
 
 		//Hero Display
