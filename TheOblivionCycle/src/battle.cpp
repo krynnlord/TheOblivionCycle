@@ -57,7 +57,7 @@ void battle_sim(monster enemy)
 		bar_ticks += hppercent / 4;
 		while (bar_ticks > 0)
 		{
-			hp_bar += ":";
+			hp_bar += "#";
 			bar_ticks -= 1;
 		}
 		hero_line2 = hp_bar;
@@ -87,7 +87,7 @@ void battle_sim(monster enemy)
 		ebar_ticks += hppercent_e / 4;
 		while (ebar_ticks > 0)
 		{
-			ehp_bar += ":";
+			ehp_bar += "#";
 			ebar_ticks -= 1;
 		}
 		enemy_line2 = ehp_bar;
