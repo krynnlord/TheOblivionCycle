@@ -137,7 +137,9 @@ int main()
     
     // Check for Sound Enabled or Disabled
     if (music_setting == 1) 
-    { }
+    {
+        PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+    }
         
     int i = 0;
     string ans = "";

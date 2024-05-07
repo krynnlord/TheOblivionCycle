@@ -10,5 +10,5 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
-
+#pragma comment(lib, "Winmm.lib")
 using namespace std;

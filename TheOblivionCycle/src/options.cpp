@@ -21,18 +21,18 @@ int options(int i)
     if (music_setting == 1) { Color(2); cout << "(On)"; Color(7); cout << endl; }
     if (music_setting == 0) { Color(4); cout << "(Off)"; Color(7); cout << endl; }
     //Volume
-    Color(6); cout << "- +"; Color(7); cout << "";
-    cout << " Music Volume: [";
-    
-    // Print Volume HPbar
-    bar_ticks += music_vol / 5;
-    while (bar_ticks > 0)
-    {
-        vol_bar += ":";
-        bar_ticks -= 1;
-    }
-    vol_line = vol_bar;
-    Color(2); cout << left << setw(20); cout << vol_line; Color(7); cout << "] " << endl;
+    //Color(6); cout << "- +"; Color(7); cout << "";
+    //cout << " Music Volume: [";
+    //
+    //// Print Volume HPbar
+    //bar_ticks += music_vol / 5;
+    //while (bar_ticks > 0)
+    //{
+    //    vol_bar += ":";
+    //    bar_ticks -= 1;
+    //}
+    //vol_line = vol_bar;
+    //Color(2); cout << left << setw(20); cout << vol_line; Color(7); cout << "] " << endl;
     
 
 
@@ -52,8 +52,16 @@ int options(int i)
         else { intro_sequence = 1; }
     
     if (ans == "2")
-        if (music_setting == 1) { music_setting = 0; }
-        else { music_setting = 1; }
+        if (music_setting == 1) 
+        { 
+            music_setting = 0;
+            PlaySound(NULL, NULL, 0);
+        }
+        else 
+        { 
+            music_setting = 1;
+            PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+        }
 
     if (ans == "3")
         { 
