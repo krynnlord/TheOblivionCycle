@@ -7,14 +7,14 @@
 /////////////////////////////////////////
  
 // OFFENSIVE
-trinket rabbit_foot = { 1, "RABBIT FOOT", "A rabbit foot on a chain", 1, 0, 0};
-trinket dragon_talon = { 2, "DRAGON TALON", "A dark talon of a dragon", 1, 0, 0 };
+trinket rabbit_foot = { 1, "RABBIT FOOT", "A rabbit foot on a chain", 1, 0};
+trinket dragon_talon = { 2, "DRAGON TALON", "A dark talon of a dragon", 1, 0 };
 
 //DEFENSIVE
-trinket azure_neclace = { 21, "AZURE NECKLACE", "A blue necklace of divine power", 2, 0, 0 };
-trinket witch_effegy = { 22, "WITCH EFFEGY", "A crude stick figure shaped like a man", 2, 0, 0 };
-trinket vail_blood = { 23, "VAIL OF BLOOD", "A small vial filled with blood", 2, 0, 0 };
-trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 2, 0, 0 };
+trinket azure_neclace = { 21, "AZURE NECKLACE", "A blue necklace of divine power", 2, 0 };
+trinket witch_effegy = { 22, "WITCH EFFEGY", "A crude stick figure shaped like a man", 2, 0 };
+trinket vail_blood = { 23, "VAIL OF BLOOD", "A small vial filled with blood", 2, 0 };
+trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 2, 0 };
 
 /////////////////////////////////////////
 // Spells ///////////////////////////////

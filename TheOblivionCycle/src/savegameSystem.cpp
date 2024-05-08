@@ -26,6 +26,7 @@ txtOut << hero_player.prof << endl;
 txtOut << hero_player.exp << endl;
 txtOut << hero_player.stat << endl;
 txtOut << hero_player.gold << endl;
+txtOut << hero_player.trinket << endl;
 txtOut << "*** WEAPON ***" << endl;
 txtOut << hero_weapon.id << endl;
 txtOut << hero_weapon.name << endl;
@@ -43,7 +44,14 @@ txtOut << hero_armor.description << endl;
 txtOut << "*** GAME SETTINGS ***" << endl;
 txtOut << intro_sequence << endl;
 txtOut << music_setting << endl;
-txtOut << music_vol; 
+txtOut << music_vol << endl;
+txtOut << "*** TRINKETS ***" << endl;
+txtOut << rabbit_foot.have << endl;
+txtOut << dragon_talon.have << endl;
+txtOut << azure_neclace.have << endl;
+txtOut << witch_effegy.have << endl;
+txtOut << vail_blood.have << endl;
+txtOut << frozen_tear.have;
 txtOut.close();
 
 };
@@ -71,6 +79,7 @@ getline(txtIn,emptyline); istringstream s8(emptyline); s8 >> hero_player.prof;
 getline(txtIn,emptyline); istringstream s9(emptyline); s9 >> hero_player.exp;
 getline(txtIn,emptyline); istringstream s10(emptyline); s10 >> hero_player.stat;
 getline(txtIn,emptyline); istringstream s11(emptyline); s11 >> hero_player.gold;
+getline(txtIn,emptyline); istringstream s90(emptyline); s90 >> hero_player.trinket;
 getline(txtIn,emptyline);
 getline(txtIn,emptyline); istringstream s12(emptyline); s12 >> hero_weapon.id;
 getline(txtIn,hero_weapon.name);
@@ -89,6 +98,13 @@ getline(txtIn, emptyline);
 getline(txtIn, emptyline); istringstream s20(emptyline); s20 >> intro_sequence;
 getline(txtIn, emptyline); istringstream s21(emptyline); s21 >> music_setting;
 getline(txtIn, emptyline); istringstream s22(emptyline); s22 >> music_vol;
+getline(txtIn, emptyline); // TRINKETS
+getline(txtIn, emptyline); istringstream s23(emptyline); s23 >> rabbit_foot.have;
+getline(txtIn, emptyline); istringstream s24(emptyline); s24 >> dragon_talon.have;
+getline(txtIn, emptyline); istringstream s25(emptyline); s25 >> azure_neclace.have;
+getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
+getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vail_blood.have;
+getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
 txtIn.close();
 
 }

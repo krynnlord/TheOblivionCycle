@@ -1,11 +1,29 @@
 #include "../headers/functions.h"
 
+//void trinket_checker(trinket temp_trinket)
+//{
+//    if (temp_trinket.have == 1)
+//    {
+//        cout << " ["; Color(14);
+//        if (temp_trinket.equipped == 1)
+//        {
+//            cout << "E"; Color(7); cout << "] " << temp_trinket.name << endl;
+//        }
+//        else
+//        {
+//            cout << " "; Color(7); cout << "] " << temp_trinket.name << endl;
+//        }
+//    }
+//
+//}
+
+
 void trinket_checker(trinket temp_trinket)
 {
     if (temp_trinket.have == 1)
     {
         cout << " ["; Color(14);
-        if (temp_trinket.equipped == 1)
+        if (hero_player.trinket == temp_trinket.id)
         {
             cout << "E"; Color(7); cout << "] " << temp_trinket.name << endl;
         }
@@ -16,6 +34,7 @@ void trinket_checker(trinket temp_trinket)
     }
 
 }
+
 
 void trinkets()
 {

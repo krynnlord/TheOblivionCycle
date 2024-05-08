@@ -174,9 +174,6 @@
     <ClCompile Include="src\vars.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TOC1.sav" />
-  </ItemGroup>
-  <ItemGroup>
     <Media Include="data\music\01.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

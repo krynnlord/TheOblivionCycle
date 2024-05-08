@@ -132,14 +132,14 @@ int main()
      // Loads Game
     load_game();
 
-    // Check for Intro Enabled or Disabled
-    if (intro_sequence == 1) { intro(); }
-    
     // Check for Sound Enabled or Disabled
     if (music_setting == 1) 
     {
         PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
     }
+   
+    // Check for Intro Enabled or Disabled
+    if (intro_sequence == 1) { intro(); }
         
     int i = 0;
     string ans = "";
