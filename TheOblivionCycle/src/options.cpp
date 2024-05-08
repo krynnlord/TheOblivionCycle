@@ -179,20 +179,66 @@ void info_screen()
 
 void help_screen()
 {
-    print_help();
-
-    string ans;
-    ans = _getch();
-
-    if (ans == "1")
+    int i = 0;
+    while (i == 0)
     {
-        system("cls");
-        cout << "Character Stats" << endl;
-        cout << "----------------" << endl;
-        cout << "The player character has these major stats:" << endl << endl;
-        cout << "[HP] Numeric value of current life" << endl;
-        cout << "[LUCK] - This value is the amount of extra damage a player hits their opponent" << endl << endl;
-    
+        print_help();
+
+        string ans;
         ans = _getch();
+   
+            if (ans == "1")
+            {
+                system("cls");
+                cout << "Character Stats" << endl;
+                cout << "----------------" << endl;
+                cout << "The player character has these major stats:" << endl << endl;
+                cout << "   [HP] Amount of current life" << endl;
+                cout << "[LEVEL] Current Player Level" << endl;
+                cout << "  [EXP] Total Experience Points" << endl;
+                cout << " [GOLD] Amount of Wealth" << endl;
+                cout << " [LUCK] Chance for extra attacks" << endl << endl;
+
+                system("pause");
+            }
+
+            if (ans == "2")
+            {
+                system("cls");
+                cout << "The Magic System" << endl;
+                cout << "----------------" << endl;
+                cout << "Magic is the practice of arcane arts. There are 3 circles and" << endl;
+                cout << "in each of the three circles are 4 disiplines:" << endl << endl;
+                cout << "["; Color(9); cout << "Invocation"; Color(7); cout <<"] Healing Magic" << endl;
+                cout << "Spells: Heal, Greater Heal, Regeneration" << endl<< endl;
+                cout << "["; Color(10); cout << "Abjuration"; Color(7); cout << "] Protective Magic" << endl;
+                cout << "Spells: Cure, Barrier, Holy Ground" << endl << endl;
+                cout << "["; Color(14); cout << "Conjuration"; Color(7); cout << "] Creation/Alteration Magic" << endl;
+                cout << "Spells: Create Food, Escape, Double" << endl << endl;
+                cout << "["; Color(12); cout << "Evocation"; Color(7); cout << "] Destructive Magic" << endl;
+                cout << "Spells: Magic Missle, Fireball, Immolation" << endl << endl;
+
+                system("pause");
+            }
+
+            if (ans == "3")
+            {
+                system("cls");
+                cout << "The Celestial Flask" << endl;
+                cout << "----------------" << endl;
+                cout << "A magic flask imbuned with power of the divine." << endl;
+                cout << "Drinking a portion of this potion can restore the health" << endl;
+                cout << "of the lucky individual, however, the maximum potiential is" << endl;
+                cout << "limited to 1/3 of the volume." << endl << endl;
+                cout << "Using this flask which has 3 charges restores 75% of the" << endl;
+                cout << "players health. Know that refilling this flask requires a sacrifice." << endl << endl;
+
+                system("pause");
+            }
+
+            if (ans == "\033")
+            {
+                i = 1;
+            }
     }
 }
