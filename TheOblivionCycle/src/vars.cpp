@@ -88,3 +88,4 @@ monster giant_boar = { "Giant Boar",42,42,0,0,0,0,1,1,12,"1d2" };
 player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
+int quest_level = 0;

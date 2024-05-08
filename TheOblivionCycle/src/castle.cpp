@@ -15,9 +15,13 @@ int castle(int i)
 
     if (ans == "1")
     {
-        print_king();
-        cout << "Random Quest Text!";
-        Sleep(4000);
+        string ans2 = "";
+        print_king(); // Print King Graphic
+        int bar2; for (bar2 = 0;bar2 < 5;bar2++) { cout << "-"; }; cout << " The King ";
+        for (bar2 = 0;bar2 < 60;bar2++) { cout << "-"; } cout << endl;
+        conversation_king(); // Conversation 
+        for (bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+        ans2 = _getch();
     }
 
     if (ans == "2")
@@ -28,5 +32,27 @@ int castle(int i)
     else {return 0;}
 
     return 1;
+
+}
+
+void conversation_king()
+{
+    string ans = "";
+    
+    if (quest_level == 0)
+    {
+        printf("Welcome traveler, we are in need of help. Astoria is under attack from evil\n");
+        printf("hordes. It must have something to do with the unusual portal that recently\n");
+        printf("appeared at the circle of stones. Can you investigate this portal for us?\n");
+        quest_level = 1;
+        return;
+    }
+    if (quest_level == 1)
+    {
+        printf("Have you discovered why this portal has appeared?\n");
+        return;
+    }
+
+    
 
 }

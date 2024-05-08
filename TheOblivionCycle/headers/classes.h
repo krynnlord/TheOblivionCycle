@@ -175,3 +175,4 @@ extern monster giant_boar;
 extern player hero_player;
 extern weapon hero_weapon;
 extern armor hero_armor;
+extern int quest_level;

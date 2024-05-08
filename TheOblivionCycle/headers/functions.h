@@ -12,6 +12,9 @@ void adventure();
 int mystic(int i);
 int temple(int i);
 
+// Conversations
+void conversation_king();
+
 // Utilities
 void battle_sim(monster);
 void Color(int color);

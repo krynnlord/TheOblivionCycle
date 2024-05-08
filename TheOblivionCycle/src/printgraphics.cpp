@@ -237,22 +237,15 @@ void print_score()
     
     system("cls");
     Color(10);
-    
-    string line1 = R"(      ,)";
-    string line2 = R"(  ,   |\ ,__)";
-    string line3 = R"(  | \  \ /  `.       _    _ ______ _____   ____)";
-    string line4 = R"(   \ `-.:.    `\    | |  | |  ____| __  \ / __ \)";
-    string line5 = R"(    `-.__`\=====|   | |__| | |__  | |__) | |  | |)";
-    string line6 = R"(      /=`'/  ^ _\   |  __  |  __| |  _  /| |  | |)";
-    string line7 = R"(    .'   /\    .=)  | |  | | |____| | \ \| |__| | )";
-    string line8 = R"(   .-'  ' | '-(/_|  |_|  |_|______|_|  \_\\____/)";
-    string line9 = R"( .'  __(  \  .'`)";
-    string line10 = R"(/_.'`  `.  |`)";
-    string line11 = R"(         \ |)";
-    string line12 = R"(          |/)";
+    string line1 = R"(   \^/  |    _____ _    _          _____            _____ _______ ______ _____)";
+    string line2 = R"(  _<->_ |   / ____| |  | |   /\   |  __ \     /\   / ____|__   __|  ____|  __ \ )";
+    string line3 = R"(0/ \ / o=o | |    | |__| |  /  \  | |__) |   /  \ | |       | |  | |__  | |__) |)";
+    string line4 = R"(\/\ ^ /'0  | |    |  __  | / /\ \ |  _  /   / /\ \| |       | |  |  __| |  _  /)";
+    string line5 = R"(  /_^_\    | |____| |  | |/ ____ \| | \ \  / ____ \ |____   | |  | |____| | \ \)";
+    string line6 = R"(  || ||     \_____|_|  |_/_/    \_\_|  \_\/_/    \_\_____|  |_|  |______|_|  \_\)";
+
 
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
-    cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
     Color(7);
 }
 
