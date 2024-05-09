@@ -197,6 +197,7 @@ void battle_sim(monster enemy)
 			{
 				enemy.hp = 0;
 				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
+				hero_player.exp += enemy.exp;  // gives exp to player
 			}
 			else
 			{

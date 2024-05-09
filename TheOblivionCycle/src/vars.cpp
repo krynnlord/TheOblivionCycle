@@ -78,11 +78,10 @@ armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 /////////////////////////////////////////
 // Monsters /////////////////////////////
 /////////////////////////////////////////
-monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2" };
-monster zombie2 = { "Zombie",200,200,0,0,0,0,1,1,8,"2d3" }; //test unit
-monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2" };
-monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2" };
-monster giant_boar = { "Giant Boar",42,42,0,0,0,0,1,1,12,"1d2" };
+monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2",10,10};
+monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
+monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
+monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
 
 // Hero Initial Creation
 player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1 };

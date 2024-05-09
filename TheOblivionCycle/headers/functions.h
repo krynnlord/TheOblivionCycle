@@ -18,6 +18,7 @@ void conversation_king();
 
 // Utilities
 void battle_sim(monster);
+void battle_loop(int);
 void Color(int color);
 void CreateHero();
 void intro();

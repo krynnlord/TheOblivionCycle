@@ -40,6 +40,8 @@ public:
     int prof;
     int ac;
     string damage;
+    int exp;
+    int essence;
 };
 
 class spell

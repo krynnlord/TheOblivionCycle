@@ -63,10 +63,32 @@ void gates()
         if (ans == "1" and quest_level >= 1)
         {
             cout << "Entering the Red Gate!\n"; Sleep(2000);
+            battle_loop(1);
         }
 
 
     }
 
 
+}
+
+
+void battle_loop(int gate)
+{
+    
+    // Roll for Monsters
+    if (gate == 1)
+    {
+        int monster_roller;
+        srand((unsigned)time(NULL));
+        monster_roller = rand()%4 + 1;
+        if (monster_roller == 1) { battle_sim(zombie); }
+        if (monster_roller == 2) { battle_sim(skeleton); }
+        if (monster_roller == 3) { battle_sim(giant_boar); }
+        if (monster_roller == 4) { battle_sim(giant_bat); }
+
+    }
+
+
+    return;
 }

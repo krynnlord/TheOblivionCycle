@@ -13,7 +13,7 @@ void player_score()
     cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
     cout << "NAME: " << left << setw(14); cout << hero_player.name;
     cout << "LEVEL: " << left << setw(7); cout << hero_player.level;
-    cout << "EXP: " << left << setw(10); cout << hero_player.level << endl;
+    cout << "EXP: " << left << setw(10); cout << hero_player.exp << endl;
     cout << "HP: " << right << setw(4); cout << hero_player.hp << "/";
     cout << left << setw(6); cout << hero_player.hp_max; cout << "     ";
     cout << "LUCK: " << left << setw(2); cout << hero_player.luck << endl << endl;
