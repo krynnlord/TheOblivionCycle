@@ -218,6 +218,7 @@ void help_screen()
                 cout << "["; Color(12); cout << "Evocation"; Color(7); cout << "] Destructive Magic" << endl;
                 cout << "Spells: Magic Missle, Fireball, Immolation" << endl << endl;
 
+                
                 system("pause");
             }
 

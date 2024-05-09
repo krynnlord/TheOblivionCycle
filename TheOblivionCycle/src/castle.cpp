@@ -39,15 +39,15 @@ void conversation_king()
 {
     string ans = "";
     
-    if (quest_level == 0)
+    if (hero_player.quest_level == 0)
     {
         printf("Welcome traveler, we are in need of help. Astoria is under attack from evil\n");
         printf("hordes. It must have something to do with the unusual portal that recently\n");
         printf("appeared at the circle of stones. Can you investigate this portal for us?\n");
-        quest_level = 1;
+        hero_player.quest_level = 1;
         return;
     }
-    if (quest_level == 1)
+    if (hero_player.quest_level == 1)
     {
         printf("Have you discovered why this portal has appeared?\n");
         return;

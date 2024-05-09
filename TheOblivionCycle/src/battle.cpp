@@ -197,7 +197,9 @@ void battle_sim(monster enemy)
 			{
 				enemy.hp = 0;
 				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
-				hero_player.exp += enemy.exp;  // gives exp to player
+				
+				loot(enemy); // calls loot function
+				loop = 1;
 			}
 			else
 			{
@@ -295,6 +297,31 @@ void battle_sim(monster enemy)
 
 
 	}
+
+	return;
+}
+
+void loot(monster enemy)
+{
+	system("cls");
+	hero_player.exp += enemy.exp;  // gives exp to player
+	hero_player.essence += enemy.essence; // gives essence to player
+
+	//money roller
+	int money_roll = 0;
+	int money_gained = 0;
+	srand((unsigned)time(NULL));
+	money_roll = 5 + rand() % 10 + 1;
+	money_gained = enemy.level * money_roll;
+	hero_player.gold += money_gained; // Show me the money!!!
+
+	cout << "*** Victory! ***" << endl << endl;
+	cout << "Experience gained: " << enemy.exp << endl;
+	cout << "Essence gained: " << enemy.essence << endl;
+	cout << "Gold gained: " << money_gained << endl;
+
+	cout << endl;
+	system("pause");
 
 	return;
 }

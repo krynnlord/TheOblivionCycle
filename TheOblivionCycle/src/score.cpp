@@ -3,8 +3,8 @@
 void player_score()
 {
     string quest_text = "";
-    if (quest_level == 0) { quest_text = "NONE"; }
-    if (quest_level == 1) { quest_text = "INVESTIGATE THE PORTAL"; }
+    if (hero_player.quest_level == 0) { quest_text = "NONE"; }
+    if (hero_player.quest_level == 1) { quest_text = "INVESTIGATE THE PORTAL"; }
     
     
     print_score();
@@ -16,7 +16,8 @@ void player_score()
     cout << "EXP: " << left << setw(10); cout << hero_player.exp << endl;
     cout << "HP: " << right << setw(4); cout << hero_player.hp << "/";
     cout << left << setw(6); cout << hero_player.hp_max; cout << "     ";
-    cout << "LUCK: " << left << setw(2); cout << hero_player.luck << endl << endl;
+    cout << "LUCK: " << left << setw(8); cout << hero_player.luck;
+    cout << "ESSENCE: " << hero_player.essence << endl << endl;
     cout << "WEAPON: " << left << setw(12); cout << hero_weapon.name;
     cout << "ATTACK: " << left << setw(6); cout << hero_weapon.damage;
     cout << "TYPE: " << left << setw(8); cout << hero_weapon.type << endl;

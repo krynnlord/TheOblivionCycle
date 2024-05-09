@@ -78,13 +78,15 @@ armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 /////////////////////////////////////////
 // Monsters /////////////////////////////
 /////////////////////////////////////////
+// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, ac, damage, exp, essence
+
 monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2",10,10};
 monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
 monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
 monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
 
 // Hero Initial Creation
-player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1 };
+// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, exp, stat, gold, trinket, quest_level, essence;
+player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1, 0, 0 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
-int quest_level = 0;

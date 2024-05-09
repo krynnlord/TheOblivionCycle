@@ -7,7 +7,6 @@
 int blacksmith(int i);
 int castle(int i);
 int circleofstones(int i);
-void gates();
 int inn(int i);
 void adventure();
 int mystic(int i);
@@ -19,6 +18,7 @@ void conversation_king();
 // Utilities
 void battle_sim(monster);
 void battle_loop(int);
+void loot(monster);
 void Color(int color);
 void CreateHero();
 void intro();
