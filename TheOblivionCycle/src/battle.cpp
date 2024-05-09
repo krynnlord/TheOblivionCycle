@@ -199,7 +199,7 @@ void battle_sim(monster enemy)
 				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
 				
 				loot(enemy); // calls loot function
-				loop = 1;
+				break;
 			}
 			else
 			{
@@ -332,8 +332,11 @@ void loot(monster enemy)
 
 	if (diplay_levelup == true)
 	{
-		cout << "\n---"; Color(10); cout << "PROMOTED------"; Color(7); cout << endl;
+		cout << "\n---"; Color(10); cout << "PROMOTED"; Color(7); cout << "------" << endl;
 		cout << "Congratulations you are now level "; Color(14); cout << hero_player.level << endl; Color(7);
+		cout << "Hit Points raised to "; Color(12);cout << hero_player.hp_max << endl;
+
+		Color(7);
 	}
 
 	cout << endl;
@@ -341,3 +344,4 @@ void loot(monster enemy)
 
 	return;
 }
+
