@@ -114,7 +114,7 @@ void battle_sim(monster enemy)
 		cout << endl;
 		Color(2); cout << hero_player.name << ": "; Color(7); cout <<  hero_combat_string << endl;
 		Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl << endl;
-
+		
 		if (endcombat == true) 
 		{ 
 			cout << "Press any key to return..." << endl;
@@ -303,6 +303,9 @@ void battle_sim(monster enemy)
 
 void loot(monster enemy)
 {
+	int old_level = 0;
+	bool diplay_levelup = false;
+
 	system("cls");
 	hero_player.exp += enemy.exp;  // gives exp to player
 	hero_player.essence += enemy.essence; // gives essence to player
@@ -315,10 +318,23 @@ void loot(monster enemy)
 	money_gained = enemy.level * money_roll;
 	hero_player.gold += money_gained; // Show me the money!!!
 
-	cout << "*** Victory! ***" << endl << endl;
-	cout << "Experience gained: " << enemy.exp << endl;
-	cout << "Essence gained: " << enemy.essence << endl;
-	cout << "Gold gained: " << money_gained << endl;
+	//check level
+	old_level = hero_player.level;
+	checklevelup();
+	if (old_level < hero_player.level) { diplay_levelup = true; }
+
+
+	cout << "*** "; Color(10); cout << "Victory!"; Color(7); cout << " ***" << endl << endl;
+	cout << "---EARNED-------" << endl;
+	Color(10); cout << enemy.exp; Color(7); cout << " Experience" << endl;
+	Color(9); cout << enemy.essence; Color(7); cout << " Essence" << endl;
+	Color(14); cout << money_gained; Color(7); cout << " Gold" << endl;
+
+	if (diplay_levelup == true)
+	{
+		cout << "\n---"; Color(10); cout << "PROMOTED------"; Color(7); cout << endl;
+		cout << "Congratulations you are now level "; Color(14); cout << hero_player.level << endl; Color(7);
+	}
 
 	cout << endl;
 	system("pause");

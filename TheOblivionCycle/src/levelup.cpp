@@ -1,106 +1,106 @@
-#include "../headers/header.h"
+#include "../headers/functions.h"
 
 //////////////////////////////////////////////////////////////////
 // Level - Up Calculator - Takes exp - sends new level and prof #
 //////////////////////////////////////////////////////////////////
 
-void checklevelup(int level, int prof, int exp)
+void checklevelup()
 {
 
-    if (exp >= 300 and exp < 900)
+    if (hero_player.exp >= 300 and hero_player.exp < 900)
     {
-        level = 2;
-        prof = 4;
+        hero_player.level = 2;
+        hero_player.prof = 4;
     }
-    if (exp >= 900 and exp < 2700)
+    if (hero_player.exp >= 900 and hero_player.exp < 2700)
     {
-        level = 3;
-        prof = 6;
+        hero_player.level = 3;
+        hero_player.prof = 6;
     }
-    if (exp >= 2700 and exp < 6500)
+    if (hero_player.exp >= 2700 and hero_player.exp < 6500)
     {
-        level = 4;
-        prof = 8;
+        hero_player.level = 4;
+        hero_player.prof = 8;
     }
-    if (exp >= 6500 and exp < 14000)
+    if (hero_player.exp >= 6500 and hero_player.exp < 14000)
     {
-        level = 5;
-        prof = 11;
+        hero_player.level = 5;
+        hero_player.prof = 11;
     }
-    if (exp >= 14000 and exp < 23000)
+    if (hero_player.exp >= 14000 and hero_player.exp < 23000)
     {
-        level = 6;
-        prof = 14;
+        hero_player.level = 6;
+        hero_player.prof = 14;
     }
-    if (exp >= 23000 and exp < 34000)
+    if (hero_player.exp >= 23000 and hero_player.exp < 34000)
     {
-        level = 7;
-        prof = 17;
+        hero_player.level = 7;
+        hero_player.prof = 17;
     }
-    if (exp >= 34000 and exp < 48000)
+    if (hero_player.exp >= 34000 and hero_player.exp < 48000)
     {
-        level = 8;
-        prof = 20;
+        hero_player.level = 8;
+        hero_player.prof = 20;
     }
-    if (exp >= 48000 and exp < 64000)
+    if (hero_player.exp >= 48000 and hero_player.exp < 64000)
     {
-        level = 9;
-        prof = 24;
+        hero_player.level = 9;
+        hero_player.prof = 24;
     }
-    if (exp >= 64000 and exp < 85000)
+    if (hero_player.exp >= 64000 and hero_player.exp < 85000)
     {
-        level = 10;
-        prof = 28;
+        hero_player.level = 10;
+        hero_player.prof = 28;
     }
-    if (exp >= 85000 and exp < 100000)
+    if (hero_player.exp >= 85000 and hero_player.exp < 100000)
     {
-        level = 11;
-        prof = 32;
+        hero_player.level = 11;
+        hero_player.prof = 32;
     }
-    if (exp >= 100000 and exp < 120000)
+    if (hero_player.exp >= 100000 and hero_player.exp < 120000)
     {
-        level = 12;
-        prof = 36;
+        hero_player.level = 12;
+        hero_player.prof = 36;
     }
-    if (exp >= 120000 and exp < 140000)
+    if (hero_player.exp >= 120000 and hero_player.exp < 140000)
     {
-        level = 13;
-        prof = 41;
+        hero_player.level = 13;
+        hero_player.prof = 41;
     }
-    if (exp >= 140000 and exp < 165000)
+    if (hero_player.exp >= 140000 and hero_player.exp < 165000)
     {
-        level = 14;
-        prof = 46;
+        hero_player.level = 14;
+        hero_player.prof = 46;
     }
-    if (exp >= 165000 and exp < 195000)
+    if (hero_player.exp >= 165000 and hero_player.exp < 195000)
     {
-        level = 15;
-        prof = 51;
+        hero_player.level = 15;
+        hero_player.prof = 51;
     }
-    if (exp >= 195000 and exp < 225000)
+    if (hero_player.exp >= 195000 and hero_player.exp < 225000)
     {
-        level = 16;
-        prof = 56;
+        hero_player.level = 16;
+        hero_player.prof = 56;
     }
-    if (exp >= 225000 and exp < 265000)
+    if (hero_player.exp >= 225000 and hero_player.exp < 265000)
     {
-        level = 17;
-        prof = 62;
+        hero_player.level = 17;
+        hero_player.prof = 62;
     }
-    if (exp >= 265000 and exp < 305000)
+    if (hero_player.exp >= 265000 and hero_player.exp < 305000)
     {
-        level = 18;
-        prof = 68;
+        hero_player.level = 18;
+        hero_player.prof = 68;
     }
-    if (exp >= 305000 and exp < 355000)
+    if (hero_player.exp >= 305000 and hero_player.exp < 355000)
     {
-        level = 19;
-        prof = 74;
+        hero_player.level = 19;
+        hero_player.prof = 74;
     }
-    if (exp > 355000)
+    if (hero_player.exp > 355000)
     {
-        level = 20;
-        prof = 80;
+        hero_player.level = 20;
+        hero_player.prof = 80;
     }
 
 

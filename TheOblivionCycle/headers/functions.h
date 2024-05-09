@@ -22,7 +22,7 @@ void loot(monster);
 void Color(int color);
 void CreateHero();
 void intro();
-void checklevelup(int level, int prof, int exp);
+void checklevelup();
 int options(int i);
 void load_game();
 void save_game();
