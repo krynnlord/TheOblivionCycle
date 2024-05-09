@@ -6,7 +6,7 @@ int circleofstones(int i)
 
     // Print Menu Options
     cout << "("; Color(6); cout << "1"; Color(7); cout << ") Embark on quest" << endl;
-    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Back" << endl;
+    cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     // Input Selection
     string ans = "";
@@ -18,7 +18,7 @@ int circleofstones(int i)
             cout << "Embarking!" << endl; system("pause"); return 0;
         }
 
-    if (ans == "2")
+    if (ans == "0")
         { 
             return 1; 
         }

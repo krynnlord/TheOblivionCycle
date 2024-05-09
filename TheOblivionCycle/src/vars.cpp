@@ -41,39 +41,39 @@ spell immolation = { "Immolation", "Heals for a small amount", 0, 0, 15, 3, 12 }
 // Weapons //////////////////////////////
 /////////////////////////////////////////
 // No Weapon
-weapon hands = { 1, "Hands", "blunt", 0, "1d2","Your bare hands" };
+weapon hands = { 1, "Hands", "BLUNT", 0, "1d2","Your bare hands" };
 
 // Blunt
-weapon club = { 2, "Club", "blunt", 200, "1d4", "" };
-weapon mace = { 3, "Mace", "blunt", 500, "1d6", "" };
-weapon lighthammer = { 4, "Light Hammer", "blunt", 1000, "1d8", "" };
-weapon warhammer = { 5, "warhammer", "blunt", 1000, "1d10", "" };
-weapon maul = { 6, "Maul", "blunt", 5000, "2d6", "" };
+weapon club = { 2, "Club", "BLUNT", 200, "1d4", "" };
+weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "" };
+weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "" };
+weapon warhammer = { 5, "warhammer", "BLUNT", 1000, "1d10", "" };
+weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "" };
 
 // Slashing
-weapon dagger = { 7, "Dagger", "slashing", 200, "1d4", "" };
-weapon handaxe = { 8, "Handaxe", "slashing", 500, "1d6", "" };
-weapon shortsword = { 9, "Short Sword", "slashing", 1000, "1d8", "" };
-weapon longsword = { 10, "Long Sword", "slashing", 1500, "1d10", "" };
-weapon greatsword = { 11, "Great Sword", "slashing", 5000, "2d6", "" };
+weapon dagger = { 7, "Dagger", "SLASHING", 200, "1d4", "" };
+weapon handaxe = { 8, "Handaxe", "SLASHING", 500, "1d6", "" };
+weapon shortsword = { 9, "Short Sword", "SLASHING", 1000, "1d8", "" };
+weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d10", "" };
+weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "" };
 
 /////////////////////////////////////////
 // Armor ////////////////////////////////
 /////////////////////////////////////////
 // No Armor
-armor tunic = { 1, "Tunic", "Light", 0, 1,"A Plain shirt" };
+armor tunic = { 1, "Tunic", "LIGHT", 0, 1,"A Plain shirt" };
 
 // Light
-armor cloth_armor = { 2, "Cloth Armor", "Light", 50, 5, "" };
-armor leather_armor = { 3, "Leather Armor", "Light", 100, 11, "" };
+armor cloth_armor = { 2, "Cloth Armor", "LIGHT", 50, 5, "" };
+armor leather_armor = { 3, "Leather Armor", "LIGHT", 100, 11, "" };
 
 // Medium
-armor chain_armor = { 4, "Chain Armor", "Medium", 500, 13, "" };
-armor scale_armor = { 5, "Scale Armor", "Medium", 600, 14, "" };
+armor chain_armor = { 4, "Chain Armor", "MEDIUM", 500, 13, "" };
+armor scale_armor = { 5, "Scale Armor", "MEDIUM", 600, 14, "" };
 
 // Heavy
-armor splint_armor = { 6, "Splint Armor", "Heavy", 2000, 17, "" };
-armor plate_armor = { 7, "Plate Armor", "Heavy", 3000, 18, "" };
+armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 17, "" };
+armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 
 /////////////////////////////////////////
 // Monsters /////////////////////////////

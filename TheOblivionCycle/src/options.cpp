@@ -226,12 +226,11 @@ void help_screen()
                 system("cls");
                 cout << "The Celestial Flask" << endl;
                 cout << "----------------" << endl;
-                cout << "A magic flask imbuned with power of the divine." << endl;
-                cout << "Drinking a portion of this potion can restore the health" << endl;
-                cout << "of the lucky individual, however, the maximum potiential is" << endl;
-                cout << "limited to 1/3 of the volume." << endl << endl;
-                cout << "Using this flask which has 3 charges restores 75% of the" << endl;
-                cout << "players health. Know that refilling this flask requires a sacrifice." << endl << endl;
+                cout << "The Celestial flask is imbuned with power of the divine." << endl;
+                cout << "Drinking a this potion can restore the health of the player," << endl;
+                cout << "however, the maximum potiential is limited to 1/3 of its volume." << endl << endl;
+                cout << "Using this flask restores 75% of the players health. The flask" << endl;
+                cout << "has 3 charges which can be refilled at the temple for a price." << endl << endl;
 
                 system("pause");
             }

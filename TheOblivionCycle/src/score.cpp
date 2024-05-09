@@ -9,21 +9,20 @@ void player_score()
     
     print_score();
     cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    cout << " ACTIVE QUEST: " << quest_text << endl;
+    cout << "ACTIVE QUEST: " << quest_text << endl;
     cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    cout << " NAME: " << left << setw(12); cout << hero_player.name;
-    cout << "LEVEL: " << left << setw(4); cout << hero_player.level;
-    cout << "EXP: " << left << setw(8); cout << hero_player.level;
-    cout << "GOLD : " << left << setw(8); cout << hero_player.gold << endl;
-    cout << " HP: " << right << setw(4); cout << hero_player.hp << "/";
-    cout << left << setw(4); cout << hero_player.hp_max; cout << "     ";
+    cout << "NAME: " << left << setw(14); cout << hero_player.name;
+    cout << "LEVEL: " << left << setw(7); cout << hero_player.level;
+    cout << "EXP: " << left << setw(10); cout << hero_player.level << endl;
+    cout << "HP: " << right << setw(4); cout << hero_player.hp << "/";
+    cout << left << setw(6); cout << hero_player.hp_max; cout << "     ";
     cout << "LUCK: " << left << setw(2); cout << hero_player.luck << endl << endl;
-    cout << " WEAPON: " << hero_weapon.name;
-    cout << " ATTACK: " << hero_weapon.damage;
-    cout << " TYPE: " << hero_weapon.type << endl;
-    cout << " ARMOR: " << hero_armor.name;
-    cout << " AC: " << hero_armor.armorclass;
-    cout << " TYPE: " << hero_armor.type << endl;
+    cout << "WEAPON: " << left << setw(12); cout << hero_weapon.name;
+    cout << "ATTACK: " << left << setw(6); cout << hero_weapon.damage;
+    cout << "TYPE: " << left << setw(8); cout << hero_weapon.type << endl;
+    cout << "ARMOR: " << left << setw(13); cout << hero_armor.name;
+    cout << "AC: " << left << setw(10); cout << hero_armor.armorclass;
+    cout << "TYPE: " << left << setw(12); cout << hero_armor.type << endl;
     cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
 
     string ans;

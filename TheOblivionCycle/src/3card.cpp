@@ -66,7 +66,7 @@ string line106 = R"(|___10|)";
 void printroll(int roll1, int roll2, int roll3)
 {
 	// First Line
-	Color(4);
+	Color(15);
 	if (roll1 == 2) { cout << line21 << " "; }
 	if (roll1 == 3) { cout << line31 << " "; }
 	if (roll1 == 4) { cout << line41 << " "; }
@@ -282,7 +282,7 @@ void gambling()
 		{
 			bet = 0;
 			print_gambling();
-			cout << "\nGold: " << left << setw(6); cout << hero_player.gold << " [ESC] Back" << endl << endl;
+			cout << "\nGold: " << left << setw(8); cout << hero_player.gold << " [0] Back" << endl << endl;
 			cout << "[1]  10 GOLD   [5]  200 GOLD" << endl;
 			cout << "[2]  20 GOLD   [6]  300 GOLD" << endl;
 			cout << "[3]  50 GOLD   [7]  500 GOLD" << endl;
@@ -297,7 +297,7 @@ void gambling()
 			if (ans == "6") { bet = 300; }
 			if (ans == "7") { bet = 500; }
 			if (ans == "8") { bet = 1000; }
-			if (ans == "\033") { return; }
+			if (ans == "0") { return; }
 
 
 			fakemoney = hero_player.gold;
@@ -312,7 +312,7 @@ void gambling()
 			{
 				cout << "\nBetting " << bet << " gold. Good Luck!";
 				hero_player.gold -= bet;
-				Sleep(4000);
+				
 				b = 1;
 
 				roll1 = 0;
@@ -324,8 +324,10 @@ void gambling()
 				srand((unsigned)time(NULL));
 				rollresult = 2 + rand() % 8 + 1;
 				roll1 = rollresult;
+				Sleep(1000);
 				rollresult = 2 + rand() % 8 + 1;
 				roll2 = rollresult;
+				Sleep(1000);
 				rollresult = 2 + rand() % 8 + 1;
 				roll3 = rollresult;
 
@@ -341,7 +343,7 @@ void gambling()
 					hero_player.gold += bet;
 					bet *= 3;
 					hero_player.gold += bet;
-					Sleep(2000);
+					Sleep(3000);
 				}
 
 
@@ -351,7 +353,7 @@ void gambling()
 					hero_player.gold += bet;
 					bet *= 2;
 					hero_player.gold += bet;
-					Sleep(2000);
+					Sleep(3000);
 				}
 
 				else

@@ -5,22 +5,21 @@ int inn(int i)
 
 
     // Print Menu Options
-    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Rest" << endl;
-    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Wardrobe" << endl;
-    cout << "("; Color(6); cout << "3"; Color(7); cout << ") Gambling" << endl;
-    cout << "("; Color(6); cout << "4"; Color(7); cout << ") Back" << endl;
+    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Wardrobe" << endl;
+    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Gambling" << endl;
+    cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     // Input Selection
     string ans = "";
     ShowConsoleCursor(false);
     ans = _getch();
 
-    if (ans == "3")
+    if (ans == "2")
     {
         gambling();
     }
 
-    if (ans == "4")
+    if (ans == "0")
         { 
             return 1; 
         }
