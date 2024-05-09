@@ -449,3 +449,38 @@ void print_flask()
     cout << line11 << endl << line12 << endl;
 
 }
+
+
+void print_portal()
+{
+
+    system("cls");
+
+    string line1 = R"(                     &&&&&&&&$$&&&&&)";
+    string line2 = R"(             &&&&&)";
+    string line3 = R"(          ;&&&&       xXX$X+)";
+    string line4 = R"(         &&&&    &&&&&&&&&&&&&&&&)";
+    string line5 = R"(        &&&:  :&&&&&$.       X&&&&&X)";
+    string line6 = R"(       &&&   &&&&$   +&&&&&$     &&&&$)";
+    string line7 = R"(      &&&$  &&&&  X&&&&&&&&&&&&X   &&&&)";
+    string line8 = R"(     &&&&  &&&&  &&&&       &&&&&x   &&&)";
+    string line9 = R"($    &&&&  &&&& &&&     &&&&  &&&&&   &&&)";
+    string line10 = R"(&+   &&&&  &&&& .&&       &&&; &&&&&   &&.)";
+    string line11 = R"( &   +&&&& x&&&X           &&&. &&&&   &&&)";
+    string line12 = R"( &x   &&&&& ;&&&&          &&&& &&&&   &&&)";
+    string line13 = R"(  &;   &&&&&  &&&&&&&&&&  &&&&  &&&&   &&$)";
+    string line14 = R"(  X&&   x&&&&&   :&&&:  &&&&&: &&&&:   &&)";
+    string line15 = R"(   +&&    X&&&&&&&&&&&&&&&&&  $&&&x   &&x)";
+    string line16 = R"(     &&&     X&&&&&&&&&&&    &&&&.   +&&)";
+    string line17 = R"(       &&&&.              &&&&&&    X&$)";
+    string line18 = R"(         $&&&&&&&&&&&&&&&&&&&;     &&;)";
+    string line19 = R"(             +&&&&&&&&&&&X       &&$)";
+    string line20 = R"(                               &&)";
+    string line21 = R"(                            $+)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
+    cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
+    cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
+    cout << line21 << endl << endl;
+}

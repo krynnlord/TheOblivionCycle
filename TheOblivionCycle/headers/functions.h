@@ -7,6 +7,7 @@
 int blacksmith(int i);
 int castle(int i);
 int circleofstones(int i);
+void gates();
 int inn(int i);
 void adventure();
 int mystic(int i);
@@ -67,3 +68,4 @@ void print_help();
 void print_king();
 void print_gambling();
 void print_flask();
+void print_portal();
