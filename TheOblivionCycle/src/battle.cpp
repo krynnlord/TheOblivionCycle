@@ -26,6 +26,8 @@ void battle_sim(monster enemy)
 	string enemy_line2 = "";
 	int bar_ticks = 0;
 	int ebar_ticks = 0;
+	int skip_hero_atk = 0;
+	int heal_run = 0;
 
 	// DICE Vars
 	int dice_i = 0;
@@ -142,18 +144,29 @@ void battle_sim(monster enemy)
 			cout << endl;
 		}
 		
-		
+		skip_hero_atk = 0;
+		heal_run = 0;
+
 		string ans;
 		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
 
 		if (ans == "0")
 		{
-			loop = 1;
+			skip_hero_atk = 1;
+			heal_run = 2;
+			ans = "1";
+			srand((unsigned)time(NULL));
+			int runroll = (rand() % 4) + 1;
+			if (runroll == 4) { loop = 1; }
 		}
 
 		if (ans == "3")
 		{
+			skip_hero_atk = 1;
+			heal_run = 1;
+			ans = "1";
+			
 			if (hero_player.hp == hero_player.hp_max)
 			{
 				hero_player.flask = hero_player.flask;
@@ -220,33 +233,42 @@ void battle_sim(monster enemy)
 
 			//trinket_run(hero_total_atk, hero_trinket);
 
-			enemy.hp -= hero_total_atk;
-			
-			if (enemy.hp <= 0)
+			if (skip_hero_atk == 0)
 			{
-				enemy.hp = 0;
-				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
-				
-				loot(enemy); // calls loot function
-				break;
-			}
-			else
-			{
-				
-				if (crit == 1)
-				{
-					hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
-				}
-				if (crit == 0)
-				{
-					hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
-				}
-				if (crit == 2)
-				{
-					hero_combat_string = "misses " + enemy.name + ".";
-				}
+				enemy.hp -= hero_total_atk;
 
+				if (enemy.hp <= 0)
+				{
+					enemy.hp = 0;
+					hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
+
+					loot(enemy); // calls loot function
+					break;
+				}
+				else
+				{
+
+					if (crit == 1)
+					{
+						hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+					}
+					if (crit == 0)
+					{
+						hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+					}
+					if (crit == 2)
+					{
+						hero_combat_string = "misses " + enemy.name + ".";
+					}
+
+				}
 			}
+			else 
+			{	
+				if (heal_run == 1){ hero_combat_string = "heals using the Celestial Flask."; }
+				if (heal_run == 2){ hero_combat_string = "attempts to run, but fails."; }
+			}
+
 
 			// ENEMY TURN
 			
