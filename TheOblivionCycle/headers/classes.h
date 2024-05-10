@@ -165,6 +165,11 @@ extern armor scale_armor;
 extern armor splint_armor;
 extern armor plate_armor;
 
+// Hero Initial Creation
+extern player hero_player;
+extern weapon hero_weapon;
+extern armor hero_armor;
+
 /////////////////////////////////////////
 // Monsters /////////////////////////////
 /////////////////////////////////////////
@@ -173,8 +178,7 @@ extern monster zombie2;
 extern monster skeleton;
 extern monster giant_bat;
 extern monster giant_boar;
-
-// Hero Initial Creation
-extern player hero_player;
-extern weapon hero_weapon;
-extern armor hero_armor;
+extern monster ash_zombie;
+extern monster skeleton_warrior;
+extern monster giant_centipede;
+extern monster goblin;

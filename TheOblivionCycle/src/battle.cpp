@@ -132,8 +132,9 @@ void battle_sim(monster enemy)
 			cout << endl;
 		}
 		
-
+		
 		string ans;
+		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
 
 		if (ans == "3")
@@ -341,7 +342,7 @@ void loot(monster enemy)
 
 	cout << endl;
 	system("pause");
-
+	
 	return;
 }
 

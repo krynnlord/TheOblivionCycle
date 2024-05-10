@@ -75,18 +75,24 @@ armor scale_armor = { 5, "Scale Armor", "MEDIUM", 600, 14, "" };
 armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 17, "" };
 armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 
-/////////////////////////////////////////
-// Monsters /////////////////////////////
-/////////////////////////////////////////
-// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, ac, damage, exp, essence
-
-monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2",10,10};
-monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
-monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
-monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
-
 // Hero Initial Creation
 // name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, exp, stat, gold, trinket, quest_level, essence;
 player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1, 0, 0 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
+
+/////////////////////////////////////////
+// Monsters /////////////////////////////
+/////////////////////////////////////////
+// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, ac, damage, exp, essence
+
+// LVL 1
+monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2",10,10};
+monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
+monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
+monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
+// LVL 2
+monster ash_zombie = { "Ash Zombie",30,30,0,0,0,0,1,1,8,"1d4",15,15 };
+monster skeleton_warrior = { "Skeletal Warriror",25,25,0,0,0,0,1,1,13,"1d4",9,9 };
+monster giant_centipede = { "Giant Centipede",28,28,0,0,0,0,1,1,13,"1d4",15,15 };
+monster goblin = { "Goblin",32,32,0,0,0,0,1,1,12,"1d4",20,18 };
