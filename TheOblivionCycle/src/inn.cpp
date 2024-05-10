@@ -5,7 +5,7 @@ int inn(int i)
 
 
     // Print Menu Options
-    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Wardrobe" << endl;
+    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Equip Gear" << endl;
     cout << "("; Color(6); cout << "2"; Color(7); cout << ") Gambling" << endl;
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 

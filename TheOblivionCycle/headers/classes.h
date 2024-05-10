@@ -26,6 +26,7 @@ public:
     int trinket;
     int quest_level;
     int essence;
+    int flask;
 };
 
 class monster

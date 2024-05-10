@@ -147,9 +147,12 @@ int main()
     {
 
         print_title();
-       
+
         // Print Choices
-        cout << "("; Color(6); cout << "1"; Color(7); cout << ") Play Game" << endl;
+        if (hero_player.name != "Player") 
+        {
+            cout << "("; Color(6); cout << "1"; Color(7); cout << ") Play Game ["; Color(2); cout << hero_player.name; Color(7); cout << "]" << endl;
+        }
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") New Game" << endl; //To be NewGame
         cout << "("; Color(6); cout << "3"; Color(7); cout << ") Game Options" << endl;
         cout << "("; Color(6); cout << "4"; Color(7); cout << ") Quit Game" << endl;
@@ -157,7 +160,7 @@ int main()
         ShowConsoleCursor(false);
         ans = _getch();
         
-        if (ans == "1") 
+        if (ans == "1" and hero_player.name != "Player")
         { 
             adventure(); 
         }
@@ -208,7 +211,7 @@ int main()
     string test = "Thank you for playing The Oblivion Cycle!";
     typer(test,25); cout << endl;
     ShowConsoleCursor(true);
-    
+    Sleep(2000);
     return 0; // EXIT CODE
 
 }

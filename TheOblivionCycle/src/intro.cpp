@@ -31,7 +31,7 @@ void intro()
 	print_title();
 	//string titletext = "		          Part I: The Shimmering Gate";
 	//typer(titletext, 100);
-	Sleep(4000);
+	//Sleep(4000);
 
 	ShowConsoleCursor(true);
 	return;

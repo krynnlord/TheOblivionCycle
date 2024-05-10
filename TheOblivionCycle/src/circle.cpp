@@ -29,7 +29,7 @@ int circleofstones(int i)
 
     if (ans == "1" and hero_player.quest_level >= 1)
     {
-        cout << "\nEntering the Red Gate!\n"; Sleep(2000);
+        // cout << "\nEntering the Red Gate!\n"; Sleep(2000);
         battle_loop(1);
     }
 

@@ -127,7 +127,17 @@ void battle_sim(monster enemy)
 			
 			cout << "[1] Attack" << endl;
 			cout << "[2] Cast" << endl;
-			cout << "[3] Run" << endl;
+			cout << "[3] Use Flask [";
+			
+			int temp_health = hero_player.flask;
+			string temp_flask = "";
+			while(temp_health > 0)
+			{
+				temp_flask += "#";
+				temp_health -= 1;
+			}
+			cout << left << setw(3); Color(2); cout << temp_flask; Color(7); cout << "]" << endl;
+			cout << "[0] Run" << endl;
 						
 			cout << endl;
 		}
@@ -137,10 +147,28 @@ void battle_sim(monster enemy)
 		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
 
-		if (ans == "3")
+		if (ans == "0")
 		{
 			loop = 1;
 		}
+
+		if (ans == "3")
+		{
+			if (hero_player.hp == hero_player.hp_max)
+			{
+				hero_player.flask = hero_player.flask;
+			}
+			else
+			{
+				hero_player.hp += round(hero_player.hp_max * .75) + 1;
+				if (hero_player.hp > hero_player.hp_max)
+				{
+					hero_player.hp = hero_player.hp_max;
+				}
+				hero_player.flask -= 1;
+			}
+		}
+
 
 		if (ans == "\033")
 		{

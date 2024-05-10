@@ -76,8 +76,8 @@ armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 17, "" };
 armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 
 // Hero Initial Creation
-// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, exp, stat, gold, trinket, quest_level, essence;
-player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1, 0, 0 };
+// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
+player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1, 0, 0, 3 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
 
