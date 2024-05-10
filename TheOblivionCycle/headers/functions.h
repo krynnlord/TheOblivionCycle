@@ -29,6 +29,7 @@ void save_game();
 void info_screen();
 void player_score();
 void spellbook();
+void fill_flask();
 void trinkets();
 void help_screen();
 void weapons_display();

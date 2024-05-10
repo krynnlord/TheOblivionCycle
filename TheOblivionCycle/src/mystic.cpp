@@ -6,6 +6,7 @@ int mystic(int i)
 
     // Print Menu Options
     cout << "("; Color(6); cout << "1"; Color(7); cout << ") Buy Trinket" << endl;
+    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Craft Prism" << endl;
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     // Input Selection

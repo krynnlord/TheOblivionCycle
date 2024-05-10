@@ -51,8 +51,6 @@ void battle_loop(int gate)
     // Roll for Monsters
     if (gate == 1) // RED GATE
     {
-       
-        
         int monster_roller;
         srand((unsigned)time(NULL));
         
@@ -65,6 +63,7 @@ void battle_loop(int gate)
             if (monster_roller == 4) { battle_sim(giant_bat); }
             return;
         }
+
         if (hero_player.level == 2)
         {
             monster_roller = rand() % 8 + 1;
@@ -79,6 +78,61 @@ void battle_loop(int gate)
             return;
         }
 
+        if (hero_player.level == 3)
+        {
+            monster_roller = rand() % 8 + 1;
+            if (monster_roller == 1) { battle_sim(zombie); }
+            if (monster_roller == 2) { battle_sim(skeleton); }
+            if (monster_roller == 3) { battle_sim(giant_boar); }
+            if (monster_roller == 4) { battle_sim(giant_bat); }
+            if (monster_roller == 5) { battle_sim(ash_zombie); }
+            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
+            if (monster_roller == 7) { battle_sim(giant_centipede); }
+            if (monster_roller == 8) { battle_sim(goblin); }
+            return;
+        }
+
+        if (hero_player.level == 4)
+        {
+            monster_roller = rand() % 8 + 1;
+            if (monster_roller == 1) { battle_sim(zombie); }
+            if (monster_roller == 2) { battle_sim(skeleton); }
+            if (monster_roller == 3) { battle_sim(giant_boar); }
+            if (monster_roller == 4) { battle_sim(giant_bat); }
+            if (monster_roller == 5) { battle_sim(ash_zombie); }
+            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
+            if (monster_roller == 7) { battle_sim(giant_centipede); }
+            if (monster_roller == 8) { battle_sim(goblin); }
+            return;
+        }
+
+        if (hero_player.level == 5)
+        {
+            monster_roller = rand() % 8 + 1;
+            if (monster_roller == 1) { battle_sim(zombie); }
+            if (monster_roller == 2) { battle_sim(skeleton); }
+            if (monster_roller == 3) { battle_sim(giant_boar); }
+            if (monster_roller == 4) { battle_sim(giant_bat); }
+            if (monster_roller == 5) { battle_sim(ash_zombie); }
+            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
+            if (monster_roller == 7) { battle_sim(giant_centipede); }
+            if (monster_roller == 8) { battle_sim(goblin); }
+            return;
+        }
+
+        else
+        {
+            monster_roller = rand() % 8 + 1;
+            if (monster_roller == 1) { battle_sim(zombie); }
+            if (monster_roller == 2) { battle_sim(skeleton); }
+            if (monster_roller == 3) { battle_sim(giant_boar); }
+            if (monster_roller == 4) { battle_sim(giant_bat); }
+            if (monster_roller == 5) { battle_sim(ash_zombie); }
+            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
+            if (monster_roller == 7) { battle_sim(giant_centipede); }
+            if (monster_roller == 8) { battle_sim(goblin); }
+            return;
+        }
     }
 
 
