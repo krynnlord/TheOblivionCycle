@@ -193,12 +193,13 @@ void help_screen()
                 cout << "Character Stats" << endl;
                 cout << "----------------" << endl;
                 cout << "The player character has these major stats:" << endl << endl;
-                cout << "   [HP] Amount of current life" << endl;
-                cout << "[LEVEL] Current Player Level" << endl;
-                cout << "  [EXP] Total Experience Points" << endl;
-                cout << " [GOLD] Amount of Wealth" << endl;
-                cout << " [LUCK] Chance for extra attacks" << endl << endl;
-
+                cout << "      [HP] Amount of current life" << endl;
+                cout << "   [LEVEL] Current Player Level" << endl;
+                cout << "     [EXP] Total Experience Points" << endl;
+                cout << "    [GOLD] Amount of Wealth" << endl;
+                cout << "    [LUCK] Chance for extra attacks" << endl;
+                cout << " [ESSENCE] The essesnce of monsters" << endl;
+                cout << "    [PROF] Proficiency Level. Governs attack power" << endl<< endl;
                 system("pause");
             }
 

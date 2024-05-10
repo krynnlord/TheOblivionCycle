@@ -167,11 +167,16 @@ void battle_sim(monster enemy)
 			heal_run = 1;
 			ans = "1";
 			
+			if (hero_player.flask == 0) 
+			{
+				hero_player.flask = 0;
+			}
+			
 			if (hero_player.hp == hero_player.hp_max)
 			{
 				hero_player.flask = hero_player.flask;
 			}
-			else
+			if (hero_player.flask != 0 and hero_player.hp != hero_player.hp_max)
 			{
 				hero_player.hp += round(hero_player.hp_max * .75) + 1;
 				if (hero_player.hp > hero_player.hp_max)
@@ -265,7 +270,7 @@ void battle_sim(monster enemy)
 			}
 			else 
 			{	
-				if (heal_run == 1){ hero_combat_string = "heals using the Celestial Flask."; }
+				if (heal_run == 1){ hero_combat_string = "takes a sip from the Celestial Flask!"; }
 				if (heal_run == 2){ hero_combat_string = "attempts to run, but fails."; }
 			}
 

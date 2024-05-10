@@ -92,7 +92,7 @@ monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
 monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
 monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
 // LVL 2
-monster ash_zombie = { "Ash Zombie",30,30,0,0,0,0,1,1,8,"1d4",15,15 };
-monster skeleton_warrior = { "Skeletal Warriror",25,25,0,0,0,0,1,1,13,"1d4",9,9 };
-monster giant_centipede = { "Giant Centipede",28,28,0,0,0,0,1,1,13,"1d4",15,15 };
-monster goblin = { "Goblin",32,32,0,0,0,0,1,1,12,"1d4",20,18 };
+monster ash_zombie = { "Ash Zombie",30,30,0,0,0,0,2,2,8,"1d4",15,15 };
+monster skeleton_warrior = { "Skeletal Warriror",25,25,0,0,0,0,2,2,13,"1d4",9,9 };
+monster giant_centipede = { "Giant Centipede",28,28,0,0,0,0,2,2,13,"1d4",15,15 };
+monster goblin = { "Goblin",32,32,0,0,0,0,2,2,12,"1d4",20,18 };

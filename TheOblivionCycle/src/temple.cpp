@@ -57,6 +57,7 @@ void fill_flask()
                 a = 0;
                 break;
             }
+
             if (hero_player.gold >= 100 and hero_player.flask < 3)
             {
                 hero_player.gold -= 100;
@@ -66,6 +67,7 @@ void fill_flask()
                 a = 0;
                 break;
             }
+
             if(hero_player.gold < 100)
             {
                 cout << "\nYou do not possess enough gold!\n\n";
@@ -73,6 +75,34 @@ void fill_flask()
                 a = 0;
             }
         }
+
+        if (ans == "2")
+        {
+            if (hero_player.flask == 3)
+            {
+                cout << "\nYou aready have a full flask!\n\n";
+                system("pause");
+                a = 0;
+                break;
+            }
+
+            if (hero_player.flask < 3)
+            {
+                hero_player.exp -= round(hero_player.exp * .25);
+                if (hero_player.exp < min_exp)
+                {
+                    hero_player.exp = min_exp;
+                }
+
+                hero_player.flask = 3;
+                cout << "\nMay the gods have pitty on your spirit!\n\n";
+                system("pause");
+                a = 0;
+                break;
+            }
+        }
+
+
         if (ans == "0")
         {
             a = 0;
