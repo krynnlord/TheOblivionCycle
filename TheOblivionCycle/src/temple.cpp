@@ -38,12 +38,12 @@ void fill_flask()
         print_temple();
         show_statbar(hero_player.name, hero_player.level, hero_player.exp, hero_weapon.name, hero_armor.name);
 
-        cout << "Filling the Celestial Flask demands a tithe of 100g.\n" << endl;
-        cout << "You have: "; Color(14); cout << hero_player.gold; Color(7); cout << " gold.\n";
+        cout << "Filling the Celestial Flask demands a tithe. Will it be your wealth or your spirit?\n" << endl;
         cout << "Your Flask has "; Color(2); cout << hero_player.flask; Color(7); cout << " charges remaining." << endl;
         cout << "Do you want to fill the flask?" << endl << endl;
-        cout << "(1) Yes" << endl;
-        cout << "(2) No" << endl;
+        cout << "(1) Pay Gold ["; Color(14); cout << "100"; Color(7); cout <<"]" << endl;
+        cout << "(2) Offer Spirit ["; Color(9); cout << "25%"; Color(7); cout << "]" << endl;
+        cout << "(0) No" << endl;
         string ans = "";
         ans = _getch();
 
@@ -73,7 +73,7 @@ void fill_flask()
                 a = 0;
             }
         }
-        if (ans == "2")
+        if (ans == "0")
         {
             a = 0;
         }
