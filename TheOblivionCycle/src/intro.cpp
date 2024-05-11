@@ -27,12 +27,6 @@ void intro()
 	typer(storytext, 30);
 	Sleep(4000);
 	
-	system("cls");
-	print_title();
-	//string titletext = "		          Part I: The Shimmering Gate";
-	//typer(titletext, 100);
-	//Sleep(4000);
-
 	ShowConsoleCursor(true);
 	return;
 }

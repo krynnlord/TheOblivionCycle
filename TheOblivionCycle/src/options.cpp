@@ -229,10 +229,51 @@ void help_screen()
                 cout << "The Celestial Flask" << endl;
                 cout << "----------------" << endl;
                 cout << "The Celestial flask is imbuned with power of the divine." << endl;
-                cout << "Drinking a this potion can restore the health of the player," << endl;
-                cout << "however, the maximum potiential is limited to 1/3 of its volume." << endl << endl;
+                cout << "Drinking this potion can restore the health of the player," << endl;
+                cout << "however, the you can only withstand 1/3 of its volume at a time." << endl << endl;
                 cout << "Using this flask restores 75% of the players health. The flask" << endl;
                 cout << "has 3 charges which can be refilled at the temple for a price." << endl << endl;
+
+                system("pause");
+            }
+            if (ans == "4")
+            {
+                system("cls");
+                cout << "Enemy Types" << endl;
+                cout << "----------------" << endl;
+                cout << "The world of Astoria is crawling with denziens of another world." << endl;
+                cout << "These enemies sometimes share common characteristics, such as," << endl;
+                cout << "enraged animals, or the army of the undead." << endl;
+                cout << "Knowledge in the types of enemies could provide a substantial advantage" << endl;
+                cout << "during combat." << endl << endl;
+
+                system("pause");
+            }
+
+            if (ans == "5")
+            {
+                system("cls");
+                cout << "Quests" << endl;
+                cout << "----------------" << endl;
+                cout << "As a player character you will be asked to fufill special tasks." << endl;
+                cout << "Quests are given by the King who resides in the castle. Upon completion" << endl;
+                cout << "of a quest, the player recieves a reward. This is usually experience points," << endl;
+                cout << "and or gold." << endl << endl;
+                cout << "If you forget which quest you are on, simply open the Character screen and look" << endl;
+                cout << "at the current quest." << endl << endl;
+
+                system("pause");
+            }
+            if (ans == "6")
+            {
+                system("cls");
+                cout << "Trinkets" << endl;
+                cout << "----------------" << endl;
+                cout << "Trinkets are usuful gadgets or trophies that supplement the player's." << endl;
+                cout << "combat in some way. There are trinkets that help increase damage, and some" << endl;
+                cout << "that help with defense. " << endl << endl;
+                cout << "Be sure to try different combinations of trinkets to gain an edge against" << endl;
+                cout << "your opponent. It may very well save your life!" << endl << endl;
 
                 system("pause");
             }
