@@ -27,7 +27,7 @@ void adventure()
         print_village();
 
         //Print Statbar
-        show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+        show_statbar();
 
         // Print Menu Options
         cout << "("; Color(6); cout << "1"; Color(7); cout << ") The Circle of Stones" << endl;
@@ -49,7 +49,7 @@ void adventure()
             while (i==0) 
             {    
                 print_stones();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = circleofstones(i);
             }
         }
@@ -60,7 +60,7 @@ void adventure()
             while (i==0) 
             {    
                 print_castle();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = castle(i);
             } 
         }
@@ -71,7 +71,7 @@ void adventure()
             while (i==0) 
             {    
                 print_temple();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = temple(i);
             } 
         }
@@ -82,7 +82,7 @@ void adventure()
             while (i==0) 
             {    
                 print_blacksmith();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = blacksmith(i);
             } 
         }
@@ -93,7 +93,7 @@ void adventure()
             while (i==0) 
             {    
                 print_mystic();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = mystic(i);
             } 
         }
@@ -104,7 +104,7 @@ void adventure()
             while (i==0) 
             {    
                 print_inn();
-                show_statbar(hero_player.name, hero_player.level,hero_player.exp, hero_weapon.name, hero_armor.name);
+                show_statbar();
                 i = inn(i);
             } 
         }

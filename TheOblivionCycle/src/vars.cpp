@@ -44,18 +44,18 @@ spell immolation = { "Immolation", "Heals for a small amount", 0, 0, 15, 3, 12 }
 weapon hands = { 1, "Hands", "BLUNT", 0, "1d2","Your bare hands" };
 
 // Blunt
-weapon club = { 2, "Club", "BLUNT", 200, "1d4", "" };
-weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "" };
-weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "" };
-weapon warhammer = { 5, "warhammer", "BLUNT", 1000, "1d10", "" };
-weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "" };
+weapon club = { 2, "Club", "BLUNT", 200, "1d4", "",0 };
+weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "",0 };
+weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "",0 };
+weapon warhammer = { 5, "warhammer", "BLUNT", 1000, "1d10", "",0 };
+weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "",0 };
 
 // Slashing
-weapon dagger = { 7, "Dagger", "SLASHING", 200, "1d4", "" };
-weapon handaxe = { 8, "Handaxe", "SLASHING", 500, "1d6", "" };
-weapon shortsword = { 9, "Short Sword", "SLASHING", 1000, "1d8", "" };
-weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d10", "" };
-weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "" };
+weapon dagger = { 7, "Dagger", "SLASHING", 200, "1d4", "",0 };
+weapon handaxe = { 8, "Handaxe", "SLASHING", 500, "1d6", "",0 };
+weapon shortsword = { 9, "Short Sword", "SLASHING", 1000, "1d8", "",0 };
+weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d10", "",0 };
+weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "",0 };
 
 /////////////////////////////////////////
 // Armor ////////////////////////////////

@@ -91,7 +91,7 @@ string line3 =R"(  _-/-\-_   | |\/| |\ V /\___ \ | |  | | |)";
 string line4 =R"( /  (*)  \  | |  | | | |  ___) || |  | | |___)";
 string line5 =R"(/-|  | |- \ |_|  |_| |_| |____/ |_| |___\____|)";
 
-cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 <<endl << endl;
 Color(7);
 }
 

@@ -36,7 +36,7 @@ void fill_flask()
     while (a == 1)
     {
         print_temple();
-        show_statbar(hero_player.name, hero_player.level, hero_player.exp, hero_weapon.name, hero_armor.name);
+        show_statbar();
 
         cout << "Filling the Celestial Flask demands a tithe. Will it be your wealth or your spirit?\n" << endl;
         cout << "Your Flask has "; Color(2); cout << hero_player.flask; Color(7); cout << " charges remaining." << endl;

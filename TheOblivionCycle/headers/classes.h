@@ -80,6 +80,7 @@ public:
     int cost;
     string damage;
     string description;
+    int have; //(0) No (1) Yes
 };
 
 class armor
@@ -91,6 +92,7 @@ public:
     int cost;
     int armorclass;
     string description;
+    int have; //(0) No (1) Yes
 };
 
 // Variables
