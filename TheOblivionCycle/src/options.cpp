@@ -59,8 +59,20 @@ int options(int i)
         }
         else 
         { 
-            music_setting = 1;
-            PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+            fstream musicfiletest;
+            musicfiletest.open("data/music/01.wav");
+            if (!musicfiletest)
+            {
+                music_setting = 0;
+                cout << "\nMusic File Missing. Keeping music setting off....";
+                Sleep(2000);
+            }
+            else
+            {
+                music_setting = 1;
+                PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+            }
+                        
         }
 
     if (ans == "3")
