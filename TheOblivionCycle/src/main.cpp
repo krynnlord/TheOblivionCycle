@@ -135,7 +135,18 @@ int main()
     // Check for Sound Enabled or Disabled
     if (music_setting == 1) 
     {
-        PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+        fstream musicfiletest;
+        musicfiletest.open("data/music/01.wav");
+        if(!musicfiletest)
+        {
+            music_setting = 0;
+            cout << "Music File Missing. Setting Music to off....";
+            Sleep(2000);
+        }
+        else
+        {
+            PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+        }
     }
    
     // Check for Intro Enabled or Disabled
