@@ -39,28 +39,27 @@ void trinket_checker(trinket temp_trinket)
 void trinkets()
 {
    
-    
         print_trinkets();
         cout << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
         if (rabbit_foot.have == 1)
         { trinket_checker(rabbit_foot); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
         if (dragon_talon.have == 1)
         { trinket_checker(dragon_talon); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
         if (azure_neclace.have == 1)
         { trinket_checker(azure_neclace); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
         if (witch_effegy.have == 1)
         { trinket_checker(witch_effegy); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
         if (vail_blood.have == 1)
         { trinket_checker(vail_blood); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
         if (frozen_tear.have == 1)
         { trinket_checker(frozen_tear); }
-        else { Color(8); cout << " [ ] UNKNOWN"; Color(7); cout << endl; }
+        else { ; }
 
 
         cout << endl;
