@@ -9,6 +9,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 #include <iomanip>
 #pragma comment(lib, "Winmm.lib")
 using namespace std;

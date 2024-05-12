@@ -2,6 +2,13 @@
 
 // Variables
 
+// Prisms for Closing Gates
+bool prism_red = false;
+bool prism_blue = false;
+bool prism_purple = false;
+bool prism_yellow = false;
+bool prism_shimmering = false;
+
 /////////////////////////////////////////
 // Trinkets /////////////////////////////
 /////////////////////////////////////////
@@ -96,6 +103,8 @@ monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
 monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
 // LVL 2
 monster ash_zombie = { "Ash Zombie",40,40,0,0,0,0,2,2,8,"1d4",15,15 };
-monster skeleton_warrior = { "Skeletal Warriror",35,35,0,0,0,0,2,2,13,"1d4",9,9 };
+monster skeleton_warrior = { "Skeletal Warrior",35,35,0,0,0,0,2,2,13,"1d4",9,9 };
 monster giant_centipede = { "Giant Centipede",38,38,0,0,0,0,2,2,13,"1d4",15,15 };
 monster goblin = { "Goblin",42,42,0,0,0,0,2,2,12,"1d4",20,18 };
+
+monster monsters_all[8] = { zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin };

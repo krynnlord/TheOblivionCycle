@@ -29,7 +29,6 @@ int circleofstones(int i)
 
     if (ans == "1" and hero_player.quest_level >= 1)
     {
-        // cout << "\nEntering the Red Gate!\n"; Sleep(2000);
         battle_loop(1);
     }
 
@@ -47,81 +46,27 @@ int circleofstones(int i)
 
 void battle_loop(int gate)
 {
-    
-    // Roll for Monsters
-    if (gate == 1) // RED GATE
+    if (gate == 1 and prism_red == true)
     {
-        int monster_roller;
-        srand((unsigned)time(NULL));
-        
-        if (hero_player.level == 1)
-        {
-            monster_roller = rand() % 4 + 1;
-            if (monster_roller == 1) { battle_sim(zombie); }
-            if (monster_roller == 2) { battle_sim(skeleton); }
-            if (monster_roller == 3) { battle_sim(giant_boar); }
-            if (monster_roller == 4) { battle_sim(giant_bat); }
-            return;
-        }
-
-        if (hero_player.level == 2)
-        {
-            monster_roller = rand() % 8 + 1;
-            if (monster_roller == 1) { battle_sim(zombie); }
-            if (monster_roller == 2) { battle_sim(skeleton); }
-            if (monster_roller == 3) { battle_sim(giant_boar); }
-            if (monster_roller == 4) { battle_sim(giant_bat); }
-            if (monster_roller == 5) { battle_sim(ash_zombie); }
-            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
-            if (monster_roller == 7) { battle_sim(giant_centipede); }
-            if (monster_roller == 8) { battle_sim(goblin); }
-            return;
-        }
-
-        if (hero_player.level == 3)
-        {
-            monster_roller = rand() % 8 + 1;
-            if (monster_roller == 1) { battle_sim(zombie); }
-            if (monster_roller == 2) { battle_sim(skeleton); }
-            if (monster_roller == 3) { battle_sim(giant_boar); }
-            if (monster_roller == 4) { battle_sim(giant_bat); }
-            if (monster_roller == 5) { battle_sim(ash_zombie); }
-            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
-            if (monster_roller == 7) { battle_sim(giant_centipede); }
-            if (monster_roller == 8) { battle_sim(goblin); }
-            return;
-        }
-
-        if (hero_player.level == 4)
-        {
-            monster_roller = rand() % 8 + 1;
-            if (monster_roller == 1) { battle_sim(zombie); }
-            if (monster_roller == 2) { battle_sim(skeleton); }
-            if (monster_roller == 3) { battle_sim(giant_boar); }
-            if (monster_roller == 4) { battle_sim(giant_bat); }
-            if (monster_roller == 5) { battle_sim(ash_zombie); }
-            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
-            if (monster_roller == 7) { battle_sim(giant_centipede); }
-            if (monster_roller == 8) { battle_sim(goblin); }
-            return;
-        }
-
-        if (hero_player.level >= 5)
-        {
-            monster_roller = rand() % 8 + 1;
-            if (monster_roller == 1) { battle_sim(zombie); }
-            if (monster_roller == 2) { battle_sim(skeleton); }
-            if (monster_roller == 3) { battle_sim(giant_boar); }
-            if (monster_roller == 4) { battle_sim(giant_bat); }
-            if (monster_roller == 5) { battle_sim(ash_zombie); }
-            if (monster_roller == 6) { battle_sim(skeleton_warrior); }
-            if (monster_roller == 7) { battle_sim(giant_centipede); }
-            if (monster_roller == 8) { battle_sim(goblin); }
-            return;
-        }
 
     }
 
+    // Roll for Monster based on hero level
+    vector<monster> monsterlist;
+        
+    for (int i = 0; i < 8; i++)
+    {
+        if (monsters_all[i].level == hero_player.level)
+        {
+            monsterlist.push_back(monsters_all[i]);
+        }
+    }
+
+    srand((unsigned)time(NULL));
+    int monst_rand;
+    monst_rand = rand() % size(monsterlist);
+
+    battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
 
     return;
 }

@@ -99,6 +99,15 @@ public:
 // Variables
 
 /////////////////////////////////////////
+// Prisms ///////////////////////////////
+/////////////////////////////////////////
+extern bool prism_red;
+extern bool prism_blue; 
+extern bool prism_purple;
+extern bool prism_yellow;
+extern bool prism_shimmering;
+
+/////////////////////////////////////////
 // Trinkets /////////////////////////////
 /////////////////////////////////////////
 
@@ -188,3 +197,4 @@ extern monster ash_zombie;
 extern monster skeleton_warrior;
 extern monster giant_centipede;
 extern monster goblin;
+extern monster monsters_all[];
