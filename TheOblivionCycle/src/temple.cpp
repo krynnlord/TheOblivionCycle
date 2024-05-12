@@ -88,7 +88,7 @@ void fill_flask()
 
             if (hero_player.flask < 3)
             {
-                hero_player.exp -= round(hero_player.exp * .25);
+                hero_player.exp -= int(round(hero_player.exp * .25));
                 if (hero_player.exp < min_exp)
                 {
                     hero_player.exp = min_exp;

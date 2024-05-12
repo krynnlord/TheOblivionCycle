@@ -178,7 +178,7 @@ void battle_sim(monster enemy)
 			}
 			if (hero_player.flask != 0 and hero_player.hp != hero_player.hp_max)
 			{
-				hero_player.hp += round(hero_player.hp_max * .75) + 1;
+				hero_player.hp += int(round(hero_player.hp_max * .75)) + 1;
 				if (hero_player.hp > hero_player.hp_max)
 				{
 					hero_player.hp = hero_player.hp_max;
