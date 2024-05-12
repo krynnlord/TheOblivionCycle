@@ -5,8 +5,9 @@ int inn(int i)
 
 
     // Print Menu Options
-    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Equip Gear" << endl;
-    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Gambling" << endl;
+    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Change Weapon" << endl;
+    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Change Armor" << endl;
+    cout << "("; Color(6); cout << "3"; Color(7); cout << ") Play 3Card (Gamble)" << endl;
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     // Input Selection
@@ -14,7 +15,7 @@ int inn(int i)
     ShowConsoleCursor(false);
     ans = _getch();
 
-    if (ans == "2")
+    if (ans == "3")
     {
         gambling();
     }

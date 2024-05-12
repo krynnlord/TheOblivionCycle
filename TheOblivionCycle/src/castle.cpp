@@ -42,14 +42,19 @@ void conversation_king()
     if (hero_player.quest_level == 0)
     {
         printf("Welcome traveler, we are in need of help. Astoria is under attack from evil\n");
-        printf("hordes. It must have something to do with the unusual portal that recently\n");
-        printf("appeared at the circle of stones. Can you investigate this portal for us?\n");
+        printf("hordes. It must have something to do with the unusual gate that recently\n");
+        printf("appeared at the circle of stones. Can you investigate this gate for us?\n");
         hero_player.quest_level = 1;
         return;
     }
     if (hero_player.quest_level == 1)
     {
-        printf("Have you discovered why this portal has appeared?\n");
+        srand((unsigned)time(NULL));
+        int speakroll = (rand() % 4);
+        if (speakroll == 0) { printf("Have you discovered why this gate has appeared?\n"); }
+        if (speakroll == 1) { printf("The gate that has appeared is strange, is it not?\n"); }
+        if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
+        if (speakroll == 3) { printf("The sky has been dark lately! I am unsure what has caused it.\n"); }
         return;
     }
 

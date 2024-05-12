@@ -150,6 +150,13 @@ void battle_sim(monster enemy)
 		string ans;
 		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
+		
+		// Delaying for Time Randomizer
+		if (ans == "1") { cout << "Player Attacks..."; }
+		if (ans == "2") { cout << "Player Casts Spell..."; }
+		if (ans == "3") { cout << "Player Attempts to Heal..."; }
+		if (ans == "0") { cout << "Player Attempts to Run..."; }
+		Sleep(1000); // Delay 1 second
 
 		if (ans == "0")
 		{
