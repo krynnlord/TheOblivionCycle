@@ -39,17 +39,19 @@ void trinkets();
 void help_screen();
 void weapons_display();
 void armor_display();
-void printroll(int roll1, int roll2, int roll3);
+void printroll(int, int, int);
 void gambling();
 void show_statbar();
-void ShowConsoleCursor(bool showFlag);
-void typer(std::string& str, int speed);
-void trinket_checker(trinket temp_trinket);
-int master_damage_roller(int dice_i, int sides_i);
-int trinket_run(int hero_total_atk);
+void ShowConsoleCursor(bool);
+void typer(std::string&, int);
+void trinket_checker(trinket);
+void weapon_checker(weapon);
+void armor_checker(armor);
+int master_damage_roller(int, int);
+int trinket_run(int);
 int crit_roller();
-int baseDamage_roller(int dice_i, int sides_i);
-int final_calculations(int crit, int final);
+int baseDamage_roller(int, int);
+int final_calculations(int, int);
 
 // Print Images
 void print_blacksmith();
