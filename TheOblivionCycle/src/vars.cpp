@@ -85,8 +85,8 @@ armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 17, "" };
 armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "" };
 
 // Hero Initial Creation
-// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
-player hero_player = { "Player", 100, 100, 0, 0, 0, 0, 1, 1, 0, 1, 2, 1, 0, 0, 3 };
+// name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
+player hero_player = { "Player", 100, 100, 0, 1, 1, 0, 1, 2, 1, 0, 0, 3 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
 
@@ -94,17 +94,17 @@ armor hero_armor = tunic;
 // Monsters /////////////////////////////
 /////////////////////////////////////////
 
-// name, hp, hp_max, luck, DEF_m, DEF_s, DEF_b, level, prof, ac, damage, exp, essence
-
+// name, hp, hp_max, luck, level, prof, ac, damage, exp, essence
+// enemy luck reduces crit chance.
 // LVL 1
-monster zombie = { "Zombie",22,22,0,0,0,0,1,1,8,"1d2",10,10};
-monster skeleton = { "Skeleton",13,13,0,0,0,0,1,1,13,"1d2",5,5};
-monster giant_bat = { "Giant Bat",22,22,0,0,0,0,1,1,13,"1d2",10,10};
-monster giant_boar = { "Giant Boar",26,26,0,0,0,0,1,1,12,"1d2",15,12};
+monster zombie = { "Zombie",22,22,0,1,1,8,"1d2",10,10};
+monster skeleton = { "Skeleton",13,13,0,1,1,13,"1d2",5,5};
+monster giant_bat = { "Giant Bat",22,22,0,1,1,13,"1d2",10,10};
+monster giant_boar = { "Giant Boar",26,26,0,1,1,12,"1d2",15,12};
 // LVL 2
-monster ash_zombie = { "Ash Zombie",40,40,0,0,0,0,2,2,8,"1d4",15,15 };
-monster skeleton_warrior = { "Skeletal Warrior",35,35,0,0,0,0,2,2,13,"1d4",9,9 };
-monster giant_centipede = { "Giant Centipede",38,38,0,0,0,0,2,2,13,"1d4",15,15 };
-monster goblin = { "Goblin",42,42,0,0,0,0,2,2,12,"1d4",20,18 };
+monster ash_zombie = { "Ash Zombie",40,40,1,2,2,8,"1d4",15,15 };
+monster skeleton_warrior = { "Skeletal Warrior",35,35,0,2,2,13,"1d4",9,9 };
+monster giant_centipede = { "Giant Centipede",38,38,0,2,2,13,"1d4",15,15 };
+monster goblin = { "Goblin",42,42,2,2,2,12,"1d4",20,18 };
 
 monster monsters_all[8] = { zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin };

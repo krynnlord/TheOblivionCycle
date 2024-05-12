@@ -18,9 +18,6 @@ public:
     int hp;
     int hp_max;
     int luck;
-    int DEF_m;
-    int DEF_s;
-    int DEF_b;
     int level;
     int prof;
     int exp;
@@ -39,9 +36,6 @@ public:
     int hp;
     int hp_max;
     int luck;
-    int DEF_m;
-    int DEF_s;
-    int DEF_b;
     int level;
     int prof;
     int ac;

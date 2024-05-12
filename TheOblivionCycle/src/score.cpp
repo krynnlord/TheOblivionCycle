@@ -4,7 +4,7 @@ void player_score()
 {
     string quest_text = "";
     if (hero_player.quest_level == 0) { quest_text = "NONE"; }
-    if (hero_player.quest_level == 1) { quest_text = "INVESTIGATE THE PORTAL"; }
+    if (hero_player.quest_level == 1) { quest_text = "INVESTIGATE THE RED GATE"; }
     
     
     print_score();
