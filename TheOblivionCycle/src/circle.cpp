@@ -32,7 +32,7 @@ int circleofstones(int i)
         battle_loop(1);
     }
 
-    if (ans == "0")
+    if (ans == "0" or ans == "\033")
         { 
             return 1; 
         }

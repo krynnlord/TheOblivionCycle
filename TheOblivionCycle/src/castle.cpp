@@ -24,7 +24,7 @@ int castle(int i)
         ans2 = _getch();
     }
 
-    if (ans == "0")
+    if (ans == "0" or ans == "\033")
         { 
             return 1; 
         }

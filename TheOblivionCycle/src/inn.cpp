@@ -20,7 +20,7 @@ int inn(int i)
         gambling();
     }
 
-    if (ans == "0")
+    if (ans == "0" or ans == "\033")
         { 
             return 1; 
         }

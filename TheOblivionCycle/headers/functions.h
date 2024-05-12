@@ -47,6 +47,7 @@ void typer(std::string&, int);
 void trinket_checker(trinket);
 void weapon_checker(weapon);
 void armor_checker(armor);
+void check_weapon_purchase(weapon&);
 int master_damage_roller(int, int);
 int trinket_run(int);
 int crit_roller();

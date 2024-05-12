@@ -2,107 +2,156 @@
 
 int blacksmith(int i)
 {
-
-
-    // Print Menu Options
-    cout << "("; Color(6); cout << "1"; Color(7); cout << ") Buy Weapons" << endl;
-    cout << "("; Color(6); cout << "2"; Color(7); cout << ") Buy Armor" << endl;
-    cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
-
-    // Input Selection
-    string ans = "";
-    ShowConsoleCursor(false);
-    ans = _getch();
-
-    
-    if (ans == "0")
-        { 
-            return 1; 
-        }
-    if (ans == "1")
+    int b = 0;
+    while (b == 0)
     {
-        buy_weapons();
+        print_blacksmith();
+        show_statbar();
+        
+        // Print Menu Options
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") Buy Weapons" << endl;
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") Buy Armor" << endl;
+        cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
+
+        // Input Selection
+        string ans = "";
+        ShowConsoleCursor(false);
+        ans = _getch();
+
+
+        if (ans == "0" or ans == "\033")
+        {
+            return 1;
+        }
+        if (ans == "1")
+        {
+            buy_weapons();
+        }
+
+        else { return 0; }
     }
-
-    else {return 0;}
-
+    
     return 1;
 
 }
 
 void buy_weapons()
 {
-    print_blacksmith();
-    show_statbar();
-    if (dagger.have == 0) 
-    { 
-        cout << left << setw(20) << "[1] Dagger";
-        cout << "Cost: ";
-        cout << left << setw(10) << dagger.cost;
-        cout << "Damage: " << dagger.damage << endl;
-    }
-    if (mace.have == 0)
+    int i = 0;
+    while (i == 0)
     {
-        cout << left << setw(20) << "[2] Mace";
-        cout << "Cost: ";
-        cout << left << setw(10) << mace.cost;
-        cout << "Damage: " << mace.damage << endl;
-    }
-    if (shortsword.have == 0) 
-    {
-        cout << left << setw(20) << "[3] Short Sword";
-        cout << "Cost: ";
-        cout << left << setw(10) << shortsword.cost;
-        cout << "Damage: " << shortsword.damage << endl;
-    }
-    if (lighthammer.have == 0) 
-    { 
-        cout << left << setw(20) << "[4] Light Hammer";
-        cout << "Cost: ";
-        cout << left << setw(10) << lighthammer.cost;
-        cout << "Damage: " << lighthammer.damage << endl;
-    }
-    if (warhammer.have == 0) 
-    { 
-        cout << left << setw(20) << "[5] Warhammer";
-        cout << "Cost: ";
-        cout << left << setw(10) << warhammer.cost;
-        cout << "Damage: " << warhammer.damage << endl;
-    }
-    if (longsword.have == 0)
-    {
-        cout << left << setw(20) << "[6] Long Sword";
-        cout << "Cost: ";
-        cout << left << setw(10) << longsword.cost;
-        cout << "Damage: " << longsword.damage << endl;
-    }
-    if (greatsword.have == 0) 
-    { 
-        cout << left << setw(20) << "[7] Greatsword";
-        cout << "Cost: ";
-        cout << left << setw(10) << greatsword.cost;
-        cout << "Damage: " << greatsword.damage << endl;
-    }
-    if (maul.have == 0) 
-    { 
-        cout << left << setw(20) << "[8] Maul";
-        cout << "Cost: ";
-        cout << left << setw(10) << maul.cost;
-        cout << "Damage: " << maul.damage << endl;
-    }
-    cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    cout << "Have a look at my weapons. Are you interested in anything?" << endl;
-    cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    
-    ShowConsoleCursor(true);
-    string ansr;
-    cout << "Purchase> ";
-    cin >> ansr;
+        print_blacksmith();
+        show_statbar();
+        if (dagger.have == 0)
+        {
+            cout << left << setw(20) << "[1] Dagger";
+            cout << "Cost: ";
+            cout << left << setw(10) << dagger.cost;
+            cout << "Damage: " << dagger.damage << endl;
+        }
+        if (mace.have == 0)
+        {
+            cout << left << setw(20) << "[2] Mace";
+            cout << "Cost: ";
+            cout << left << setw(10) << mace.cost;
+            cout << "Damage: " << mace.damage << endl;
+        }
+        if (shortsword.have == 0)
+        {
+            cout << left << setw(20) << "[3] Short Sword";
+            cout << "Cost: ";
+            cout << left << setw(10) << shortsword.cost;
+            cout << "Damage: " << shortsword.damage << endl;
+        }
+        if (lighthammer.have == 0)
+        {
+            cout << left << setw(20) << "[4] Light Hammer";
+            cout << "Cost: ";
+            cout << left << setw(10) << lighthammer.cost;
+            cout << "Damage: " << lighthammer.damage << endl;
+        }
+        if (warhammer.have == 0)
+        {
+            cout << left << setw(20) << "[5] Warhammer";
+            cout << "Cost: ";
+            cout << left << setw(10) << warhammer.cost;
+            cout << "Damage: " << warhammer.damage << endl;
+        }
+        if (longsword.have == 0)
+        {
+            cout << left << setw(20) << "[6] Long Sword";
+            cout << "Cost: ";
+            cout << left << setw(10) << longsword.cost;
+            cout << "Damage: " << longsword.damage << endl;
+        }
+        if (greatsword.have == 0)
+        {
+            cout << left << setw(20) << "[7] Greatsword";
+            cout << "Cost: ";
+            cout << left << setw(10) << greatsword.cost;
+            cout << "Damage: " << greatsword.damage << endl;
+        }
+        if (maul.have == 0)
+        {
+            cout << left << setw(20) << "[8] Maul";
+            cout << "Cost: ";
+            cout << left << setw(10) << maul.cost;
+            cout << "Damage: " << maul.damage << endl;
+        }
+        cout << endl;
+        cout << "--- The Blacksmith --~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        cout << "Are you interested in any of my weapons?" << endl;
+        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl << endl;
 
 
-    ShowConsoleCursor(false);
+        string ansr;
+        ansr = _getch();
+
+        if (ansr == "\033" or ansr == "0")
+        {
+            i = 1;
+        }
+        
+        if (ansr == "1" and dagger.have == 1){;}
+        if (ansr == "1" and dagger.have != 1) { check_weapon_purchase(dagger); }
+        if (ansr == "2" and mace.have == 1) { ; }
+        if (ansr == "2" and mace.have != 1) { check_weapon_purchase(mace); }
+        if (ansr == "3" and shortsword.have == 1) { ; }
+        if (ansr == "3" and shortsword.have != 1) { check_weapon_purchase(shortsword); }
+        if (ansr == "4" and lighthammer.have == 1) { ; }
+        if (ansr == "4" and lighthammer.have != 1) { check_weapon_purchase(lighthammer); }
+        if (ansr == "5" and warhammer.have == 1) { ; }
+        if (ansr == "5" and warhammer.have != 1) { check_weapon_purchase(warhammer); }
+        if (ansr == "6" and longsword.have == 1) { ; }
+        if (ansr == "6" and longsword.have != 1) { check_weapon_purchase(longsword); }
+        if (ansr == "7" and greatsword.have == 1) { ; }
+        if (ansr == "7" and greatsword.have != 1) { check_weapon_purchase(greatsword); }
+        if (ansr == "8" and maul.have == 1) { ; }
+        if (ansr == "8" and maul.have != 1) { check_weapon_purchase(maul); }
+
+    }
 
 }
+
+void check_weapon_purchase(weapon& temp_weapon)
+{
+    if (hero_player.gold < temp_weapon.cost)
+            {
+                cout << "You cannot afford the " << temp_weapon.name << "!";
+                Sleep(3000);
+
+            }
+            if (hero_player.gold >= temp_weapon.cost)
+            {
+                cout << "You purchase the " << temp_weapon.name << "!";
+                temp_weapon.have = 1;
+                hero_player.gold -= temp_weapon.cost;
+                Sleep(3000);
+
+            }
+
+}
+
 
 void buy_armor()
 {

@@ -15,7 +15,7 @@ int mystic(int i)
     ans = _getch();
 
 
-    if (ans == "0")
+    if (ans == "0" or ans == "\033")
         { 
             return 1; 
         }

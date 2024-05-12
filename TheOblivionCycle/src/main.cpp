@@ -82,8 +82,7 @@ void adventure()
             int i = 0;
             while (i==0) 
             {    
-                print_blacksmith();
-                show_statbar();
+                
                 i = blacksmith(i);
             } 
         }

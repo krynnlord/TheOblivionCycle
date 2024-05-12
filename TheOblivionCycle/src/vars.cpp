@@ -55,7 +55,7 @@ weapon hands = { 1, "Hands", "BLUNT", 0, "1d2","Your bare hands", 1 };
 weapon club = { 2, "Club", "BLUNT", 200, "1d4", "",0 };
 weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "",0 };
 weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "",0 };
-weapon warhammer = { 5, "warhammer", "BLUNT", 1000, "1d10", "",0 };
+weapon warhammer = { 5, "Warhammer", "BLUNT", 1000, "1d10", "",0 };
 weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "",0 };
 
 // Slashing
