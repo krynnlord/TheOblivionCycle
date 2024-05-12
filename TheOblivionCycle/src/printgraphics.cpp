@@ -484,3 +484,20 @@ void print_portal()
     cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
     cout << line21 << endl << endl;
 }
+
+void print_music_player()
+{
+    system("cls");
+    Color(12);
+
+    string line1 = R"( __  __ _    _  _____ _____ _____               |\)";
+    string line2 = R"(|  \/  | |  | |/ ____|_   _/ ____| ---|\--------|-\\-----)";
+    string line3 = R"(| \  / | |  | | (___   | || |      ---|/-------0---\|----)";
+    string line4 = R"(| |\/| | |  | |\___ \  | || |      --/|-------------|----)";
+    string line5 = R"(| |  | | |__| |____) |_| || |____  -|-/-\----------0-----)";
+    string line6 = R"(|_|  |_|\____/|_____/|_____\_____| --\|/-----------------)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    Color(7);
+
+}

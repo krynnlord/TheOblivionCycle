@@ -4,6 +4,7 @@
 int intro_sequence = 1;
 int music_setting = 1;
 int music_vol = 100;
+int music_track = 2;
 
 //Battle Seq
 int crit_result = 0;
@@ -129,26 +130,16 @@ void adventure()
 /////////////////////////////
 int main() 
 {
-     // Loads Game
+    // Loads Game
     load_game();
 
     // Check for Sound Enabled or Disabled
     if (music_setting == 1) 
-    {
-        fstream musicfiletest;
-        musicfiletest.open("data/music/01.wav");
-        if(!musicfiletest)
-        {
-            music_setting = 0;
-            cout << "Music File Missing. Setting Music to off....";
-            Sleep(2000);
-        }
-        else
-        {
-            PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
-        }
+    { 
+        stream_music(music_track);
+        
     }
-   
+    
     // Check for Intro Enabled or Disabled
     if (intro_sequence == 1) { intro(); }
         

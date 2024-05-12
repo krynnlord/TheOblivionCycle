@@ -48,6 +48,7 @@ txtOut << "*** GAME SETTINGS ***" << endl;
 txtOut << intro_sequence << endl;
 txtOut << music_setting << endl;
 txtOut << music_vol << endl;
+txtOut << music_track << endl;
 txtOut << "*** TRINKETS ***" << endl;
 txtOut << rabbit_foot.have << endl;
 txtOut << dragon_talon.have << endl;
@@ -104,6 +105,7 @@ getline(txtIn, emptyline);
 getline(txtIn, emptyline); istringstream s20(emptyline); s20 >> intro_sequence;
 getline(txtIn, emptyline); istringstream s21(emptyline); s21 >> music_setting;
 getline(txtIn, emptyline); istringstream s22(emptyline); s22 >> music_vol;
+getline(txtIn, emptyline); istringstream s94(emptyline); s94 >> music_track;
 getline(txtIn, emptyline); // TRINKETS
 getline(txtIn, emptyline); istringstream s23(emptyline); s23 >> rabbit_foot.have;
 getline(txtIn, emptyline); istringstream s24(emptyline); s24 >> dragon_talon.have;

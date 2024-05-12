@@ -3,6 +3,7 @@
 extern int intro_sequence;
 extern int music_setting; // 1-on 0-off
 extern int music_vol; //0 mut 100 full
+extern int music_track;
 extern int exit_mode; // leave game via main menu
 
 int options(int i)
@@ -20,27 +21,23 @@ int options(int i)
     cout << "Currently ";
     if (music_setting == 1) { Color(2); cout << "(On)"; Color(7); cout << endl; }
     if (music_setting == 0) { Color(4); cout << "(Off)"; Color(7); cout << endl; }
-    //Volume
-    //Color(6); cout << "- +"; Color(7); cout << "";
-    //cout << " Music Volume: [";
-    //
-    //// Print Volume HPbar
-    //bar_ticks += music_vol / 5;
-    //while (bar_ticks > 0)
-    //{
-    //    vol_bar += ":";
-    //    bar_ticks -= 1;
-    //}
-    //vol_line = vol_bar;
-    //Color(2); cout << left << setw(20); cout << vol_line; Color(7); cout << "] " << endl;
     
-
-
-
-
-
-    cout << "("; Color(6); cout << "3"; Color(7); cout << ") Information" << endl;
-    cout << "("; Color(6); cout << "4"; Color(7); cout << ") Back" << endl;
+    //Volume
+    Color(6); cout << "- +"; Color(7); cout << "";
+    cout << " Music Volume: [";
+    
+    // Print Volume HPbar
+    bar_ticks += music_vol / 5;
+    while (bar_ticks > 0)
+    {
+        vol_bar += ":";
+        bar_ticks -= 1;
+    }
+    vol_line = vol_bar;
+    Color(2); cout << left << setw(20); cout << vol_line; Color(7); cout << "] " << endl;
+    cout << "("; Color(6); cout << "3"; Color(7); cout << ") Music Player" << endl;
+    cout << "("; Color(6); cout << "4"; Color(7); cout << ") Information" << endl << endl;
+    cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     // Input Selection
     string ans = "";
@@ -50,38 +47,33 @@ int options(int i)
     if (ans == "1") 
         if (intro_sequence == 1) { intro_sequence = 0; }
         else { intro_sequence = 1; }
-    
+    if (ans == "3")
+    {
+        music_player();
+    }
+
+
     if (ans == "2")
         if (music_setting == 1) 
         { 
             music_setting = 0;
-            PlaySound(NULL, NULL, 0);
+            mciSendString(L"close MyFile", NULL, 0, 0);
         }
         else 
         { 
-            fstream musicfiletest;
-            musicfiletest.open("data/music/01.wav");
-            if (!musicfiletest)
-            {
-                music_setting = 0;
-                cout << "\nMusic File Missing. Keeping music setting off....";
-                Sleep(2000);
-            }
-            else
-            {
                 music_setting = 1;
-                PlaySound(L"data/music/01.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
-            }
-                        
+                stream_music(music_track);
         }
 
-    if (ans == "3")
+    if (ans == "4")
         { 
         print_gameinfo();
         Color(6); cout  << "\n\nGame:"; Color(7); cout << " The Oblivion Cycle, Part I: The Shimmering Gate" << endl;
         Color(6); cout << "Version:"; Color(7); cout<< " .01" << endl;
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
+        Color(6); cout << "Music:"; Color(7); cout << " Alkakrab - Itch.io"; cout << endl;
+
             string temp;
             temp = _getch();
         }
@@ -97,6 +89,32 @@ int options(int i)
         {
             music_vol += 20;
         }
+        if (music_vol == 100)
+        {
+            mciSendString(L"setaudio MyFile volume to 1000", NULL, 1, 0);
+
+        }
+        if (music_vol == 80)
+        {
+            mciSendString (L"setaudio MyFile volume to 800", NULL, 1, 0);
+
+        }
+        if (music_vol == 60)
+        {
+            mciSendString(L"setaudio MyFile volume to 600", NULL, 1, 0);
+
+        }
+        if (music_vol == 40)
+        {
+            mciSendString(L"setaudio MyFile volume to 400", NULL, 1, 0);
+
+        }
+        if (music_vol == 20)
+        {
+            mciSendString(L"setaudio MyFile volume to 200", NULL, 1, 0);
+
+        }
+
     }
 
     if (ans == "-" or ans == "_")
@@ -109,11 +127,36 @@ int options(int i)
         {
             music_vol -= 20;
         }
+        if (music_vol == 0)
+        {
+            mciSendString(L"setaudio MyFile volume to 0", NULL, 1, 0);
+
+        }
+        if (music_vol == 80)
+        {
+            mciSendString(L"setaudio MyFile volume to 800", NULL, 1, 0);
+
+        }
+        if (music_vol == 60)
+        {
+            mciSendString(L"setaudio MyFile volume to 600", NULL, 1, 0);
+
+        }
+        if (music_vol == 40)
+        {
+            mciSendString(L"setaudio MyFile volume to 400", NULL, 1, 0);
+
+        }
+        if (music_vol == 20)
+        {
+            mciSendString(L"setaudio MyFile volume to 200", NULL, 1, 0);
+
+        }
     }
 
 
 
-    if (ans == "4") { return 1; }
+    if (ans == "0") { return 1; }
 
     return 0;
 
@@ -295,4 +338,165 @@ void help_screen()
                 i = 1;
             }
     }
+}
+
+void check_music_vol()
+{
+    if (music_vol == 0)
+    {
+        mciSendString(L"setaudio MyFile volume to 0", NULL, 1, 0);
+    }
+    if (music_vol == 20)
+    {
+        mciSendString(L"setaudio MyFile volume to 200", NULL, 1, 0);
+    }
+    if (music_vol == 40)
+    {
+        mciSendString(L"setaudio MyFile volume to 400", NULL, 1, 0);
+    }
+    if (music_vol == 60)
+    {
+        mciSendString(L"setaudio MyFile volume to 600", NULL, 1, 0);
+    }
+    if (music_vol == 80)
+    {
+        mciSendString(L"setaudio MyFile volume to 800", NULL, 1, 0);
+    }
+    if (music_vol == 100)
+    {
+        mciSendString(L"setaudio MyFile volume to 1000", NULL, 1, 0);
+    }
+}
+
+void music_player()
+{
+    int keep = 1;
+    while (keep == 1)
+    {
+        string music_text;
+        if (music_track == 1) { music_text = "Elven Ruins"; }
+        if (music_track == 2) { music_text = "To Oblivion"; }
+        if (music_track == 3) { music_text = "Mysterious Gate"; }
+        if (music_track == 4) { music_text = "Cryptic Walls"; }
+        if (music_track == 5) { music_text = "Bard's Story"; }
+        if (music_track == 6) { music_text = "Shimmering Lights"; }
+        if (music_track == 7) { music_text = "The Iron Wall"; }
+        if (music_track == 8) { music_text = "Lullaby"; }
+        if (music_track == 9) { music_text = "Spiraling Descent"; }
+        if (music_track == 10) { music_text = "Distant Stars"; }
+        if (music_track == 11) { music_text = "Judgement"; }
+        if (music_track == 12) { music_text = "Ascendancy"; }
+
+        print_music_player();
+        int bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
+        cout << "Currently Selected: " << music_text << endl;
+        bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
+        cout << endl;
+        cout << "[1] Elven Ruins          [7] The Iron Wall" << endl;
+        cout << "[2] To Oblivion          [8] Lullaby" << endl;
+        cout << "[3] Mysterious Gate      [9] Spiraling Descent" << endl;
+        cout << "[4] Cryptic Walls        [a] Distant Stars" << endl;
+        cout << "[5] Bard's Story         [b] Judgement" << endl;
+        cout << "[6] Shimmering Lights    [c] Ascendancy" << endl << endl;
+        cout << "[0] Back" << endl;
+
+        string ans;
+        ans = _getch();
+
+        if (ans == "1") { music_track = 1; stream_music(music_track); }
+        if (ans == "2") { music_track = 2; stream_music(music_track); }
+        if (ans == "3") { music_track = 3; stream_music(music_track); }
+        if (ans == "4") { music_track = 4; stream_music(music_track); }
+        if (ans == "5") { music_track = 5; stream_music(music_track); }
+        if (ans == "6") { music_track = 6; stream_music(music_track); }
+        if (ans == "7") { music_track = 7; stream_music(music_track); }
+        if (ans == "8") { music_track = 8; stream_music(music_track); }
+        if (ans == "9") { music_track = 9; stream_music(music_track); }
+        if (ans == "a") { music_track = 10; stream_music(music_track);}
+        if (ans == "b") { music_track = 11; stream_music(music_track);}
+        if (ans == "c") { music_track = 12; stream_music(music_track);}
+        if (ans == "0") { keep=0; }
+
+        
+    }
+}
+
+void stream_music(int music_selected)
+{
+    if (music_selected == 1)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/01.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 2)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/02.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 3)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/03.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 4)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/04.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 5)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/05.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 6)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/06.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 7)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/07.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 8)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/08.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 9)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/09.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 10)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/10.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 11)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/11.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    if (music_selected == 12)
+    {
+        mciSendString(L"close MyFile", NULL, 0, 0);
+        mciSendString(L"open data/music/12.mp3 alias MyFile", NULL, 0, 0);
+        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+    }
+    
+    
+    
+    check_music_vol(); // last step
 }
