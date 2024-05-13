@@ -30,7 +30,7 @@ int options(int i)
     bar_ticks += music_vol / 5;
     while (bar_ticks > 0)
     {
-        vol_bar += ":";
+        vol_bar += "#";
         bar_ticks -= 1;
     }
     vol_line = vol_bar;
