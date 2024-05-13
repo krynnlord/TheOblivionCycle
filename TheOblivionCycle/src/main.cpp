@@ -102,8 +102,6 @@ void adventure()
             int i = 0;
             while (i==0) 
             {    
-                print_inn();
-                show_statbar();
                 i = inn(i);
             } 
         }

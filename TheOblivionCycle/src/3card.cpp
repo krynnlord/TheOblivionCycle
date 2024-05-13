@@ -273,13 +273,14 @@ void gambling()
 	while (i == 0)
 	{
 		
-
+		int dontrun = 0;
 		int bet = 0;
 		int result = 0;
 		int fakemoney = 0;
 		b = 0;
 		while (b == 0)
 		{
+			dontrun = 1;
 			bet = 0;
 			print_gambling();
 			cout << "\nGold: " << left << setw(8); cout << hero_player.gold << " [0] Back" << endl << endl;
@@ -289,79 +290,83 @@ void gambling()
 			cout << "[4] 100 GOLD   [8] 1000 GOLD" << endl;
 
 			ans = _getch();
-			if (ans == "1") { bet = 10; }
-			if (ans == "2") { bet = 20; }
-			if (ans == "3") { bet = 50; }
-			if (ans == "4") { bet = 100; }
-			if (ans == "5") { bet = 200; }
-			if (ans == "6") { bet = 300; }
-			if (ans == "7") { bet = 500; }
-			if (ans == "8") { bet = 1000; }
-			if (ans == "0") { return; }
+			if (ans == "1") { bet = 10; dontrun = 0; }
+			if (ans == "2") { bet = 20; dontrun = 0;}
+			if (ans == "3") { bet = 50; dontrun = 0;}
+			if (ans == "4") { bet = 100; dontrun = 0;}
+			if (ans == "5") { bet = 200; dontrun = 0;}
+			if (ans == "6") { bet = 300; dontrun = 0;}
+			if (ans == "7") { bet = 500; dontrun = 0;}
+			if (ans == "8") { bet = 1000; dontrun = 0;}
+			if (ans == "0" or ans == "\033") { return; }
+			
 
-
-			fakemoney = hero_player.gold;
-			result = fakemoney -= bet;
-
-			if (result < 0)
+			if (dontrun == 0)
 			{
-				cout << "You can't afford that!"; Sleep(4000);
-				b = 1;
-			}
-			else
-			{
-				cout << "\nBetting " << bet << " gold. Good Luck!";
-				hero_player.gold -= bet;
-				
-				b = 1;
+				fakemoney = hero_player.gold;
+				result = fakemoney -= bet;
 
-				roll1 = 0;
-				roll2 = 0;
-				roll3 = 0;
-
-				int rollresult = 0;
-
-				srand((unsigned)time(NULL));
-				rollresult = 2 + rand() % 8 + 1;
-				roll1 = rollresult;
-				Sleep(1000);
-				rollresult = 2 + rand() % 8 + 1;
-				roll2 = rollresult;
-				Sleep(1000);
-				rollresult = 2 + rand() % 8 + 1;
-				roll3 = rollresult;
-
-				cout << endl;
-
-				printroll(roll1, roll2, roll3);
-
-				cout << endl;
-
-				if (roll1 == roll2 == roll3)
+				if (result < 0)
 				{
-					cout << "Triple! You won big!! ";
-					hero_player.gold += bet;
-					bet *= 3;
-					hero_player.gold += bet;
-					Sleep(3000);
+					cout << "You can't afford that!"; Sleep(4000);
+					b = 1;
 				}
-
-
-				if (roll1 == roll2 or roll1 == roll3 or roll2 == roll3)
-				{
-					cout << "Double! Your a winner!! ";
-					hero_player.gold += bet;
-					bet *= 2;
-					hero_player.gold += bet;
-					Sleep(3000);
-				}
-
 				else
 				{
-					cout << "You lose!";
-					Sleep(2000);
-				}
+					cout << "\nBetting " << bet << " gold. Good Luck!";
+					hero_player.gold -= bet;
 
+					b = 1;
+
+					roll1 = 0;
+					roll2 = 0;
+					roll3 = 0;
+
+					int rollresult = 0;
+
+					srand((unsigned)time(NULL));
+					rollresult = 2 + rand() % 8 + 1;
+					roll1 = rollresult;
+					Sleep(1000);
+					rollresult = 2 + rand() % 8 + 1;
+					roll2 = rollresult;
+					Sleep(1000);
+					rollresult = 2 + rand() % 8 + 1;
+					roll3 = rollresult;
+
+					cout << endl;
+
+					printroll(roll1, roll2, roll3);
+
+					cout << endl;
+
+					if (roll1 == roll2 == roll3)
+					{
+						cout << "Triple! You won big!! ";
+						hero_player.gold += bet;
+						bet *= 3;
+						hero_player.gold += bet;
+						Sleep(3000);
+					}
+
+
+					if (roll1 == roll2 or roll1 == roll3 or roll2 == roll3)
+					{
+						cout << "Double! Your a winner!! ";
+						hero_player.gold += bet;
+						bet *= 2;
+						hero_player.gold += bet;
+						Sleep(3000);
+					}
+
+					else
+					{
+						cout << "You lose!";
+						Sleep(2000);
+					}
+
+
+				}
 			}
 
 		}

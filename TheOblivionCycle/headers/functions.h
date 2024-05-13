@@ -41,6 +41,8 @@ void help_screen();
 void weapons_display();
 void armor_display();
 void printroll(int, int, int);
+void change_weapon();
+void change_armor();
 void gambling();
 void show_statbar();
 void ShowConsoleCursor(bool);
