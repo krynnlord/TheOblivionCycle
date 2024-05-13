@@ -21,6 +21,8 @@ void battle_loop(int);
 void loot(monster);
 void buy_weapons();
 void buy_armor();
+void weapon_equipper(weapon);
+void armor_equipper(armor);
 void buy_trinket();
 void Color(int color);
 void CreateHero();

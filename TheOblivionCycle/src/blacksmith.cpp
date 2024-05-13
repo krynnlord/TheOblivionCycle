@@ -142,7 +142,7 @@ void check_weapon_purchase(weapon& temp_weapon)
     if (hero_player.gold < temp_weapon.cost)
             {
                 cout << "You cannot afford the " << temp_weapon.name << "!";
-                Sleep(3000);
+                Sleep(2000);
 
             }
             if (hero_player.gold >= temp_weapon.cost)
@@ -150,7 +150,7 @@ void check_weapon_purchase(weapon& temp_weapon)
                 cout << "You purchase the " << temp_weapon.name << "!";
                 temp_weapon.have = 1;
                 hero_player.gold -= temp_weapon.cost;
-                Sleep(3000);
+                Sleep(2000);
 
             }
 
@@ -244,7 +244,7 @@ void check_armor_purchase(armor& temp_armor)
     if (hero_player.gold < temp_armor.cost)
     {
         cout << "You cannot afford the " << temp_armor.name << "!";
-        Sleep(3000);
+        Sleep(2000);
 
     }
     if (hero_player.gold >= temp_armor.cost)
@@ -252,7 +252,7 @@ void check_armor_purchase(armor& temp_armor)
         cout << "You purchase the " << temp_armor.name << "!";
         temp_armor.have = 1;
         hero_player.gold -= temp_armor.cost;
-        Sleep(3000);
+        Sleep(2000);
 
     }
 

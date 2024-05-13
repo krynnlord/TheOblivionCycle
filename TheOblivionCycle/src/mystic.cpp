@@ -122,7 +122,7 @@ void check_trinket_purchase(trinket& temp_trinket)
     if (hero_player.gold < temp_trinket.cost)
     {
         cout << "You cannot afford the " << temp_trinket.name << "!";
-        Sleep(3000);
+        Sleep(2000);
 
     }
     if (hero_player.gold >= temp_trinket.cost)
@@ -130,7 +130,7 @@ void check_trinket_purchase(trinket& temp_trinket)
         cout << "You purchase the " << temp_trinket.name << "!";
         temp_trinket.have = 1;
         hero_player.gold -= temp_trinket.cost;
-        Sleep(3000);
+        Sleep(2000);
 
     }
 
