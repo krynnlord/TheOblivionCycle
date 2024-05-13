@@ -191,4 +191,4 @@ extern monster ash_zombie;
 extern monster skeleton_warrior;
 extern monster giant_centipede;
 extern monster goblin;
-extern monster monsters_all[];
+extern vector<monster> monsters_all;

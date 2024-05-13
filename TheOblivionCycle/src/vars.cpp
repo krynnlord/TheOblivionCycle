@@ -107,4 +107,4 @@ monster skeleton_warrior = { "Skeletal Warrior",35,35,0,2,2,13,"1d4",9,9 };
 monster giant_centipede = { "Giant Centipede",38,38,0,2,2,13,"1d4",15,15 };
 monster goblin = { "Goblin",42,42,2,2,2,12,"1d4",20,18 };
 
-monster monsters_all[8] = { zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin };
+vector<monster> monsters_all = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin};

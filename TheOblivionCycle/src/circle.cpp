@@ -53,8 +53,8 @@ void battle_loop(int gate)
 
     // Roll for Monster based on hero level
     vector<monster> monsterlist;
-        
-    for (int i = 0; i < 8; i++)
+       
+    for (int i = 0; i < size(monsters_all); i++)
     {
         if (monsters_all[i].level == hero_player.level)
         {
