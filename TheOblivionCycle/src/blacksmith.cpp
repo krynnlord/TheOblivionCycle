@@ -27,6 +27,10 @@ int blacksmith(int i)
         {
             buy_weapons();
         }
+        if (ans == "2")
+        {
+            buy_armor();
+        }
 
         else { return 0; }
     }
@@ -155,7 +159,101 @@ void check_weapon_purchase(weapon& temp_weapon)
 
 void buy_armor()
 {
+    int i = 0;
+    while (i == 0)
+    {
+        print_blacksmith();
+        show_statbar();
+        if (cloth_armor.have == 0)
+        {
+            cout << left << setw(20) << "[1] Cloth Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << cloth_armor.cost;
+            cout << "AC: " << cloth_armor.armorclass << endl;
+        }
+        if (leather_armor.have == 0)
+        {
+            cout << left << setw(20) << "[2] Leather Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << leather_armor.cost;
+            cout << "AC: " << leather_armor.armorclass << endl;
+        }
+        if (chain_armor.have == 0)
+        {
+            cout << left << setw(20) << "[3] Chain Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << chain_armor.cost;
+            cout << "AC: " << chain_armor.armorclass << endl;
+        }
+        if (scale_armor.have == 0)
+        {
+            cout << left << setw(20) << "[4] Scale Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << scale_armor.cost;
+            cout << "AC: " << scale_armor.armorclass << endl;
+        }
+        if (splint_armor.have == 0)
+        {
+            cout << left << setw(20) << "[5] Splint Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << splint_armor.cost;
+            cout << "AC: " << splint_armor.armorclass << endl;
+        }
+        if (plate_armor.have == 0)
+        {
+            cout << left << setw(20) << "[6] Plate Armor";
+            cout << "Cost: ";
+            cout << left << setw(10) << plate_armor.cost;
+            cout << "AC: " << plate_armor.armorclass << endl;
+        }
+ 
+        cout << endl;
+        cout << "--- The Blacksmith --~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        cout << "Are you interested in any of these fine armor sets?" << endl;
+        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl << endl;
 
 
+        string ansr;
+        ansr = _getch();
+
+        if (ansr == "\033" or ansr == "0")
+        {
+            i = 1;
+        }
+
+        if (ansr == "1" and cloth_armor.have == 1) { ; }
+        if (ansr == "1" and cloth_armor.have != 1) { check_armor_purchase(cloth_armor); }
+        if (ansr == "2" and leather_armor.have == 1) { ; }
+        if (ansr == "2" and leather_armor.have != 1) { check_armor_purchase(leather_armor); }
+        if (ansr == "3" and chain_armor.have == 1) { ; }
+        if (ansr == "3" and chain_armor.have != 1) { check_armor_purchase(chain_armor); }
+        if (ansr == "4" and scale_armor.have == 1) { ; }
+        if (ansr == "4" and scale_armor.have != 1) { check_armor_purchase(scale_armor); }
+        if (ansr == "5" and splint_armor.have == 1) { ; }
+        if (ansr == "5" and splint_armor.have != 1) { check_armor_purchase(splint_armor); }
+        if (ansr == "6" and plate_armor.have == 1) { ; }
+        if (ansr == "6" and plate_armor.have != 1) { check_armor_purchase(plate_armor); }
+
+    }
+
+
+}
+
+void check_armor_purchase(armor& temp_armor)
+{
+    if (hero_player.gold < temp_armor.cost)
+    {
+        cout << "You cannot afford the " << temp_armor.name << "!";
+        Sleep(3000);
+
+    }
+    if (hero_player.gold >= temp_armor.cost)
+    {
+        cout << "You purchase the " << temp_armor.name << "!";
+        temp_armor.have = 1;
+        hero_player.gold -= temp_armor.cost;
+        Sleep(3000);
+
+    }
 
 }

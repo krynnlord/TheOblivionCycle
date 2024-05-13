@@ -51,7 +51,7 @@ txtOut << rabbit_foot.have << endl;
 txtOut << dragon_talon.have << endl;
 txtOut << azure_neclace.have << endl;
 txtOut << witch_effegy.have << endl;
-txtOut << vail_blood.have << endl;
+txtOut << vial_blood.have << endl;
 txtOut << frozen_tear.have;
 txtOut.close();
 
@@ -105,7 +105,7 @@ getline(txtIn, emptyline); istringstream s23(emptyline); s23 >> rabbit_foot.have
 getline(txtIn, emptyline); istringstream s24(emptyline); s24 >> dragon_talon.have;
 getline(txtIn, emptyline); istringstream s25(emptyline); s25 >> azure_neclace.have;
 getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
-getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vail_blood.have;
+getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vial_blood.have;
 getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
 txtIn.close();
 

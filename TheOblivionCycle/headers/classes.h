@@ -62,6 +62,7 @@ public:
     int id;
     string name;
     string desc;
+    int cost;
     int mod_type; //(1)Attack (2)Defense
     int have; //(0) No (1) Yes
 };
@@ -112,7 +113,7 @@ extern trinket dragon_talon;
 // DEFENSIVE
 extern trinket azure_neclace;
 extern trinket witch_effegy;
-extern trinket vail_blood;
+extern trinket vial_blood;
 extern trinket frozen_tear;
 
 /////////////////////////////////////////

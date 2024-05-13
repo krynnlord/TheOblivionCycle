@@ -59,7 +59,7 @@ void trinkets()
         if (dragon_talon.have == 1) { trinket_checker(dragon_talon); } else { ; }
         if (azure_neclace.have == 1) { trinket_checker(azure_neclace); } else { ; }
         if (witch_effegy.have == 1) { trinket_checker(witch_effegy); } else { ; }
-        if (vail_blood.have == 1) { trinket_checker(vail_blood); } else { ; }
+        if (vial_blood.have == 1) { trinket_checker(vial_blood); } else { ; }
         if (frozen_tear.have == 1) { trinket_checker(frozen_tear); }  else { ; }
         cout << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;

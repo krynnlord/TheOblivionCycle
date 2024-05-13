@@ -92,8 +92,7 @@ void adventure()
             int i = 0;
             while (i==0) 
             {    
-                print_mystic();
-                show_statbar();
+                
                 i = mystic(i);
             } 
         }
