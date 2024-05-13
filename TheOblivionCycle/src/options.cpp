@@ -72,7 +72,7 @@ int options(int i)
         Color(6); cout << "Version:"; Color(7); cout<< " .01" << endl;
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
-        Color(6); cout << "Music:"; Color(7); cout << " Alkakrab - Itch.io"; cout << endl;
+        Color(6); cout << "Music:"; Color(7); cout << " Richard Miller"; cout << endl;
 
             string temp;
             temp = _getch();
@@ -374,8 +374,8 @@ void music_player()
     while (keep == 1)
     {
         string music_text;
-        if (music_track == 1) { music_text = "Elven Ruins"; }
-        if (music_track == 2) { music_text = "To Oblivion"; }
+        if (music_track == 1) { music_text = "To Oblivion"; }
+        /*if (music_track == 2) { music_text = "To Oblivion"; }
         if (music_track == 3) { music_text = "Mysterious Gate"; }
         if (music_track == 4) { music_text = "Cryptic Walls"; }
         if (music_track == 5) { music_text = "Bard's Story"; }
@@ -385,26 +385,21 @@ void music_player()
         if (music_track == 9) { music_text = "Spiraling Descent"; }
         if (music_track == 10) { music_text = "Distant Stars"; }
         if (music_track == 11) { music_text = "Judgement"; }
-        if (music_track == 12) { music_text = "Ascendancy"; }
+        if (music_track == 12) { music_text = "Ascendancy"; }*/
 
         print_music_player();
         int bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
         cout << "Currently Selected: " << music_text << endl;
         bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
         cout << endl;
-        cout << "[1] Elven Ruins          [7] The Iron Wall" << endl;
-        cout << "[2] To Oblivion          [8] Lullaby" << endl;
-        cout << "[3] Mysterious Gate      [9] Spiraling Descent" << endl;
-        cout << "[4] Cryptic Walls        [a] Distant Stars" << endl;
-        cout << "[5] Bard's Story         [b] Judgement" << endl;
-        cout << "[6] Shimmering Lights    [c] Ascendancy" << endl << endl;
+        cout << "[1] To Oblivion"<< endl<<endl;
         cout << "[0] Back" << endl;
 
         string ans;
         ans = _getch();
 
         if (ans == "1") { music_track = 1; stream_music(music_track); }
-        if (ans == "2") { music_track = 2; stream_music(music_track); }
+        /*if (ans == "2") { music_track = 2; stream_music(music_track); }
         if (ans == "3") { music_track = 3; stream_music(music_track); }
         if (ans == "4") { music_track = 4; stream_music(music_track); }
         if (ans == "5") { music_track = 5; stream_music(music_track); }
@@ -414,7 +409,7 @@ void music_player()
         if (ans == "9") { music_track = 9; stream_music(music_track); }
         if (ans == "a") { music_track = 10; stream_music(music_track);}
         if (ans == "b") { music_track = 11; stream_music(music_track);}
-        if (ans == "c") { music_track = 12; stream_music(music_track);}
+        if (ans == "c") { music_track = 12; stream_music(music_track);}*/
         if (ans == "0") { keep=0; }
 
         
