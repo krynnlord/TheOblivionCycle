@@ -29,7 +29,7 @@ trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 6000, 2, 
 // Circle 1
 spell heal = { "Heal", "Heals for a small amount", 3, 1, 15, 1, 1 };
 spell cure = { "Cure", "Heals for a small amount", 0, 0, 15, 1, 2 };
-spell create_food = { "Create Food", "Heals for a small amount", 0, 0, 15, 1, 3 };
+spell conjure_elixer = { "Conjure Elixer", "Fills the Celestial Flask 1 charge", 0, 0, 15, 1, 3 };
 spell magic_missle = { "Magic Missle", "Heals for a small amount", 0, 0, 15, 1, 4 };
 
 // Circle 2

@@ -2,7 +2,7 @@
 
 void spellbook()
 {
-    int c11 = heal.qty; int c12 = cure.qty; int c13 = create_food.qty; int c14 = magic_missle.qty;
+    int c11 = heal.qty; int c12 = cure.qty; int c13 = conjure_elixer.qty; int c14 = magic_missle.qty;
     int c21 = greater_heal.qty; int c22 = barrier.qty; int c23 = escape.qty; int c24 = fireball.qty;
     int c31 = regeneration.qty; int c32 = holy_ground.qty; int c33 = doubleme.qty; int c34 = immolation.qty;
     
@@ -16,8 +16,8 @@ void spellbook()
     cout << "["; Color(6); cout << c12; Color(7); cout << "]CURE";
     cout << "            ["; Color(6); cout << c22; Color(7); cout << "]BARRIER          ";
     cout << "["; Color(6); cout << c32; Color(7); cout << "]HOLY GROUND" << endl;
-    cout << "["; Color(6); cout << c13; Color(7); cout << "]CREATE FOOD";
-    cout << "     ["; Color(6); cout << c23; Color(7); cout << "]ESCAPE";
+    cout << "["; Color(6); cout << c13; Color(7); cout << "]CONJURE ELIXER";
+    cout << "  ["; Color(6); cout << c23; Color(7); cout << "]ESCAPE";
     cout << "           ["; Color(6); cout << c33; Color(7); cout << "]DOUBLE" << endl;
     cout << "["; Color(6); cout << c14; Color(7); cout << "]MAGIC MISSLE";
     cout << "    ["; Color(6); cout << c24; Color(7); cout << "]FIREBALL";

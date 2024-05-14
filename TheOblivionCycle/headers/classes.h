@@ -122,7 +122,7 @@ extern trinket frozen_tear;
 // Circle 1
 extern spell heal;
 extern spell cure;
-extern spell create_food;
+extern spell conjure_elixer;
 extern spell magic_missle;
 
 // Circle 2

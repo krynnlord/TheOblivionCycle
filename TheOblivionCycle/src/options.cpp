@@ -181,22 +181,24 @@ void info_screen()
 
         if (ans == "2")
         {
-            trinkets();
+            weapons_display();
+            
         }
 
         if (ans == "3")
         {
-            spellbook();
+            armor_display();
+            
         }
 
         if (ans == "4")
         {
-            weapons_display();
+            trinkets();
         }
 
         if (ans == "5")
         {
-            armor_display();
+            spellbook();
         }
 
         if (ans == "6")
@@ -270,7 +272,7 @@ void help_screen()
                 cout << "["; Color(10); cout << "Abjuration"; Color(7); cout << "] Protective Magic" << endl;
                 cout << "Spells: Cure, Barrier, Holy Ground" << endl << endl;
                 cout << "["; Color(14); cout << "Conjuration"; Color(7); cout << "] Creation/Alteration Magic" << endl;
-                cout << "Spells: Create Food, Escape, Double" << endl << endl;
+                cout << "Spells: Conjure Elixer, Escape, Double" << endl << endl;
                 cout << "["; Color(12); cout << "Evocation"; Color(7); cout << "] Destructive Magic" << endl;
                 cout << "Spells: Magic Missle, Fireball, Immolation" << endl << endl;
 
@@ -294,13 +296,13 @@ void help_screen()
             if (ans == "4")
             {
                 system("cls");
-                cout << "Enemy Types" << endl;
+                cout << "Prisms" << endl;
                 cout << "----------------" << endl;
-                cout << "The world of Astoria is crawling with denziens of another world." << endl;
-                cout << "These enemies sometimes share common characteristics, such as," << endl;
-                cout << "enraged animals, or the army of the undead." << endl;
-                cout << "Knowledge in the types of enemies could provide a substantial advantage" << endl;
-                cout << "during combat." << endl << endl;
+                cout << "In Astoria gate are appearing. These gates are unleashing monsters" << endl;
+                cout << "on the populations and the King has sent for you to put a stop to it." << endl;
+                cout << "Prisms can be crafted at the Mystic, which allows the adventurer to" << endl;
+                cout << "seal the gate and spawn the boss. Upon sealing the gate, if one carries" << endl;
+                cout << "the prism, they can once again enter the domain." << endl << endl;
 
                 system("pause");
             }

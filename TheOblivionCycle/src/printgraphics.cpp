@@ -311,10 +311,10 @@ void print_infoscreen()
     string line7  = R"(  ||||                    :                    ||||)";
     string line8  = R"(  ||||                    :                    ||||)";
     string line9  = R"(  ||||   [1] CHARACTER    :     [6] HELP       ||||)";
-    string line10 = R"(  ||||   [2] TRINKETS     :     [7] OPTIONS    ||||)";
-    string line11 = R"(  ||||   [3] SPELLBOOK    :     [8] EXIT GAME  ||||)";
-    string line12 = R"(  ||||   [4] WEAPONS      :                    ||||)";
-    string line13 = R"(  ||||   [5] ARMOR        :    [ESC] BACK      ||||)";
+    string line10 = R"(  ||||   [2] WEAPONS      :     [7] OPTIONS    ||||)";
+    string line11 = R"(  ||||   [3] ARMOR        :     [8] EXIT GAME  ||||)";
+    string line12 = R"(  ||||   [4] TRINKETS     :                    ||||)";
+    string line13 = R"(  ||||   [5] SPELLBOOK    :   [ESC] BACK       ||||)";
     string line14 = R"(  ||||___________________ : ___________________||||)";
     string line15 = R"(  ||/====================\:/====================\||)";
     string line16 = R"(  `---------------------~___~--------------------'')";
@@ -373,7 +373,7 @@ void print_help()
     string line8  = R"(|   |           [1] Character Stats           |    |)";
     string line9  = R"(|   |           [2] Magic System              |    |)";
     string line10 = R"(|   |           [3] Healing Flask             |    |)";
-    string line11 = R"(|   |           [4] Enemy Types               |    |)";
+    string line11 = R"(|   |           [4] Prisms                    |    |)";
     string line12 = R"(|   |           [5] Quests                    |    |)";
     string line13 = R"(|   |           [6] Trinkets                  |    |)";
     string line14 = R"(|   |                                         |    |)";
