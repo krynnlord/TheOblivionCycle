@@ -156,7 +156,7 @@ int options(int i)
 
 
 
-    if (ans == "0") { return 1; }
+    if (ans == "0" or ans == "\033") { return 1; }
 
     return 0;
 
@@ -411,7 +411,7 @@ void music_player()
         if (ans == "a") { music_track = 10; stream_music(music_track);}
         if (ans == "b") { music_track = 11; stream_music(music_track);}
         if (ans == "c") { music_track = 12; stream_music(music_track);}*/
-        if (ans == "0") { keep=0; }
+        if (ans == "0" or ans == "\033") { keep = 0; }
 
         
     }
