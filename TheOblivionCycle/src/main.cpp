@@ -4,7 +4,7 @@
 int intro_sequence = 1;
 int music_setting = 1;
 int music_vol = 100;
-int music_track = 2;
+int music_track = 1;
 
 //Battle Seq
 int crit_result = 0;

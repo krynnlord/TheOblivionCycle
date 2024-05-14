@@ -12,7 +12,13 @@ int circleofstones(int i)
     // Print Menu Options
     if (hero_player.quest_level == 1)
     {
-        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << "LVL 1-5" << endl;
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << "LVL 1-5";
+        if (prism_red == true)
+        {
+            Color(11); cout << " [can be sealed with prism]" << endl;Color(7);
+        }
+
+        cout << endl;
     }
     if (hero_player.quest_level == 2)
     {

@@ -12,14 +12,22 @@ void show_statbar()
     cout << "Gold: " << left << setw(7); Color(14); cout << hero_player.gold; Color(7);
     cout << "Essence: " << left << setw(4); Color(10); cout << hero_player.essence; Color(7);
     cout << "Heals: " << left << setw(5); Color(9); cout << hero_player.flask; Color(7);
-    cout << "Trinket: " << left << setw(10); Color(5);
-    if (hero_player.trinket == 0) { cout << "None"; }
-    if (hero_player.trinket == 1) { cout << "Rabbit Foot"; }
-    if (hero_player.trinket == 2) { cout << "Dragon Talon"; }
-    if (hero_player.trinket == 21) { cout << "Azure Necklace"; }
-    if (hero_player.trinket == 22) { cout << "Witch Effegy"; }
-    if (hero_player.trinket == 23) { cout << "Vial of Blood"; }
-    if (hero_player.trinket == 24) { cout << "Frozen Tear"; }
+    cout << "Trinket: " << left << setw(9); Color(5);
+    if (hero_player.trinket == 0) { cout << "NONE"; }
+    if (hero_player.trinket == 1) { cout << "FOOT"; }
+    if (hero_player.trinket == 2) { cout << "TALON"; }
+    if (hero_player.trinket == 21) { cout << "NECKLACE"; }
+    if (hero_player.trinket == 22) { cout << "EFFEGY"; }
+    if (hero_player.trinket == 23) { cout << "BLOOD"; }
+    if (hero_player.trinket == 24) { cout << "TEAR"; }
+    Color(7);
+    cout << "Prisms: ";
+    if (prism_red == true) { Color(4); cout << "*"; }
+    if (prism_blue == true) { Color(9); cout << "*"; }
+    if (prism_purple == true) { Color(5); cout << "*"; }
+    if (prism_yellow == true) { Color(6); cout << "*"; }
+    if (prism_shimmering == true) { Color(15); cout << "*"; }
+    Color(7);
         
     cout << endl; Color(7);
     int bar; for (bar=0;bar<70;bar++){cout<<"-";} cout << endl;

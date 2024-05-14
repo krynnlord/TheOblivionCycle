@@ -52,7 +52,13 @@ txtOut << dragon_talon.have << endl;
 txtOut << azure_neclace.have << endl;
 txtOut << witch_effegy.have << endl;
 txtOut << vial_blood.have << endl;
-txtOut << frozen_tear.have;
+txtOut << frozen_tear.have << endl;
+txtOut << "*** PRISMS ***" << endl;
+txtOut << prism_red << endl;
+txtOut << prism_blue << endl;
+txtOut << prism_purple << endl;
+txtOut << prism_yellow << endl;
+txtOut << prism_shimmering;
 txtOut.close();
 
 };
@@ -107,6 +113,12 @@ getline(txtIn, emptyline); istringstream s25(emptyline); s25 >> azure_neclace.ha
 getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
 getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vial_blood.have;
 getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
+getline(txtIn, emptyline); // PRISMS
+getline(txtIn, emptyline); istringstream s29(emptyline); s29 >> prism_red;
+getline(txtIn, emptyline); istringstream s30(emptyline); s30 >> prism_blue;
+getline(txtIn, emptyline); istringstream s31(emptyline); s31 >> prism_purple;
+getline(txtIn, emptyline); istringstream s32(emptyline); s32 >> prism_yellow;
+getline(txtIn, emptyline); istringstream s33(emptyline); s33 >> prism_shimmering;
 txtIn.close();
 
 }
