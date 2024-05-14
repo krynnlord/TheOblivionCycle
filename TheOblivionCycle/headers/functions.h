@@ -25,6 +25,7 @@ void weapon_equipper(weapon);
 void armor_equipper(armor);
 void trinket_equipper(trinket);
 void buy_trinket();
+void craft_prism();
 void Color(int color);
 void CreateHero();
 void intro();

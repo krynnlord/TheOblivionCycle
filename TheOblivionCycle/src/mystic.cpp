@@ -32,6 +32,11 @@ int mystic(int i)
         {
             change_trinket();
         }
+        if (ans == "3")
+        {
+            craft_prism();
+        }
+
         else { return 0; }
     }
 
@@ -225,4 +230,62 @@ void trinket_equipper(trinket trinket)
     {
         ;
     }
+}
+
+
+void craft_prism()
+{
+    int i = 0;
+    while (i == 0)
+    {
+
+        print_mystic();
+        int bar2; for (bar2 = 0;bar2 < 5;bar2++) { cout << "-"; }; cout << " The Mystic ";
+        for (bar2 = 0;bar2 < 58;bar2++) { cout << "-"; } cout << endl;
+        
+
+        if (hero_player.quest_level == 0)
+        {
+            cout << "Hello! Can I help you with something!";
+        }
+        if (hero_player.quest_level == 1)
+        {
+            cout << "I can craft you a prism to seal a gate. Bring me some monster essence!" << endl;
+        }
+        
+        for (bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+        cout << "Current Essence: "; Color(10); cout << hero_player.essence << endl << endl; Color(7);
+
+        if (hero_player.quest_level == 1)
+        {
+            cout << "[1] Craft RED Prism ["; Color(10); cout << "1000"; Color(7); cout << "] Essence" << endl;
+        }
+        if (hero_player.quest_level == 2)
+        {
+            cout << "[2] Craft BLUE Prism ["; Color(10); cout << "3000"; Color(7); cout << "] Essence" << endl;
+        }
+
+
+        string ans;
+        ans = _getch();
+
+        if (ans == "1" and hero_player.essence < 1000)
+        {
+            cout << endl << "You do not possess enough essence!";
+            Sleep(3000);
+        }
+
+        if (ans == "1" and hero_player.essence >= 1000)
+        {
+            cout << endl << "I have crafted your prism. Now go seal the gate!";
+            hero_player.essence -= 1000;
+            prism_red = true;
+            Sleep(3000);
+        }
+        if (ans == "0" or ans == "\033")
+        {
+            i = 1;
+        }
+    }
+
 }
