@@ -375,8 +375,8 @@ void music_player()
     {
         string music_text;
         if (music_track == 1) { music_text = "To Oblivion"; }
-        /*if (music_track == 2) { music_text = "To Oblivion"; }
-        if (music_track == 3) { music_text = "Mysterious Gate"; }
+        if (music_track == 2) { music_text = "The Ritual"; }
+        /*if (music_track == 3) { music_text = "Mysterious Gate"; }
         if (music_track == 4) { music_text = "Cryptic Walls"; }
         if (music_track == 5) { music_text = "Bard's Story"; }
         if (music_track == 6) { music_text = "Shimmering Lights"; }
@@ -392,15 +392,16 @@ void music_player()
         cout << "Currently Selected: " << music_text << endl;
         bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
         cout << endl;
-        cout << "[1] To Oblivion"<< endl<<endl;
+        cout << "[1] To Oblivion" << endl;
+        cout << "[2] The Ritual" << endl;
         cout << "[0] Back" << endl;
 
         string ans;
         ans = _getch();
 
         if (ans == "1") { music_track = 1; stream_music(music_track); }
-        /*if (ans == "2") { music_track = 2; stream_music(music_track); }
-        if (ans == "3") { music_track = 3; stream_music(music_track); }
+        if (ans == "2") { music_track = 2; stream_music(music_track); }
+        /*if (ans == "3") { music_track = 3; stream_music(music_track); }
         if (ans == "4") { music_track = 4; stream_music(music_track); }
         if (ans == "5") { music_track = 5; stream_music(music_track); }
         if (ans == "6") { music_track = 6; stream_music(music_track); }
