@@ -44,7 +44,7 @@ void buy_weapons()
     int i = 0;
     while (i == 0)
     {
-        print_blacksmith();
+        print_weapons();
         show_statbar();
         if (dagger.have == 0)
         {
@@ -162,7 +162,7 @@ void buy_armor()
     int i = 0;
     while (i == 0)
     {
-        print_blacksmith();
+        print_armor();
         show_statbar();
         if (cloth_armor.have == 0)
         {

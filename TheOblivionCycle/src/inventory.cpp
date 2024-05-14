@@ -57,8 +57,8 @@ void trinkets()
     {
 
         print_trinkets();
-        cout << endl;
-        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        show_statbar();
+        
         if (rabbit_foot.have == 1) { trinket_checker(rabbit_foot); }
         else { ; }
         if (dragon_talon.have == 1) { trinket_checker(dragon_talon); }
@@ -80,7 +80,7 @@ void trinkets()
         ansr = _getch();
         if (ansr == "r" or ansr == "R")
         {
-            cout << "Coming Soon!"; Sleep(2000);
+            change_trinket();
         }
         if (ansr == "0" or ansr == "\033")
         {
@@ -97,8 +97,8 @@ void weapons_display()
     {
 
         print_weapons();
-        cout << endl;
-        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        show_statbar();
+        
         if (hands.have == 1) { weapon_checker(hands); }
         else { ; }
         if (dagger.have == 1) { weapon_checker(dagger); }
@@ -146,8 +146,8 @@ void armor_display()
     {
     
         print_armor();
-        cout << endl;
-        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        show_statbar();
+        
         if (tunic.have == 1) { armor_checker(tunic); } else { ; }
         if (cloth_armor.have == 1) { armor_checker(cloth_armor); } else { ; }
         if (leather_armor.have == 1) { armor_checker(leather_armor); } else { ; }

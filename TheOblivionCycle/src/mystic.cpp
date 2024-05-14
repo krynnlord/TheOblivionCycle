@@ -28,7 +28,10 @@ int mystic(int i)
         {
             buy_trinket();
         }
-
+        if (ans == "2")
+        {
+            change_trinket();
+        }
         else { return 0; }
     }
 
@@ -43,42 +46,42 @@ void buy_trinket()
     {
         print_mystic();
         show_statbar();
-        if (cloth_armor.have == 0)
+        if (rabbit_foot.have == 0)
         {
             cout << left << setw(20) << "[1] Rabbit Foot";
             cout << "Cost: ";
             cout << left << setw(10) << rabbit_foot.cost;
             cout << rabbit_foot.desc << endl;
         }
-        if (leather_armor.have == 0)
+        if (dragon_talon.have == 0)
         {
             cout << left << setw(20) << "[2] Dragon Talon";
             cout << "Cost: ";
             cout << left << setw(10) << dragon_talon.cost;
             cout << dragon_talon.desc << endl;
         }
-        if (chain_armor.have == 0)
+        if (azure_neclace.have == 0)
         {
             cout << left << setw(20) << "[3] Azure Necklace";
             cout << "Cost: ";
             cout << left << setw(10) << azure_neclace.cost;
             cout << azure_neclace.desc << endl;
         }
-        if (scale_armor.have == 0)
+        if (witch_effegy.have == 0)
         {
             cout << left << setw(20) << "[4] Witch Effegy";
             cout << "Cost: ";
             cout << left << setw(10) << witch_effegy.cost;
             cout << witch_effegy.desc << endl;
         }
-        if (splint_armor.have == 0)
+        if (vial_blood.have == 0)
         {
             cout << left << setw(20) << "[5] Vial of Blood";
             cout << "Cost: ";
             cout << left << setw(10) << vial_blood.cost;
             cout << vial_blood.desc << endl;
         }
-        if (plate_armor.have == 0)
+        if (frozen_tear.have == 0)
         {
             cout << left << setw(20) << "[6] Frozen Tear";
             cout << "Cost: ";
@@ -115,7 +118,6 @@ void buy_trinket()
 
     }
 
-
 }
 
 void check_trinket_purchase(trinket& temp_trinket)
@@ -135,4 +137,92 @@ void check_trinket_purchase(trinket& temp_trinket)
 
     }
 
+}
+
+void change_trinket()
+{
+    int i = 0;
+    while (i == 0)
+    {
+        print_trinkets();
+        show_statbar();
+
+        if (rabbit_foot.have == 1)
+        {
+            cout << "[1] "; cout << left << setw(15) << rabbit_foot.name;
+            cout << "Desc: " << rabbit_foot.desc;
+            if (hero_player.trinket == rabbit_foot.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+        if (dragon_talon.have == 1)
+        {
+            cout << "[2] "; cout << left << setw(15) << dragon_talon.name;
+            cout << "Desc: " << dragon_talon.desc;
+            if (hero_player.trinket == dragon_talon.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+        if (azure_neclace.have == 1)
+        {
+            cout << "[3] "; cout << left << setw(15) << azure_neclace.name;
+            cout << "Desc: " << azure_neclace.desc;
+            if (hero_player.trinket == azure_neclace.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+        if (witch_effegy.have == 1)
+        {
+            cout << "[4] "; cout << left << setw(15) << witch_effegy.name;
+            cout << "Desc: " << witch_effegy.desc;
+            if (hero_player.trinket == witch_effegy.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+        if (vial_blood.have == 1)
+        {
+            cout << "[5] "; cout << left << setw(15) << vial_blood.name;
+            cout << "Desc: " << vial_blood.desc;
+            if (hero_player.trinket == vial_blood.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+        if (frozen_tear.have == 1)
+        {
+            cout << "[6] "; cout << left << setw(15) << frozen_tear.name;
+            cout << "Desc: " << frozen_tear.desc;
+            if (hero_player.trinket == frozen_tear.id) { Color(2); cout << "        Equipped"; Color(7); }
+            cout << endl;
+        }
+
+        cout << endl;
+        cout << "--- Equip Trinket ---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+        cout << "Choose trinket to equip, or press 0 to go exit." << endl;
+        cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl << endl;
+        string ansr;
+        ansr = _getch();
+
+        if (ansr == "\033" or ansr == "0") { i = 1; }
+        if (ansr == "1") { trinket_equipper(rabbit_foot); }
+        if (ansr == "2") { trinket_equipper(dragon_talon); }
+        if (ansr == "3") { trinket_equipper(azure_neclace); }
+        if (ansr == "4") { trinket_equipper(witch_effegy); }
+        if (ansr == "5") { trinket_equipper(vial_blood); }
+        if (ansr == "6") { trinket_equipper(frozen_tear); }
+
+    }
+}
+
+void trinket_equipper(trinket trinket)
+{
+    if (hero_player.trinket == trinket.id)
+    {
+        cout << "You already have this trinket equipped!" << endl;
+        Sleep(2000);
+    }
+    if (hero_player.trinket != trinket.id and trinket.have == 1)
+    {
+        hero_player.trinket = trinket.id;
+        cout << "You equip your " << trinket.name << "!" << endl;
+        Sleep(2000);
+    }
+    if (hero_player.trinket != trinket.id and trinket.have == 0)
+    {
+        ;
+    }
 }

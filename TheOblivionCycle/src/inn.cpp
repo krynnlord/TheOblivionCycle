@@ -36,7 +36,7 @@ void change_weapon()
     int i = 0;
     while (i == 0)
     {
-        print_inn();
+        print_weapons();
         show_statbar();
         
         if (hands.have == 1)
@@ -149,7 +149,7 @@ void change_armor()
     int i = 0;
     while (i == 0)
     {
-        print_inn();
+        print_armor();
         show_statbar();
 
         if (tunic.have == 1)
