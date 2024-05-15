@@ -2,29 +2,64 @@
 
 void spellbook()
 {
-    int c11 = heal.qty; int c12 = cure.qty; int c13 = conjure_elixer.qty; int c14 = magic_missle.qty;
-    int c21 = greater_heal.qty; int c22 = barrier.qty; int c23 = escape.qty; int c24 = fireball.qty;
-    int c31 = regeneration.qty; int c32 = holy_ground.qty; int c33 = doubleme.qty; int c34 = immolation.qty;
+    int c11 = heal.ready; int c12 = cure.ready; int c13 = conjure_elixer.ready; int c14 = magic_missle.ready;
+    int c21 = greater_heal.ready; int c22 = barrier.ready; int c23 = escape.ready; int c24 = fireball.ready;
+    int c31 = regeneration.ready; int c32 = holy_ground.ready; int c33 = doubleme.ready; int c34 = immolation.ready;
     
+
+
     print_spellbook();
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
     cout << "1ST CIRCLE         2ND CIRCLE          3RD CIRCLE       " << endl;
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
-    cout << "["; Color(6); cout << c11; Color(7);cout << "]HEAL";
-    cout << "            ["; Color(6); cout << c21; Color(7); cout << "]GREATER HEAL";
-    cout << "     ["; Color(6); cout << c31; Color(7); cout << "]REGENERATION" << endl;
-    cout << "["; Color(6); cout << c12; Color(7); cout << "]CURE";
-    cout << "            ["; Color(6); cout << c22; Color(7); cout << "]BARRIER          ";
-    cout << "["; Color(6); cout << c32; Color(7); cout << "]HOLY GROUND" << endl;
-    cout << "["; Color(6); cout << c13; Color(7); cout << "]CONJURE ELIXER";
-    cout << "  ["; Color(6); cout << c23; Color(7); cout << "]ESCAPE";
-    cout << "           ["; Color(6); cout << c33; Color(7); cout << "]DOUBLE" << endl;
-    cout << "["; Color(6); cout << c14; Color(7); cout << "]MAGIC MISSLE";
-    cout << "    ["; Color(6); cout << c24; Color(7); cout << "]FIREBALL";
-    cout << "         ["; Color(6); cout << c34; Color(7); cout << "]IMMOLATION" << endl;
+    cout << "["; Color(6); cout << convert_spell(c11); Color(7);cout << "]"; cout << spell_level_checker(heal); Color(7);
+    cout << "            ["; Color(6); cout << convert_spell(c21); Color(7); cout << "]"; cout << spell_level_checker(greater_heal);Color(7);
+    cout << "     ["; Color(6); cout << convert_spell(c31); Color(7); cout << "]"; cout << spell_level_checker(regeneration) << endl;Color(7);
+    cout << "["; Color(6); cout << convert_spell(c12); Color(7); cout << "]"; cout << spell_level_checker(cure);Color(7);
+    cout << "            ["; Color(6); cout << convert_spell(c22); Color(7); cout << "]"; cout << spell_level_checker(barrier);Color(7);
+    cout << "          ["; Color(6); cout << convert_spell(c32); Color(7); cout << "]"; cout << spell_level_checker(holy_ground) << endl;Color(7);
+    cout << "["; Color(6); cout << convert_spell(c13); Color(7); cout << "]"; cout << spell_level_checker(conjure_elixer);Color(7);
+    cout << "  ["; Color(6); cout << convert_spell(c23); Color(7); cout << "]"; cout << spell_level_checker(escape);Color(7);
+    cout << "           ["; Color(6); cout << convert_spell(c33); Color(7); cout << "]"; cout << spell_level_checker(doubleme) << endl;Color(7);
+    cout << "["; Color(6); cout << convert_spell(c14); Color(7); cout << "]"; cout << spell_level_checker(magic_missle);Color(7);
+    cout << "    ["; Color(6); cout << convert_spell(c24); Color(7); cout << "]"; cout << spell_level_checker(fireball);Color(7);
+    cout << "         ["; Color(6); cout << convert_spell(c34); Color(7); cout << "]"; cout << spell_level_checker(immolation) << endl;Color(7);
     cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
 
     string ans;
     ans = _getch();
+
+}
+
+string convert_spell(int a)
+{
+    string stringval;
+    if (a == 1)
+    {
+        stringval = "X";
+        return stringval;
+    }
+    else
+    {
+        stringval = " ";
+        return stringval;
+    }
+
+    
+}
+
+string spell_level_checker(spell spellname)
+{
+    if (hero_player.level >= spellname.levelreq)
+    {
+        Color(7);
+        return spellname.name;
+    }
+    else
+    {
+        Color(8);
+        return spellname.name;
+    }
+
 
 }

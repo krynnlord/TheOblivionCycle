@@ -27,23 +27,24 @@ trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 6000, 2, 
 // Spells ///////////////////////////////
 /////////////////////////////////////////
 // Circle 1
-spell heal = { "Heal", "Heals for a small amount", 3, 1, 15, 1, 1 };
-spell cure = { "Cure", "Heals for a small amount", 0, 0, 15, 1, 2 };
-spell conjure_elixer = { "Conjure Elixer", "Fills the Celestial Flask 1 charge", 0, 0, 15, 1, 3 };
-spell magic_missle = { "Magic Missle", "Heals for a small amount", 0, 0, 15, 1, 4 };
+spell heal = { "HEAL", "Heals for a small amount", 1, 1, 15, 1, 1 };
+spell cure = { "CURE", "Heals for a small amount", 1, 0, 15, 1, 2 };
+spell conjure_elixer = { "CONJURE ELIXER", "Fills the Celestial Flask 1 charge", 1, 0, 15, 1, 3 };
+spell magic_missle = { "MAGIC MISSLE", "Heals for a small amount", 1, 0, 15, 1, 4 };
 
 // Circle 2
-spell greater_heal = { "Greater Heal", "Heals for a small amount", 0, 0, 15, 2, 5 };
-spell barrier = { "Barrier", "Creates a protective barrier around user", 0, 0, 1, 2, 6 };
-spell escape = { "Escape", "Heals for a small amount", 0, 0, 15, 2, 7 };
-spell fireball = { "Fireball","Sends a hurl of fire at opponent.", 2, 1, 25, 2, 8 };
+spell greater_heal = { "GREATER HEAL", "Heals for a small amount", 1, 0, 15, 2, 5 };
+spell barrier = { "BARRIER", "Creates a protective barrier around user", 1, 0, 1, 2, 6 };
+spell escape = { "ESCAPE", "Heals for a small amount", 1, 0, 15, 2, 7 };
+spell fireball = { "FIREBALL","Sends a hurl of fire at opponent.", 1, 0, 25, 2, 8 };
 
 // Circle 3
-spell regeneration = { "Regeneration", "Heals for a small amount", 0, 0, 15, 3, 9 };
-spell holy_ground = { "Holy Ground", "Heals for a small amount", 0, 0, 15, 3, 10 };
-spell doubleme = { "Double", "Heals for a small amount", 0, 0, 15, 3, 11 };
-spell immolation = { "Immolation", "Heals for a small amount", 0, 0, 15, 3, 12 };
+spell regeneration = { "REGENERATION", "Heals for a small amount", 1, 0, 15, 3, 9 };
+spell holy_ground = { "HOLY GROUND", "Heals for a small amount", 1, 0, 15, 3, 10 };
+spell doubleme = { "DOUBLE", "Heals for a small amount", 1, 0, 15, 3, 11 };
+spell immolation = { "IMMOLATION", "Heals for a small amount", 1, 0, 15, 3, 12 };
 
+vector<spell> spells_all = { heal, cure, conjure_elixer, magic_missle, greater_heal, barrier, escape, fireball, regeneration, holy_ground, doubleme, immolation };
 /////////////////////////////////////////
 // Weapons //////////////////////////////
 /////////////////////////////////////////
