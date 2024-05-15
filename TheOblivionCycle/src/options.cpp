@@ -72,7 +72,7 @@ int options(int i)
         Color(6); cout << "Version:"; Color(7); cout<< " .01" << endl;
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
-        Color(6); cout << "Music:"; Color(7); cout << " Richard Miller"; cout << endl;
+        Color(6); cout << "Music:"; Color(7); cout << " Richard & Elijah Miller"; cout << endl;
 
             string temp;
             temp = _getch();
@@ -394,6 +394,7 @@ void music_player()
         cout << endl;
         cout << "[1] To Oblivion" << endl;
         cout << "[2] The Ritual" << endl;
+        cout << "[3] Call of Ravens" << endl;
         cout << "[0] Back" << endl;
 
         string ans;
@@ -401,8 +402,8 @@ void music_player()
 
         if (ans == "1") { music_track = 1; stream_music(music_track); }
         if (ans == "2") { music_track = 2; stream_music(music_track); }
-        /*if (ans == "3") { music_track = 3; stream_music(music_track); }
-        if (ans == "4") { music_track = 4; stream_music(music_track); }
+        if (ans == "3") { music_track = 3; stream_music(music_track); }
+        /*if (ans == "4") { music_track = 4; stream_music(music_track); }
         if (ans == "5") { music_track = 5; stream_music(music_track); }
         if (ans == "6") { music_track = 6; stream_music(music_track); }
         if (ans == "7") { music_track = 7; stream_music(music_track); }

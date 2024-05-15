@@ -58,7 +58,21 @@ txtOut << prism_red << endl;
 txtOut << prism_blue << endl;
 txtOut << prism_purple << endl;
 txtOut << prism_yellow << endl;
-txtOut << prism_shimmering;
+txtOut << prism_shimmering << endl;
+txtOut << "*** SPELLS ***" << endl;
+txtOut << heal.ready << endl;
+txtOut << cure.ready << endl;
+txtOut << heal.ready << endl;
+txtOut << conjure_elixer.ready << endl;
+txtOut << magic_missle.ready << endl;
+txtOut << greater_heal.ready << endl;
+txtOut << barrier.ready << endl;
+txtOut << escape.ready << endl;
+txtOut << fireball.ready << endl;
+txtOut << regeneration.ready << endl;
+txtOut << holy_ground.ready << endl;
+txtOut << doubleme.ready << endl;
+txtOut << immolation.ready;
 txtOut.close();
 
 };
@@ -119,6 +133,19 @@ getline(txtIn, emptyline); istringstream s30(emptyline); s30 >> prism_blue;
 getline(txtIn, emptyline); istringstream s31(emptyline); s31 >> prism_purple;
 getline(txtIn, emptyline); istringstream s32(emptyline); s32 >> prism_yellow;
 getline(txtIn, emptyline); istringstream s33(emptyline); s33 >> prism_shimmering;
+getline(txtIn, emptyline); // SPELLS
+getline(txtIn, emptyline); istringstream s34(emptyline); s34 >> heal.ready;
+getline(txtIn, emptyline); istringstream s35(emptyline); s35 >> cure.ready;
+getline(txtIn, emptyline); istringstream s36(emptyline); s36 >> conjure_elixer.ready;
+getline(txtIn, emptyline); istringstream s37(emptyline); s37 >> magic_missle.ready;
+getline(txtIn, emptyline); istringstream s38(emptyline); s38 >> greater_heal.ready;
+getline(txtIn, emptyline); istringstream s39(emptyline); s39 >> barrier.ready;
+getline(txtIn, emptyline); istringstream s40(emptyline); s40 >> escape.ready;
+getline(txtIn, emptyline); istringstream s41(emptyline); s41 >> fireball.ready;
+getline(txtIn, emptyline); istringstream s42(emptyline); s42 >> regeneration.ready;
+getline(txtIn, emptyline); istringstream s43(emptyline); s43 >> holy_ground.ready;
+getline(txtIn, emptyline); istringstream s44(emptyline); s44 >> doubleme.ready;
+getline(txtIn, emptyline); istringstream s45(emptyline); s45 >> immolation.ready;
 txtIn.close();
 
 }
