@@ -128,8 +128,29 @@ void battle_sim(monster enemy)
 			cout << "Actions" << endl;
 			
 			cout << "[1] Attack" << endl;
-			cout << "[2] Cast" << endl;
-			cout << "[3] Use Flask [";
+			if (hero_player.level > 1)
+			{
+				cout << "--> Cast [a] "; Color(9);
+				if (heal.ready == 1) { cout << heal.name; }
+				if (cure.ready == 1) { cout << cure.name; }
+				if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
+				if (magic_missle.ready == 1) { cout << magic_missle.name; }
+				Color(7);cout << " [b] ";Color(9);
+				if (greater_heal.ready == 1) { cout << greater_heal.name; }
+				if (barrier.ready == 1) { cout << barrier.name; }
+				if (escape.ready == 1) { cout << escape.name; }
+				if (fireball.ready == 1) { cout << fireball.name; }
+				Color(7);cout << " [c] ";Color(9);
+				if (regeneration.ready == 1) { cout << regeneration.name; }
+				if (holy_ground.ready == 1) { cout << holy_ground.name; }
+				if (doubleme.ready == 1) { cout << doubleme.name; }
+				if (immolation.ready == 1) { cout << immolation.name; }
+				Color(7);cout << endl;
+			}
+
+
+
+			cout << "[2] Use Flask [";
 			
 			int temp_health = hero_player.flask;
 			string temp_flask = "";
@@ -153,8 +174,11 @@ void battle_sim(monster enemy)
 		
 		// Delaying for Time Randomizer
 		if (ans == "1") { cout << "Player Attacks..."; }
-		if (ans == "2") { cout << "Player Casts Spell..."; }
-		if (ans == "3") { cout << "Player Attempts to Heal..."; }
+		if (hero_player.level > 1)
+		{
+			if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell..."; }
+		}
+		if (ans == "2") { cout << "Player Attempts to Heal..."; }
 		if (ans == "0") { cout << "Player Attempts to Run..."; }
 		Sleep(1000); // Delay 1 second
 
@@ -168,7 +192,7 @@ void battle_sim(monster enemy)
 			if (runroll == 4) { loop = 1; }
 		}
 
-		if (ans == "3")
+		if (ans == "2")
 		{
 			skip_hero_atk = 1;
 			heal_run = 1;
