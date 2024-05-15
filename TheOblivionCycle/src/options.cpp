@@ -250,13 +250,13 @@ void help_screen()
                 cout << "Character Stats" << endl;
                 cout << "----------------" << endl;
                 cout << "The player character has these major stats:" << endl << endl;
-                cout << "      [HP] Amount of current life" << endl;
-                cout << "   [LEVEL] Current Player Level" << endl;
-                cout << "     [EXP] Total Experience Points" << endl;
-                cout << "    [GOLD] Amount of Wealth" << endl;
-                cout << "    [LUCK] Chance for extra attacks" << endl;
-                cout << " [ESSENCE] The essesnce of monsters" << endl;
-                cout << "    [PROF] Proficiency Level. Governs attack power" << endl<< endl;
+                cout << "[HP]       Amount of current life" << endl;
+                cout << "[LEVEL]    Current Level" << endl;
+                cout << "[EXP]      Experience Points" << endl;
+                cout << "[GOLD]     Amount of wealth" << endl;
+                cout << "[LUCK]     Chance for extra attacks" << endl;
+                cout << "[ESSENCE]  The essesnce of monsters used as a currency" << endl;
+                cout << "[PROF]     Proficiency Level. Governs attack power" << endl<< endl;
                 system("pause");
             }
 
@@ -315,9 +315,8 @@ void help_screen()
                 cout << "As a player character you will be asked to fufill special tasks." << endl;
                 cout << "Quests are given by the King who resides in the castle. Upon completion" << endl;
                 cout << "of a quest, the player recieves a reward. This is usually experience points," << endl;
-                cout << "and or gold." << endl << endl;
-                cout << "If you forget which quest you are on, simply open the Character screen and look" << endl;
-                cout << "at the current quest." << endl << endl;
+                cout << "and or gold. If you forget which quest you are on, simply open the Character" << endl;
+                cout << "screen and look at the current quest." << endl << endl;
 
                 system("pause");
             }
@@ -328,9 +327,8 @@ void help_screen()
                 cout << "----------------" << endl;
                 cout << "Trinkets are usuful gadgets or trophies that supplement the player's." << endl;
                 cout << "combat in some way. There are trinkets that help increase damage, and some" << endl;
-                cout << "that help with defense. " << endl << endl;
-                cout << "Be sure to try different combinations of trinkets to gain an edge against" << endl;
-                cout << "your opponent. It may very well save your life!" << endl << endl;
+                cout << "that help with defense. Be sure to try different combinations of trinkets" << endl;
+                cout << " to gain an edge against your opponent. It may very well save your life!" << endl << endl;
 
                 system("pause");
             }
