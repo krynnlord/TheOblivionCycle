@@ -5,6 +5,7 @@ void CreateHero()
 string newname;
 ShowConsoleCursor(true);
 cout << "\nEnter Name: "; cin >> newname;
+newname = newname.substr(0, 10);
 ShowConsoleCursor(false);
 string warning = "WARNING!!! ";
 string warning2 = "Are you sure you want to start over as "+ newname +"? (y/n)";

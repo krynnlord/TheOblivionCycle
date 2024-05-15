@@ -23,7 +23,7 @@ void intro()
 	storytext = "     of the infinity, and it was not meant that we should voyage far.\n\n";
 	typer(storytext, 30);
 	Sleep(1000);
-	storytext = "                                                     ~ H.P. Lovercraft";
+	storytext = "                                                     ~ H.P. Lovecraft";
 	typer(storytext, 30);
 	Sleep(4000);
 	
