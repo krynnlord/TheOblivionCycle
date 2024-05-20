@@ -36,6 +36,8 @@ int temple(int i)
 void fill_flask()
 {
     int a = 1;
+    int purchase_amount_gold = hero_player.level * 50;
+    int purchase_amount_ess = hero_player.level * 50;
     while (a == 1)
     {
         print_temple();
@@ -44,8 +46,8 @@ void fill_flask()
         cout << "Filling the Celestial Flask demands a tithe. Will it be your wealth or your spirit?\n" << endl;
         cout << "Your Flask has "; Color(2); cout << hero_player.flask; Color(7); cout << " charges remaining." << endl;
         cout << "Do you want to fill the flask?" << endl << endl;
-        cout << "(1) Pay Gold ["; Color(14); cout << "100"; Color(7); cout <<"]" << endl;
-        cout << "(2) Offer Essence ["; Color(10); cout << "100"; Color(7); cout << "]" << endl;
+        cout << "(1) Pay Gold ["; Color(14); cout << purchase_amount_gold; Color(7); cout <<"]" << endl;
+        cout << "(2) Offer Essence ["; Color(10); cout << purchase_amount_ess; Color(7); cout << "]" << endl;
         cout << "(0) No" << endl;
         string ans = "";
         ans = _getch();
@@ -61,16 +63,16 @@ void fill_flask()
 
             }
             
-            if (hero_player.gold < 100 and hero_player.flask < 3)
+            if (hero_player.gold < purchase_amount_gold and hero_player.flask < 3)
             {
                 cout << "\nYou do not possess enough gold!\n\n";
                 Sleep(3000);
                 a = 1;
             }
 
-            if (hero_player.gold >= 100 and hero_player.flask < 3)
+            if (hero_player.gold >= purchase_amount_gold and hero_player.flask < 3)
             {
-                hero_player.gold -= 100;
+                hero_player.gold -= purchase_amount_gold;
                 hero_player.flask = 3;
                 cout << "\nMay the gods bless you!\n\n";
                 Sleep(3000);
@@ -89,7 +91,7 @@ void fill_flask()
                 a = 1;
             }
             
-            if (hero_player.essence < 100 and hero_player.flask < 3)
+            if (hero_player.essence < purchase_amount_ess and hero_player.flask < 3)
             {
                 cout << "\nYou do not possess enough essence!\n\n";
                 Sleep(3000);
@@ -97,9 +99,9 @@ void fill_flask()
             }
 
 
-            if (hero_player.flask < 3 and hero_player.essence >= 100)
+            if (hero_player.flask < 3 and hero_player.essence >= purchase_amount_ess)
             {
-                hero_player.essence -= 100;
+                hero_player.essence -= purchase_amount_ess;
                 hero_player.flask = 3;
                 cout << "\nMay the gods bless you!\n\n";
                 Sleep(3000);
