@@ -45,7 +45,7 @@ void fill_flask()
         cout << "Your Flask has "; Color(2); cout << hero_player.flask; Color(7); cout << " charges remaining." << endl;
         cout << "Do you want to fill the flask?" << endl << endl;
         cout << "(1) Pay Gold ["; Color(14); cout << "100"; Color(7); cout <<"]" << endl;
-        cout << "(2) Offer Spirit ["; Color(9); cout << "25%"; Color(7); cout << "]" << endl;
+        cout << "(2) Offer Essence ["; Color(10); cout << "100"; Color(7); cout << "]" << endl;
         cout << "(0) No" << endl;
         string ans = "";
         ans = _getch();
@@ -53,12 +53,19 @@ void fill_flask()
         if (ans == "1")
         {
          
-            if (hero_player.gold >=100 and hero_player.flask == 3)
+            if (hero_player.flask == 3)
             {
                 cout << "\nYou aready have a full flask!\n\n";
-                system("pause");
-                a = 0;
-                break;
+                Sleep(3000);
+                a = 1;
+
+            }
+            
+            if (hero_player.gold < 100 and hero_player.flask < 3)
+            {
+                cout << "\nYou do not possess enough gold!\n\n";
+                Sleep(3000);
+                a = 1;
             }
 
             if (hero_player.gold >= 100 and hero_player.flask < 3)
@@ -66,17 +73,11 @@ void fill_flask()
                 hero_player.gold -= 100;
                 hero_player.flask = 3;
                 cout << "\nMay the gods bless you!\n\n";
-                system("pause");
-                a = 0;
-                break;
+                Sleep(3000);
+                a = 1;
             }
 
-            if(hero_player.gold < 100)
-            {
-                cout << "\nYou do not possess enough gold!\n\n";
-                system("pause");
-                a = 0;
-            }
+            
         }
 
         if (ans == "2")
@@ -84,29 +85,32 @@ void fill_flask()
             if (hero_player.flask == 3)
             {
                 cout << "\nYou aready have a full flask!\n\n";
-                system("pause");
-                a = 0;
-                break;
+                Sleep(3000);
+                a = 1;
             }
-
-            if (hero_player.flask < 3)
+            
+            if (hero_player.essence < 100 and hero_player.flask < 3)
             {
-                hero_player.exp -= int(round(hero_player.exp * .25));
-                if (hero_player.exp < min_exp)
-                {
-                    hero_player.exp = min_exp;
-                }
-
-                hero_player.flask = 3;
-                cout << "\nMay the gods have pitty on your spirit!\n\n";
-                system("pause");
-                a = 0;
-                break;
+                cout << "\nYou do not possess enough essence!\n\n";
+                Sleep(3000);
+                a = 1;
             }
+
+
+            if (hero_player.flask < 3 and hero_player.essence >= 100)
+            {
+                hero_player.essence -= 100;
+                hero_player.flask = 3;
+                cout << "\nMay the gods bless you!\n\n";
+                Sleep(3000);
+                a = 1;
+            }
+           
+
         }
 
 
-        if (ans == "0")
+        if (ans == "0" or ans == "\033")
         {
             a = 0;
         }
@@ -118,7 +122,7 @@ void memorize_spells()
 {
     if (hero_player.level < 2)
     {
-        cout << "\nYou are not ready to learn this disicpline!" << endl;
+        cout << "\nYou are currently unworthy of these teachings!" << endl;
         Sleep(3000);
         return;
     }

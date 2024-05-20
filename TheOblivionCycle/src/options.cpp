@@ -376,8 +376,8 @@ void music_player()
         string music_text;
         if (music_track == 1) { music_text = "To Oblivion"; }
         if (music_track == 2) { music_text = "The Ritual"; }
-        /*if (music_track == 3) { music_text = "Mysterious Gate"; }
-        if (music_track == 4) { music_text = "Cryptic Walls"; }
+        if (music_track == 3) { music_text = "Call of Isis"; }
+        /*if (music_track == 4) { music_text = "Cryptic Walls"; }
         if (music_track == 5) { music_text = "Bard's Story"; }
         if (music_track == 6) { music_text = "Shimmering Lights"; }
         if (music_track == 7) { music_text = "The Iron Wall"; }
@@ -394,7 +394,7 @@ void music_player()
         cout << endl;
         cout << "[1] To Oblivion" << endl;
         cout << "[2] The Ritual" << endl;
-        cout << "[3] Call of Ravens" << endl;
+        cout << "[3] Call of Isis" << endl;
         cout << "[0] Back" << endl;
 
         string ans;

@@ -5,14 +5,14 @@ void show_statbar()
     
     int bar1; for (bar1=0;bar1<70;bar1++){cout<<"-";} cout << endl;
     cout << left << setw(13); cout << hero_player.name; 
-    cout << "Level: " << left << setw(6); cout << hero_player.level;
-    cout << "Exp: " << left << setw(7); cout << hero_player.exp;
-    cout << "Weapon: " << left << setw(10); cout << hero_weapon.name;
-    cout << "Armor: " << left << setw(10); cout << hero_armor.name << endl;
-    cout << "Gold: " << left << setw(7); Color(14); cout << hero_player.gold; Color(7);
-    cout << "Essence: " << left << setw(4); Color(10); cout << hero_player.essence; Color(7);
-    cout << "Heals: " << left << setw(5); Color(9); cout << hero_player.flask; Color(7);
-    cout << "Trinket: " << left << setw(9); Color(5);
+    cout << "Level:" << left << setw(7); cout << hero_player.level;
+    cout << "Exp:" << left << setw(8); cout << hero_player.exp;
+    cout << "Weapon:" << left << setw(11); Color(14); cout << hero_weapon.name; Color(7);
+    cout << "Armor:" << left << setw(10); Color(14); cout << hero_armor.name; Color(7); cout << endl;
+    cout << "Gold:" << left << setw(8); Color(14); cout << hero_player.gold; Color(7);
+    cout << "Ess:" << left << setw(9); Color(10); cout << hero_player.essence; Color(7);
+    cout << "Heals:" << left << setw(6); Color(9); cout << hero_player.flask; Color(7);
+    cout << "Trinket:" << left << setw(10); Color(5);
     if (hero_player.trinket == 0) { cout << "NONE"; }
     if (hero_player.trinket == 1) { cout << "FOOT"; }
     if (hero_player.trinket == 2) { cout << "TALON"; }
