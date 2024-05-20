@@ -175,12 +175,53 @@ void memorize_spells()
         cout << endl << endl; Color(7);
         cout << "[0] Back" << endl;
 
+        int c1 = 0;
         string ans = "";
         ans = _getch();
 
         if (ans == "1")
         {
-            ;
+            if (heal.ready == 1 and hero_player.level >= 3 and c1 == 0)
+            { 
+                heal.ready = 0;
+                cure.ready = 1;
+                c1 = 1;
+            }
+            if (cure.ready == 1 and hero_player.level >= 4 and c1 == 0)
+            {
+                cure.ready = 0;
+                conjure_elixer.ready = 1;
+                c1 = 1;
+            }
+            if (cure.ready == 1 and hero_player.level < 4 and c1 == 0)
+            {
+                cure.ready = 0;
+                heal.ready = 1;
+                c1 = 1;
+            }
+            if (conjure_elixer.ready == 1 and hero_player.level < 5 and c1 == 0)
+            {
+                conjure_elixer.ready = 0;
+                heal.ready = 1;
+                c1 = 1;
+            }
+            if (conjure_elixer.ready == 1 and hero_player.level >= 5 and c1 == 0)
+            {
+                conjure_elixer.ready = 0;
+                magic_missle.ready = 1;
+                c1 = 1;
+            }
+            if (magic_missle.ready == 1 and hero_player.level >= 5 and c1 == 0)
+            {
+                magic_missle.ready = 0;
+                heal.ready = 1;
+                c1 = 1;
+            }
+            if (heal.ready != 1 and cure.ready != 1 and conjure_elixer.ready != 1 and magic_missle.ready != 1)
+            {
+                heal.ready = 1;
+                c1 = 1;
+            }
         }
           
         if (ans == "0" or ans == "\033")
