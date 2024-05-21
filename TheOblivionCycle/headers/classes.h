@@ -193,5 +193,6 @@ extern monster ash_zombie;
 extern monster skeleton_warrior;
 extern monster giant_centipede;
 extern monster goblin;
-extern vector<monster> monsters_all;
+extern monster goblin_warrior;
+extern vector<monster> monsters_all_red;
 extern vector<spell> spells_all;

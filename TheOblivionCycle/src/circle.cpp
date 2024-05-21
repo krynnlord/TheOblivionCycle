@@ -52,27 +52,104 @@ int circleofstones(int i)
 
 void battle_loop(int gate)
 {
-    if (gate == 1 and prism_red == true)
+    if (gate == 1 and prism_red == true and hero_player.level >= 4)
     {
-
+        
     }
 
-    // Roll for Monster based on hero level
-    vector<monster> monsterlist;
-       
-    for (int i = 0; i < size(monsters_all); i++)
+    if (gate == 1)
     {
-        if (monsters_all[i].level == hero_player.level)
+        if (hero_player.level <= 4)
         {
-            monsterlist.push_back(monsters_all[i]);
+            // Roll for Monster based on hero level
+            vector<monster> monsterlist;
+
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                if (monsters_all_red[i].level == hero_player.level)
+                {
+                    monsterlist.push_back(monsters_all_red[i]);
+                }
+            }
+
+            srand((unsigned)time(NULL));
+            int monst_rand;
+            monst_rand = rand() % size(monsterlist);
+
+            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+
         }
+
+        if (hero_player.level > 4)
+        {
+            // Roll for Monster based on hero level
+            vector<monster> monsterlist;
+
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                if (monsters_all_red[i].level == 4)
+                {
+                    monsterlist.push_back(monsters_all_red[i]);
+                }
+            }
+
+            srand((unsigned)time(NULL));
+            int monst_rand;
+            monst_rand = rand() % size(monsterlist);
+
+            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+
+        }
+
     }
 
-    srand((unsigned)time(NULL));
-    int monst_rand;
-    monst_rand = rand() % size(monsterlist);
+    if (gate == 2)
+    {
+        if (hero_player.level <= 8)
+        {
+            // Roll for Monster based on hero level
+            vector<monster> monsterlist;
 
-    battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                if (monsters_all_red[i].level == hero_player.level)
+                {
+                    monsterlist.push_back(monsters_all_red[i]);
+                }
+            }
+
+            srand((unsigned)time(NULL));
+            int monst_rand;
+            monst_rand = rand() % size(monsterlist);
+
+            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+        }
+
+        if (hero_player.level > 8)
+        {
+            // Roll for Monster based on hero level
+            vector<monster> monsterlist;
+
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                if (monsters_all_red[i].level == 8)
+                {
+                    monsterlist.push_back(monsters_all_red[i]);
+                }
+            }
+
+            srand((unsigned)time(NULL));
+            int monst_rand;
+            monst_rand = rand() % size(monsterlist);
+
+            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+
+        }
+
+    }
+
+    
+
 
     return;
 }

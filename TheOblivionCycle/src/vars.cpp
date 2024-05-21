@@ -110,5 +110,9 @@ monster ash_zombie = { "Ash Zombie",40,40,1,2,2,8,"1d4",15,15 };
 monster skeleton_warrior = { "Skeletal Warrior",35,35,0,2,2,13,"1d4",9,9 };
 monster giant_centipede = { "Giant Centipede",38,38,0,2,2,13,"1d4",15,15 };
 monster goblin = { "Goblin",42,42,2,2,2,12,"1d4",20,18 };
+// LVL 3
 
-vector<monster> monsters_all = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin};
+// LVL 4
+monster goblin_warrior = { "Goblin Warrior",72,72,2,4,2,12,"1d4",20,18 };
+
+vector<monster> monsters_all_red = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin, goblin_warrior};
