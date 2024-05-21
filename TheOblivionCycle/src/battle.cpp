@@ -119,7 +119,7 @@ void battle_sim(monster enemy)
 		
 		if (endcombat == true) 
 		{ 
-			cout << "Press any key to return..." << endl;
+			player_death();
 			loop = 1; 
 		}
 
@@ -432,3 +432,23 @@ void loot(monster enemy)
 	return;
 }
 
+void player_death()
+{
+	system("cls");
+	int hero_gold_before = hero_player.gold;
+	hero_player.gold = 0;
+	int temp_exp_loss = 0;
+	int hero_exp_before = hero_player.exp;
+
+	temp_exp_loss = static_cast<int>(hero_player.exp * .25);
+	if (min_exp >= (hero_player.exp - temp_exp_loss)) { hero_player.exp = min_exp; }
+	if (min_exp < (hero_player.exp - temp_exp_loss)) { hero_player.exp -= temp_exp_loss; }
+	
+	hero_player.hp = hero_player.hp_max;
+	hero_player.flask = 3;
+	
+	cout << "You have died!" << endl << endl;
+	cout << "You have dropped " << hero_gold_before << " gold..." << endl;
+	cout << "Your lost " << hero_exp_before - hero_player.exp << " experience points..." << endl << endl;
+	cout << "Press any key..." << endl;
+}

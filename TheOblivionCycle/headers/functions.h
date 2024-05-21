@@ -18,6 +18,7 @@ void conversation_king();
 // Utilities
 void battle_sim(monster);
 void battle_loop(int);
+void player_death();
 void loot(monster);
 void vault();
 void buy_weapons();

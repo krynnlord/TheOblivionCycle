@@ -28,6 +28,7 @@ txtOut << "QUESTLVL:" << hero_player.quest_level << endl;
 txtOut << "ESSENCE:" << hero_player.essence << endl;
 txtOut << "FLASK:" << hero_player.flask << endl;
 txtOut << "GOLDVAULT:" << gold_vault << endl;
+txtOut << "MINEXP:" << min_exp << endl;
 txtOut << "*** WEAPON ***" << endl;
 txtOut << "ID:" << hero_weapon.id << endl;
 txtOut << "NAME:" << hero_weapon.name << endl;
@@ -103,6 +104,7 @@ while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); ist
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s92(emptyline); s92 >> hero_player.essence;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s93(emptyline); s93 >> hero_player.flask;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s95(emptyline); s95 >> gold_vault;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s96(emptyline); s96 >> min_exp;
 getline(txtIn,emptyline); // WEAPON
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn,emptyline); istringstream s12(emptyline); s12 >> hero_weapon.id;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn,hero_weapon.name);
