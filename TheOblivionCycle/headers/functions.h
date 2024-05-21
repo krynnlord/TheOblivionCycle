@@ -16,6 +16,7 @@ int temple(int i);
 void conversation_king();
 
 // Utilities
+void debug_screens();
 void battle_sim(monster);
 void battle_loop(int);
 void player_death();

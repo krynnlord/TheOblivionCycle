@@ -193,6 +193,15 @@ extern monster ash_zombie;
 extern monster skeleton_warrior;
 extern monster giant_centipede;
 extern monster goblin;
+extern monster wolf;
+extern monster grimlock;
+extern monster ooze;
+extern monster sprite;
 extern monster goblin_warrior;
+extern monster gnoll;
+extern monster hobgoblin;
+extern monster satyr;
+extern monster orc;
+
 extern vector<monster> monsters_all_red;
 extern vector<spell> spells_all;

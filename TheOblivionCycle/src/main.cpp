@@ -188,19 +188,7 @@ int main()
             i=1; 
         }
 
-        if (ans == "b" or ans == "B")
-        {
-            // Random Monster Battle
-            int rand_monster = 0;
-            srand((unsigned)time(NULL));
-            rand_monster = (rand() % 20) + 1;
-            int monster_to_send = 0;
-            if (rand_monster > 1 and rand_monster <= 5) { battle_sim(zombie); }
-            if (rand_monster > 5 and rand_monster <= 10) { battle_sim(skeleton); }
-            if (rand_monster > 10 and rand_monster <= 15) { battle_sim(giant_bat); }
-            if (rand_monster > 15 and rand_monster <= 20) { battle_sim(giant_boar); }
-
-        }
+        if (ans == "*") { debug_screens(); }
     }
 
     i = 0;
@@ -212,4 +200,40 @@ int main()
     Sleep(2000);
     return 0; // EXIT CODE
 
+}
+
+void debug_screens()
+{
+    int i = 0;
+    while (i == 0)
+    {
+        system("cls");
+        cout << "Debug Screens" << endl;
+        cout << "-----------------" << endl;
+        cout << "(1) Red Gate - Monster Listing" << endl;
+
+        
+        cout << endl;
+        cout << "[ESC] Exit";
+        string ans;
+        ans = _getch();
+
+        if (ans == "\033") { i = 1; }
+        if (ans == "1")
+        {
+            system("cls");
+            cout << "Red Gate Monster List" << endl << endl;
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+               cout << monsters_all_red[i].level << ": " << monsters_all_red[i].name << endl;
+               
+            }
+            cout << endl;
+            system("pause");
+
+
+
+        }
+
+    }
 }
