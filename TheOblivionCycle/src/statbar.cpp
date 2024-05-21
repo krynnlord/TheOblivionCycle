@@ -21,7 +21,7 @@ void show_statbar()
     if (hero_player.trinket == 23) { cout << "BLOOD"; }
     if (hero_player.trinket == 24) { cout << "TEAR"; }
     Color(7);
-    cout << "Prisms: ";
+    cout << "Prisms:";
     if (prism_red == true) { Color(4); cout << "*"; }
     if (prism_blue == true) { Color(9); cout << "*"; }
     if (prism_purple == true) { Color(5); cout << "*"; }
