@@ -73,12 +73,17 @@ void conversation_king()
 
 void vault()
 {
+    float tax_rate = .15;
+    if (hero_player.trinket == 1) { tax_rate = .10; }
+    
+    
     int i = 0;
     while (i == 0)
     {
         print_castle();
         show_statbar();
 
+        cout << "Tax to withdraw is: " << (tax_rate*100) << "%" << endl;
         cout << "Gold in Vault: "; Color(6); cout << gold_vault << endl << endl; Color(7);
 
         // Print Menu Options
@@ -132,9 +137,13 @@ void vault()
             }
             if (temp_value <= gold_vault)
             {
-                cout << "\nYou withdraw " << temp_value << " gold!";
-                Sleep(2000);
-                hero_player.gold += temp_value;
+                int temp_value2;
+                temp_value2 = temp_value;
+                temp_value2 -= static_cast<int>(temp_value * tax_rate);
+                cout << "Tax Fee: " << temp_value - temp_value2 << " gold.";
+                cout << "\nYou withdraw " << temp_value2 << " gold!";
+                Sleep(3000);
+                hero_player.gold += temp_value2;
                 gold_vault -= temp_value;
             }
 
@@ -147,7 +156,11 @@ void vault()
 void king_ressurect()
 {
     print_king();
-    cout << "Welcome back " << hero_player.name << endl;
-
+    int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";
+    for (bar2 = 0; bar2 < 60; bar2++) { cout << "-"; } cout << endl;
+    cout << "Welcome back " << hero_player.name << ". I have brought you back to life." << endl;
+    cout << "Please be careful in the future, for I cannot return what has been lost!" << endl;
+    for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
+    
     system("pause");
 }

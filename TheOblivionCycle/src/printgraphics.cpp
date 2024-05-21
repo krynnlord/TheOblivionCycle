@@ -380,7 +380,7 @@ void print_help()
     string line15 = R"(|   |          [ESC] Return                   |    |)";
     string line16 = R"(|   |                                         |    |)";
     string line17 = R"(|   |_________________________________________|    |)";
-    string line18 = R"(|            PART I: THE SHIMMERING ISLE           |)";
+    string line18 = R"(|            PART I: THE SHIMMERING GATE           |)";
     string line19 = R"(\_________________________________________________/)";
     string line20 = R"(       \___________________________________/)";
 
@@ -526,6 +526,35 @@ void print_rip()
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
     cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
     cout << line13 << endl << line14 << endl << line15 << endl;
+    Color(7);
+
+}
+
+void print_intro_castle()
+{
+    system("cls");
+    Color(10);
+
+    string line1 = R"(                              _  ___  _)";
+    string line2 = R"(                             |;| |;| |;|)";
+    string line3 = R"(                _  ___  _    \\.    .  /    _  ___  _)";
+    string line4 = R"(               |;|_|;|_|;|    \\:. ,  /    |;|_|;|_|;|)";
+    string line5 = R"(               \\..      /    ||;   . |    \\.    .  /)";
+    string line6 = R"(                \\.  ,  /     ||:  .  |     \\:  .  /)";
+    string line7 = R"(                 ||:   |_   _ ||_ . _ | _   _||:   |)";
+    string line8 = R"(                 ||:  .|||_|;|_|;|_|;|_|;|_|;||:.  |)";
+    string line9 = R"(                 ||:   ||.    .     .      . ||:  .|)";
+    string line10 = R"(                 ||: . || .     . .   .  ,   ||:   |)";
+    string line11 = R"(                 ||:   ||:  ,  _______   .   ||: , |)";
+    string line12 = R"(                 ||:   || .   /+++++++\    . ||:   |)";
+    string line13 = R"(                 ||:   ||.    |+++++++| .    ||: . |)";
+    string line14 = R"(              __ ||: . ||: ,  |+++++++|.  . _||_   |)";
+    string line15 = R"(     ____--`~    '--~~__|.    |+++++__|----~    ~`---,              ___)";
+    string line16 = R"(-~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~~)";
+
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
+    cout << line13 << endl << line14 << endl << line15 << endl << line16 << endl;
     Color(7);
 
 }

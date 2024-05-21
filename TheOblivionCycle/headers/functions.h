@@ -85,6 +85,7 @@ void print_spellbook();
 void print_stones();
 void print_temple();
 void print_title();
+void print_intro_castle();
 void print_village();
 void print_trinkets();
 void print_weapons();

@@ -27,6 +27,23 @@ void intro()
 	typer(storytext, 30);
 	Sleep(4000);
 	
+	print_intro_castle();
+	Sleep(1000);
+	storytext = "\n\n     Astoria. Once a land of peace and prosperity has fallen under an evil \n";
+	typer(storytext, 30);
+	storytext = "     plague. The land has been overrun with monsters, which are spewing from a \n";
+	typer(storytext, 30);
+	storytext = "     red gate which has suddenly appeared in the most sacred of places,\n";
+	typer(storytext, 30);
+	storytext = "     the circle of stones.\n";
+	typer(storytext, 30);
+	Sleep(1000);
+	storytext = "\n\n     Your story begins at the request of the king. You are to report to him\n";
+	typer(storytext, 30);
+	storytext = "     as soon as you arrive...\n";
+	typer(storytext, 30);
+	Sleep(4000);
+
 	ShowConsoleCursor(true);
 	return;
 }
