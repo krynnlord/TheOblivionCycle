@@ -353,10 +353,11 @@ void battle_sim(monster enemy)
 			{
 				total = (final * enemy.prof);
 			}
-
+			total -= hero_armor.armorclass; // Total Attack minus Hero AC
+			if (total <= 0) { total = 0; }
 			enemy_total_atk = total;
 
-			hero_player.hp -= enemy_total_atk;
+			hero_player.hp -= enemy_total_atk; 
 
 			if (hero_player.hp <= 0)
 			{

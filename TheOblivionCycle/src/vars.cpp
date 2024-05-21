@@ -74,19 +74,19 @@ weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "",0 };
 /////////////////////////////////////////
 
 // No Armor
-armor tunic = { 1, "Tunic", "LIGHT", 0, 1,"A Plain shirt", 1 };
+armor tunic = { 1, "Tunic", "LIGHT", 0, 0,"A Plain shirt", 1 };
 
 // Light
-armor cloth_armor = { 2, "Cloth Armor", "LIGHT", 50, 5, "", 0 };
-armor leather_armor = { 3, "Leather Armor", "LIGHT", 100, 11, "", 0 };
+armor cloth_armor = { 2, "Cloth Armor", "LIGHT", 50, 2, "", 0 };
+armor leather_armor = { 3, "Leather Armor", "LIGHT", 100, 4, "", 0 };
 
 // Medium
-armor chain_armor = { 4, "Chain Armor", "MEDIUM", 500, 13, "", 0 };
-armor scale_armor = { 5, "Scale Armor", "MEDIUM", 600, 14, "", 0 };
+armor chain_armor = { 4, "Chain Armor", "MEDIUM", 500, 6, "", 0 };
+armor scale_armor = { 5, "Scale Armor", "MEDIUM", 600, 8, "", 0 };
 
 // Heavy
-armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 17, "", 0 };
-armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 18, "", 0 };
+armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 10, "", 0 };
+armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 12, "", 0 };
 
 // Hero Initial Creation
 // name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
