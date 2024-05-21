@@ -3,6 +3,10 @@
 int castle(int i)
 {
 
+    if (i == 2) { king_ressurect(); }
+    
+    print_castle();
+    show_statbar();
 
     // Print Menu Options
     cout << "("; Color(6); cout << "1"; Color(7); cout << ") Speak with King" << endl;
@@ -138,4 +142,12 @@ void vault()
 
 
     }
+}
+
+void king_ressurect()
+{
+    print_king();
+    cout << "Welcome back " << hero_player.name << endl;
+
+    system("pause");
 }

@@ -60,8 +60,6 @@ void adventure()
             int i = 0;
             while (i==0) 
             {    
-                print_castle();
-                show_statbar();
                 i = castle(i);
             } 
         }

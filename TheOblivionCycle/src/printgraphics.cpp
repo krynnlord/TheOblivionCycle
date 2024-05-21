@@ -501,3 +501,31 @@ void print_music_player()
     Color(7);
 
 }
+
+void print_rip()
+{
+    system("cls");
+    Color(12);
+
+    string line1 = R"( _.---,._,')";
+    string line2 = R"(/' _.--.<)";
+    string line3 = R"(  /'     `')";
+    string line4 = R"(/' _.---._____)";
+    string line5 = R"(\.'   ___, .-'`)";
+    string line6 = R"(    /'    \\             .)";
+    string line7 = R"(  /'       `-.          -|-)";
+    string line8 = R"( |                       |)";
+    string line9 = R"( |                   .-'~~~`-.)";
+    string line10 = R"( |                 .'         `.)";
+    string line11 = R"( |                 |  R  I  P  |)";
+    string line12 = R"( |                 |           |)";
+    string line13 = R"( |                 |           |)";
+    string line14 = R"(  \              \\|           |//)";
+    string line15 = R"(^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^)";
+    
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl;
+    cout << line7 << endl << line8 << endl << line9 << endl << line10 << endl << line11 << endl << line12 << endl;
+    cout << line13 << endl << line14 << endl << line15 << endl;
+    Color(7);
+
+}

@@ -120,7 +120,10 @@ void battle_sim(monster enemy)
 		if (endcombat == true) 
 		{ 
 			player_death();
-			loop = 1; 
+			castle(2);
+			break;
+			
+			//loop = 1; 
 		}
 
 		else
@@ -434,7 +437,7 @@ void loot(monster enemy)
 
 void player_death()
 {
-	system("cls");
+	print_rip();
 	int hero_gold_before = hero_player.gold;
 	hero_player.gold = 0;
 	int temp_exp_loss = 0;
@@ -447,8 +450,11 @@ void player_death()
 	hero_player.hp = hero_player.hp_max;
 	hero_player.flask = 3;
 	
-	cout << "You have died!" << endl << endl;
-	cout << "You have dropped " << hero_gold_before << " gold..." << endl;
-	cout << "Your lost " << hero_exp_before - hero_player.exp << " experience points..." << endl << endl;
-	cout << "Press any key..." << endl;
+	cout << hero_player.name << " has died!" << endl << endl;
+	cout << "You lost:" << endl;
+	cout << hero_gold_before << " GOLD" << endl;
+	cout << hero_exp_before - hero_player.exp << " EXP" << endl << endl;
+	
+	system("pause");
+
 }
