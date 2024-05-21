@@ -19,6 +19,7 @@ void conversation_king();
 void battle_sim(monster);
 void battle_loop(int);
 void loot(monster);
+void vault();
 void buy_weapons();
 void buy_armor();
 void weapon_equipper(weapon);

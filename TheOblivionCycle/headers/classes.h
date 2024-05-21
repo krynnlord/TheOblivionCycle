@@ -8,6 +8,7 @@ extern int music_track; // Music Selected 1-12
 extern int crit_result0; //Battle Seq
 
 extern int min_exp;
+extern int gold_vault;
 
 // Classes
 
