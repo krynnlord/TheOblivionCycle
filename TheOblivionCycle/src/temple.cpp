@@ -176,6 +176,8 @@ void memorize_spells()
         cout << "[0] Back" << endl;
 
         int c1 = 0;
+        int c2 = 0;
+        int c3 = 0;
         string ans = "";
         ans = _getch();
 
@@ -223,7 +225,95 @@ void memorize_spells()
                 c1 = 1;
             }
         }
-          
+        if (ans == "2")
+        {
+            if (greater_heal.ready == 1 and hero_player.level >= 7 and c2 == 0)
+            {
+                greater_heal.ready = 0;
+                barrier.ready = 1;
+                c2 = 1;
+            }
+            if (barrier.ready == 1 and hero_player.level >= 8 and c2 == 0)
+            {
+                barrier.ready = 0;
+                escape.ready = 1;
+                c2 = 1;
+            }
+            if (barrier.ready == 1 and hero_player.level < 8 and c2 == 0)
+            {
+                barrier.ready = 0;
+                greater_heal.ready = 1;
+                c2 = 1;
+            }
+            if (escape.ready == 1 and hero_player.level < 9 and c2 == 0)
+            {
+                escape.ready = 0;
+                greater_heal.ready = 1;
+                c2 = 1;
+            }
+            if (escape.ready == 1 and hero_player.level >= 9 and c2 == 0)
+            {
+                escape.ready = 0;
+                fireball.ready = 1;
+                c2 = 1;
+            }
+            if (fireball.ready == 1 and hero_player.level >= 9 and c2 == 0)
+            {
+                fireball.ready = 0;
+                greater_heal.ready = 1;
+                c2 = 1;
+            }
+            if (greater_heal.ready != 1 and barrier.ready != 1 and escape.ready != 1 and fireball.ready != 1 and hero_player.level >=6)
+            {
+                greater_heal.ready = 1;
+                c2 = 1;
+            }
+        }
+
+        if (ans == "3")
+        {
+            if (regeneration.ready == 1 and hero_player.level >= 11 and c3 == 0)
+            {
+                regeneration.ready = 0;
+                holy_ground.ready = 1;
+                c3 = 1;
+            }
+            if (holy_ground.ready == 1 and hero_player.level >= 12 and c3 == 0)
+            {
+                holy_ground.ready = 0;
+                doubleme.ready = 1;
+                c3 = 1;
+            }
+            if (holy_ground.ready == 1 and hero_player.level < 12 and c3 == 0)
+            {
+                holy_ground.ready = 0;
+                regeneration.ready = 1;
+                c3 = 1;
+            }
+            if (doubleme.ready == 1 and hero_player.level < 13 and c3 == 0)
+            {
+                doubleme.ready = 0;
+                regeneration.ready = 1;
+                c3 = 1;
+            }
+            if (doubleme.ready == 1 and hero_player.level >= 13 and c3 == 0)
+            {
+                doubleme.ready = 0;
+                immolation.ready = 1;
+                c3 = 1;
+            }
+            if (immolation.ready == 1 and hero_player.level >= 13 and c3 == 0)
+            {
+                immolation.ready = 0;
+                regeneration.ready = 1;
+                c3 = 1;
+            }
+            if (regeneration.ready != 1 and holy_ground.ready != 1 and doubleme.ready != 1 and immolation.ready != 1 and hero_player.level >= 10)
+            {
+                regeneration.ready = 1;
+                c3 = 1;
+            }
+        }
         if (ans == "0" or ans == "\033")
         {
             a = 0;
