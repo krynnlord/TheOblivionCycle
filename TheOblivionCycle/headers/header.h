@@ -11,5 +11,6 @@
 #include <ctime>
 #include <vector>
 #include <iomanip>
+#include <random>
 #pragma comment(lib, "Winmm.lib")
 using namespace std;

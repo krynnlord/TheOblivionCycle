@@ -8,10 +8,12 @@ int trinket_run(int hero_total_atk)
 
     if (hero_player.trinket == 1) // Rabbit's Foot
     {
-        srand((unsigned)time(0));
-        int rand_chance = (rand() % 10) + 1;
+        uniform_int_distribution<int> rng_range(1, 10);
+        random_device rd;
+        mt19937 rng(rd());
+        int rand_chance = rng_range(rng);
 
-        if (rand_chance >= 9)
+        if (rand_chance > 9)
         {
             trinket_modded_atk = hero_total_atk * 2; trigger = 1;
         }

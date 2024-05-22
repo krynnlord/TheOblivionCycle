@@ -10,9 +10,6 @@ void battle_sim(monster enemy)
 	string hero_combat_string = "Ready for combat.";
 	string enemy_combat_string = "Ready for combat.";
 
-	// Define Enemy
-	// monster enemy = zombie;
-
 	// Combat Active
 	bool endcombat = false;
 	extern int exit_mode;
@@ -135,8 +132,6 @@ void battle_sim(monster enemy)
 			player_death();
 			castle(2);
 			break;
-			
-			//loop = 1; 
 		}
 
 		else
@@ -228,26 +223,18 @@ void battle_sim(monster enemy)
 		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
 		
-		// Delaying for Time Randomizer
-		if (ans == "1") { cout << "Player Attacks..."; Sleep(1000);}
+		if (ans == "1") { cout << "Player Attacks...";}
 		if (hero_player.level > 1)
-		{
-			if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell...";Sleep(1000);}
-		}
-		if (ans == "2") { cout << "Player Attempts to Heal...";Sleep(1000);}
-		if (ans == "0") { cout << "Player Attempts to Run...";Sleep(1000); }
-		
+		{  if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell...";} 	}
+		if (ans == "2") { cout << "Player Attempts to Heal...";}
+		if (ans == "0") { cout << "Player Attempts to Run...";}
 
-		
-		
 		// Magic Cast
-		
 		if (ans == "a" and c1_spell == 0)
 		{
 			hero_combat_string = "casts magic missle, but it is out of charges!";
 			enemy_combat_string = "flinches!";	
 		}
-
 		
 		if (ans == "a" and c1_spell == 1)
 		{
@@ -265,8 +252,6 @@ void battle_sim(monster enemy)
 			enemy.hp -= hero_total_atk;
 		}
 		
-
-		
 		if (ans == "0")
 		{
 			
@@ -274,8 +259,10 @@ void battle_sim(monster enemy)
 			skip_hero_atk = 1;
 			heal_run = 2;
 			ans = "1";
-			srand((unsigned)time(NULL));
-			int runroll = (rand() % 4) + 1;
+			uniform_int_distribution<int> rng_range(1, 4);
+			random_device rd;
+			mt19937 rng(rd());
+			int runroll = rng_range(rng);
 			if (runroll == 4) { loop = 1; }
 		}
 
@@ -307,7 +294,6 @@ void battle_sim(monster enemy)
 			}
 		}
 
-
 		if (ans == "\033")
 		{
 			info_screen();
@@ -326,8 +312,10 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			int	crit = 0;
-			srand((unsigned)time(NULL));
-			int critroll = (rand() % 20) + 1;
+			uniform_int_distribution<int> rng_range(1, 20);
+			random_device rd;
+			mt19937 rng(rd());
+			int critroll = rng_range(rng);
 			if (critroll >= 20 - hero_player.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
 			else { crit = 0; } // normal
@@ -336,8 +324,10 @@ void battle_sim(monster enemy)
 			int final = 0;
 			for (int i = 0; i < dice_i; ++i)
 			{
-				srand((unsigned)time(NULL));
-				int roll = (rand() % sides_i) + 1;
+				uniform_int_distribution<int> rng_range(1, sides_i);
+				random_device rd;
+				mt19937 rng(rd());
+				int roll = rng_range(rng);
 				final += roll;
 				roll = 0;
 			}
@@ -418,8 +408,10 @@ void battle_sim(monster enemy)
 
 			// Crit role
 			int crit = 0;
-			srand((unsigned)time(NULL));
-			int critroll = (rand() % 20) + 1;
+			uniform_int_distribution<int> rng_range(1, 20);
+			random_device rd;
+			mt19937 rng(rd());
+			int critroll = rng_range(rng);
 			if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
 			else { crit = 0; } // normal
@@ -428,8 +420,10 @@ void battle_sim(monster enemy)
 			int final = 0;
 			for (int i = 0; i < dice_i; ++i)
 			{
-				srand((unsigned)time(NULL));
-				int roll = (rand() % sides_i) + 1;
+				uniform_int_distribution<int> rng_range(1, sides_i);
+				random_device rd;
+				mt19937 rng(rd());
+				int roll = rng_range(rng);
 				final += roll;
 				roll = 0;
 			}
@@ -498,8 +492,10 @@ void loot(monster enemy)
 	//money roller
 	int money_roll = 0;
 	int money_gained = 0;
-	srand((unsigned)time(NULL));
-	money_roll = 5 + rand() % 10 + 1;
+	uniform_int_distribution<int> rng_range(5, 10);
+	random_device rd;
+	mt19937 rng(rd());
+	money_roll = rng_range(rng);
 	money_gained = enemy.level * money_roll;
 	hero_player.gold += money_gained; // Show me the money!!!
 

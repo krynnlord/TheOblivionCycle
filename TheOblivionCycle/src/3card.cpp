@@ -289,6 +289,7 @@ void gambling()
 			cout << "[3]  50 GOLD   [7]  500 GOLD" << endl;
 			cout << "[4] 100 GOLD   [8] 1000 GOLD" << endl;
 
+			FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 			ans = _getch();
 			if (ans == "1") { bet = 10; dontrun = 0; }
 			if (ans == "2") { bet = 20; dontrun = 0;}
@@ -305,10 +306,10 @@ void gambling()
 			{
 				fakemoney = hero_player.gold;
 				result = fakemoney -= bet;
-
+				int skip_double = 0;
 				if (result < 0)
 				{
-					cout << "You can't afford that!"; Sleep(4000);
+					cout << "You can't afford that!"; Sleep(2000);
 					b = 1;
 				}
 				else
@@ -323,15 +324,14 @@ void gambling()
 					roll3 = 0;
 
 					int rollresult = 0;
-
-					srand((unsigned)time(NULL));
-					rollresult = 2 + rand() % 8 + 1;
+					uniform_int_distribution<int> rng_range(2, 10);
+					random_device rd;
+					mt19937 rng(rd());
+					rollresult = rng_range(rng);
 					roll1 = rollresult;
-					Sleep(1000);
-					rollresult = 2 + rand() % 8 + 1;
+					rollresult = rng_range(rng);
 					roll2 = rollresult;
-					Sleep(1000);
-					rollresult = 2 + rand() % 8 + 1;
+					rollresult = rng_range(rng);
 					roll3 = rollresult;
 
 					cout << endl;
@@ -340,23 +340,24 @@ void gambling()
 
 					cout << endl;
 
-					if (roll1 == roll2 == roll3)
+					if (roll1 == roll2 && roll2 == roll3)
 					{
 						cout << "Triple! You won big!! ";
 						hero_player.gold += bet;
 						bet *= 3;
 						hero_player.gold += bet;
-						Sleep(3000);
+						skip_double = 1;
+						Sleep(2000);
 					}
 
 
-					if (roll1 == roll2 or roll1 == roll3 or roll2 == roll3)
+					else if ((roll1 == roll2 or roll1 == roll3 or roll2 == roll3) && skip_double == 0)
 					{
 						cout << "Double! Your a winner!! ";
 						hero_player.gold += bet;
 						bet *= 2;
 						hero_player.gold += bet;
-						Sleep(3000);
+						Sleep(2000);
 					}
 
 					else
