@@ -73,7 +73,7 @@ void conversation_king()
 
 void vault()
 {
-    float tax_rate = .15;
+    double tax_rate = .15;
     if (hero_player.trinket == 1) { tax_rate = .10; }
     
     

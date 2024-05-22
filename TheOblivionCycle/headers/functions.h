@@ -65,11 +65,7 @@ void armor_checker(armor);
 void check_weapon_purchase(weapon&);
 void check_armor_purchase(armor&);
 void check_trinket_purchase(trinket&);
-int master_damage_roller(int, int);
 int trinket_run(int);
-int crit_roller();
-int baseDamage_roller(int, int);
-int final_calculations(int, int);
 
 // Print Images
 void print_blacksmith();

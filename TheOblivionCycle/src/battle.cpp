@@ -17,7 +17,9 @@ void battle_sim(monster enemy)
 	bool endcombat = false;
 	extern int exit_mode;
 	exit_mode = 0;
+
 	// VARS for Battle System
+	int trigger = 0;
 	int hppercent;
 	int hppercent_e;
 	string hp_bar = "";
@@ -115,8 +117,10 @@ void battle_sim(monster enemy)
 
 		cout << endl;
 		Color(2); cout << hero_player.name << ": "; Color(7); cout <<  hero_combat_string << endl;
-		Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl << endl;
-		
+		Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl;
+		if (trigger == 1) { Color(5); cout << "*** Trinket triggered ***"; Color(7); }
+		cout << endl << endl;
+
 		if (endcombat == true) 
 		{ 
 			player_death();
@@ -269,8 +273,9 @@ void battle_sim(monster enemy)
 			hero_final = final;
 			hero_crit = crit;
 			hero_total_atk = total;
-
-			//trinket_run(hero_total_atk, hero_trinket);
+			
+			
+			hero_total_atk, trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
 
 			if (skip_hero_atk == 0)
 			{
