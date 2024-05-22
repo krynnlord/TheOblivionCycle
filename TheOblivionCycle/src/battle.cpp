@@ -29,7 +29,16 @@ void battle_sim(monster enemy)
 	int bar_ticks = 0;
 	int ebar_ticks = 0;
 	int skip_hero_atk = 0;
+	int skip_enemy_atk = 1;
 	int heal_run = 0;
+
+	// Magic Vars
+	int spell_damage = 0;
+	int att_magic_round = 0;
+	int def_magic_round = 0;
+	int c1_spell = 1;
+	int c2_spell = 1;
+	int c3_spell = 1;
 
 	// DICE Vars
 	int dice_i = 0;
@@ -137,25 +146,65 @@ void battle_sim(monster enemy)
 			cout << "[1] Attack" << endl;
 			if (hero_player.level > 1)
 			{
-				cout << "--> Cast [a] "; Color(9);
-				if (heal.ready == 1) { cout << heal.name; }
-				if (cure.ready == 1) { cout << cure.name; }
-				if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
-				if (magic_missle.ready == 1) { cout << magic_missle.name; }
-				Color(7);cout << " [b] ";Color(9);
-				if (greater_heal.ready == 1) { cout << greater_heal.name; }
-				if (barrier.ready == 1) { cout << barrier.name; }
-				if (escape.ready == 1) { cout << escape.name; }
-				if (fireball.ready == 1) { cout << fireball.name; }
-				Color(7);cout << " [c] ";Color(9);
-				if (regeneration.ready == 1) { cout << regeneration.name; }
-				if (holy_ground.ready == 1) { cout << holy_ground.name; }
-				if (doubleme.ready == 1) { cout << doubleme.name; }
-				if (immolation.ready == 1) { cout << immolation.name; }
-				Color(7);cout << endl;
+				cout << "--> Cast [a] "; 
+				if (c1_spell == 1)
+				{
+					Color(9);
+					if (heal.ready == 1) { cout << heal.name; }
+					if (cure.ready == 1) { cout << cure.name; }
+					if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
+					if (magic_missle.ready == 1) { cout << magic_missle.name; }
+					Color(7);
+				}
+				if (c1_spell == 0)
+				{
+					Color(8);
+					if (heal.ready == 1) { cout << heal.name; }
+					if (cure.ready == 1) { cout << cure.name; }
+					if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
+					if (magic_missle.ready == 1) { cout << magic_missle.name; }
+					Color(7);
+				}
+				cout << " [b] ";
+				if (c2_spell == 1)
+				{
+					Color(9);
+					if (greater_heal.ready == 1) { cout << greater_heal.name; }
+					if (barrier.ready == 1) { cout << barrier.name; }
+					if (escape.ready == 1) { cout << escape.name; }
+					if (fireball.ready == 1) { cout << fireball.name; }
+					Color(7);
+				}
+				if (c2_spell == 0)
+				{
+					Color(8);
+					if (greater_heal.ready == 1) { cout << greater_heal.name; }
+					if (barrier.ready == 1) { cout << barrier.name; }
+					if (escape.ready == 1) { cout << escape.name; }
+					if (fireball.ready == 1) { cout << fireball.name; }
+					Color(7);
+				}
+				cout << " [c] ";
+				if (c3_spell == 1)
+				{
+					Color(9);
+					if (regeneration.ready == 1) { cout << regeneration.name; }
+					if (holy_ground.ready == 1) { cout << holy_ground.name; }
+					if (doubleme.ready == 1) { cout << doubleme.name; }
+					if (immolation.ready == 1) { cout << immolation.name; }
+					Color(7);cout << endl;
+				}
+				if (c3_spell == 0)
+				{
+					Color(8);
+					if (regeneration.ready == 1) { cout << regeneration.name; }
+					if (holy_ground.ready == 1) { cout << holy_ground.name; }
+					if (doubleme.ready == 1) { cout << doubleme.name; }
+					if (immolation.ready == 1) { cout << immolation.name; }
+					Color(7);cout << endl;
+				}
+
 			}
-
-
 
 			cout << "[2] Use Flask [";
 			
@@ -171,7 +220,7 @@ void battle_sim(monster enemy)
 						
 			cout << endl;
 		}
-		
+		skip_enemy_atk = 1;
 		skip_hero_atk = 0;
 		heal_run = 0;
 
@@ -180,17 +229,48 @@ void battle_sim(monster enemy)
 		ans = _getch();
 		
 		// Delaying for Time Randomizer
-		if (ans == "1") { cout << "Player Attacks..."; }
+		if (ans == "1") { cout << "Player Attacks..."; Sleep(1000);}
 		if (hero_player.level > 1)
 		{
-			if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell..."; }
+			if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell...";Sleep(1000);}
 		}
-		if (ans == "2") { cout << "Player Attempts to Heal..."; }
-		if (ans == "0") { cout << "Player Attempts to Run..."; }
-		Sleep(1000); // Delay 1 second
+		if (ans == "2") { cout << "Player Attempts to Heal...";Sleep(1000);}
+		if (ans == "0") { cout << "Player Attempts to Run...";Sleep(1000); }
+		
 
+		
+		
+		// Magic Cast
+		
+		if (ans == "a" and c1_spell == 0)
+		{
+			hero_combat_string = "casts magic missle, but it is out of charges!";
+			enemy_combat_string = "flinches!";	
+		}
+
+		
+		if (ans == "a" and c1_spell == 1)
+		{
+			
+			if (magic_missle.ready == 1)
+			{
+				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell);
+				hero_combat_string = "casts Magic Missle at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
+				c1_spell = 0;
+				skip_enemy_atk = 0;
+			}
+
+
+
+			enemy.hp -= hero_total_atk;
+		}
+		
+
+		
 		if (ans == "0")
 		{
+			
+			skip_enemy_atk = 0;
 			skip_hero_atk = 1;
 			heal_run = 2;
 			ans = "1";
@@ -201,6 +281,8 @@ void battle_sim(monster enemy)
 
 		if (ans == "2")
 		{
+			
+			skip_enemy_atk = 0;
 			skip_hero_atk = 1;
 			heal_run = 1;
 			ans = "1";
@@ -233,6 +315,9 @@ void battle_sim(monster enemy)
 
 		if (ans == "1") // Round Start
 		{
+			
+			skip_enemy_atk = 0;
+
 			// HERO TURN
 			string dice; dice = hero_weapon.damage[0]; dice_i = stoi(dice); // # of dice
 			string sides; sides = hero_weapon.damage[2]; sides_i = stoi(sides); // # of sides
@@ -273,8 +358,8 @@ void battle_sim(monster enemy)
 			hero_final = final;
 			hero_crit = crit;
 			hero_total_atk = total;
-			
-			
+
+
 			hero_total_atk, trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
 
 			if (skip_hero_atk == 0)
@@ -307,36 +392,40 @@ void battle_sim(monster enemy)
 
 				}
 			}
-			else 
-			{	
-				if (heal_run == 1){ hero_combat_string = "takes a sip from the Celestial Flask!"; }
-				if (heal_run == 2){ hero_combat_string = "attempts to run, but fails."; }
+			else
+			{
+				if (heal_run == 1) { hero_combat_string = "takes a sip from the Celestial Flask!"; }
+				if (heal_run == 2) { hero_combat_string = "attempts to run, but fails."; }
 			}
 
+		}
 
-			// ENEMY TURN
-			
-			if (enemy.hp == 0) 
+// *********************************************************************************************************		
+//           ENEMY TURN
+// *********************************************************************************************************
+		if (skip_enemy_atk != 1)
+		{
+			if (enemy.hp == 0)
 			{
 				enemy_combat_string = "has been killed.";
 				endcombat = true;
 			}
-			
-			dice = enemy.damage[0]; dice_i = stoi(dice); // # of dice
-			sides = enemy.damage[2]; sides_i = stoi(sides); // # of sides
 
-			total = 0;
+			string dice; dice = enemy.damage[0]; dice_i = stoi(dice); // # of dice
+			string sides; sides = enemy.damage[2]; sides_i = stoi(sides); // # of sides
+
+			int total = 0;
 
 			// Crit role
-			crit = 0;
+			int crit = 0;
 			srand((unsigned)time(NULL));
-			critroll = (rand() % 20) + 1;
+			int critroll = (rand() % 20) + 1;
 			if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
 			else if (critroll == 1) { crit = 2; } //miss
 			else { crit = 0; } // normal
 
 			// Dice Roll
-			final = 0;
+			int final = 0;
 			for (int i = 0; i < dice_i; ++i)
 			{
 				srand((unsigned)time(NULL));
@@ -347,7 +436,7 @@ void battle_sim(monster enemy)
 
 			// add modifiers
 			if (crit == 1)
-			{ 
+			{
 				total = (final * enemy.prof) * 2;
 			}
 			else if (crit == 2)
@@ -362,7 +451,7 @@ void battle_sim(monster enemy)
 			if (total <= 0) { total = 0; }
 			enemy_total_atk = total;
 
-			hero_player.hp -= enemy_total_atk; 
+			hero_player.hp -= enemy_total_atk;
 
 			if (hero_player.hp <= 0)
 			{

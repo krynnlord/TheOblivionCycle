@@ -66,6 +66,8 @@ void check_weapon_purchase(weapon&);
 void check_armor_purchase(armor&);
 void check_trinket_purchase(trinket&);
 int trinket_run(int);
+int magic_attack(int, int, int);
+void magic_persistent_attack(int);
 
 // Print Images
 void print_blacksmith();
