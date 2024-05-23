@@ -35,7 +35,9 @@ void show_statbar()
     if (hppercent < 75 and hppercent >40) { Color(14); }
     if (hppercent <= 40) { Color(4); }
     cout << hero_player.hp; Color(7);
-    cout << "/" << left << setw(4) << hero_player.hp_max << " ";
-    int bar; for (bar=0;bar<57;bar++){cout<<"-";};
+    cout << "/" << left << setw(4) << hero_player.hp_max << " ----";
+    if (hero_player.stat == 2) { Color(10); cout << ">>>POISONED<<<";Color(7); }
+    if (hero_player.stat != 2) { cout << "--------------"; }
+    int bar; for (bar=0;bar<39;bar++){cout<<"-";};
     cout << endl << endl;
 }
