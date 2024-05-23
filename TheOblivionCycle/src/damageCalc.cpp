@@ -140,7 +140,7 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 	hero_total_atk = total;
 
 
-	hero_total_atk, trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
+	trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
 
 	if (skip_hero_atk == 0)
 	{
@@ -269,7 +269,7 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 
 // Trinket Calculator
-int trinket_run(int hero_total_atk)
+int trinket_run(int& hero_total_atk)
 {
     int trigger = 0;
     int trinket_modded_atk = 0;
@@ -299,7 +299,8 @@ int trinket_run(int hero_total_atk)
         trinket_modded_atk = hero_total_atk;
     }
     
-    return trinket_modded_atk, trigger;
+	hero_total_atk = trinket_modded_atk;
+    return trigger;
 }
 
 int magic_attack(int c1_spell, int c2_spell, int c3_spell)

@@ -27,8 +27,15 @@ void show_statbar()
     if (prism_purple == true) { Color(5); cout << "*"; }
     if (prism_yellow == true) { Color(6); cout << "*"; }
     if (prism_shimmering == true) { Color(15); cout << "*"; }
-    Color(7);
-        
+    Color(7);  
     cout << endl; Color(7);
-    int bar; for (bar=0;bar<70;bar++){cout<<"-";} cout << endl;
+    cout << "HP:" << right << setw(4);
+    int hppercent = static_cast<int>(100 * round(hero_player.hp) / round(hero_player.hp_max));
+    if (hppercent >= 75) { Color(7); }
+    if (hppercent < 75 and hppercent >40) { Color(14); }
+    if (hppercent <= 40) { Color(4); }
+    cout << hero_player.hp; Color(7);
+    cout << "/" << left << setw(4) << hero_player.hp_max << " ";
+    int bar; for (bar=0;bar<57;bar++){cout<<"-";};
+    cout << endl << endl;
 }

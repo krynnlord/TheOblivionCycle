@@ -18,6 +18,9 @@ void enemy_display(monster enemy);
 void battle_log(monster, string, string, int);
 void hero_turn(monster&, string&, int&, int&, int, int&);
 void enemy_turn(monster&, string&, bool&);
+int trinket_run(int&);
+int magic_attack(int, int, int);
+void magic_persistent_attack(int);
 
 // Conversations
 void conversation_king();
@@ -72,9 +75,6 @@ void armor_checker(armor);
 void check_weapon_purchase(weapon&);
 void check_armor_purchase(armor&);
 void check_trinket_purchase(trinket&);
-int trinket_run(int);
-int magic_attack(int, int, int);
-void magic_persistent_attack(int);
 
 // Print Images
 void print_blacksmith();
