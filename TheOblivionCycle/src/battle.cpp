@@ -70,8 +70,8 @@ void battle_sim(monster enemy)
 					Color(9);
 					if (heal.ready == 1) { cout << heal.name; }
 					if (cure.ready == 1) { cout << cure.name; }
-					if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
-					if (magic_missle.ready == 1) { cout << magic_missle.name; }
+					if (conjure_elixir.ready == 1) { cout << conjure_elixir.name; }
+					if (magic_missile.ready == 1) { cout << magic_missile.name; }
 					Color(7);
 				}
 				if (c1_spell == 0)
@@ -79,8 +79,8 @@ void battle_sim(monster enemy)
 					Color(8);
 					if (heal.ready == 1) { cout << heal.name; }
 					if (cure.ready == 1) { cout << cure.name; }
-					if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
-					if (magic_missle.ready == 1) { cout << magic_missle.name; }
+					if (conjure_elixir.ready == 1) { cout << conjure_elixir.name; }
+					if (magic_missile.ready == 1) { cout << magic_missile.name; }
 					Color(7);
 				}
 				cout << " [b] ";
@@ -146,30 +146,38 @@ void battle_sim(monster enemy)
 		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));  // Flush Console input while Sleeping
 		ans = _getch();
 		
-		if (ans == "1") { cout << "Player Attacks...";}
-		if (hero_player.level > 1)
-		{  if (ans == "a" or ans == "b" or ans == "c") { cout << "Player Casts Spell...";} 	}
-		if (ans == "2") { cout << "Player Attempts to Heal...";}
-		if (ans == "0") { cout << "Player Attempts to Run...";}
-
 		// Magic Cast
 		if (ans == "a" and c1_spell == 0)
 		{
-			hero_combat_string = "casts magic missle, but it is out of charges!";
+			hero_combat_string = "casts a spell, but it fails!";
 			enemy_combat_string = "flinches!";	
 		}
 		
 		if (ans == "a" and c1_spell == 1)
 		{
 			
-			if (magic_missle.ready == 1)
+			if (magic_missile.ready == 1)
 			{
 				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell);
-				hero_combat_string = "casts Magic Missle at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
+				hero_combat_string = "casts Magic Missile at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
 			}
 
+			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask < 3)
+			{
+				magic_aid(c1_spell, c2_spell, c3_spell);
+				hero_combat_string = "casts Conjure Exilir and refills 1 flask charge!";
+				c1_spell = 0;
+				skip_enemy_atk = 0;
+			}
+			
+			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask == 3)
+			{
+				hero_combat_string = "casts Conjure Exilir but flask was already full!";
+				c1_spell = 0;
+				skip_enemy_atk = 0;
+			}
 
 
 			enemy.hp -= hero_total_atk;
@@ -229,9 +237,10 @@ void battle_sim(monster enemy)
 			hero_turn(enemy, hero_combat_string, trigger, skip_hero_atk, heal_run, hero_total_atk);// HERO TURN
 		}
 
-		
-		enemy_turn(enemy, enemy_combat_string, endcombat); // ENEMY TURN
-
+		if (skip_enemy_atk != 1)
+		{
+			enemy_turn(enemy, enemy_combat_string, endcombat); // ENEMY TURN
+		}
 
 	}
 

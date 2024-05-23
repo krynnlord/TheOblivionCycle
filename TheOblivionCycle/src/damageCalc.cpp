@@ -323,7 +323,7 @@ void trinket_cleanup()
 int magic_attack(int c1_spell, int c2_spell, int c3_spell)
 {
     int spell_damage = 0;
-    if (magic_missle.ready == 1 and c1_spell == 1)
+    if (magic_missile.ready == 1 and c1_spell == 1)
     {
         spell_damage = hero_player.prof * 3;
     }
@@ -340,6 +340,18 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell)
 
     return spell_damage;
 }
+
+void magic_aid(int c1_spell, int c2_spell, int c3_spell)
+{
+	if (conjure_elixir.ready == 1 and c1_spell == 1)
+	{
+		if (hero_player.flask < 3)
+		{
+			hero_player.flask += 1;
+		}
+	}
+}
+
 
 void magic_persistent_attack(int att_magic_round)
 {

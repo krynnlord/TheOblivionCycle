@@ -35,8 +35,8 @@ trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 6000, 2, 
 // Circle 1
 spell heal = { "HEAL", "Heals for a small amount", 1, 0, 15, 1, 2 };
 spell cure = { "CURE", "Heals for a small amount", 1, 0, 15, 1, 3 };
-spell conjure_elixer = { "CONJURE ELIXER", "Fills the Celestial Flask 1 charge", 1, 0, 15, 1, 4 };
-spell magic_missle = { "MAGIC MISSLE", "Heals for a small amount", 1, 0, 15, 1, 5 };
+spell conjure_elixir = { "CONJURE ELIXIR", "Fills the Celestial Flask 1 charge", 1, 0, 15, 1, 4 };
+spell magic_missile = { "MAGIC MISSILE", "Heals for a small amount", 1, 0, 15, 1, 5 };
 
 // Circle 2
 spell greater_heal = { "GREATER HEAL", "Heals for a small amount", 1, 0, 15, 2, 6 };
@@ -50,7 +50,7 @@ spell holy_ground = { "HOLY GROUND", "Heals for a small amount", 1, 0, 15, 3, 11
 spell doubleme = { "DOUBLE", "Heals for a small amount", 1, 0, 15, 3, 12 };
 spell immolation = { "IMMOLATION", "Heals for a small amount", 1, 0, 15, 3, 13 };
 
-vector<spell> spells_all = { heal, cure, conjure_elixer, magic_missle, greater_heal, barrier, escape, fireball, regeneration, holy_ground, doubleme, immolation };
+vector<spell> spells_all = { heal, cure, conjure_elixir, magic_missile, greater_heal, barrier, escape, fireball, regeneration, holy_ground, doubleme, immolation };
 /////////////////////////////////////////
 // Weapons //////////////////////////////
 /////////////////////////////////////////

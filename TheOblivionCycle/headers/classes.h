@@ -126,8 +126,8 @@ extern trinket frozen_tear;
 // Circle 1
 extern spell heal;
 extern spell cure;
-extern spell conjure_elixer;
-extern spell magic_missle;
+extern spell conjure_elixir;
+extern spell magic_missile;
 
 // Circle 2
 extern spell greater_heal;

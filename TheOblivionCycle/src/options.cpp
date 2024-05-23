@@ -272,9 +272,9 @@ void help_screen()
                 cout << "["; Color(10); cout << "Abjuration"; Color(7); cout << "] Protective Magic" << endl;
                 cout << "Spells: Cure, Barrier, Holy Ground" << endl << endl;
                 cout << "["; Color(14); cout << "Conjuration"; Color(7); cout << "] Creation/Alteration Magic" << endl;
-                cout << "Spells: Conjure Elixer, Escape, Double" << endl << endl;
+                cout << "Spells: Conjure Elixir, Escape, Double" << endl << endl;
                 cout << "["; Color(12); cout << "Evocation"; Color(7); cout << "] Destructive Magic" << endl;
-                cout << "Spells: Magic Missle, Fireball, Immolation" << endl << endl;
+                cout << "Spells: Magic Missile, Fireball, Immolation" << endl << endl;
 
                 
                 system("pause");

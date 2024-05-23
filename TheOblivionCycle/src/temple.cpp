@@ -134,7 +134,7 @@ void memorize_spells()
     {
         print_spellbook();
         
-        int c11 = heal.ready; int c12 = cure.ready; int c13 = conjure_elixer.ready; int c14 = magic_missle.ready;
+        int c11 = heal.ready; int c12 = cure.ready; int c13 = conjure_elixir.ready; int c14 = magic_missile.ready;
         int c21 = greater_heal.ready; int c22 = barrier.ready; int c23 = escape.ready; int c24 = fireball.ready;
         int c31 = regeneration.ready; int c32 = holy_ground.ready; int c33 = doubleme.ready; int c34 = immolation.ready;
 
@@ -147,10 +147,10 @@ void memorize_spells()
         cout << "["; Color(6); cout << convert_spell(c12); Color(7); cout << "]"; cout << spell_level_checker(cure);Color(7);
         cout << "            ["; Color(6); cout << convert_spell(c22); Color(7); cout << "]"; cout << spell_level_checker(barrier);Color(7);
         cout << "          ["; Color(6); cout << convert_spell(c32); Color(7); cout << "]"; cout << spell_level_checker(holy_ground) << endl;Color(7);
-        cout << "["; Color(6); cout << convert_spell(c13); Color(7); cout << "]"; cout << spell_level_checker(conjure_elixer);Color(7);
+        cout << "["; Color(6); cout << convert_spell(c13); Color(7); cout << "]"; cout << spell_level_checker(conjure_elixir);Color(7);
         cout << "  ["; Color(6); cout << convert_spell(c23); Color(7); cout << "]"; cout << spell_level_checker(escape);Color(7);
         cout << "           ["; Color(6); cout << convert_spell(c33); Color(7); cout << "]"; cout << spell_level_checker(doubleme) << endl;Color(7);
-        cout << "["; Color(6); cout << convert_spell(c14); Color(7); cout << "]"; cout << spell_level_checker(magic_missle);Color(7);
+        cout << "["; Color(6); cout << convert_spell(c14); Color(7); cout << "]"; cout << spell_level_checker(magic_missile);Color(7);
         cout << "    ["; Color(6); cout << convert_spell(c24); Color(7); cout << "]"; cout << spell_level_checker(fireball);Color(7);
         cout << "         ["; Color(6); cout << convert_spell(c34); Color(7); cout << "]"; cout << spell_level_checker(immolation) << endl;Color(7);
         cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
@@ -158,8 +158,8 @@ void memorize_spells()
         cout << "[1] "; Color(3);
         if (heal.ready == 1) { cout << heal.name; }
         if (cure.ready == 1) { cout << cure.name; }
-        if (conjure_elixer.ready == 1) { cout << conjure_elixer.name; }
-        if (magic_missle.ready == 1) { cout << magic_missle.name; }
+        if (conjure_elixir.ready == 1) { cout << conjure_elixir.name; }
+        if (magic_missile.ready == 1) { cout << magic_missile.name; }
         cout << endl; Color(7);
         cout << "[2] "; Color(3);
         if (greater_heal.ready == 1) { cout << greater_heal.name; }
@@ -192,7 +192,7 @@ void memorize_spells()
             if (cure.ready == 1 and hero_player.level >= 4 and c1 == 0)
             {
                 cure.ready = 0;
-                conjure_elixer.ready = 1;
+                conjure_elixir.ready = 1;
                 c1 = 1;
             }
             if (cure.ready == 1 and hero_player.level < 4 and c1 == 0)
@@ -201,25 +201,25 @@ void memorize_spells()
                 heal.ready = 1;
                 c1 = 1;
             }
-            if (conjure_elixer.ready == 1 and hero_player.level < 5 and c1 == 0)
+            if (conjure_elixir.ready == 1 and hero_player.level < 5 and c1 == 0)
             {
-                conjure_elixer.ready = 0;
+                conjure_elixir.ready = 0;
                 heal.ready = 1;
                 c1 = 1;
             }
-            if (conjure_elixer.ready == 1 and hero_player.level >= 5 and c1 == 0)
+            if (conjure_elixir.ready == 1 and hero_player.level >= 5 and c1 == 0)
             {
-                conjure_elixer.ready = 0;
-                magic_missle.ready = 1;
+                conjure_elixir.ready = 0;
+                magic_missile.ready = 1;
                 c1 = 1;
             }
-            if (magic_missle.ready == 1 and hero_player.level >= 5 and c1 == 0)
+            if (magic_missile.ready == 1 and hero_player.level >= 5 and c1 == 0)
             {
-                magic_missle.ready = 0;
+                magic_missile.ready = 0;
                 heal.ready = 1;
                 c1 = 1;
             }
-            if (heal.ready != 1 and cure.ready != 1 and conjure_elixer.ready != 1 and magic_missle.ready != 1)
+            if (heal.ready != 1 and cure.ready != 1 and conjure_elixir.ready != 1 and magic_missile.ready != 1)
             {
                 heal.ready = 1;
                 c1 = 1;

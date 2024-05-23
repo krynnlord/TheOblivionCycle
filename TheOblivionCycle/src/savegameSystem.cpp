@@ -64,8 +64,8 @@ txtOut << "SHIMMERING:" << prism_shimmering << endl;
 txtOut << "*** SPELLS ***" << endl;
 txtOut << "HEAL:" << heal.ready << endl;
 txtOut << "CURE:" << cure.ready << endl;
-txtOut << "CONJURE:" << conjure_elixer.ready << endl;
-txtOut << "MISSLE:" << magic_missle.ready << endl;
+txtOut << "CONJURE:" << conjure_elixir.ready << endl;
+txtOut << "MISSILE:" << magic_missile.ready << endl;
 txtOut << "GTRHEAL:" << greater_heal.ready << endl;
 txtOut << "BARRIER:" << barrier.ready << endl;
 txtOut << "ESCAPE:" << escape.ready << endl;
@@ -140,8 +140,8 @@ while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); ist
 getline(txtIn, emptyline); // SPELLS
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s34(emptyline); s34 >> heal.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s35(emptyline); s35 >> cure.ready;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s36(emptyline); s36 >> conjure_elixer.ready;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s37(emptyline); s37 >> magic_missle.ready;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s36(emptyline); s36 >> conjure_elixir.ready;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s37(emptyline); s37 >> magic_missile.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s38(emptyline); s38 >> greater_heal.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s39(emptyline); s39 >> barrier.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s40(emptyline); s40 >> escape.ready;
