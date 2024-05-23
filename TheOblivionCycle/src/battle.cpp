@@ -1,4 +1,5 @@
 #include "../headers/functions.h"
+using namespace std;
 
 void battle_sim(monster enemy)
 {
@@ -17,14 +18,7 @@ void battle_sim(monster enemy)
 
 	// VARS for Battle System
 	int trigger = 0;
-	int hppercent;
-	int hppercent_e;
-	string hp_bar = "";
-	string ehp_bar = "";
-	string hero_line2 = "";
-	string enemy_line2 = "";
-	int bar_ticks = 0;
-	int ebar_ticks = 0;
+	int hero_total_atk = 0;
 	int skip_hero_atk = 0;
 	int skip_enemy_atk = 1;
 	int heal_run = 0;
@@ -37,14 +31,6 @@ void battle_sim(monster enemy)
 	int c2_spell = 1;
 	int c3_spell = 1;
 
-	// DICE Vars
-	int dice_i = 0;
-	int sides_i = 0;
-	int hero_final = 0;
-	int hero_crit = 0;
-	int hero_total_atk = 0;
-	int enemy_total_atk = 0;
-
 	// Battle Loop
 	int loop = 0;
 	while (loop != 1)
@@ -54,88 +40,21 @@ void battle_sim(monster enemy)
 			cout << endl << "You can not exit during a battle!" << endl;
 			Sleep(2000);
 		}
-		system("cls");
-
-		//Hero Display
-		cout << "Hero" << endl;
-		for (int a = 0; a < 70; a++) { cout << "-"; }
-
-		cout << "\nName: " << hero_player.name << "    " << "Level: " << hero_player.level << "    ";
-		cout << "Weapon: " << hero_weapon.name << "    " << "Armor: " << hero_armor.name << endl;
-
-		hppercent = static_cast<int>(100 * round(hero_player.hp) / round(hero_player.hp_max));
-
-		cout << left << setw(4); cout << "HP: " << right << setw(4); cout << hero_player.hp << "/" 
-			 << left << setw(4); cout << hero_player.hp_max << "[";
-		
-		// Print Hero HPbar
-		hp_bar = "";
-		bar_ticks += hppercent / 4;
-		while (bar_ticks > 0)
-		{
-			hp_bar += "#";
-			bar_ticks -= 1;
-		}
-		hero_line2 = hp_bar;
-		if (hppercent >= 75) { Color(2); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
-		if (hppercent < 75 and hppercent >40) { Color(14); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
-		if (hppercent <= 40) { Color(4); cout << left << setw(25); cout << hero_line2; Color(7); cout << "] "; }
-
-		if (hppercent >= 75) { Color(2); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
-		if (hppercent < 75 and hppercent > 40) { Color(14); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
-		if (hppercent <= 40) { Color(4); cout << right << setw(3); cout << hppercent << "%"; Color(7); cout << "    "; }
-
-		cout << endl << endl;
-
-		//Enemy Display
-		cout << "Enemy" << endl;
-		for (int a = 0; a < 70; a++) { cout << "-"; }
-
-		cout << "\nName: " << enemy.name << "    " << "Level: " << enemy.level << endl;
-
-		hppercent_e = static_cast<int>(100 * round(enemy.hp) / round(enemy.hp_max));
-
-		cout << left << setw(4); cout << "HP: " << right << setw(4); cout << enemy.hp << "/"
-			<< left << setw(4); cout << enemy.hp_max << "[";
-
-		// Print Enemy HPbar
-		ehp_bar = "";
-		ebar_ticks += hppercent_e / 4;
-		while (ebar_ticks > 0)
-		{
-			ehp_bar += "#";
-			ebar_ticks -= 1;
-		}
-		enemy_line2 = ehp_bar;
-		if (hppercent_e >= 75) { Color(2); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
-		if (hppercent_e < 75 and hppercent_e >40) { Color(14); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
-		if (hppercent_e <= 40) { Color(4); cout << left << setw(25); cout << enemy_line2; Color(7); cout << "] "; }
-		
-		if (hppercent_e >= 75) { Color(2); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-		if (hppercent_e < 75 and hppercent_e > 40) { Color(14); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-		if (hppercent_e <= 40) { Color(4); cout << right << setw(3); cout << hppercent_e << "%"; Color(7); cout << "    "; }
-
-		cout << endl << endl;
-
-		// Battle Log
-		cout << "Battle Log" << endl;
-		for (int a = 0; a < 70; a++) { cout << "-"; }
-
-		cout << endl;
-		Color(2); cout << hero_player.name << ": "; Color(7); cout <<  hero_combat_string << endl;
-		Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl;
-		if (trigger == 1) { Color(5); cout << "*** Trinket triggered ***"; Color(7); }
-		cout << endl << endl;
-
-		if (endcombat == true) 
+		if (endcombat == true and hero_player.hp == 0) 
 		{ 
 			player_death();
 			castle(2);
 			break;
 		}
+		if (endcombat == true && hero_player.hp != 0)
+		{ break; }
 
-		else
-		{
+		system("cls");
+		hero_display(); //Hero Display
+		enemy_display(enemy);//Enemy Display
+		battle_log(enemy, hero_combat_string, enemy_combat_string, trigger); // Battle Log
+		
+		
 			cout << "Actions" << endl;
 			
 			cout << "[1] Attack" << endl;
@@ -214,7 +133,7 @@ void battle_sim(monster enemy)
 			cout << "[0] Run" << endl;
 						
 			cout << endl;
-		}
+		
 		skip_enemy_atk = 1;
 		skip_hero_atk = 0;
 		heal_run = 0;
@@ -303,176 +222,11 @@ void battle_sim(monster enemy)
 		{
 			
 			skip_enemy_atk = 0;
-
-			// HERO TURN
-			string dice; dice = hero_weapon.damage[0]; dice_i = stoi(dice); // # of dice
-			string sides; sides = hero_weapon.damage[2]; sides_i = stoi(sides); // # of sides
-
-			int total = 0;
-
-			// Crit role
-			int	crit = 0;
-			uniform_int_distribution<int> rng_range(1, 20);
-			random_device rd;
-			mt19937 rng(rd());
-			int critroll = rng_range(rng);
-			if (critroll >= 20 - hero_player.luck) { crit = 1; } //crit
-			else if (critroll == 1) { crit = 2; } //miss
-			else { crit = 0; } // normal
-
-			// Dice Roll
-			int final = 0;
-			for (int i = 0; i < dice_i; ++i)
-			{
-				uniform_int_distribution<int> rng_range(1, sides_i);
-				random_device rd;
-				mt19937 rng(rd());
-				int roll = rng_range(rng);
-				final += roll;
-				roll = 0;
-			}
-
-			// add modifiers
-			if (crit == 1)
-			{
-				total = (final * hero_player.prof) * 2;
-			}
-			else if (crit == 2)
-			{
-				total = 0;
-			}
-			else
-			{
-				total = (final * hero_player.prof);
-			}
-			hero_final = final;
-			hero_crit = crit;
-			hero_total_atk = total;
-
-
-			hero_total_atk, trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
-
-			if (skip_hero_atk == 0)
-			{
-				enemy.hp -= hero_total_atk;
-
-				if (enemy.hp <= 0)
-				{
-					enemy.hp = 0;
-					hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
-
-					loot(enemy); // calls loot function
-					break;
-				}
-				else
-				{
-
-					if (crit == 1)
-					{
-						hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
-					}
-					if (crit == 0)
-					{
-						hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
-					}
-					if (crit == 2)
-					{
-						hero_combat_string = "misses " + enemy.name + ".";
-					}
-
-				}
-			}
-			else
-			{
-				if (heal_run == 1) { hero_combat_string = "takes a sip from the Celestial Flask!"; }
-				if (heal_run == 2) { hero_combat_string = "attempts to run, but fails."; }
-			}
-
+			hero_turn(enemy, hero_combat_string, trigger, skip_hero_atk, heal_run, hero_total_atk);// HERO TURN
 		}
 
-// *********************************************************************************************************		
-//           ENEMY TURN
-// *********************************************************************************************************
-		if (skip_enemy_atk != 1)
-		{
-			if (enemy.hp == 0)
-			{
-				enemy_combat_string = "has been killed.";
-				endcombat = true;
-			}
-
-			string dice; dice = enemy.damage[0]; dice_i = stoi(dice); // # of dice
-			string sides; sides = enemy.damage[2]; sides_i = stoi(sides); // # of sides
-
-			int total = 0;
-
-			// Crit role
-			int crit = 0;
-			uniform_int_distribution<int> rng_range(1, 20);
-			random_device rd;
-			mt19937 rng(rd());
-			int critroll = rng_range(rng);
-			if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
-			else if (critroll == 1) { crit = 2; } //miss
-			else { crit = 0; } // normal
-
-			// Dice Roll
-			int final = 0;
-			for (int i = 0; i < dice_i; ++i)
-			{
-				uniform_int_distribution<int> rng_range(1, sides_i);
-				random_device rd;
-				mt19937 rng(rd());
-				int roll = rng_range(rng);
-				final += roll;
-				roll = 0;
-			}
-
-			// add modifiers
-			if (crit == 1)
-			{
-				total = (final * enemy.prof) * 2;
-			}
-			else if (crit == 2)
-			{
-				total = 0;
-			}
-			else
-			{
-				total = (final * enemy.prof);
-			}
-			total -= hero_armor.armorclass; // Total Attack minus Hero AC
-			if (total <= 0) { total = 0; }
-			enemy_total_atk = total;
-
-			hero_player.hp -= enemy_total_atk;
-
-			if (hero_player.hp <= 0)
-			{
-				hero_player.hp = 0;
-				enemy_combat_string = "hits you for " + to_string(enemy_total_atk) + " damage, and kills you!";
-				endcombat = true;
-			}
-			else
-			{
-
-				if (crit == 1)
-				{
-					enemy_combat_string = "hits *Critical* you for " + to_string(enemy_total_atk) + " damage.";
-				}
-				if (crit == 0)
-				{
-					enemy_combat_string = "hits you for " + to_string(enemy_total_atk) + " damage.";
-				}
-				if (crit == 2)
-				{
-					enemy_combat_string = "misses you.";
-				}
-
-			}
-
-
-		}
+		
+		enemy_turn(enemy, enemy_combat_string, endcombat); // ENEMY TURN
 
 
 	}

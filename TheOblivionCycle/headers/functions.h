@@ -12,6 +12,13 @@ void adventure();
 int mystic(int i);
 int temple(int i);
 
+// Battle
+void hero_display();
+void enemy_display(monster enemy);
+void battle_log(monster, string, string, int);
+void hero_turn(monster&, string&, int&, int&, int, int&);
+void enemy_turn(monster&, string&, bool&);
+
 // Conversations
 void conversation_king();
 
