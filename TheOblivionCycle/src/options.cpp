@@ -378,9 +378,9 @@ void music_player()
         if (music_track == 2) { music_text = "The Ritual"; }
         if (music_track == 3) { music_text = "Call of Eris"; }
         if (music_track == 4) { music_text = "Cryptic"; }
-        if (music_track == 5) { music_text = "Tsar"; }
-        /*if (music_track == 6) { music_text = "Shimmering Lights"; }
-        if (music_track == 7) { music_text = "The Iron Wall"; }
+        if (music_track == 5) { music_text = "Beyond the World"; }
+        if (music_track == 6) { music_text = "Twilight Lua"; }
+        /*if (music_track == 7) { music_text = "The Iron Wall"; }
         if (music_track == 8) { music_text = "Lullaby"; }
         if (music_track == 9) { music_text = "Spiraling Descent"; }
         if (music_track == 10) { music_text = "Distant Stars"; }
@@ -396,7 +396,9 @@ void music_player()
         cout << "[2] The Ritual" << endl;
         cout << "[3] Call of Eris" << endl;
         cout << "[4] Cryptic" << endl;
-        cout << "[5] Tsar" << endl;
+        cout << "[5] Beyond the World" << endl;
+        cout << "[6] Twilight Lua";
+        cout << endl;
         cout << "[0] Back" << endl;
 
         string ans;
@@ -407,8 +409,8 @@ void music_player()
         if (ans == "3") { music_track = 3; stream_music(music_track); }
         if (ans == "4") { music_track = 4; stream_music(music_track); }
         if (ans == "5") { music_track = 5; stream_music(music_track); }
-        /*if (ans == "6") { music_track = 6; stream_music(music_track); }
-        if (ans == "7") { music_track = 7; stream_music(music_track); }
+        if (ans == "6") { music_track = 6; stream_music(music_track); }
+        /*if (ans == "7") { music_track = 7; stream_music(music_track); }
         if (ans == "8") { music_track = 8; stream_music(music_track); }
         if (ans == "9") { music_track = 9; stream_music(music_track); }
         if (ans == "a") { music_track = 10; stream_music(music_track);}
