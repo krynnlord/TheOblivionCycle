@@ -4,6 +4,7 @@ using namespace std;
 void battle_sim(monster enemy)
 {
 	print_preparecombat();
+	trinket_start(); // Check Startup Trinkets
 	Sleep(2000);
 	
 	system("cls");
@@ -33,12 +34,15 @@ void battle_sim(monster enemy)
 
 	// Battle Loop
 	int loop = 0;
+	
+	
 	while (loop != 1)
 	{
 		if (exit_mode == 1) 
 		{ 
 			cout << endl << "You can not exit during a battle!" << endl;
 			Sleep(2000);
+			exit_mode = 0;
 		}
 		if (endcombat == true and hero_player.hp == 0) 
 		{ 
@@ -231,6 +235,7 @@ void battle_sim(monster enemy)
 
 	}
 
+	trinket_cleanup(); // Cleanup Startup Trinkets
 	return;
 }
 

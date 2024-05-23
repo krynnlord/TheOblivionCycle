@@ -21,6 +21,8 @@ void enemy_turn(monster&, string&, bool&);
 int trinket_run(int&);
 int magic_attack(int, int, int);
 void magic_persistent_attack(int);
+void trinket_start();
+void trinket_cleanup();
 
 // Conversations
 void conversation_king();

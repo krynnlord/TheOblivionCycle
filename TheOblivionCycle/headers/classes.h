@@ -10,6 +10,9 @@ extern int crit_result0; //Battle Seq
 extern int min_exp;
 extern int gold_vault;
 
+// Trinket Battle Vars
+extern bool rabbit_foot_trigger;
+
 // Classes
 
 class player

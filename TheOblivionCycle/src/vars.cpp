@@ -9,6 +9,9 @@ bool prism_purple = false;
 bool prism_yellow = false;
 bool prism_shimmering = false;
 
+// Trinket Battle Vars
+bool rabbit_foot_trigger = false;
+
 // GOLD VAULT
 int gold_vault = 0;
 

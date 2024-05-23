@@ -265,7 +265,25 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 }
 
+void trinket_start()
+{
+	if (hero_player.trinket == 1) // Rabbit's Foot
+	{
+		uniform_int_distribution<int> rng_range(1, 10);
+		random_device rd;
+		mt19937 rng(rd());
+		int rand_chance = rng_range(rng);
 
+		if (rand_chance > 8)
+		{
+			hero_player.luck += 1;
+			rabbit_foot_trigger = true;
+			Color(5); cout << endl << "        Rabbit Foot Activated!"; Color(7);
+		}
+		
+	}
+
+}
 
 
 // Trinket Calculator
@@ -273,21 +291,6 @@ int trinket_run(int& hero_total_atk)
 {
     int trigger = 0;
     int trinket_modded_atk = 0;
-
-    if (hero_player.trinket == 1) // Rabbit's Foot
-    {
-        uniform_int_distribution<int> rng_range(1, 10);
-        random_device rd;
-        mt19937 rng(rd());
-        int rand_chance = rng_range(rng);
-
-        if (rand_chance > 9)
-        {
-            trinket_modded_atk = hero_total_atk * 2; trigger = 1;
-        }
-        else { trinket_modded_atk = hero_total_atk; }
-
-    }
 
     if (hero_player.trinket == 2) // Stick Man
     { 
@@ -299,8 +302,22 @@ int trinket_run(int& hero_total_atk)
         trinket_modded_atk = hero_total_atk;
     }
     
-	hero_total_atk = trinket_modded_atk;
+	//hero_total_atk = trinket_modded_atk;
     return trigger;
+}
+
+void trinket_cleanup()
+{
+	if (hero_player.trinket == 1) // Rabbit's Foot
+	{
+		if (rabbit_foot_trigger == true)
+		{
+			hero_player.luck -= 1;
+			rabbit_foot_trigger = false;
+		}
+
+	}
+
 }
 
 int magic_attack(int c1_spell, int c2_spell, int c3_spell)
