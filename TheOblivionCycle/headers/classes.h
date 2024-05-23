@@ -46,6 +46,7 @@ public:
     string damage;
     int exp;
     int essence;
+    int stat;
 };
 
 class spell

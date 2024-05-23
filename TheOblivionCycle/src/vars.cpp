@@ -93,7 +93,8 @@ armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 12, "", 0 };
 
 // Hero Initial Creation
 // name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
-player hero_player = { "Player", 100, 100, 0, 1, 1, 0, 1, 2, 1, 0, 0, 3 };
+// Stat = 1 Normal | 2 Posioned | 3 Burning
+player hero_player = { "Player", 100, 100, 0, 1, 1, 0, 1, 0, 0, 0, 0, 3 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
 
@@ -101,28 +102,29 @@ armor hero_armor = tunic;
 // Monsters /////////////////////////////
 /////////////////////////////////////////
 
-// name, hp, hp_max, luck, level, prof, ac, damage, exp, essence
+// name, hp, hp_max, luck, level, prof, ac, damage, exp, essence, stat
 // enemy luck reduces crit chance.
+// Stat = 1 Normal | 2 Posioned | 3 Burning
 // LVL 1
-monster zombie = { "Zombie",22,22,0,1,1,8,"1d2",10,10};
-monster skeleton = { "Skeleton",13,13,0,1,1,13,"1d2",5,5};
-monster giant_bat = { "Giant Bat",22,22,0,1,1,13,"1d2",10,10};
-monster giant_boar = { "Giant Boar",26,26,0,1,1,12,"1d2",15,12};
+monster zombie = { "Zombie",22,22,0,1,1,8,"1d2",10,10,1};
+monster skeleton = { "Skeleton",13,13,0,1,1,13,"1d2",5,5,1};
+monster giant_bat = { "Giant Bat",22,22,0,1,1,13,"1d2",10,10,1};
+monster giant_boar = { "Giant Boar",26,26,0,1,1,12,"1d2",15,12,1};
 // LVL 2
-monster ash_zombie = { "Ash Zombie",40,40,1,2,2,8,"1d4",15,15 };
-monster skeleton_warrior = { "Skeletal Warrior",35,35,0,2,2,13,"1d4",9,9 };
-monster giant_centipede = { "Giant Centipede",38,38,0,2,2,13,"1d4",15,15 };
-monster goblin = { "Goblin",42,42,2,2,2,12,"1d4",20,18 };
+monster ash_zombie = { "Ash Zombie",40,40,1,2,2,8,"1d4",15,15,1};
+monster skeleton_warrior = { "Skeletal Warrior",35,35,0,2,2,13,"1d4",9,9,1};
+monster giant_centipede = { "Giant Centipede",38,38,0,2,2,13,"1d4",15,15,1};
+monster goblin = { "Goblin",42,42,2,2,2,12,"1d4",20,18,1};
 // LVL 3
-monster wolf = { "Wolf",43,43,1,3,2,8,"1d4",22,18 };
-monster grimlock = { "Grimlock",45,45,0,3,2,13,"1d4",24,15 };
-monster ooze = { "Ooze",48,48,0,3,2,13,"1d3",21,20 };
-monster sprite = { "Sprite",46,46,2,3,2,12,"1d4",22,21 };
+monster wolf = { "Wolf",43,43,1,3,2,8,"1d4",22,18,1};
+monster grimlock = { "Grimlock",45,45,0,3,2,13,"1d4",24,15,1};
+monster ooze = { "Ooze",48,48,0,3,2,13,"1d3",21,20,1};
+monster sprite = { "Sprite",46,46,2,3,2,12,"1d4",22,21,1};
 // LVL 4
-monster goblin_warrior = { "Goblin Warrior",52,52,2,4,2,12,"1d5",24,25 };
-monster gnoll = { "Gnoll",55,55,2,4,2,12,"1d5",25,22 };
-monster hobgoblin = { "Hobgoblin",56,56,2,4,2,12,"1d5",26,21 };
-monster satyr = { "Satyr",48,48,3,4,2,12,"1d5",28,23 };
-monster orc = { "Orc",50,50,2,4,2,12,"1d5",28,25 };
+monster goblin_warrior = { "Goblin Warrior",52,52,2,4,2,12,"1d5",24,25,1};
+monster gnoll = { "Gnoll",55,55,2,4,2,12,"1d5",25,22,1};
+monster hobgoblin = { "Hobgoblin",56,56,2,4,2,12,"1d5",26,21,1};
+monster satyr = { "Satyr",48,48,3,4,2,12,"1d5",28,23,1};
+monster orc = { "Orc",50,50,2,4,2,12,"1d5",28,25,1};
 
 vector<monster> monsters_all_red = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin, wolf, grimlock, ooze, sprite, goblin_warrior, gnoll, hobgoblin, satyr, orc};

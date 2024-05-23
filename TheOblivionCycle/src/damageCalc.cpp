@@ -7,7 +7,10 @@ void hero_display()
 	int bar_ticks = 0;
 	string hero_line2 = "";
 
-	cout << "Hero" << endl;
+	cout << "Hero ";
+	if (hero_player.stat == 2) { Color(10); cout << ">>>POISONED<<<"; Color(7); }
+	if (hero_player.stat == 3) { Color(12); cout << ">>>BURNING<<<"; Color(7); }
+	cout << endl;
 	for (int a = 0; a < 70; a++) { cout << "-"; }
 
 	cout << "\nName: " << hero_player.name << "    " << "Level: " << hero_player.level << "    ";
@@ -46,7 +49,10 @@ void enemy_display(monster enemy)
 	string ehp_bar = "";
 	string enemy_line2 = "";
 	
-	cout << "Enemy" << endl;
+	cout << "Enemy   ";
+	if (enemy.stat == 2) { Color(10); cout << ">>>POISONED<<<"; Color(7); }
+	if (enemy.stat == 3) { Color(12); cout << ">>>BURNING<<<"; Color(7); }
+	cout << endl;
 	for (int a = 0; a < 70; a++) { cout << "-"; }
 
 	cout << "\nName: " << enemy.name << "    " << "Level: " << enemy.level << endl;
