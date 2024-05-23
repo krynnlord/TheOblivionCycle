@@ -155,6 +155,13 @@ void battle_sim(monster enemy)
 		
 		if (ans == "a" and c1_spell == 1)
 		{
+			if (heal.ready == 1)
+			{
+				magic_aid(c1_spell, c2_spell, c3_spell);
+				hero_combat_string = "casts Heal and gains 50 HP!";
+				c1_spell = 0;
+				skip_enemy_atk = 0;
+			}
 			
 			if (magic_missile.ready == 1)
 			{
@@ -174,7 +181,7 @@ void battle_sim(monster enemy)
 			
 			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask == 3)
 			{
-				hero_combat_string = "casts Conjure Exilir but flask was already full!";
+				hero_combat_string = "casts Conjure Exilir but flask was already full and spilled over!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
 			}

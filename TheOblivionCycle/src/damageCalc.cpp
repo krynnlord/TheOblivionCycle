@@ -350,8 +350,16 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell)
 			hero_player.flask += 1;
 		}
 	}
-}
+	if (heal.ready == 1 and c1_spell == 1)
+	{
+		hero_player.hp += 50;
+		if (hero_player.hp > hero_player.hp_max)
+		{
+			hero_player.hp = hero_player.hp_max;
+		}
+	}
 
+}
 
 void magic_persistent_attack(int att_magic_round)
 {
