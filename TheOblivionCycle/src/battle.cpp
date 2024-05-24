@@ -295,6 +295,8 @@ void loot(monster enemy)
 	checklevelup();
 	if (old_level < hero_player.level) { diplay_levelup = true; }
 
+	// Stats Update
+	total_kills += 1;
 
 	cout << "*** "; Color(10); cout << "Victory!"; Color(7); cout << " ***" << endl << endl;
 	cout << "---EARNED-------" << endl;
@@ -324,6 +326,9 @@ void player_death()
 	hero_player.gold = 0;
 	int temp_exp_loss = 0;
 	int hero_exp_before = hero_player.exp;
+
+	// Update Stats
+	total_deaths += 1;
 
 	temp_exp_loss = static_cast<int>(hero_player.exp * .25);
 	if (min_exp >= (hero_player.exp - temp_exp_loss)) { hero_player.exp = min_exp; }

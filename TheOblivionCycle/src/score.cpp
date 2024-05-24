@@ -8,23 +8,20 @@ void player_score()
     
     
     print_score();
-    cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    cout << "ACTIVE QUEST: " << quest_text << endl;
-    cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
-    cout << "NAME: " << left << setw(14); cout << hero_player.name;
-    cout << "LEVEL: " << left << setw(7); cout << hero_player.level;
-    cout << "EXP: " << left << setw(10); cout << hero_player.exp << endl;
-    cout << "HP: " << right << setw(4); cout << hero_player.hp << "/";
-    cout << left << setw(6); cout << hero_player.hp_max; cout << "     ";
-    cout << "LUCK: " << left << setw(8); cout << hero_player.luck;
-    cout << "ESSENCE: " << hero_player.essence << endl << endl;
-    cout << "WEAPON: " << left << setw(12); cout << hero_weapon.name;
-    cout << "ATTACK: " << left << setw(6); cout << hero_weapon.damage;
-    cout << "TYPE: " << left << setw(8); cout << hero_weapon.type << endl;
-    cout << "ARMOR: " << left << setw(13); cout << hero_armor.name;
-    cout << "AC: " << left << setw(10); cout << hero_armor.armorclass;
-    cout << "TYPE: " << left << setw(12); cout << hero_armor.type << endl;
-    cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
+    show_statbar();
+    cout << "ACTIVE QUEST: " << quest_text << endl << endl;
+    
+    cout << "ARMOR CLASS: " << hero_armor.armorclass << endl;
+    cout << "ATTACK VALUE: " << hero_weapon.damage << endl;
+    cout << "BANK: " << gold_vault << endl;
+    cout << "LUCK: " << hero_player.luck << endl;
+    cout << "STATUS: ";
+    if (hero_player.stat == 1) { cout << "NORMAL"; }
+    if (hero_player.stat == 2) { Color(10); cout << ">>>POISONED<<<"; Color(7); }
+    if (hero_player.stat == 3) { Color(12); cout << ">>>BURNING<<<"; Color(7);  }
+    cout << endl;
+    cout << "TOTAL KILLS: " << total_kills << endl;
+    cout << "TOTAL DEATHS: " << total_deaths << endl;
 
     string ans;
     ans = _getch();

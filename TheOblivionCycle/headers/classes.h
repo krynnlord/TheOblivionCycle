@@ -11,6 +11,9 @@ extern int min_exp;
 extern int gold_vault;
 extern int poison_ticker;
 
+extern int total_kills;
+extern int total_deaths;
+
 // Trinket Battle Vars
 extern bool rabbit_foot_trigger;
 

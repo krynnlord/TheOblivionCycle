@@ -1,7 +1,14 @@
 #include "../headers/functions.h"
 
 // Variables
+
+// Tickers
 int poison_ticker = 0;
+
+// Stats
+int total_kills = 0;
+int total_deaths = 0;
+
 
 // Prisms for Closing Gates
 bool prism_red = false;

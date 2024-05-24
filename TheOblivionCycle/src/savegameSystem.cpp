@@ -73,7 +73,10 @@ txtOut << "FIREBALL:" << fireball.ready << endl;
 txtOut << "REGEN:" << regeneration.ready << endl;
 txtOut << "HLYGROUND:" << holy_ground.ready << endl;
 txtOut << "DOUBLE:" << doubleme.ready << endl;
-txtOut << "IMMOLATION:" << immolation.ready;
+txtOut << "IMMOLATION:" << immolation.ready << endl;
+txtOut << "*** STATS ***" << endl;
+txtOut << "TOTALKILLS:" << total_kills << endl;
+txtOut << "TOTALDEATHS:" << total_deaths;
 txtOut.close();
 
 };
@@ -150,6 +153,9 @@ while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); ist
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s43(emptyline); s43 >> holy_ground.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s44(emptyline); s44 >> doubleme.ready;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s45(emptyline); s45 >> immolation.ready;
+getline(txtIn, emptyline); // STATS
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s97(emptyline); s97 >> total_kills;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s98(emptyline); s98 >> total_deaths;
 txtIn.close();
 
 }
