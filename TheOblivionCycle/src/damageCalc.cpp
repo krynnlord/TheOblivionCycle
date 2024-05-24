@@ -364,8 +364,25 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell)
 			hero_player.hp = hero_player.hp_max;
 		}
 	}
+	if (cure.ready == 1 and c1_spell == 1)
+	{
+		hero_player.stat = 1;
+	}
 
 }
+
+void magic_persistent_damage(string& hero_combat_string)
+{
+	if (hero_player.stat == 2)
+	{
+		hero_player.hp -= 5;
+		if (hero_player.hp < 0) { hero_player.hp = 0; }
+		hero_combat_string.append(" You take 5 posion damage!");
+		poison_ticker -= 1;
+		if (poison_ticker <= 0) { poison_ticker = 0; hero_player.stat = 1; }
+	}
+}
+
 
 void magic_persistent_attack(int att_magic_round)
 {

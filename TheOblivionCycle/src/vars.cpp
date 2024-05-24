@@ -1,6 +1,7 @@
 #include "../headers/functions.h"
 
 // Variables
+int poison_ticker = 0;
 
 // Prisms for Closing Gates
 bool prism_red = false;

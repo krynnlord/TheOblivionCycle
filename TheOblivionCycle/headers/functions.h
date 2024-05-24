@@ -22,6 +22,7 @@ int trinket_run(int&);
 int magic_attack(int, int, int);
 void magic_aid(int, int, int);
 void magic_persistent_attack(int);
+void magic_persistent_damage(string&);
 void trinket_start();
 void trinket_cleanup();
 

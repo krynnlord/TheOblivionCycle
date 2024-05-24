@@ -53,6 +53,9 @@ void battle_sim(monster enemy)
 		if (endcombat == true && hero_player.hp != 0)
 		{ break; }
 
+		magic_persistent_damage(hero_combat_string);  // Hero Persistant Damage Check
+
+
 		system("cls");
 		hero_display(); //Hero Display
 		enemy_display(enemy);//Enemy Display
@@ -161,14 +164,23 @@ void battle_sim(monster enemy)
 				hero_combat_string = "casts Heal and gains 50 HP!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
 			}
-			
+			if (cure.ready == 1)
+			{
+				magic_aid(c1_spell, c2_spell, c3_spell);
+				hero_combat_string = "casts Cure on themself!";
+				c1_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
+			}
 			if (magic_missile.ready == 1)
 			{
 				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell);
 				hero_combat_string = "casts Magic Missile at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
 			}
 
 			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask < 3)
@@ -177,6 +189,7 @@ void battle_sim(monster enemy)
 				hero_combat_string = "casts Conjure Exilir and refills 1 flask charge!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
 			}
 			
 			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask == 3)
@@ -184,10 +197,13 @@ void battle_sim(monster enemy)
 				hero_combat_string = "casts Conjure Exilir but flask was already full and spilled over!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
 			}
 
-
-			enemy.hp -= hero_total_atk;
+			if (skip_hero_atk != 1) 
+			{
+				enemy.hp -= hero_total_atk;
+			}
 		}
 		
 		if (ans == "0")

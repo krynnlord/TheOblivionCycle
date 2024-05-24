@@ -9,6 +9,7 @@ extern int crit_result0; //Battle Seq
 
 extern int min_exp;
 extern int gold_vault;
+extern int poison_ticker;
 
 // Trinket Battle Vars
 extern bool rabbit_foot_trigger;
