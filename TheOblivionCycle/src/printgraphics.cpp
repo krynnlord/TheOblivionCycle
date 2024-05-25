@@ -124,8 +124,8 @@ string line5  =R"(  |_| |_| |_|\___|  \___/|_.__/|_|_| \_/ |_|\___/|_| |_|  \___
 string line6 = R"(                                                               |___ /)";
 
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
-Color(7); cout << "                          Part I: The Shimmering Gate" << endl << endl << endl;
-
+// cout << "                          Part I: The Shimmering Gate" << endl << endl << endl;
+Color(7); cout << endl;
 }
 
 void print_options()
@@ -380,7 +380,7 @@ void print_help()
     string line15 = R"(|   |          [ESC] Return                   |    |)";
     string line16 = R"(|   |                                         |    |)";
     string line17 = R"(|   |_________________________________________|    |)";
-    string line18 = R"(|            PART I: THE SHIMMERING GATE           |)";
+    string line18 = R"(|                                                  |)";
     string line19 = R"(\_________________________________________________/)";
     string line20 = R"(       \___________________________________/)";
 
