@@ -1,19 +1,19 @@
 #include "header.h"
 #pragma once
 
-extern int intro_sequence; // Game Settings
-extern int music_setting; // 1-on 0-off
-extern int music_vol; //0 mut 100 full
-extern int music_track; // Music Selected 1-12
-extern int crit_result0; //Battle Seq
+extern int intro_sequence;  // Game Settings
+extern int music_setting;   // 1-on 0-off
+extern int music_vol;       // 0 mute 100 full
+extern int music_track;     // Music Selected 1-12
+extern int crit_result0;    // Battle Seq
 
-extern int min_exp;
-extern int gold_vault;
-extern int poison_ticker;
-extern int resent_rez;
+extern int min_exp;         // Min Experience for level for Death
+extern int gold_vault;      // Gold in Vault
+extern int poison_ticker;   // Poison ticker countdown for Battle
+extern int resent_rez;      // Recently been resurrected 
 
-extern int total_kills;
-extern int total_deaths;
+extern int total_kills;     // Stats tracking for Player Total Kills
+extern int total_deaths;    // Stats tracking for Player Total Deaths
 
 // Trinket Battle Vars
 extern bool rabbit_foot_trigger;
@@ -73,8 +73,8 @@ public:
     string name;
     string desc;
     int cost;
-    int mod_type; //(1)Attack (2)Defense
-    int have; //(0) No (1) Yes
+    int mod_type;       //(1)Attack (2)Defense
+    int have;           //(0) No (1) Yes
 };
 
 class weapon
@@ -86,7 +86,7 @@ public:
     int cost;
     string damage;
     string description;
-    int have; //(0) No (1) Yes
+    int have;           //(0) No (1) Yes
 };
 
 class armor
@@ -98,7 +98,7 @@ public:
     int cost;
     int armorclass;
     string description;
-    int have; //(0) No (1) Yes
+    int have;           //(0) No (1) Yes
 };
 
 // Variables
@@ -212,7 +212,19 @@ extern monster hobgoblin;
 extern monster satyr;
 extern monster orc;
 
+// BOSSES
 extern monster redgate_boss;
+extern monster bluegate_boss;
+extern monster purplegate_boss;
+extern monster yellowgate_boss;
+extern monster final_boss;
 
+// Monster Groups
 extern vector<monster> monsters_all_red;
+extern vector<monster> monsters_all_blue;
+extern vector<monster> monsters_all_purple;
+extern vector<monster> monsters_all_yellow;
+extern vector<monster> monsters_all_shimmering;
+
+// SPELLS
 extern vector<spell> spells_all;

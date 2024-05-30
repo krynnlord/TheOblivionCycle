@@ -455,7 +455,7 @@ void print_portal()
 {
 
     system("cls");
-
+    Color(5);
     string line1 = R"(                     &&&&&&&&$$&&&&&)";
     string line2 = R"(             &&&&&)";
     string line3 = R"(          ;&&&&       xXX$X+)";
@@ -477,12 +477,14 @@ void print_portal()
     string line19 = R"(             +&&&&&&&&&&&X       &&$)";
     string line20 = R"(                               &&)";
     string line21 = R"(                            $+)";
+    string line22 = R"(           A BOSS HAS ARRIVED!!)";
 
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
     cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
     cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
     cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
-    cout << line21 << endl << endl;
+    cout << line21 << endl << endl;Color(7); cout << line22 << endl << endl;
+    
 }
 
 void print_music_player()

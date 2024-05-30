@@ -56,8 +56,31 @@ void battle_loop(int gate)
 {
     if (gate == 1 and prism_red == true and hero_player.level >= 4)
     {
-        battle_sim(redgate_boss);
-        return;
+        cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
+        
+        string tempans;
+        tempans = _getch();
+
+        if (tempans == "1") { print_portal(); Sleep(3000); battle_sim(redgate_boss); return; }
+        else 
+        {
+            vector<monster> monsterlist;
+
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                if (monsters_all_red[i].level == 4)
+                {
+                    monsterlist.push_back(monsters_all_red[i]);
+                }
+            }
+
+            srand((unsigned)time(NULL));
+            int monst_rand;
+            monst_rand = rand() % size(monsterlist);
+
+            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            return;
+        }
     }
 
     if (gate == 1)
@@ -80,10 +103,10 @@ void battle_loop(int gate)
             monst_rand = rand() % size(monsterlist);
 
             battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
-
+            return;
         }
 
-        if (hero_player.level > 4)
+        if (hero_player.level > 4 and hero_player.quest_level >=2)
         {
             // Roll for Monster based on hero level
             vector<monster> monsterlist;
@@ -101,7 +124,7 @@ void battle_loop(int gate)
             monst_rand = rand() % size(monsterlist);
 
             battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
-
+            return;
         }
 
     }
@@ -126,6 +149,7 @@ void battle_loop(int gate)
             monst_rand = rand() % size(monsterlist);
 
             battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            return;
         }
 
         if (hero_player.level > 8)
@@ -146,7 +170,7 @@ void battle_loop(int gate)
             monst_rand = rand() % size(monsterlist);
 
             battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
-
+            return;
         }
 
     }
