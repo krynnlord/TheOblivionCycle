@@ -16,7 +16,7 @@ int circleofstones(int i)
         cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << "LVL 1-4";
         if (prism_red == true and hero_player.level >= 4)
         {
-            Color(11); cout << " [can be sealed with prism]" << endl;Color(7);
+            Color(11); cout << " [can be sealed with prism]"; Color(7);
         }
 
         cout << endl;

@@ -3,7 +3,7 @@
 int castle(int i)
 {
 
-    if (i == 2) { king_ressurect(); }
+    if (i == 2) { king_ressurect(); return 1; }
     
     print_castle();
     show_statbar();
