@@ -48,7 +48,6 @@ void battle_sim(monster enemy)
 		{ 
 			player_death();
 			castle(2);
-			break;
 		}
 		if (endcombat == true && hero_player.hp != 0)
 		{ break; }

@@ -10,6 +10,7 @@ extern int crit_result0; //Battle Seq
 extern int min_exp;
 extern int gold_vault;
 extern int poison_ticker;
+extern int resent_rez;
 
 extern int total_kills;
 extern int total_deaths;
@@ -210,6 +211,8 @@ extern monster gnoll;
 extern monster hobgoblin;
 extern monster satyr;
 extern monster orc;
+
+extern monster redgate_boss;
 
 extern vector<monster> monsters_all_red;
 extern vector<spell> spells_all;

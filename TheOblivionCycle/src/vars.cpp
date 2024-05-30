@@ -4,7 +4,7 @@
 
 // Tickers
 int poison_ticker = 0;
-
+int resent_rez = 0;
 // Stats
 int total_kills = 0;
 int total_deaths = 0;
@@ -134,5 +134,8 @@ monster gnoll = { "Gnoll",55,55,2,4,2,12,"1d5",25,22,1};
 monster hobgoblin = { "Hobgoblin",56,56,2,4,2,12,"1d5",26,21,1};
 monster satyr = { "Satyr",48,48,3,4,2,12,"1d5",28,23,1};
 monster orc = { "Orc",50,50,2,4,2,12,"1d5",28,25,1};
+
+// Bosses
+monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,"2d3",100,100,1 };
 
 vector<monster> monsters_all_red = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin, wolf, grimlock, ooze, sprite, goblin_warrior, gnoll, hobgoblin, satyr, orc};

@@ -2,6 +2,7 @@
 
 int circleofstones(int i)
 {
+    resent_rez = 0;
 
     if (hero_player.quest_level == 0)
     {
@@ -36,6 +37,7 @@ int circleofstones(int i)
     if (ans == "1" and hero_player.quest_level >= 1)
     {
         battle_loop(1);
+        if (resent_rez == 1) { return 1; }
     }
 
     if (ans == "0" or ans == "\033")
@@ -54,7 +56,8 @@ void battle_loop(int gate)
 {
     if (gate == 1 and prism_red == true and hero_player.level >= 4)
     {
-        
+        battle_sim(redgate_boss);
+        return;
     }
 
     if (gate == 1)
