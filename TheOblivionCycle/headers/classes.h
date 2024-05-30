@@ -15,6 +15,8 @@ extern int resent_rez;      // Recently been resurrected
 extern int total_kills;     // Stats tracking for Player Total Kills
 extern int total_deaths;    // Stats tracking for Player Total Deaths
 
+extern bool display_fight_symbol; // Battle Screen Toggle
+
 // Trinket Battle Vars
 extern bool rabbit_foot_trigger;
 

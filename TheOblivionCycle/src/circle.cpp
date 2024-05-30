@@ -3,6 +3,7 @@
 int circleofstones(int i)
 {
     resent_rez = 0;
+    display_fight_symbol = true;
 
     if (hero_player.quest_level == 0)
     {
@@ -61,7 +62,13 @@ void battle_loop(int gate)
         string tempans;
         tempans = _getch();
 
-        if (tempans == "1") { print_portal(); Sleep(3000); battle_sim(redgate_boss); return; }
+        if (tempans == "1") 
+        { 
+            display_fight_symbol = false;
+            print_portal(redgate_boss); 
+            battle_sim(redgate_boss); 
+            return; 
+        }
         else 
         {
             vector<monster> monsterlist;

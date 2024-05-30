@@ -5,10 +5,13 @@
 // Tickers
 int poison_ticker = 0;
 int resent_rez = 0;
+
 // Stats
 int total_kills = 0;
 int total_deaths = 0;
 
+// Battle Screen Toggle
+bool display_fight_symbol = true;
 
 // Prisms for Closing Gates
 bool prism_red = false;

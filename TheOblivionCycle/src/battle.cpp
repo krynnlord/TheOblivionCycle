@@ -3,7 +3,8 @@ using namespace std;
 
 void battle_sim(monster enemy)
 {
-	print_preparecombat();
+	if (display_fight_symbol == true) { print_preparecombat(true); }
+	else { print_preparecombat(false); }
 	trinket_start(); // Check Startup Trinkets
 	Sleep(2000);
 	

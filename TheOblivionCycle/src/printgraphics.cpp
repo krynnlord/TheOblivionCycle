@@ -327,35 +327,38 @@ void print_infoscreen()
     
 }
 
-void print_preparecombat()
+void print_preparecombat(bool display_fight_symbol)
 {
+    if (display_fight_symbol == false) { return; }
+    else
+    {
+        system("cls");
+        Color(12);
+        string line1 = R"(      |\                     /))";
+        string line2 = R"(    /\_\\__               (_//)";
+        string line3 = R"(   |   `>\-`     _._       //`))";
+        string line4 = R"(    \ /` \\  _.-`:::`-._  //)";
+        string line5 = R"(     `    \|`    :::    `|/)";
+        string line6 = R"(           |     :::     |)";
+        string line7 = R"(           |.....:::.....|)";
+        string line8 = R"(           |:::::::::::::|)";
+        string line9 = R"(           |     :::     |)";
+        string line10 = R"(           \     :::     /)";
+        string line11 = R"(            \    :::    /)";
+        string line12 = R"(             `-. ::: .-')";
+        string line13 = R"(              //`:::`\\)";
+        string line14 = R"(             //   '   \\)";
+        string line15 = R"(            |/         \\)";
+        string line16 = R"()";
+        string line17 = R"(         PREPARE FOR COMBAT!!)";
 
-    system("cls");
-    Color(12);
-    string line1 = R"(      |\                     /))";
-    string line2 = R"(    /\_\\__               (_//)";
-    string line3 = R"(   |   `>\-`     _._       //`))";
-    string line4 = R"(    \ /` \\  _.-`:::`-._  //)";
-    string line5 = R"(     `    \|`    :::    `|/)";
-    string line6 = R"(           |     :::     |)";
-    string line7 = R"(           |.....:::.....|)";
-    string line8 = R"(           |:::::::::::::|)";
-    string line9 = R"(           |     :::     |)";
-    string line10 = R"(           \     :::     /)";
-    string line11 = R"(            \    :::    /)";
-    string line12 = R"(             `-. ::: .-')";
-    string line13 = R"(              //`:::`\\)";
-    string line14 = R"(             //   '   \\)";
-    string line15 = R"(            |/         \\)";
-    string line16 = R"()";
-    string line17 = R"(         PREPARE FOR COMBAT!!)";
 
+        cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+        cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
+        cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
+        cout << line16 << endl; Color(7); cout << line17 << endl;
 
-    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
-    cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
-    cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
-    cout << line16 << endl; Color(7); cout << line17 << endl;
-    
+    }
 }
 
 void print_help()
@@ -451,39 +454,29 @@ void print_flask()
 }
 
 
-void print_portal()
+void print_portal(monster enemy)
 {
 
     system("cls");
-    Color(5);
-    string line1 = R"(                     &&&&&&&&$$&&&&&)";
-    string line2 = R"(             &&&&&)";
-    string line3 = R"(          ;&&&&       xXX$X+)";
-    string line4 = R"(         &&&&    &&&&&&&&&&&&&&&&)";
-    string line5 = R"(        &&&:  :&&&&&$.       X&&&&&X)";
-    string line6 = R"(       &&&   &&&&$   +&&&&&$     &&&&$)";
-    string line7 = R"(      &&&$  &&&&  X&&&&&&&&&&&&X   &&&&)";
-    string line8 = R"(     &&&&  &&&&  &&&&       &&&&&x   &&&)";
-    string line9 = R"($    &&&&  &&&& &&&     &&&&  &&&&&   &&&)";
-    string line10 = R"(&+   &&&&  &&&& .&&       &&&; &&&&&   &&.)";
-    string line11 = R"( &   +&&&& x&&&X           &&&. &&&&   &&&)";
-    string line12 = R"( &x   &&&&& ;&&&&          &&&& &&&&   &&&)";
-    string line13 = R"(  &;   &&&&&  &&&&&&&&&&  &&&&  &&&&   &&$)";
-    string line14 = R"(  X&&   x&&&&&   :&&&:  &&&&&: &&&&:   &&)";
-    string line15 = R"(   +&&    X&&&&&&&&&&&&&&&&&  $&&&x   &&x)";
-    string line16 = R"(     &&&     X&&&&&&&&&&&    &&&&.   +&&)";
-    string line17 = R"(       &&&&.              &&&&&&    X&$)";
-    string line18 = R"(         $&&&&&&&&&&&&&&&&&&&;     &&;)";
-    string line19 = R"(             +&&&&&&&&&&&X       &&$)";
-    string line20 = R"(                               &&)";
-    string line21 = R"(                            $+)";
-    string line22 = R"(           A BOSS HAS ARRIVED!!)";
+    Color(12);
+    string line1  = R"(        ,     \    /      ,)";
+    string line2  = R"(       / \    )\__/(     / \)";
+    string line3  = R"(      /   \  (_\  /_)   /   \)";
+    string line4  = R"( ____/_____\__\@  @/___/_____\____ )";
+    string line5  = R"(|             |\../|              |)";
+    string line6  = R"(|              \VV/               |)";
+    string line7  = R"(|           BOSS BATTLE           |)";
+    string line8  = R"(|_________________________________|)";
+    string line9  = R"( | /\ /         \\       \ /\    |)";
+    string line10 = R"( |  /   V        ))       V   \  |)";
+    string line11 = R"( |/     `       //        '     \|)";
+    string line12 = R"( `              V                ')";
+
 
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
     cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
-    cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
-    cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
-    cout << line21 << endl << endl;Color(7); cout << line22 << endl << endl;
+    cout << line11 << endl << line12 << endl << endl; Color(7);
+    cout << "      " << enemy.name << " arrives!!" << endl;
     
 }
 
