@@ -161,6 +161,7 @@
     <ClCompile Include="src\inventory.cpp" />
     <ClCompile Include="src\levelup.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\monsterDisplay.cpp" />
     <ClCompile Include="src\options.cpp" />
     <ClCompile Include="src\printgraphics.cpp" />
     <ClCompile Include="src\mystic.cpp" />

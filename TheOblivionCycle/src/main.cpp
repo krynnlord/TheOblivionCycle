@@ -209,6 +209,7 @@ void debug_screens()
         cout << "Debug Screens" << endl;
         cout << "-----------------" << endl;
         cout << "(1) Red Gate - Monster Listing" << endl;
+        cout << "(2) Monster Display" << endl;
 
         
         cout << endl;
@@ -232,6 +233,29 @@ void debug_screens()
 
 
         }
+
+        if (ans == "2")
+        {
+            system("cls");
+            
+            for (int i = 0; i < size(monsters_all_red); i++)
+            {
+                cout << "[" << i << "] " << monsters_all_red[i].name << endl;
+            }
+            
+            int ans;
+            cout << "\nChoice> ";
+            cin >> ans;
+            
+
+            system("cls");
+            cout << "Monster Information" << endl;
+            cout << "--------------------" << endl << endl;
+            monster_display(monsters_all_red[ans]);
+
+        }
+
+
 
     }
 }

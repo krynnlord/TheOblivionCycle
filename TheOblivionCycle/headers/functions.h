@@ -25,6 +25,7 @@ void magic_persistent_attack(int);
 void magic_persistent_damage(string&);
 void trinket_start();
 void trinket_cleanup();
+void monster_display(monster);
 
 // Conversations
 void conversation_king();
