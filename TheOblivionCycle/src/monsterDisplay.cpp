@@ -36,8 +36,11 @@ void monster_display(monster enemy)
     cout << "-----------------" << endl;
     cout << enemy.desc << endl << endl;
     cout << "HP: " << enemy.hp << "/" << enemy.hp_max << endl;
-    cout << "Damage: " << enemy.damage << endl << endl;
-    
+    cout << "Damage: " << enemy.damage << endl;
+    cout << "AC: " << enemy.ac << endl;
+    cout << "Luck: " << enemy.luck << endl;
+    cout << "Prof: " << enemy.prof << endl;
+        
     cout << endl << endl; system("pause");
     return;
 }
