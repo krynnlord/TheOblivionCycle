@@ -54,6 +54,7 @@ public:
     int exp;
     int essence;
     int stat;
+    string desc;
 };
 
 class spell
