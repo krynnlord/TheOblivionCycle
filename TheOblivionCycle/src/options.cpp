@@ -374,14 +374,14 @@ void music_player()
     while (keep == 1)
     {
         string music_text;
-        if (music_track == 1) { music_text = "To Oblivion"; }
-        if (music_track == 2) { music_text = "The Ritual"; }
-        if (music_track == 3) { music_text = "Call of Eris"; }
-        if (music_track == 4) { music_text = "Cryptic"; }
-        if (music_track == 5) { music_text = "Beyond the World"; }
-        if (music_track == 6) { music_text = "Twilight Lua"; }
-        /*if (music_track == 7) { music_text = "The Iron Wall"; }
-        if (music_track == 8) { music_text = "Lullaby"; }
+        if (music_track == 1) { music_text = "From Oblivion They Come"; }
+        if (music_track == 2) { music_text = "To the Fallen"; }
+        if (music_track == 3) { music_text = "Silver and Steel"; }
+        if (music_track == 4) { music_text = "Gods and Demons"; }
+        if (music_track == 5) { music_text = "The Ritual"; }
+        if (music_track == 6) { music_text = "A Gate Manifests"; }
+        if (music_track == 7) { music_text = "Ethereal Dreams"; }
+        /*if (music_track == 8) { music_text = "Lullaby"; }
         if (music_track == 9) { music_text = "Spiraling Descent"; }
         if (music_track == 10) { music_text = "Distant Stars"; }
         if (music_track == 11) { music_text = "Judgement"; }
@@ -392,14 +392,15 @@ void music_player()
         cout << "Currently Selected: " << music_text << endl;
         bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
         cout << endl;
-        cout << "[1] To Oblivion" << endl;
-        cout << "[2] The Ritual" << endl;
-        cout << "[3] Call of Eris" << endl;
-        cout << "[4] Cryptic" << endl;
-        cout << "[5] Beyond the World" << endl;
-        cout << "[6] Twilight Lua";
-        cout << endl;
-        cout << "[0] Back" << endl;
+        cout << "["; Color(6); cout << "1"; Color(7); cout << "] From Oblivion They Come       "
+                "["; Color(6); cout << "7"; Color(7); cout << "] Ethereal Dreams" << endl;
+        cout << "["; Color(6); cout << "2"; Color(7); cout << "] To the Fallen" << endl;
+        cout << "["; Color(6); cout << "3"; Color(7); cout << "] Silver and Steel" << endl;
+        cout << "["; Color(6); cout << "4"; Color(7); cout << "] Gods and Demons" << endl;
+        cout << "["; Color(6); cout << "5"; Color(7); cout << "] The Ritual" << endl;
+        cout << "["; Color(6); cout << "6"; Color(7); cout << "] A Gate Manifests";
+        cout << endl << endl;
+        cout << "["; Color(6); cout << "0"; Color(7); cout << "] Back" << endl;
 
         string ans;
         ans = _getch();
@@ -410,8 +411,8 @@ void music_player()
         if (ans == "4") { music_track = 4; stream_music(music_track); }
         if (ans == "5") { music_track = 5; stream_music(music_track); }
         if (ans == "6") { music_track = 6; stream_music(music_track); }
-        /*if (ans == "7") { music_track = 7; stream_music(music_track); }
-        if (ans == "8") { music_track = 8; stream_music(music_track); }
+        if (ans == "7") { music_track = 7; stream_music(music_track); }
+        /*if (ans == "8") { music_track = 8; stream_music(music_track); }
         if (ans == "9") { music_track = 9; stream_music(music_track); }
         if (ans == "a") { music_track = 10; stream_music(music_track);}
         if (ans == "b") { music_track = 11; stream_music(music_track);}
