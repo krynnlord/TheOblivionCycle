@@ -206,6 +206,9 @@ void battle_sim(monster enemy)
 			}
 		}
 		
+		if (ans == "i" or ans == "I")
+		{ monster_display(enemy); }
+
 		if (ans == "0")
 		{
 			

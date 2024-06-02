@@ -248,10 +248,7 @@ void debug_screens()
             cin >> ans;
             
 
-            system("cls");
-            cout << "Monster Information" << endl;
-            cout << "--------------------" << endl << endl;
-            monster_display(monsters_all_red[ans]);
+           monster_display(monsters_all_red[ans]);
 
         }
 

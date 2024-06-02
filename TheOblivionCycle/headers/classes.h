@@ -197,7 +197,6 @@ extern armor hero_armor;
 // Monsters /////////////////////////////
 /////////////////////////////////////////
 extern monster zombie;
-extern monster zombie2;
 extern monster skeleton;
 extern monster giant_bat;
 extern monster giant_boar;

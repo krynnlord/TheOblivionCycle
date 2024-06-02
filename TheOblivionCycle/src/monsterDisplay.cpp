@@ -2,81 +2,42 @@
 
 void monster_display(monster enemy)
 {
-    if (enemy.name == "Zombie")
+    if (enemy.name == zombie.name) 
     {
-        enemy.desc = "";
+        enemy.desc = "Listless, humanoid corpses, reanimated as guardians by powerful clerics or wizards.";
     }
-    if (enemy.name == "Skeleton")
+    if (enemy.name == skeleton.name)
     {
-        enemy.desc = "Skeletons arise when animated by dark magic. They heed the summons of spellcasters who call them from their stony tombs and ancient battlefields, or rise of their own accord in places saturated with death and loss, awakened by stirrings of necromantic energy or the presence of corrupting evil.";
+        enemy.desc = "Skeletal remains of humanoids, reanimated as guardians by powerful magic-users or clerics. Often encountered in cemeteries, crypts, or other forlorn places.";
     }
-    if (enemy.name == "Giant Bat")
+    if (enemy.name == skeleton.name)
     {
-        enemy.desc = "";
+        enemy.desc = "Skeletal remains of humanoids, reanimated as guardians by powerful magic-users or clerics. Often encountered in cemeteries, crypts, or other forlorn places.";
     }
-    if (enemy.name == "Giant Boar")
+    if (enemy.name == giant_boar.name)
     {
-        enemy.desc = "";
+        enemy.desc = "Omnivorous wild boars that dwell primarily in forests. Can be irascible and dangerous, if disturbed.";
     }
-    if (enemy.name == "Ash Zombie")
+    if (enemy.name == giant_bat.name)
     {
-        enemy.desc = "";
+        enemy.desc = "Nocturnal, flying mammals that roost in caves or ruins.";
     }
-    if (enemy.name == "Skeletal Warrior")
+    if (enemy.name == giant_centipede.name)
     {
-        enemy.desc = "";
+        enemy.desc = "1 foot long centipedes that dwell in dark, damp locations.";
     }
-    if (enemy.name == "Giant Centipede")
+    if (enemy.name == goblin.name)
     {
-        enemy.desc = "";
+        enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured skin and glowing, red eyes. Dwell underground.";
     }
-    if (enemy.name == "Goblin")
-    {
-        enemy.desc = "Goblins are small, black-hearted, selfish humanoids that lair in caves, abandoned mines, despoiled dungeons, and other dismal settings. Individually weak, goblins gather in large sometimes overwhelming numbers. They crave power and regularly abuse whatever authority they obtain.";
-    }
-    if (enemy.name == "Wolf")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Grimlock")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Ooze")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Sprite")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Goblin Warrior")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Gnoll")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Hobgoblin")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Satyr")
-    {
-        enemy.desc = "";
-    }
-    if (enemy.name == "Orc")
-    {
-        enemy.desc = "";
-    }
-
-
-
-    cout << "Name: " << enemy.name << endl;
+    
+    system("cls");
+    cout << enemy.name << endl;
+    cout << "-----------------" << endl;
+    cout << enemy.desc << endl << endl;
     cout << "HP: " << enemy.hp << "/" << enemy.hp_max << endl;
-    cout << "Damage: " << enemy.damage << endl;
-    cout << "\nDescription: \n" << enemy.desc << endl;
+    cout << "Damage: " << enemy.damage << endl << endl;
+    
     cout << endl << endl; system("pause");
     return;
 }
