@@ -213,6 +213,22 @@ extern monster gnoll;
 extern monster hobgoblin;
 extern monster satyr;
 extern monster orc;
+extern monster imp;
+extern monster mimic;
+extern monster griffon;
+extern monster draconian_mage;
+extern monster druid;
+extern monster gargoyle;
+extern monster hellhound;
+extern monster lizardman;
+extern monster centaur;
+extern monster golem;
+extern monster ogre;
+extern monster vampire;
+extern monster banshee;
+extern monster ettin;
+extern monster gorgon;
+extern monster wraith;
 
 // BOSSES
 extern monster redgate_boss;

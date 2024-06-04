@@ -40,7 +40,11 @@ int circleofstones(int i)
         battle_loop(1);
         if (resent_rez == 1) { return 1; }
     }
-
+    if (ans == "2" and hero_player.quest_level >= 2 and hero_player.level >=8)
+    {
+        battle_loop(2);
+        if (resent_rez == 1) { return 1; }
+    }
     if (ans == "0" or ans == "\033")
         { 
             return 1; 
@@ -143,11 +147,11 @@ void battle_loop(int gate)
             // Roll for Monster based on hero level
             vector<monster> monsterlist;
 
-            for (int i = 0; i < size(monsters_all_red); i++)
+            for (int i = 0; i < size(monsters_all_blue); i++)
             {
-                if (monsters_all_red[i].level == hero_player.level)
+                if (monsters_all_blue[i].level == hero_player.level)
                 {
-                    monsterlist.push_back(monsters_all_red[i]);
+                    monsterlist.push_back(monsters_all_blue[i]);
                 }
             }
 
@@ -164,11 +168,11 @@ void battle_loop(int gate)
             // Roll for Monster based on hero level
             vector<monster> monsterlist;
 
-            for (int i = 0; i < size(monsters_all_red); i++)
+            for (int i = 0; i < size(monsters_all_blue); i++)
             {
-                if (monsters_all_red[i].level == 8)
+                if (monsters_all_blue[i].level == 8)
                 {
-                    monsterlist.push_back(monsters_all_red[i]);
+                    monsterlist.push_back(monsters_all_blue[i]);
                 }
             }
 

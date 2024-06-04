@@ -137,8 +137,29 @@ monster gnoll = { "Gnoll",55,55,2,4,2,12,"1d5",25,22,1};
 monster hobgoblin = { "Hobgoblin",56,56,2,4,2,12,"1d5",26,21,1};
 monster satyr = { "Satyr",48,48,3,4,2,12,"1d5",28,23,1};
 monster orc = { "Orc",50,50,2,4,2,12,"1d5",28,25,1};
+// LVL 5
+monster imp = { "Imp",65,65,3,5,3,14,"1d6",35,36,1};
+monster mimic = { "Mimic",64,64,3,5,3,14,"1d6",40,38,1};
+monster griffon = { "Griffon",66,66,2,5,3,14,"1d8",39,39,1};
+monster draconian_mage = { "Draconian Mage",60,60,1,5,3,12,"1d8",38,38,1};
+// LVL 6
+monster druid = { "Druid",70,70,2,6,3,15,"1d8",45,50,1};
+monster gargoyle = { "Gargoyle",72,72,2,6,3,15,"1d8",42,42,1};
+monster hellhound = { "Hellhound",75,75,1,6,3,15,"1d8",44,46,1};
+monster lizardman = { "Lizardman",74,74,2,6,3,15,"1d8",46,56,1};
+// LVL 7
+monster centaur = { "Centaur",76,76,3,7,3,16,"1d10",51,58,1};
+monster golem = { "Golem",80,80,2,7,4,16,"1d10",52,60,1};
+monster ogre = { "Ogre",80,80,1,7,4,16,"2d5",60,60,1};
+monster vampire = { "Vampire",80,80,3,7,3,15,"2d3",50,60,1};
+// LVL 8
+monster banshee = { "Banshee",82,82,2,8,3,17,"2d4",65,62,1};
+monster ettin = { "Ettin",85,85,1,8,3,17,"2d4",66,60,1};
+monster gorgon = { "Gorgon",81,81,3,8,4,17,"2d4",64,64,1};
+monster wraith = { "Wraith",80,80,2,8,3,17,"2d4",62,62,1};
 
 // Bosses
 monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,"2d3",100,100,1 };
 
 vector<monster> monsters_all_red = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin, wolf, grimlock, ooze, sprite, goblin_warrior, gnoll, hobgoblin, satyr, orc};
+vector<monster> monsters_all_blue = {imp, mimic, griffon, draconian_mage, druid, gargoyle, hellhound, lizardman, centaur, golem, ogre, vampire, banshee, ettin, gorgon, wraith};
