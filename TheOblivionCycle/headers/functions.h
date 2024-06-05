@@ -32,7 +32,7 @@ void conversation_king();
 
 // Utilities
 void debug_screens();
-void battle_sim(monster);
+void battle_sim(monster, int);
 void battle_loop(int);
 void player_death();
 void loot(monster);
@@ -101,7 +101,7 @@ void print_trinkets();
 void print_weapons();
 void print_armor();
 void print_infoscreen();
-void print_preparecombat(bool);
+void print_preparecombat(bool, int);
 void print_help();
 void print_king();
 void print_gambling();

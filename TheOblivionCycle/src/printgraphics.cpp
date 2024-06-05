@@ -327,37 +327,38 @@ void print_infoscreen()
     
 }
 
-void print_preparecombat(bool display_fight_symbol)
+void print_preparecombat(bool display_fight_symbol, int color)
 {
+    int newcolor = 0;
+    if (color == 1) { newcolor = 12; }
+    if (color == 2) { newcolor = 9; }
     if (display_fight_symbol == false) { return; }
     else
     {
         system("cls");
-        Color(12);
-        string line1 = R"(      |\                     /))";
-        string line2 = R"(    /\_\\__               (_//)";
-        string line3 = R"(   |   `>\-`     _._       //`))";
-        string line4 = R"(    \ /` \\  _.-`:::`-._  //)";
-        string line5 = R"(     `    \|`    :::    `|/)";
-        string line6 = R"(           |     :::     |)";
-        string line7 = R"(           |.....:::.....|)";
-        string line8 = R"(           |:::::::::::::|)";
-        string line9 = R"(           |     :::     |)";
-        string line10 = R"(           \     :::     /)";
-        string line11 = R"(            \    :::    /)";
-        string line12 = R"(             `-. ::: .-')";
-        string line13 = R"(              //`:::`\\)";
-        string line14 = R"(             //   '   \\)";
-        string line15 = R"(            |/         \\)";
-        string line16 = R"()";
-        string line17 = R"(         PREPARE FOR COMBAT!!)";
+        Color(newcolor);
+        string line1 = R"(        ---------------)";
+        string line2 = R"(       |  -----------  |)";
+        string line3 = R"(       | |  -------  | |)";
+        string line4 = R"(       | | |  ---  | | |)";
+        string line5 = R"(       | | | | @ | | | |)";
+        string line6 = R"(       | | | | @ | | | |)";
+        string line7 = R"(       | | | | @ | | | |)";
+        string line8 = R"(       | | | | @ | | | |)";
+        string line9 = R"(       | | | | @ | | | |)";
+        string line10 = R"(       | | |  ---  | | |)";
+        string line11 = R"(       | |  -------  | |)";
+        string line12 = R"(       |  -----------  |)";
+        string line13 = R"(~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~)";
+        string line14 = R"(        ENTERING GATE!!!)";
 
 
         cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
         cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
-        cout << line11 << endl << line12 << endl << line13 << endl << line14 << endl << line15 << endl;
-        cout << line16 << endl; Color(7); cout << line17 << endl;
-
+        cout << line11 << endl << line12 << endl;
+        Color(2); cout << line13 << endl;
+        Color(7); cout << line14 << endl;
+        
     }
 }
 

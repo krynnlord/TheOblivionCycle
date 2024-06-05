@@ -25,6 +25,11 @@ int circleofstones(int i)
     if (hero_player.quest_level == 2)
     {
         cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << " LVL 1-4"; Color(11); cout << "  [sealed]" << endl; Color(7);
+       
+    }
+    if (hero_player.quest_level == 3)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << " LVL 1-4"; Color(11); cout << "  [sealed]" << endl; Color(7);
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE] "; Color(7); cout << "LVL 5-8" << endl;
     }
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
@@ -40,7 +45,7 @@ int circleofstones(int i)
         battle_loop(1);
         if (resent_rez == 1) { return 1; }
     }
-    if (ans == "2" and hero_player.quest_level >= 2 and hero_player.level >=8)
+    if (ans == "2" and hero_player.quest_level >= 3 and hero_player.level >=8)
     {
         battle_loop(2);
         if (resent_rez == 1) { return 1; }
@@ -59,7 +64,7 @@ int circleofstones(int i)
 
 void battle_loop(int gate)
 {
-    if (gate == 1 and prism_red == true and hero_player.level >= 4)
+    if (gate == 1 and prism_red == true and hero_player.level >= 4 and hero_player.quest_level == 1)
     {
         cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
         
@@ -70,7 +75,7 @@ void battle_loop(int gate)
         { 
             display_fight_symbol = false;
             print_portal(redgate_boss); 
-            battle_sim(redgate_boss); 
+            battle_sim(redgate_boss, gate); 
             return; 
         }
         else 
@@ -89,7 +94,7 @@ void battle_loop(int gate)
             int monst_rand;
             monst_rand = rand() % size(monsterlist);
 
-            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            battle_sim(monsterlist[monst_rand],gate); // send current level monster to battle sim
             return;
         }
     }
@@ -113,7 +118,7 @@ void battle_loop(int gate)
             int monst_rand;
             monst_rand = rand() % size(monsterlist);
 
-            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            battle_sim(monsterlist[monst_rand], gate); // send current level monster to battle sim
             return;
         }
 
@@ -134,7 +139,7 @@ void battle_loop(int gate)
             int monst_rand;
             monst_rand = rand() % size(monsterlist);
 
-            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            battle_sim(monsterlist[monst_rand], gate); // send current level monster to battle sim
             return;
         }
 
@@ -159,7 +164,7 @@ void battle_loop(int gate)
             int monst_rand;
             monst_rand = rand() % size(monsterlist);
 
-            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            battle_sim(monsterlist[monst_rand], gate); // send current level monster to battle sim
             return;
         }
 
@@ -180,7 +185,7 @@ void battle_loop(int gate)
             int monst_rand;
             monst_rand = rand() % size(monsterlist);
 
-            battle_sim(monsterlist[monst_rand]); // send current level monster to battle sim
+            battle_sim(monsterlist[monst_rand], gate); // send current level monster to battle sim
             return;
         }
 

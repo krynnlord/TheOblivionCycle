@@ -1,10 +1,10 @@
 #include "../headers/functions.h"
 using namespace std;
 
-void battle_sim(monster enemy)
+void battle_sim(monster enemy, int gate)
 {
-	if (display_fight_symbol == true) { print_preparecombat(true); }
-	else { print_preparecombat(false); }
+	if (display_fight_symbol == true) { print_preparecombat(true, gate); }
+	else { print_preparecombat(false, gate); }
 	trinket_start(); // Check Startup Trinkets
 	Sleep(2000);
 	

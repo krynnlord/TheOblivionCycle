@@ -67,9 +67,26 @@ void conversation_king()
         if (speakroll == 3) { printf("The sky has been dark lately! I am unsure what has caused it.\n"); }
         return;
     }
-
-    
-
+    if (hero_player.quest_level == 2)
+    {
+        printf("Thank you for sealing the gate. I am recieving reports that a new gate\n");
+        printf("has opened in front of another stone, this time blue in color.\n");
+        printf("Can you find out why this gate appeared suddenly after closing the red one?\n");
+        hero_player.quest_level = 3;
+        return;
+    }
+    if (hero_player.quest_level == 3)
+    {
+        uniform_int_distribution<int> rng_range(0, 3);
+        random_device rd;
+        mt19937 rng(rd());
+        int speakroll = rng_range(rng);
+        if (speakroll == 0) { printf("I have comissioned you on an important mission. Please hurry!\n"); }
+        if (speakroll == 1) { printf("The gate that has appeared is strange, is it not?\n"); }
+        if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
+        if (speakroll == 3) { printf("The sky has been dark lately! I am unsure what has caused it.\n"); }
+        return;
+    }
 }
 
 void vault()
