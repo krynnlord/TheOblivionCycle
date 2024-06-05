@@ -82,9 +82,9 @@ void conversation_king()
         mt19937 rng(rd());
         int speakroll = rng_range(rng);
         if (speakroll == 0) { printf("I have comissioned you on an important mission. Please hurry!\n"); }
-        if (speakroll == 1) { printf("The gate that has appeared is strange, is it not?\n"); }
+        if (speakroll == 1) { printf("I wonder why this new gate is blue in color. Any ideas?\n"); }
         if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
-        if (speakroll == 3) { printf("The sky has been dark lately! I am unsure what has caused it.\n"); }
+        if (speakroll == 3) { printf("The sense of dread is causing unrest withing the kingdom.\n"); }
         return;
     }
 }
