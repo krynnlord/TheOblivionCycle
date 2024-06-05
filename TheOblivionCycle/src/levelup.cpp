@@ -11,7 +11,7 @@ void checklevelup()
     if (hero_player.exp >= 300 and hero_player.exp < 900 and hero_player.level == 1)
     {
         hero_player.level = 2;
-        hero_player.prof = 4;
+        hero_player.prof = 3;
         hero_player.hp_max += (1 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 300;
@@ -19,7 +19,7 @@ void checklevelup()
     if (hero_player.exp >= 900 and hero_player.exp < 2700 and hero_player.level == 2)
     {
         hero_player.level = 3;
-        hero_player.prof = 6;
+        hero_player.prof = 4;
         hero_player.hp_max += (2 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 900;
@@ -27,7 +27,7 @@ void checklevelup()
     if (hero_player.exp >= 2700 and hero_player.exp < 6500 and hero_player.level == 3)
     {
         hero_player.level = 4;
-        hero_player.prof = 8;
+        hero_player.prof = 5;
         hero_player.hp_max += (3 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 2700;
@@ -35,7 +35,7 @@ void checklevelup()
     if (hero_player.exp >= 6500 and hero_player.exp < 14000 and hero_player.level == 4)
     {
         hero_player.level = 5;
-        hero_player.prof = 11;
+        hero_player.prof = 6;
         hero_player.hp_max += (4 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 6500;
@@ -43,7 +43,7 @@ void checklevelup()
     if (hero_player.exp >= 14000 and hero_player.exp < 23000 and hero_player.level == 5)
     {
         hero_player.level = 6;
-        hero_player.prof = 14;
+        hero_player.prof = 7;
         hero_player.hp_max += (5 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 14000;
@@ -51,7 +51,7 @@ void checklevelup()
     if (hero_player.exp >= 23000 and hero_player.exp < 34000 and hero_player.level == 6)
     {
         hero_player.level = 7;
-        hero_player.prof = 17;
+        hero_player.prof = 8;
         hero_player.hp_max += (6 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 23000;
@@ -59,7 +59,7 @@ void checklevelup()
     if (hero_player.exp >= 34000 and hero_player.exp < 48000 and hero_player.level == 7)
     {
         hero_player.level = 8;
-        hero_player.prof = 20;
+        hero_player.prof = 9;
         hero_player.hp_max += (7 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 34000;
@@ -67,7 +67,7 @@ void checklevelup()
     if (hero_player.exp >= 48000 and hero_player.exp < 64000 and hero_player.level == 8)
     {
         hero_player.level = 9;
-        hero_player.prof = 24;
+        hero_player.prof = 10;
         hero_player.hp_max += (8 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 48000;
@@ -75,7 +75,7 @@ void checklevelup()
     if (hero_player.exp >= 64000 and hero_player.exp < 85000 and hero_player.level == 9)
     {
         hero_player.level = 10;
-        hero_player.prof = 28;
+        hero_player.prof = 11;
         hero_player.hp_max += (9 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 64000;
@@ -83,7 +83,7 @@ void checklevelup()
     if (hero_player.exp >= 85000 and hero_player.exp < 100000 and hero_player.level == 10)
     {
         hero_player.level = 11;
-        hero_player.prof = 32;
+        hero_player.prof = 12;
         hero_player.hp_max += (10 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 85000;
@@ -91,7 +91,7 @@ void checklevelup()
     if (hero_player.exp >= 100000 and hero_player.exp < 120000 and hero_player.level == 11)
     {
         hero_player.level = 12;
-        hero_player.prof = 36;
+        hero_player.prof = 13;
         hero_player.hp_max += (11 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 100000;
@@ -99,7 +99,7 @@ void checklevelup()
     if (hero_player.exp >= 120000 and hero_player.exp < 140000 and hero_player.level == 12)
     {
         hero_player.level = 13;
-        hero_player.prof = 41;
+        hero_player.prof = 14;
         hero_player.hp_max += (12 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 120000;
@@ -107,7 +107,7 @@ void checklevelup()
     if (hero_player.exp >= 140000 and hero_player.exp < 165000 and hero_player.level == 13)
     {
         hero_player.level = 14;
-        hero_player.prof = 46;
+        hero_player.prof = 15;
         hero_player.hp_max += (13 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 140000;
@@ -115,7 +115,7 @@ void checklevelup()
     if (hero_player.exp >= 165000 and hero_player.exp < 195000 and hero_player.level == 14)
     {
         hero_player.level = 15;
-        hero_player.prof = 51;
+        hero_player.prof = 16;
         hero_player.hp_max += (14 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 165000;
@@ -123,7 +123,7 @@ void checklevelup()
     if (hero_player.exp >= 195000 and hero_player.exp < 225000 and hero_player.level == 15)
     {
         hero_player.level = 16;
-        hero_player.prof = 56;
+        hero_player.prof = 17;
         hero_player.hp_max += (15 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 195000;
@@ -131,7 +131,7 @@ void checklevelup()
     if (hero_player.exp >= 225000 and hero_player.exp < 265000 and hero_player.level == 16)
     {
         hero_player.level = 17;
-        hero_player.prof = 62;
+        hero_player.prof = 18;
         hero_player.hp_max += (16 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 225000;
@@ -139,7 +139,7 @@ void checklevelup()
     if (hero_player.exp >= 265000 and hero_player.exp < 305000 and hero_player.level == 17)
     {
         hero_player.level = 18;
-        hero_player.prof = 68;
+        hero_player.prof = 19;
         hero_player.hp_max += (17 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 265000;
@@ -147,7 +147,7 @@ void checklevelup()
     if (hero_player.exp >= 305000 and hero_player.exp < 355000 and hero_player.level == 18)
     {
         hero_player.level = 19;
-        hero_player.prof = 74;
+        hero_player.prof = 20;
         hero_player.hp_max += (18 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 305000;
@@ -155,7 +155,7 @@ void checklevelup()
     if (hero_player.exp > 355000 and hero_player.level == 19)
     {
         hero_player.level = 20;
-        hero_player.prof = 80;
+        hero_player.prof = 21;
         hero_player.hp_max += (19 * 6) + 12;
         hero_player.hp = hero_player.hp_max;
         min_exp = 355000;

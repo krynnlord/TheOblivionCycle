@@ -73,14 +73,14 @@ weapon hands = { 1, "Hands", "BLUNT", 0, "1d2","Your bare hands", 1 };
 weapon club = { 2, "Club", "BLUNT", 200, "1d4", "",0 };
 weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "",0 };
 weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "",0 };
-weapon warhammer = { 5, "Warhammer", "BLUNT", 1000, "1d10", "",0 };
+weapon warhammer = { 5, "Warhammer", "BLUNT", 1000, "1d9", "",0 };
 weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "",0 };
 
 // Slashing
 weapon dagger = { 7, "Dagger", "SLASHING", 200, "1d4", "",0 };
 weapon handaxe = { 8, "Handaxe", "SLASHING", 500, "1d6", "",0 };
 weapon shortsword = { 9, "Short Sword", "SLASHING", 1000, "1d8", "",0 };
-weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d10", "",0 };
+weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d9", "",0 };
 weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "",0 };
 
 /////////////////////////////////////////
@@ -148,15 +148,15 @@ monster gargoyle = { "Gargoyle",72,72,2,6,3,15,"1d8",42,42,1};
 monster hellhound = { "Hellhound",75,75,1,6,3,15,"1d8",44,46,1};
 monster lizardman = { "Lizardman",74,74,2,6,3,15,"1d8",46,56,1};
 // LVL 7
-monster centaur = { "Centaur",76,76,3,7,3,16,"1d10",51,58,1};
-monster golem = { "Golem",80,80,2,7,4,16,"1d10",52,60,1};
+monster centaur = { "Centaur",76,76,3,7,3,16,"1d9",51,58,1};
+monster golem = { "Golem",80,80,2,7,4,16,"1d9",52,60,1};
 monster ogre = { "Ogre",80,80,1,7,4,16,"2d5",60,60,1};
 monster vampire = { "Vampire",80,80,3,7,3,15,"2d3",50,60,1};
 // LVL 8
-monster banshee = { "Banshee",82,82,2,8,3,17,"2d4",65,62,1};
-monster ettin = { "Ettin",85,85,1,8,3,17,"2d4",66,60,1};
-monster gorgon = { "Gorgon",81,81,3,8,4,17,"2d4",64,64,1};
-monster wraith = { "Wraith",80,80,2,8,3,17,"2d4",62,62,1};
+monster banshee = { "Banshee",182,182,2,8,3,17,"2d4",65,62,1};
+monster ettin = { "Ettin",185,185,1,8,3,17,"2d4",66,60,1};
+monster gorgon = { "Gorgon",181,181,3,8,4,17,"2d4",64,64,1};
+monster wraith = { "Wraith",180,180,2,8,3,17,"2d4",62,62,1};
 
 // Bosses
 monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,"2d3",100,100,1 };

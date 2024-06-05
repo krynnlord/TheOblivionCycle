@@ -150,12 +150,16 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 
 	if (skip_hero_atk == 0)
 	{
-		enemy.hp -= hero_total_atk;
+		int temp_enemy_ac_atk;
+		temp_enemy_ac_atk = hero_total_atk - enemy.ac;
+		if (temp_enemy_ac_atk < 0) { temp_enemy_ac_atk = 0; }
+		enemy.hp -= temp_enemy_ac_atk;
+		//enemy.hp -= hero_total_atk;
 
 		if (enemy.hp <= 0)
 		{
 			enemy.hp = 0;
-			hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage, and kills it!";
+			hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(temp_enemy_ac_atk) + " damage, and kills it!";
 
 			loot(enemy); // calls loot function
 			return;
@@ -165,11 +169,18 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 
 			if (crit == 1)
 			{
-				hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+				hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(temp_enemy_ac_atk) + " damage.";
 			}
 			if (crit == 0)
 			{
-				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(hero_total_atk) + " damage.";
+				if (temp_enemy_ac_atk == 0 ) 
+				{
+					hero_combat_string = "strikes " + enemy.name + " but the attack was blocked.";
+				}
+				else
+				{
+					hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(temp_enemy_ac_atk) + " damage.";
+				}
 			}
 			if (crit == 2)
 			{

@@ -30,8 +30,14 @@ void monster_display(monster enemy)
     {
         enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured skin and glowing, red eyes. Dwell underground.";
     }
+    if (enemy.name == hobgoblin.name)
+    {
+        enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured skin and glowing, red eyes. Dwell underground.";
+    }
     
     system("cls");
+    cout << "Monster Inspector" << endl << endl;
+    cout << "-----------------" << endl;
     cout << enemy.name << endl;
     cout << "-----------------" << endl;
     cout << enemy.desc << endl << endl;
