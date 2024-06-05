@@ -151,7 +151,7 @@ void memorize_spells()
         cout << "  ["; Color(6); cout << convert_spell(c23); Color(7); cout << "]"; cout << spell_level_checker(escape);Color(7);
         cout << "           ["; Color(6); cout << convert_spell(c33); Color(7); cout << "]"; cout << spell_level_checker(doubleme) << endl;Color(7);
         cout << "["; Color(6); cout << convert_spell(c14); Color(7); cout << "]"; cout << spell_level_checker(magic_missile);Color(7);
-        cout << "    ["; Color(6); cout << convert_spell(c24); Color(7); cout << "]"; cout << spell_level_checker(fireball);Color(7);
+        cout << "   ["; Color(6); cout << convert_spell(c24); Color(7); cout << "]"; cout << spell_level_checker(fireball);Color(7);
         cout << "         ["; Color(6); cout << convert_spell(c34); Color(7); cout << "]"; cout << spell_level_checker(immolation) << endl;Color(7);
         cout << "----~~~---~~~---~~~----~~~~----~~~---~~~---~~~---~~~----" << endl;
         cout << "Change which Circle Spell?" << endl;

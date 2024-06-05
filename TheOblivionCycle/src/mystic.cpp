@@ -259,13 +259,13 @@ void craft_prism()
 
         if (hero_player.quest_level == 1)
         {
-            cout << "[1] Craft RED Prism ["; Color(10); cout << "1000"; Color(7); cout << "] Essence" << endl;
+            cout << "[1] Craft "; Color(4); cout << "RED"; Color(7); cout << " Prism ["; Color(10); cout << "1000"; Color(7); cout << "] Essence" << endl;
         }
-        if (hero_player.quest_level == 2)
+        if (hero_player.quest_level == 3)
         {
-            cout << "[2] Craft BLUE Prism ["; Color(10); cout << "3000"; Color(7); cout << "] Essence" << endl;
+            cout << "[1] Craft "; Color(1); cout << "BLUE"; Color(7); cout << " Prism ["; Color(10); cout << "3000"; Color(7); cout << "] Essence" << endl;
         }
-
+        cout << "[0] Back" << endl;
 
         string ans;
         ans = _getch();
@@ -285,6 +285,22 @@ void craft_prism()
             prism_red = true;
             Sleep(3000);
         }
+
+        if (ans == "1" and hero_player.essence < 3000 and hero_player.quest_level == 3)
+        {
+            cout << endl << "You do not possess enough essence!";
+            Sleep(3000);
+        }
+
+        if (ans == "1" and hero_player.essence >= 3000 and hero_player.quest_level == 3)
+        {
+            cout << endl << "I have crafted your prism. Now go seal the gate!";
+            hero_player.essence -= 3000;
+            prism_blue = true;
+            Sleep(3000);
+        }
+
+
         if (ans == "0" or ans == "\033")
         {
             i = 1;
