@@ -157,9 +157,26 @@ monster banshee = { "Banshee",182,182,2,8,3,17,"2d4",65,62,1};
 monster ettin = { "Ettin",185,185,1,8,3,17,"2d4",66,60,1};
 monster gorgon = { "Gorgon",181,181,3,8,4,17,"2d4",64,64,1};
 monster wraith = { "Wraith",180,180,2,8,3,17,"2d4",62,62,1};
+// LVL 9
+monster grey_wyvern = { "Grey Wyvern",200,200,2,9,5,20,"2d5",100,86,1 };
+monster green_drake = { "Green Drake",205,205,2,9,5,20,"2d5",105,84,1 };
+monster copper_drake = { "Copper Drake",200,200,2,9,5,20,"2d5",100,85,1 };
+// LVL 10
+monster sea_serpent = { "Sea Serpent",215,215,2,10,6,20,"2d6",125,100,1 };
+monster drow = { "Drow",225,225,1,10,6,20,"2d6",120,100,1 };
+monster treant = { "Treant",240,240,3,10,6,20,"2d6",128,110,1 };
+// LVL 11
+monster naga = { "Naga",240,240,2,11,7,22,"2d7",150,145,1 };
+monster shade = { "Shade",245,245,1,11,7,22,"2d6",155,180,1 };
+monster djiin = { "Djiin",250,250,3,11,8,22,"2d7",180,200,1 };
+// LVL 12
+monster fire_dragon = { "Fire Dragon",350,350,3,12,8,25,"3d4",200,175,1 };
+monster ice_dragon = { "Ice Dragon",350,350,3,12,8,25,"3d3",200,180,1 };
+monster swamp_dragon = { "Swamp Dragon",350,350,3,12,8,25,"3d3",180,200,1 };
 
 // Bosses
 monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,"2d3",100,100,1 };
 
 vector<monster> monsters_all_red = {zombie, skeleton, giant_bat, giant_boar, ash_zombie, skeleton_warrior, giant_centipede, goblin, wolf, grimlock, ooze, sprite, goblin_warrior, gnoll, hobgoblin, satyr, orc};
 vector<monster> monsters_all_blue = {imp, mimic, griffon, draconian_mage, druid, gargoyle, hellhound, lizardman, centaur, golem, ogre, vampire, banshee, ettin, gorgon, wraith};
+vector<monster> monsters_all_purple = {grey_wyvern, green_drake, copper_drake, sea_serpent, drow, treant, naga, shade, djiin, fire_dragon, ice_dragon, swamp_dragon };
