@@ -72,7 +72,7 @@ int options(int i)
         Color(6); cout << "Version:"; Color(7); cout<< " .05" << endl;
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
-        Color(6); cout << "Music:"; Color(7); cout << " Richard & Elijah Miller"; cout << endl;
+        Color(6); cout << "Music:"; Color(7); cout << " Richard Miller"; cout << endl;
 
             string temp;
             temp = _getch();
@@ -381,11 +381,6 @@ void music_player()
         if (music_track == 5) { music_text = "The Ritual"; }
         if (music_track == 6) { music_text = "A Gate Manifests"; }
         if (music_track == 7) { music_text = "Ethereal Dreams"; }
-        /*if (music_track == 8) { music_text = "Lullaby"; }
-        if (music_track == 9) { music_text = "Spiraling Descent"; }
-        if (music_track == 10) { music_text = "Distant Stars"; }
-        if (music_track == 11) { music_text = "Judgement"; }
-        if (music_track == 12) { music_text = "Ascendancy"; }*/
 
         print_music_player();
         int bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
@@ -393,12 +388,12 @@ void music_player()
         bar1; for (bar1 = 0; bar1 < 60; bar1++) { cout << "-"; } cout << endl;
         cout << endl;
         cout << "["; Color(6); cout << "1"; Color(7); cout << "] From Oblivion They Come       "
+                "["; Color(6); cout << "5"; Color(7); cout << "] The Ritual" << endl;
+        cout << "["; Color(6); cout << "2"; Color(7); cout << "] To the Fallen                 "
+                "["; Color(6); cout << "6"; Color(7); cout << "] A Gate Manifests" << endl;
+        cout << "["; Color(6); cout << "3"; Color(7); cout << "] Silver and Steel              "
                 "["; Color(6); cout << "7"; Color(7); cout << "] Ethereal Dreams" << endl;
-        cout << "["; Color(6); cout << "2"; Color(7); cout << "] To the Fallen" << endl;
-        cout << "["; Color(6); cout << "3"; Color(7); cout << "] Silver and Steel" << endl;
         cout << "["; Color(6); cout << "4"; Color(7); cout << "] Gods and Demons" << endl;
-        cout << "["; Color(6); cout << "5"; Color(7); cout << "] The Ritual" << endl;
-        cout << "["; Color(6); cout << "6"; Color(7); cout << "] A Gate Manifests";
         cout << endl << endl;
         cout << "["; Color(6); cout << "0"; Color(7); cout << "] Back" << endl;
 
@@ -412,11 +407,6 @@ void music_player()
         if (ans == "5") { music_track = 5; stream_music(music_track); }
         if (ans == "6") { music_track = 6; stream_music(music_track); }
         if (ans == "7") { music_track = 7; stream_music(music_track); }
-        /*if (ans == "8") { music_track = 8; stream_music(music_track); }
-        if (ans == "9") { music_track = 9; stream_music(music_track); }
-        if (ans == "a") { music_track = 10; stream_music(music_track);}
-        if (ans == "b") { music_track = 11; stream_music(music_track);}
-        if (ans == "c") { music_track = 12; stream_music(music_track);}*/
         if (ans == "0" or ans == "\033") { keep = 0; }
 
         
@@ -425,80 +415,52 @@ void music_player()
 
 void stream_music(int music_selected)
 {
-    if (music_selected == 1)
+    if (music_setting != 0)
     {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/01.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
+
+        if (music_selected == 1)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/01.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 2)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/02.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 3)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/03.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 4)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/04.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 5)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/05.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 6)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/06.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
+        if (music_selected == 7)
+        {
+            mciSendString(L"close MyFile", NULL, 0, 0);
+            mciSendString(L"open data/music/07.mp3 alias MyFile", NULL, 0, 0);
+            mciSendString(L"play MyFile repeat", NULL, 1, 0);
+        }
     }
-    if (music_selected == 2)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/02.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 3)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/03.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 4)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/04.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 5)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/05.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 6)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/06.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 7)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/07.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 8)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/08.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 9)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/09.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 10)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/10.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 11)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/11.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    if (music_selected == 12)
-    {
-        mciSendString(L"close MyFile", NULL, 0, 0);
-        mciSendString(L"open data/music/12.mp3 alias MyFile", NULL, 0, 0);
-        mciSendString(L"play MyFile repeat", NULL, 1, 0);
-    }
-    
-    
-    
+
     check_music_vol(); // last step
 }

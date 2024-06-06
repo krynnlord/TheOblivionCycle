@@ -169,7 +169,7 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 
 			if (crit == 1)
 			{
-				hero_combat_string = "hits *Critical* " + enemy.name + " with " + hero_weapon.name + " for " + to_string(temp_enemy_ac_atk) + " damage.";
+				hero_combat_string = "hits " + enemy.name + " with " + hero_weapon.name + " for " + to_string(temp_enemy_ac_atk) + " damage. (CRITICAL)";
 			}
 			if (crit == 0)
 			{
@@ -267,7 +267,7 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 		if (crit == 1)
 		{
-			enemy_combat_string = "hits *Critical* you for " + to_string(enemy_total_atk) + " damage.";
+			enemy_combat_string = "hits you for " + to_string(enemy_total_atk) + " damage. (CRITICAL)";
 		}
 		if (crit == 0)
 		{

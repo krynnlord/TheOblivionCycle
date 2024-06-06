@@ -17,21 +17,43 @@ int circleofstones(int i)
         cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << "LVL 1-4";
         if (prism_red == true and hero_player.level >= 4)
         {
-            Color(11); cout << " [can be sealed with prism]"; Color(7);
+            Color(11); cout << "  [can be sealed with prism]"; Color(7);
         }
 
         cout << endl;
     }
     if (hero_player.quest_level == 2)
     {
-        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << " LVL 1-4"; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
        
     }
     if (hero_player.quest_level == 3)
     {
-        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE] "; Color(7); cout << " LVL 1-4"; Color(11); cout << "  [sealed]" << endl; Color(7);
-        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE] "; Color(7); cout << "LVL 5-8" << endl;
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";
+        if (prism_blue == true and hero_player.level >= 8)
+        {
+            Color(11); cout << "  [can be sealed with prism]"; Color(7);
+        }
+        cout << endl;
     }
+    if (hero_player.quest_level == 4)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
+    }
+    if (hero_player.quest_level == 5)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "3"; Color(7); cout << ") "; Color(5); cout << "[PURPLE GATE] "; Color(7); cout << "LVL 9-12";
+        if (prism_purple == true and hero_player.level >= 12)
+        {
+            Color(11); cout << "  [can be sealed with prism]"; Color(7);
+        }
+        cout << endl;
+    }
+    
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
     
