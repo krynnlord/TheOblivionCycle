@@ -30,23 +30,21 @@ void monster_display(monster enemy)
     {
         enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured skin and glowing, red eyes. Dwell underground.";
     }
-    if (enemy.name == hobgoblin.name)
+    if (enemy.name == goblin_warrior.name)
     {
         enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured skin and glowing, red eyes. Dwell underground.";
     }
     
     system("cls");
-    cout << "Monster Inspector" << endl << endl;
-    cout << "-----------------" << endl;
-    cout << enemy.name << endl;
-    cout << "-----------------" << endl;
+    int bar1; for (bar1 = 0;bar1 < 55;bar1++) { cout << "-"; } cout << endl;
+    cout << left << setw(20); cout << enemy.name;
+    cout << "Level: " << left << setw(2); cout << enemy.level;
+    cout << "  HP:" << right << setw(3); cout << enemy.hp << "/" << left << setw(3); cout << enemy.hp_max;
+    cout << "  Damage: " << left << setw(3); cout << enemy.damage;
+    cout << endl;
+    int bar; for (bar = 0;bar < 55;bar++) { cout << "-"; };
+    cout << endl << "Description:" << endl;
     cout << enemy.desc << endl << endl;
-    cout << "HP: " << enemy.hp << "/" << enemy.hp_max << endl;
-    cout << "Damage: " << enemy.damage << endl;
-    cout << "AC: " << enemy.ac << endl;
-    cout << "Luck: " << enemy.luck << endl;
-    cout << "Prof: " << enemy.prof << endl;
-        
     cout << endl << endl; system("pause");
     return;
 }
