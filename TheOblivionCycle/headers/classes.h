@@ -230,6 +230,9 @@ extern monster ettin;
 extern monster gorgon;
 extern monster wraith;
 
+extern monster random_enemy;
+
+
 // BOSSES
 extern monster redgate_boss;
 extern monster bluegate_boss;

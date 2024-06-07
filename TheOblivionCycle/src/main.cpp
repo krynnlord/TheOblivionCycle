@@ -210,6 +210,7 @@ void debug_screens()
         cout << "-----------------" << endl;
         cout << "(1) Red Gate - Monster Listing" << endl;
         cout << "(2) Monster Display" << endl;
+        cout << "(3) Random Monster Tester" << endl;
 
         
         cout << endl;
@@ -252,6 +253,19 @@ void debug_screens()
 
         }
 
+        if (ans == "3")
+        {
+            int monlev;
+            int gatenum;
+            cout << "\n\nMonster Lvl: ";
+            cin >> monlev;
+            cout << "Gate: ";
+            cin >> gatenum;
+
+            random_enemy = monster_generator(monlev, gatenum);
+            battle_sim(random_enemy, gatenum);
+
+        }
 
 
     }

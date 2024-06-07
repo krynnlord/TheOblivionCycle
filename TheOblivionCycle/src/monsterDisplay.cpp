@@ -55,41 +55,71 @@ void monster_display(monster enemy)
     return;
 }
 
-void monster_generator(int level, int gate)
+monster monster_generator(int level, int gate)
 {
 
-    monster enemy;
-    string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
-    string enemy_type[] = { "Skeleton","Zombie","Slug","Boar", "Dragon", "Bat", "Hellhound", "Knight", "Centipede", "Orc", "Goblin" };
 
-    enemy.level = level;
-    int enemy_rand_adj = 0;
-    int enemy_rand_type = 0;
+    if (level >= 1 and gate == 1)
+    {
+        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_type[] = { "Skeleton","Zombie","Giant Bat","Giant Boar", "Skeletal Warrior", "Wolf", "Grimlock", "Ooze", "Centipede", "Sprite", "Goblin", "Goblin Warrior","Gnoll", "Hobgoblin","Saytr","Orc", "Ash Zombie"};
+        int enemy_rand_adj = 0;
+        int enemy_rand_type = 0;
+        srand((unsigned) time(NULL));
+        enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+        enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+        random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    }
+    
+    if (level >= 5 and gate == 2)
+    {
+        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_type[] = { "Imp", "Mimic", "Griffon", "Draconian Mage", "Druid", "Gargoyle", "Hellhound", "Lizardman","Centaur","Golem","Ogre","Vampire","Banshee","Ettin","Gorgon","Wraith"};
+        int enemy_rand_adj = 0;
+        int enemy_rand_type = 0;
+        srand((unsigned)time(NULL));
+        enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+        enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+        random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    }
+    
+    if (level >= 9 and gate == 3)
+    {
+        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_type[] = { "Wyvern", "Drake", "Sea Serpent", "Drow", "Treant", "Naga", "Shade", "Djiin", "Dragon"};
+        int enemy_rand_adj = 0;
+        int enemy_rand_type = 0;
+        srand((unsigned)time(NULL));
+        enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+        enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+        random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    }
+
+    random_enemy.level = level;
     int roll = 0;
-    srand(time(NULL));
-    enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
-    enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
-
-    enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     roll = rand() % 15 + 1;
-    enemy.hp = 50 * level + roll;
-    enemy.hp_max = enemy.hp;
+    random_enemy.hp = 50 * level + roll;
+    random_enemy.hp_max = random_enemy.hp;
     int levl_rand = level * 3;
     roll = rand() % levl_rand + 1;
-    enemy.damage = roll;
-    enemy.ac = level + 1;
+    //random_enemy.damage = roll;
+    random_enemy.ac = level + 1;
     roll = rand() % (level - levl_rand) + 1;
-    enemy.exp = (level * 15) + roll;
+    random_enemy.exp = (level * 15) + roll;
     roll = rand() % (level - levl_rand) + 1;
-    enemy.essence = (level * 10) + roll;
+    random_enemy.essence = (level * 10) + roll;
 
-    cout << "Name: " << enemy.name << endl;
-    cout << "HP: " << enemy.hp << endl;
-    cout << "Attack: " << enemy.damage << endl;
-    cout << "AC: " << enemy.ac << endl;
-    cout << "Level: " << enemy.level << endl;
-    cout << "EXP: " << enemy.exp << endl;
-    cout << "ESSENCE: " << enemy.essence << endl;
+    cout << "Name: " << random_enemy.name << endl;
+    cout << "HP: " << random_enemy.hp << endl;
+    cout << "Attack: " << random_enemy.damage << endl;
+    cout << "AC: " << random_enemy.ac << endl;
+    cout << "Level: " << random_enemy.level << endl;
+    cout << "EXP: " << random_enemy.exp << endl;
+    cout << "ESSENCE: " << random_enemy.essence << endl;
     cout << endl;
-    return;
+    
+    return random_enemy;
 }

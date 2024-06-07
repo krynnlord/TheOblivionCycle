@@ -174,6 +174,9 @@ monster fire_dragon = { "Fire Dragon",350,350,3,12,8,25,"3d4",200,175,1 };
 monster ice_dragon = { "Ice Dragon",350,350,3,12,8,25,"3d3",200,180,1 };
 monster swamp_dragon = { "Swamp Dragon",350,350,3,12,8,25,"3d3",180,200,1 };
 
+monster random_enemy = { "Zombie",22,22,0,1,1,8,"1d2",10,10,1 };
+
+
 // Bosses
 monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,"2d3",100,100,1 };
 

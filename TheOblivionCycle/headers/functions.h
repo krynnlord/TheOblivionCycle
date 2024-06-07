@@ -31,7 +31,7 @@ void monster_display(monster);
 void conversation_king();
 
 // Utilities
-void monster_generator(int, int);
+monster monster_generator(int, int);
 void debug_screens();
 void battle_sim(monster, int);
 void battle_loop(int);
