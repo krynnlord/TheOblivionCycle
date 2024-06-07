@@ -54,3 +54,42 @@ void monster_display(monster enemy)
     ans = _getch();
     return;
 }
+
+void monster_generator(int level, int gate)
+{
+
+    monster enemy;
+    string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+    string enemy_type[] = { "Skeleton","Zombie","Slug","Boar", "Dragon", "Bat", "Hellhound", "Knight", "Centipede", "Orc", "Goblin" };
+
+    enemy.level = level;
+    int enemy_rand_adj = 0;
+    int enemy_rand_type = 0;
+    int roll = 0;
+    srand(time(NULL));
+    enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+    enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+    enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    roll = rand() % 15 + 1;
+    enemy.hp = 50 * level + roll;
+    enemy.hp_max = enemy.hp;
+    int levl_rand = level * 3;
+    roll = rand() % levl_rand + 1;
+    enemy.damage = roll;
+    enemy.ac = level + 1;
+    roll = rand() % (level - levl_rand) + 1;
+    enemy.exp = (level * 15) + roll;
+    roll = rand() % (level - levl_rand) + 1;
+    enemy.essence = (level * 10) + roll;
+
+    cout << "Name: " << enemy.name << endl;
+    cout << "HP: " << enemy.hp << endl;
+    cout << "Attack: " << enemy.damage << endl;
+    cout << "AC: " << enemy.ac << endl;
+    cout << "Level: " << enemy.level << endl;
+    cout << "EXP: " << enemy.exp << endl;
+    cout << "ESSENCE: " << enemy.essence << endl;
+    cout << endl;
+    return;
+}
