@@ -11,7 +11,7 @@ COLORS LIST
 7: Default white
 8: Gray/Grey
 9: Bright blue
-10: Brigth green
+10: Bright green
 11: Bright cyan
 12: Bright red
 13: Pink/Magenta
