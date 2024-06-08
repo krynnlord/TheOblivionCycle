@@ -69,6 +69,8 @@ monster monster_generator(int level, int gate)
         enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
         enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
 
+        random_enemy.adj = enemy_adj[enemy_rand_adj];
+        random_enemy.type = enemy_type[enemy_rand_type];
         random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     }
     
@@ -82,6 +84,8 @@ monster monster_generator(int level, int gate)
         enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
         enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
 
+        random_enemy.adj = enemy_adj[enemy_rand_adj];
+        random_enemy.type = enemy_type[enemy_rand_type];
         random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     }
     
@@ -94,7 +98,9 @@ monster monster_generator(int level, int gate)
         srand((unsigned)time(NULL));
         enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
         enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
-
+        
+        random_enemy.adj = enemy_adj[enemy_rand_adj];
+        random_enemy.type = enemy_type[enemy_rand_type];
         random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     }
 
@@ -112,14 +118,13 @@ monster monster_generator(int level, int gate)
     roll = rand() % (level - levl_rand) + 1;
     random_enemy.essence = (level * 10) + roll;
 
-    cout << "Name: " << random_enemy.name << endl;
-    cout << "HP: " << random_enemy.hp << endl;
-    cout << "Attack: " << random_enemy.damage << endl;
-    cout << "AC: " << random_enemy.ac << endl;
-    cout << "Level: " << random_enemy.level << endl;
-    cout << "EXP: " << random_enemy.exp << endl;
-    cout << "ESSENCE: " << random_enemy.essence << endl;
-    cout << endl;
-    
+    if (random_enemy.adj == "Rotten")
+    { random_enemy.desc = "Rotting decay pours off the "; }
+    else { random_enemy.desc = "The random "; }
+
+    if (random_enemy.type == "Skeleton")
+    { random_enemy.desc.append("figure made of no flesh and only bones.\nThey are usually found in cemeteries and old caverns.");}
+    else { random_enemy.desc.append("monster."); }
+
     return random_enemy;
 }

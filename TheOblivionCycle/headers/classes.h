@@ -55,6 +55,8 @@ public:
     int essence;
     int stat;
     string desc;
+    string adj;
+    string type;
 };
 
 class spell
