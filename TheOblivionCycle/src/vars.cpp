@@ -105,7 +105,7 @@ armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 12, "", 0 };
 // Hero Initial Creation
 // name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
 // Stat = 1 Normal | 2 Posioned | 3 Burning
-player hero_player = { "Player", 100, 100, 0, 1, 1, 0, 1, 0, 0, 0, 0, 3 };
+player hero_player = { "Player", 270, 270, 0, 1, 2, 0, 1, 0, 0, 0, 0, 3 };
 weapon hero_weapon = hands;
 armor hero_armor = tunic;
 

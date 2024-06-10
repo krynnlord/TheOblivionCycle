@@ -11,7 +11,7 @@ extern int min_exp;         // Min Experience for level for Death
 extern int gold_vault;      // Gold in Vault
 extern int poison_ticker;   // Poison ticker countdown for Battle
 extern int resent_rez;      // Recently been resurrected 
-
+extern int skip_enemy_atk;  // skip Enemy Attack
 extern int total_kills;     // Stats tracking for Player Total Kills
 extern int total_deaths;    // Stats tracking for Player Total Deaths
 

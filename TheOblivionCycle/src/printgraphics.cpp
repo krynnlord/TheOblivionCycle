@@ -477,7 +477,7 @@ void print_portal(monster enemy)
     cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
     cout << line6 << endl << line7 << endl << line8 << endl << line9 << endl << line10 << endl;
     cout << line11 << endl << line12 << endl << endl; Color(7);
-    cout << "      " << enemy.name << " arrives!!" << endl;
+    cout << enemy.name << " arrives!!" << endl;
     
 }
 

@@ -301,7 +301,8 @@ void loot(monster enemy)
 	// Stats Update
 	total_kills += 1;
 
-	cout << "*** "; Color(10); cout << "Victory!"; Color(7); cout << " ***" << endl << endl;
+	cout << "*** "; Color(10); cout << "Victory!"; Color(7); cout << " ***" << endl;
+	Color(4); cout << enemy.name; Color(7); cout << " defeated." << endl << endl;
 	cout << "---EARNED-------" << endl;
 	Color(10); cout << enemy.exp; Color(7); cout << " Experience" << endl;
 	Color(9); cout << enemy.essence; Color(7); cout << " Essence" << endl;
