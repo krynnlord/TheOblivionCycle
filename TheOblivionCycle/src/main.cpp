@@ -208,9 +208,7 @@ void debug_screens()
         system("cls");
         cout << "Debug Screens" << endl;
         cout << "-----------------" << endl;
-        cout << "(1) Red Gate - Monster Listing" << endl;
-        cout << "(2) Monster Display" << endl;
-        cout << "(3) Random Monster Tester" << endl;
+        cout << "(1) Random Monster Tester" << endl;
 
         
         cout << endl;
@@ -220,40 +218,6 @@ void debug_screens()
 
         if (ans == "\033") { i = 1; }
         if (ans == "1")
-        {
-            system("cls");
-            cout << "Red Gate Monster List" << endl << endl;
-            for (int i = 0; i < size(monsters_all_red); i++)
-            {
-               cout << monsters_all_red[i].level << ": " << monsters_all_red[i].name << endl;
-               
-            }
-            cout << endl;
-            system("pause");
-
-
-
-        }
-
-        if (ans == "2")
-        {
-            system("cls");
-            
-            for (int i = 0; i < size(monsters_all_red); i++)
-            {
-                cout << "[" << i << "] " << monsters_all_red[i].name << endl;
-            }
-            
-            int ans;
-            cout << "\nChoice> ";
-            cin >> ans;
-            
-
-           monster_display(monsters_all_red[ans]);
-
-        }
-
-        if (ans == "3")
         {
             int monlev;
             int gatenum;

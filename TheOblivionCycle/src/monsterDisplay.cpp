@@ -2,41 +2,18 @@
 
 void monster_display(monster enemy)
 {
-    if (enemy.name == zombie.name) 
+    if (enemy.adj == "Rotten")
     {
-        enemy.desc = "Listless, humanoid corpses, reanimated as guardians by\n"
-                     "powerful clerics or wizards.";
+        enemy.desc = "Rotting decay pours off the ";
     }
-    if (enemy.name == skeleton.name)
+    else {enemy.desc = "A random "; }
+
+    if (enemy.type == "Skeleton")
     {
-        enemy.desc = "Skeletal remains of humanoids, reanimated as guardians\n"
-                     "by powerful magic-users or clerics. Often encountered \n"
-                     "in cemeteries, crypts, or other forlorn places.";
+        enemy.desc.append("figure made of no flesh and only bones.\nThey are usually found in cemeteries and old caverns.");
     }
-    if (enemy.name == giant_boar.name)
-    {
-        enemy.desc = "Omnivorous wild boars that dwell primarily in forests.\n"
-                     "Can be irascible and dangerous, if disturbed.";
-    }
-    if (enemy.name == giant_bat.name)
-    {
-        enemy.desc = "Nocturnal, flying mammals that roost in caves or ruins.";
-    }
-    if (enemy.name == giant_centipede.name)
-    {
-        enemy.desc = "1 foot long centipedes that dwell in dark, damp locations.";
-    }
-    if (enemy.name == goblin.name)
-    {
-        enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured\n"
-                     "skin and glowing, red eyes. Dwell underground.";
-    }
-    if (enemy.name == goblin_warrior.name)
-    {
-        enemy.desc = "Small, grotesque humanoids with pallid, earth-coloured\n"
-                     "skin and glowing, red eyes. Dwell underground.";
-    }
-    
+    else { enemy.desc.append("monster."); }
+
     system("cls");
     Color(10); cout << "Monster Information" << endl; Color(7);
     int bar1; for (bar1 = 0;bar1 < 55;bar1++) { cout << "-"; };
@@ -103,28 +80,28 @@ monster monster_generator(int level, int gate)
         random_enemy.type = enemy_type[enemy_rand_type];
         random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     }
+    
+    //SET Max Level Mod for Gates
+    int max_level_mod = level; //SET BASE
+    if (gate == 1 and hero_player.level > 4)  { max_level_mod = 4; }
+    if (gate == 2 and hero_player.level > 8)  { max_level_mod = 8; }
+    if (gate == 3 and hero_player.level > 12) { max_level_mod = 12; }
+    if (gate == 4 and hero_player.level > 16) { max_level_mod = 16; }
 
-    random_enemy.level = level;
+    random_enemy.level = max_level_mod;                         //SET Monster Level
+    random_enemy.prof = max_level_mod + 1;                      //SET Monster Profiecieny
     int roll = 0;
     roll = rand() % 15 + 1;
-    random_enemy.hp = 50 * level + roll;
-    random_enemy.hp_max = random_enemy.hp;
-    int levl_rand = level * 3;
+    random_enemy.hp = (20 * max_level_mod) + roll;              //SET Monster HP
+    random_enemy.hp_max = random_enemy.hp;                      //SET Monster HP_MAX
+    int levl_rand = max_level_mod * 3;
     roll = rand() % levl_rand + 1;
-    //random_enemy.damage = roll;
-    random_enemy.ac = level + 1;
-    roll = rand() % (level - levl_rand) + 1;
-    random_enemy.exp = (level * 15) + roll;
-    roll = rand() % (level - levl_rand) + 1;
-    random_enemy.essence = (level * 10) + roll;
-
-    if (random_enemy.adj == "Rotten")
-    { random_enemy.desc = "Rotting decay pours off the "; }
-    else { random_enemy.desc = "The random "; }
-
-    if (random_enemy.type == "Skeleton")
-    { random_enemy.desc.append("figure made of no flesh and only bones.\nThey are usually found in cemeteries and old caverns.");}
-    else { random_enemy.desc.append("monster."); }
+    random_enemy.damage = ((random_enemy.prof * 4) + 6) + roll; //SET Monster Damage
+    random_enemy.ac = static_cast<int>(round((max_level_mod + 4) / 2)) ;          //SET Monster AC
+    roll = rand() % (max_level_mod - levl_rand) + 1;
+    random_enemy.exp = ((max_level_mod * 5) + 5) + roll;        //SET Monster EXP
+    roll = rand() % (max_level_mod - levl_rand) + 1;
+    random_enemy.essence = ((max_level_mod * 6) + 2) + roll;    //SET Monster ESSENCE
 
     return random_enemy;
 }

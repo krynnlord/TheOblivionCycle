@@ -209,10 +209,6 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 		endcombat = true;
 	}
 
-	int dice_i; int sides_i;
-	string dice; dice = enemy.damage[0]; dice_i = stoi(dice); // # of dice
-	string sides; sides = enemy.damage[2]; sides_i = stoi(sides); // # of sides
-
 	int total = 0;
 
 	// Crit role
@@ -227,20 +223,17 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 	// Dice Roll
 	int final = 0;
-	for (int i = 0; i < dice_i; ++i)
-	{
-		uniform_int_distribution<int> rng_range(1, sides_i);
-		random_device rd;
-		mt19937 rng(rd());
-		int roll = rng_range(rng);
-		final += roll;
-		roll = 0;
-	}
+	uniform_int_distribution<int> rng_range2(1, 5);
+	random_device rd2;
+	mt19937 rng2(rd2());
+	int roll = rng_range2(rng2);
+	final += enemy.damage + roll;
+	roll = 0;
 
 	// add modifiers
 	if (crit == 1)
 	{
-		total = (final * enemy.prof) * 2;
+		total = final * 2;
 	}
 	else if (crit == 2)
 	{
@@ -248,7 +241,7 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 	}
 	else
 	{
-		total = (final * enemy.prof);
+		total = final;
 	}
 	total -= hero_armor.armorclass; // Total Attack minus Hero AC
 	if (total <= 0) { total = 0; }

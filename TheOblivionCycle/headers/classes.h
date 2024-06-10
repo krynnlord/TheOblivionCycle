@@ -50,7 +50,7 @@ public:
     int level;
     int prof;
     int ac;
-    string damage;
+    int damage;
     int exp;
     int essence;
     int stat;
@@ -198,40 +198,6 @@ extern armor hero_armor;
 /////////////////////////////////////////
 // Monsters /////////////////////////////
 /////////////////////////////////////////
-extern monster zombie;
-extern monster skeleton;
-extern monster giant_bat;
-extern monster giant_boar;
-extern monster ash_zombie;
-extern monster skeleton_warrior;
-extern monster giant_centipede;
-extern monster goblin;
-extern monster wolf;
-extern monster grimlock;
-extern monster ooze;
-extern monster sprite;
-extern monster goblin_warrior;
-extern monster gnoll;
-extern monster hobgoblin;
-extern monster satyr;
-extern monster orc;
-extern monster imp;
-extern monster mimic;
-extern monster griffon;
-extern monster draconian_mage;
-extern monster druid;
-extern monster gargoyle;
-extern monster hellhound;
-extern monster lizardman;
-extern monster centaur;
-extern monster golem;
-extern monster ogre;
-extern monster vampire;
-extern monster banshee;
-extern monster ettin;
-extern monster gorgon;
-extern monster wraith;
-
 extern monster random_enemy;
 
 
@@ -241,13 +207,6 @@ extern monster bluegate_boss;
 extern monster purplegate_boss;
 extern monster yellowgate_boss;
 extern monster final_boss;
-
-// Monster Groups
-extern vector<monster> monsters_all_red;
-extern vector<monster> monsters_all_blue;
-extern vector<monster> monsters_all_purple;
-extern vector<monster> monsters_all_yellow;
-extern vector<monster> monsters_all_shimmering;
 
 // SPELLS
 extern vector<spell> spells_all;
