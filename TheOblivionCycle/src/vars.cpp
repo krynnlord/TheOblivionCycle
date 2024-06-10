@@ -67,21 +67,21 @@ vector<spell> spells_all = { heal, cure, conjure_elixir, magic_missile, greater_
 /////////////////////////////////////////
 
 // No Weapon
-weapon hands = { 1, "Hands", "BLUNT", 0, "1d2","Your bare hands", 1 };
+weapon hands = { 1, "Hands", "BLUNT", 0, 2,"Your bare hands", 1 };
 
 // Blunt
-weapon club = { 2, "Club", "BLUNT", 200, "1d4", "",0 };
-weapon mace = { 3, "Mace", "BLUNT", 500, "1d6", "",0 };
-weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, "1d8", "",0 };
-weapon warhammer = { 5, "Warhammer", "BLUNT", 1000, "1d9", "",0 };
-weapon maul = { 6, "Maul", "BLUNT", 5000, "2d6", "",0 };
+weapon club = { 2, "Club", "BLUNT", 100, 6, "",0 };
+weapon mace = { 3, "Mace", "BLUNT", 500, 7, "",0 };
+weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, 9, "",0 };
+weapon warhammer = { 5, "Warhammer", "BLUNT", 5000, 16, "",0 };
+weapon maul = { 6, "Maul", "BLUNT", 8000, 18, "",0 };
 
 // Slashing
-weapon dagger = { 7, "Dagger", "SLASHING", 200, "1d4", "",0 };
-weapon handaxe = { 8, "Handaxe", "SLASHING", 500, "1d6", "",0 };
-weapon shortsword = { 9, "Short Sword", "SLASHING", 1000, "1d8", "",0 };
-weapon longsword = { 10, "Long Sword", "SLASHING", 1500, "1d9", "",0 };
-weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "",0 };
+weapon dagger = { 7, "Dagger", "SLASHING", 50, 5, "",0 };
+weapon handaxe = { 8, "Handaxe", "SLASHING", 800, 8, "",0 };
+weapon shortsword = { 9, "Short Sword", "SLASHING", 2000, 10, "",0 };
+weapon longsword = { 10, "Long Sword", "SLASHING", 5000, 15, "",0 };
+weapon greatsword = { 11, "Great Sword", "SLASHING", 10000, 20, "",0 };
 
 /////////////////////////////////////////
 // Armor ////////////////////////////////
@@ -91,16 +91,16 @@ weapon greatsword = { 11, "Great Sword", "SLASHING", 5000, "2d6", "",0 };
 armor tunic = { 1, "Tunic", "LIGHT", 0, 0,"A Plain shirt", 1 };
 
 // Light
-armor cloth_armor = { 2, "Cloth Armor", "LIGHT", 50, 2, "", 0 };
-armor leather_armor = { 3, "Leather Armor", "LIGHT", 100, 4, "", 0 };
+armor cloth_armor = { 2, "Cloth Armor", "LIGHT", 50, 5, "", 0 };
+armor leather_armor = { 3, "Leather Armor", "LIGHT", 500, 10, "", 0 };
 
 // Medium
-armor chain_armor = { 4, "Chain Armor", "MEDIUM", 500, 6, "", 0 };
-armor scale_armor = { 5, "Scale Armor", "MEDIUM", 600, 8, "", 0 };
+armor chain_armor = { 4, "Chain Armor", "MEDIUM", 1000, 15, "", 0 };
+armor scale_armor = { 5, "Scale Armor", "MEDIUM", 2000, 20, "", 0 };
 
 // Heavy
-armor splint_armor = { 6, "Splint Armor", "HEAVY", 2000, 10, "", 0 };
-armor plate_armor = { 7, "Plate Armor", "HEAVY", 3000, 12, "", 0 };
+armor splint_armor = { 6, "Splint Armor", "HEAVY", 3000, 25, "", 0 };
+armor plate_armor = { 7, "Plate Armor", "HEAVY", 5000, 30, "", 0 };
 
 // Hero Initial Creation
 // name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
@@ -118,4 +118,4 @@ armor hero_armor = tunic;
 monster random_enemy = { "Zombie",22,22,0,1,1,8,2,10,10,1 };
 
 // Bosses
-monster redgate_boss = { "Orc Champion",120,120,3,4,3,12,2,100,100,1 };
+monster redgate_boss = { "Kilthar the Unbreakable",300,300,2,4,5,8,30,100,100,1 };

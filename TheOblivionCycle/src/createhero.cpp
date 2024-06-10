@@ -23,7 +23,7 @@ if (ans == "N" or ans =="n") { i=1; }
 if (ans == "Y" or ans =="y")
 {
 // name, hp, hp_max, luck, level, prof, exp, stat, gold, trinket, quest_level, essence, flask;
-hero_player = { newname, 100, 100, 0, 1, 2, 0, 1, 0, 0, 0, 0, 3};
+hero_player = { newname, 270, 270, 0, 1, 2, 0, 1, 0, 0, 0, 0, 3};
 hero_armor = tunic;
 hero_weapon = hands;
 

@@ -60,19 +60,19 @@ void buy_weapons()
             cout << left << setw(10) << mace.cost;
             cout << "Damage: " << mace.damage << endl;
         }
-        if (shortsword.have == 0)
-        {
-            cout << left << setw(20) << "[3] Short Sword";
-            cout << "Cost: ";
-            cout << left << setw(10) << shortsword.cost;
-            cout << "Damage: " << shortsword.damage << endl;
-        }
         if (lighthammer.have == 0)
         {
-            cout << left << setw(20) << "[4] Light Hammer";
+            cout << left << setw(20) << "[3] Light Hammer";
             cout << "Cost: ";
             cout << left << setw(10) << lighthammer.cost;
             cout << "Damage: " << lighthammer.damage << endl;
+        }
+        if (shortsword.have == 0)
+        {
+            cout << left << setw(20) << "[4] Short Sword";
+            cout << "Cost: ";
+            cout << left << setw(10) << shortsword.cost;
+            cout << "Damage: " << shortsword.damage << endl;
         }
         if (warhammer.have == 0)
         {
@@ -88,20 +88,21 @@ void buy_weapons()
             cout << left << setw(10) << longsword.cost;
             cout << "Damage: " << longsword.damage << endl;
         }
-        if (greatsword.have == 0)
-        {
-            cout << left << setw(20) << "[7] Greatsword";
-            cout << "Cost: ";
-            cout << left << setw(10) << greatsword.cost;
-            cout << "Damage: " << greatsword.damage << endl;
-        }
         if (maul.have == 0)
         {
-            cout << left << setw(20) << "[8] Maul";
+            cout << left << setw(20) << "[7] Maul";
             cout << "Cost: ";
             cout << left << setw(10) << maul.cost;
             cout << "Damage: " << maul.damage << endl;
         }
+        if (greatsword.have == 0)
+        {
+            cout << left << setw(20) << "[8] Greatsword";
+            cout << "Cost: ";
+            cout << left << setw(10) << greatsword.cost;
+            cout << "Damage: " << greatsword.damage << endl;
+        }
+
         cout << endl;
         cout << "--- The Blacksmith --~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
         cout << "Are you interested in any of my weapons?" << endl;
@@ -120,18 +121,19 @@ void buy_weapons()
         if (ansr == "1" and dagger.have != 1) { check_weapon_purchase(dagger); }
         if (ansr == "2" and mace.have == 1) { ; }
         if (ansr == "2" and mace.have != 1) { check_weapon_purchase(mace); }
-        if (ansr == "3" and shortsword.have == 1) { ; }
-        if (ansr == "3" and shortsword.have != 1) { check_weapon_purchase(shortsword); }
-        if (ansr == "4" and lighthammer.have == 1) { ; }
-        if (ansr == "4" and lighthammer.have != 1) { check_weapon_purchase(lighthammer); }
+        if (ansr == "3" and lighthammer.have == 1) { ; }
+        if (ansr == "3" and lighthammer.have != 1) { check_weapon_purchase(lighthammer); }
+        if (ansr == "4" and shortsword.have == 1) { ; }
+        if (ansr == "4" and shortsword.have != 1) { check_weapon_purchase(shortsword); }
         if (ansr == "5" and warhammer.have == 1) { ; }
         if (ansr == "5" and warhammer.have != 1) { check_weapon_purchase(warhammer); }
         if (ansr == "6" and longsword.have == 1) { ; }
         if (ansr == "6" and longsword.have != 1) { check_weapon_purchase(longsword); }
-        if (ansr == "7" and greatsword.have == 1) { ; }
-        if (ansr == "7" and greatsword.have != 1) { check_weapon_purchase(greatsword); }
-        if (ansr == "8" and maul.have == 1) { ; }
-        if (ansr == "8" and maul.have != 1) { check_weapon_purchase(maul); }
+        if (ansr == "7" and maul.have == 1) { ; }
+        if (ansr == "7" and maul.have != 1) { check_weapon_purchase(maul); }
+        if (ansr == "8" and greatsword.have == 1) { ; }
+        if (ansr == "8" and greatsword.have != 1) { check_weapon_purchase(greatsword); }
+
 
     }
 

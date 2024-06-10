@@ -5,14 +5,18 @@ void intro()
 	ShowConsoleCursor(false);
 	system("cls");
 	Sleep(2000);
-	
 	print_rlm();
 	string rlmtext = "					    	     presents an original game";
 	typer(rlmtext, 100);
 	Sleep(4000);
 
 	system("cls");
-
+	cout << "Skip Intro? (Y/N)";
+	string ans;
+	ans = _getch();
+	if (ans == "y" or ans == "Y") { return; }
+	
+	system("cls");
 	string storytext = "\n\n     The most merciful thing in the world, I think, is the inability \n";
 	typer(storytext, 30);
 	storytext = "     of the human mind to correlate all its contents.\n\n";

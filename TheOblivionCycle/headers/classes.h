@@ -89,7 +89,7 @@ public:
     string name;
     string type;
     int cost;
-    string damage;
+    int damage;
     string description;
     int have;           //(0) No (1) Yes
 };

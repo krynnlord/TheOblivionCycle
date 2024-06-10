@@ -95,15 +95,9 @@ void battle_log(monster enemy, string hero_combat_string, string enemy_combat_st
 
 void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& skip_hero_atk, int heal_run, int& hero_total_atk)
 {
-	int dice_i = 0;
-	int sides_i = 0;
 	int hero_final = 0;
 	int hero_crit = 0;
-	
-
-	string dice; dice = hero_weapon.damage[0]; dice_i = stoi(dice); // # of dice
-	string sides; sides = hero_weapon.damage[2]; sides_i = stoi(sides); // # of sides
-
+	int final = 0;
 	int total = 0;
 
 	// Crit role
@@ -116,17 +110,13 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 	else if (critroll == 1) { crit = 2; } //miss
 	else { crit = 0; } // normal
 
-	// Dice Roll
-	int final = 0;
-	for (int i = 0; i < dice_i; ++i)
-	{
-		uniform_int_distribution<int> rng_range(1, sides_i);
-		random_device rd;
-		mt19937 rng(rd());
-		int roll = rng_range(rng);
-		final += roll;
-		roll = 0;
-	}
+
+	uniform_int_distribution<int> rng_range2(1, 5);
+	random_device rd2;
+	mt19937 rng2(rd2());
+	int roll = rng_range2(rng2);
+	final += hero_weapon.damage + roll;
+	roll = 0;
 
 	// add modifiers
 	if (crit == 1)
@@ -247,7 +237,8 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 	if (total <= 0) { total = 0; }
 	enemy_total_atk = total;
 
-	hero_player.hp -= enemy_total_atk;
+	if (enemy.hp == 0) { hero_player.hp = hero_player.hp; }  //FIX for hitting Hero on Death
+	else { hero_player.hp -= enemy_total_atk; }
 
 	if (hero_player.hp <= 0)
 	{
