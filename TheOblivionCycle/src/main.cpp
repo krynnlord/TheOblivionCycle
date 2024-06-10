@@ -207,30 +207,22 @@ void debug_screens()
     {
         system("cls");
         cout << "Debug Screens" << endl;
-        cout << "-----------------" << endl;
-        cout << "(1) Random Monster Tester" << endl;
+        cout << "---------------------------" << endl;
+        cout << "(1) Random Monster Gate 1" << endl;
+        cout << "(2) Random Monster Gate 2" << endl;
+        cout << "(3) Random Monster Gate 3" << endl;
+        cout << "---------------------------" << endl;
 
-        
         cout << endl;
         cout << "[ESC] Exit";
         string ans;
         ans = _getch();
 
+        hero_player.hp = hero_player.hp_max;
         if (ans == "\033") { i = 1; }
-        if (ans == "1")
-        {
-            int monlev;
-            int gatenum;
-            cout << "\n\nMonster Lvl: ";
-            cin >> monlev;
-            cout << "Gate: ";
-            cin >> gatenum;
-
-            random_enemy = monster_generator(monlev, gatenum);
-            battle_sim(random_enemy, gatenum);
-
-        }
-
+        if (ans == "1") { battle_sim(monster_generator(hero_player.level, 1),1); }
+        if (ans == "2") { battle_sim(monster_generator(hero_player.level, 2), 2); }
+        if (ans == "3") { battle_sim(monster_generator(hero_player.level, 3), 3); }
 
     }
 }

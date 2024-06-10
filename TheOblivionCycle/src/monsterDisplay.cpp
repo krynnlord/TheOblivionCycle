@@ -6,6 +6,10 @@ void monster_display(monster enemy)
     {
         enemy.desc = "Rotting decay pours off the ";
     }
+    if (enemy.adj == "Perfect")
+    {
+        enemy.desc = "A seemingly flawless ";
+    }
     else {enemy.desc = "A random "; }
 
     if (enemy.type == "Skeleton")
@@ -38,7 +42,7 @@ monster monster_generator(int level, int gate)
 
     if (level >= 1 and gate == 1)
     {
-        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_adj[] = { "Perfect", "Grand", "Young", "Sacred", "Golden", "Old", "Weak"};
         string enemy_type[] = { "Skeleton","Zombie","Giant Bat","Giant Boar", "Skeletal Warrior", "Wolf", "Grimlock", "Ooze", "Centipede", "Sprite", "Goblin", "Goblin Warrior","Gnoll", "Hobgoblin","Saytr","Orc", "Ash Zombie"};
         int enemy_rand_adj = 0;
         int enemy_rand_type = 0;
@@ -92,8 +96,14 @@ monster monster_generator(int level, int gate)
     random_enemy.prof = max_level_mod + 1;                      //SET Monster Profiecieny
     int roll = 0;
     roll = rand() % 15 + 1;
+
+    // SET HP
     random_enemy.hp = (20 * max_level_mod) + roll;              //SET Monster HP
     random_enemy.hp_max = random_enemy.hp;                      //SET Monster HP_MAX
+
+    // HP Modifiers
+    if (random_enemy.adj == "Old") { random_enemy.hp -= (random_enemy.level * 3); random_enemy.hp_max = random_enemy.hp; }
+
     int levl_rand = max_level_mod * 3;
     roll = rand() % levl_rand + 1;
     random_enemy.damage = ((random_enemy.prof * 4) + 6) + roll; //SET Monster Damage
