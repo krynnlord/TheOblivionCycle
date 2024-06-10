@@ -2,21 +2,21 @@
 
 void monster_display(monster enemy)
 {
-    if (enemy.adj == "Rotten")
-    {
-        enemy.desc = "Rotting decay pours off the ";
-    }
-    if (enemy.adj == "Perfect")
-    {
-        enemy.desc = "A seemingly flawless ";
-    }
-    else {enemy.desc = "A random "; }
+    
+    // ADJECTIVES
+    if (enemy.adj == "Rotten") { enemy.desc = "Rotting decay pours off the "; }
+    if (enemy.adj == "Perfect") { enemy.desc = "A seemingly flawless "; }
+    if (enemy.adj == "Grand") { enemy.desc = "A well built "; }
+    if (enemy.adj == "Young") { enemy.desc = "A under-developed "; }
+    if (enemy.adj == "Sacred") { enemy.desc = "Covered in jewels and auromatic scents the "; }
+    if (enemy.adj == "Old") { enemy.desc = "The barely able to move "; }
+    if (enemy.adj == "Weak") { enemy.desc = "A desperate joke of a "; }
+    //else {enemy.desc = "A random "; } 
+    
+    // TYPES
+    if (enemy.type == "Skeleton") { enemy.desc.append("figure made of no flesh and only bones.\nThey are usually found in cemeteries and old caverns.");}
+    if (enemy.type == "Zombie") { enemy.desc.append("animated dead that smells of rot and decay."); }
 
-    if (enemy.type == "Skeleton")
-    {
-        enemy.desc.append("figure made of no flesh and only bones.\nThey are usually found in cemeteries and old caverns.");
-    }
-    else { enemy.desc.append("monster."); }
 
     system("cls");
     Color(10); cout << "Monster Information" << endl; Color(7);
@@ -42,7 +42,7 @@ monster monster_generator(int level, int gate)
 
     if (level >= 1 and gate == 1)
     {
-        string enemy_adj[] = { "Perfect", "Grand", "Young", "Sacred", "Golden", "Old", "Weak"};
+        string enemy_adj[] = { "Perfect", "Grand", "Young", "Sacred", "Old", "Weak"};
         string enemy_type[] = { "Skeleton","Zombie","Giant Bat","Giant Boar", "Skeletal Warrior", "Wolf", "Grimlock", "Ooze", "Centipede", "Sprite", "Goblin", "Goblin Warrior","Gnoll", "Hobgoblin","Saytr","Orc", "Ash Zombie"};
         int enemy_rand_adj = 0;
         int enemy_rand_type = 0;
