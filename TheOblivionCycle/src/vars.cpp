@@ -119,7 +119,7 @@ monster random_enemy = { "Zombie",22,22,0,1,1,8,2,10,10,1 };
 
 // Bosses
 monster redgate_boss = { "Kilthar the Unbreakable",300,300,2,4,5,8,30,100,100,1 };
-monster bluegate_boss = { "Kilthar the Unbreakable",500,500,2,8,9,8,50,150,150,1 };
-monster purplegate_boss = { "Kilthar the Unbreakable",700,700,2,12,13,8,70,200,200,1 };
-monster yellowgate_boss = { "Kilthar the Unbreakable",900,900,2,4,16,17,90,250,250,1 };
-monster final_boss = { "Demon King of Astoria",1200,1200,2,20,21,8,110,300,300,1 };
+monster bluegate_boss = { "Rotting King Thomas",500,500,2,8,9,8,50,150,150,1 };
+monster purplegate_boss = { "Undead Princess Zethla",700,700,2,12,13,8,70,200,200,1 };
+monster yellowgate_boss = { "Proto-Drake Ithlyius",900,900,2,4,16,17,90,250,250,1 };
+monster final_boss = { "Demon King Azuleus",1200,1200,2,20,21,8,110,300,300,1 };

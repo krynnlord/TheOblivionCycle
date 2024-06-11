@@ -20,7 +20,7 @@ void monster_display(monster enemy)
     if (enemy.type == "Skeletal Warrior") { enemy.desc.append("figure made of no flesh and only bones\nAdorned with a rusted sword and shield."); }
     if (enemy.type == "Wolf") { enemy.desc.append("pack hunter known for their cunning."); }
     if (enemy.type == "Grimlock") { enemy.desc.append("muscular humanoid with thick, grey scaly\nskin and blank, eyeless eye sockets."); }
-    if (enemy.type == "Ooze") { enemy.desc.append("amorphous creatures that live only to eat."); }
+    if (enemy.type == "Ooze") { enemy.desc.append("amorphous creatures that lives only to eat."); }
     if (enemy.type == "Centipede") { enemy.desc.append("100 legges creature that stunns it prey."); }
     if (enemy.type == "Sprite") { enemy.desc.append("small flying fairy like creature."); }
     if (enemy.type == "Goblin") { enemy.desc.append("green humanoid that incites mischief and terror."); }
@@ -124,6 +124,10 @@ monster monster_generator(int level, int gate)
     int levl_rand = max_level_mod * 3;
     roll = rand() % levl_rand + 1;
     random_enemy.damage = ((random_enemy.prof * 4) + 6) + roll; //SET Monster Damage
+
+    // Attack Modifiers
+    if (random_enemy.adj == "Weak") { random_enemy.damage -= (random_enemy.level + 3); }
+
     random_enemy.ac = static_cast<int>(round((max_level_mod + 4) / 2)) ;          //SET Monster AC
     roll = rand() % (max_level_mod - levl_rand) + 1;
     random_enemy.exp = ((max_level_mod * 5) + 5) + roll;        //SET Monster EXP
