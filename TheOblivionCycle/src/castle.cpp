@@ -21,12 +21,23 @@ int castle(int i)
     if (ans == "1")
     {
         string ans2 = "";
-        print_king(); // Print King Graphic
-        int bar2; for (bar2 = 0;bar2 < 5;bar2++) { cout << "-"; }; cout << " The King ";
-        for (bar2 = 0;bar2 < 60;bar2++) { cout << "-"; } cout << endl;
-        conversation_king(); // Conversation 
-        for (bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
-        ans2 = _getch();
+        if (hero_player.quest_level == 8)
+        { 
+            system("cls");
+            for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+            conversation_king();
+            for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+            ans2 = _getch();
+        }
+        else
+        {
+            print_king();
+            int bar2; for (bar2 = 0;bar2 < 5;bar2++) { cout << "-"; }; cout << " The King ";
+            for (bar2 = 0;bar2 < 60;bar2++) { cout << "-"; } cout << endl;
+            conversation_king(); // Conversation 
+            for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+            ans2 = _getch();
+        }
     }
     
     if (ans == "2")
@@ -85,6 +96,11 @@ void conversation_king()
         if (speakroll == 1) { printf("I wonder why this new gate is blue in color. Any ideas?\n"); }
         if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
         if (speakroll == 3) { printf("The sense of dread is causing unrest withing the kingdom.\n"); }
+        return;
+    }
+    if (hero_player.quest_level == 8)
+    {
+        printf("The King is not here!\n");
         return;
     }
 }
@@ -173,13 +189,29 @@ void vault()
 
 void king_ressurect()
 {
-    print_king();
-    int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";
-    for (bar2 = 0; bar2 < 60; bar2++) { cout << "-"; } cout << endl;
-    cout << "Welcome back " << hero_player.name << ". I have brought you back to life." << endl;
-    cout << "Please be careful in the future, for I cannot return what has been lost!" << endl;
-    for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
-    
-    resent_rez = 1;
-    system("pause");
+    if (hero_player.quest_level == 8)
+    {
+        
+        int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";
+        for (bar2 = 0; bar2 < 60; bar2++) { cout << "-"; } cout << endl;
+        cout << "A strange force has brought you back to life. You have lost all your gold," << endl;
+        cout << "but your renewed spirit urges you to continue on!" << endl;
+        for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
+
+        resent_rez = 1;
+        system("pause");
+
+    }
+    else
+    {
+        print_king();
+        int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";
+        for (bar2 = 0; bar2 < 60; bar2++) { cout << "-"; } cout << endl;
+        cout << "Welcome back " << hero_player.name << ". I have brought you back to life." << endl;
+        cout << "Please be careful in the future, for I cannot return what has been lost!" << endl;
+        for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
+
+        resent_rez = 1;
+        system("pause");
+    }
 }
