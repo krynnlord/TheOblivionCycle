@@ -269,6 +269,14 @@ void craft_prism()
         {
             cout << "[1] Craft "; Color(5); cout << "PURPLE"; Color(7); cout << " Prism ["; Color(10); cout << "8000"; Color(7); cout << "] Essence" << endl;
         }
+        if (hero_player.quest_level == 7 and prism_yellow == false)
+        {
+            cout << "[1] Craft "; Color(6); cout << "YELLOW"; Color(7); cout << " Prism ["; Color(10); cout << "10000"; Color(7); cout << "] Essence" << endl;
+        }
+        if (hero_player.quest_level == 8 and prism_shimmering == false)
+        {
+            cout << "[1] Craft "; Color(7); cout << "Shimmering"; Color(7); cout << " Prism ["; Color(10); cout << "15000"; Color(7); cout << "] Essence" << endl;
+        }
         cout << "[0] Back" << endl;
 
         string ans;
@@ -316,7 +324,32 @@ void craft_prism()
             prism_purple = true;
             Sleep(3000);
         }
+        if (ans == "1" and hero_player.essence < 10000 and hero_player.quest_level == 7 and prism_yellow == false)
+        {
+            cout << endl << "You do not possess enough essence!";
+            Sleep(3000);
+        }
 
+        if (ans == "1" and hero_player.essence >= 10000 and hero_player.quest_level == 7 and prism_yellow == false)
+        {
+            cout << endl << "I have crafted your prism. Now go seal the gate!";
+            hero_player.essence -= 10000;
+            prism_yellow = true;
+            Sleep(3000);
+        }
+        if (ans == "1" and hero_player.essence < 15000 and hero_player.quest_level == 8 and prism_shimmering == false)
+        {
+            cout << endl << "You do not possess enough essence!";
+            Sleep(3000);
+        }
+
+        if (ans == "1" and hero_player.essence >= 15000 and hero_player.quest_level == 8 and prism_shimmering == false)
+        {
+            cout << endl << "I have crafted your prism. Now go seal the gate!";
+            hero_player.essence -= 15000;
+            prism_shimmering = true;
+            Sleep(3000);
+        }
         if (ans == "0" or ans == "\033")
         {
             i = 1;

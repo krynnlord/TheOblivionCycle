@@ -154,6 +154,86 @@ void battle_loop(int gate)
             return;
         }
     }
+    if (gate == 2 and prism_blue == true and hero_player.level >= 8 and hero_player.quest_level == 3)
+    {
+        cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
+
+        string tempans;
+        tempans = _getch();
+
+        if (tempans == "1")
+        {
+            display_fight_symbol = false;
+            print_portal(bluegate_boss);
+            battle_sim(bluegate_boss, gate);
+            return;
+        }
+        else
+        {
+            battle_sim(monster_generator(8, gate), 2);
+            return;
+        }
+    }
+    if (gate == 3 and prism_purple == true and hero_player.level >= 12 and hero_player.quest_level == 5)
+    {
+        cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
+
+        string tempans;
+        tempans = _getch();
+
+        if (tempans == "1")
+        {
+            display_fight_symbol = false;
+            print_portal(purplegate_boss);
+            battle_sim(purplegate_boss, gate);
+            return;
+        }
+        else
+        {
+            battle_sim(monster_generator(12, gate), 3);
+            return;
+        }
+    }
+    if (gate == 4 and prism_yellow == true and hero_player.level >= 16 and hero_player.quest_level == 7)
+    {
+        cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
+
+        string tempans;
+        tempans = _getch();
+
+        if (tempans == "1")
+        {
+            display_fight_symbol = false;
+            print_portal(yellowgate_boss);
+            battle_sim(yellowgate_boss, gate);
+            return;
+        }
+        else
+        {
+            battle_sim(monster_generator(16, gate), 4);
+            return;
+        }
+    }
+    if (gate == 5 and prism_shimmering == true and hero_player.level >= 20 and hero_player.quest_level == 8)
+    {
+        cout << "\nDo you want to attempt to seal the gate?\n\n[1] Yes";
+
+        string tempans;
+        tempans = _getch();
+
+        if (tempans == "1")
+        {
+            display_fight_symbol = false;
+            print_portal(final_boss);
+            battle_sim(final_boss, gate);
+            return;
+        }
+        else
+        {
+            battle_sim(monster_generator(20, gate), 5);
+            return;
+        }
+    }
 
     if (gate == 1)
     {
