@@ -74,7 +74,7 @@ monster monster_generator(int level, int gate)
     
     if (level >= 5 and gate == 2)
     {
-        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted", "Poisonous"};
         string enemy_type[] = { "Imp", "Mimic", "Griffon", "Draconian Mage", "Druid", "Gargoyle", "Hellhound", "Lizardman","Centaur","Golem","Ogre","Vampire","Banshee","Ettin","Gorgon","Wraith"};
         int enemy_rand_adj = 0;
         int enemy_rand_type = 0;

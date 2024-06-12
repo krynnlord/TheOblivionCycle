@@ -240,6 +240,21 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 	if (enemy.hp == 0) { hero_player.hp = hero_player.hp; }  //FIX for hitting Hero on Death
 	else { hero_player.hp -= enemy_total_atk; }
 
+	if (enemy.adj == "Poisonous" or enemy.adj == "Rotten")
+	{
+		uniform_int_distribution<int> rng_range(1, 5);
+		random_device rd;
+		mt19937 rng(rd());
+		int roll = rng_range(rng);
+		if (roll == 5)
+		{
+			poison_ticker = 10;
+			hero_player.stat = 2;
+		}
+
+	}
+
+
 	if (hero_player.hp <= 0)
 	{
 		hero_player.hp = 0;
@@ -362,6 +377,7 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell)
 	if (cure.ready == 1 and c1_spell == 1)
 	{
 		hero_player.stat = 1;
+		poison_ticker = 0;
 	}
 
 }
@@ -370,9 +386,9 @@ void magic_persistent_damage(string& hero_combat_string)
 {
 	if (hero_player.stat == 2)
 	{
-		hero_player.hp -= 5;
+		hero_player.hp -= 2 * hero_player.level;
 		if (hero_player.hp < 0) { hero_player.hp = 0; }
-		hero_combat_string.append(" You take 5 posion damage!");
+		hero_combat_string.append(" You take " + to_string(2 * hero_player.level) + " posion damage!");
 		poison_ticker -= 1;
 		if (poison_ticker <= 0) { poison_ticker = 0; hero_player.stat = 1; }
 	}
