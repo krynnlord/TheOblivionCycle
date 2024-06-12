@@ -101,6 +101,35 @@ monster monster_generator(int level, int gate)
         random_enemy.type = enemy_type[enemy_rand_type];
         random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
     }
+
+    if (level >= 12 and gate == 4)
+    {
+        string enemy_adj[] = { "Rotten","Decayed","Broken", "Red","Green", "Wilted", "Perfect", "Grand", "Young", "Sacred", "Golden", "Rusted" };
+        string enemy_type[] = { "Devil", "Gutworm", "Incubus", "Succubus", "Oni", "Demon", "Elemental", "Fallen Angel", "Reaper" };
+        int enemy_rand_adj = 0;
+        int enemy_rand_type = 0;
+        srand((unsigned)time(NULL));
+        enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+        enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+        random_enemy.adj = enemy_adj[enemy_rand_adj];
+        random_enemy.type = enemy_type[enemy_rand_type];
+        random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    }
+    if (level >= 16 and gate == 5)
+    {
+        string enemy_adj[] = { "Shimmering"};
+        string enemy_type[] = { "Devil", "Gutworm", "Incubus", "Succubus", "Oni", "Demon", "Elemental", "Fallen Angel", "Reaper","Wyvern", "Drake", "Sea Serpent", "Drow", "Treant", "Naga", "Shade", "Djiin", "Dragon","Imp", "Mimic", "Griffon", "Draconian Mage", "Druid", "Gargoyle", "Hellhound", "Lizardman","Centaur","Golem","Ogre","Vampire","Banshee","Ettin","Gorgon","Wraith","Skeleton","Zombie","Giant Bat","Giant Boar", "Skeletal Warrior", "Wolf", "Grimlock", "Ooze", "Centipede", "Sprite", "Goblin", "Goblin Warrior","Gnoll", "Hobgoblin","Satyr","Orc", "Ash Zombie" };
+        int enemy_rand_adj = 0;
+        int enemy_rand_type = 0;
+        srand((unsigned)time(NULL));
+        enemy_rand_adj = rand() % (end(enemy_adj) - begin(enemy_adj));
+        enemy_rand_type = rand() % (end(enemy_type) - begin(enemy_type));
+
+        random_enemy.adj = enemy_adj[enemy_rand_adj];
+        random_enemy.type = enemy_type[enemy_rand_type];
+        random_enemy.name = enemy_adj[enemy_rand_adj] + " " + enemy_type[enemy_rand_type];
+    }
     
     //SET Max Level Mod for Gates
     int max_level_mod = level; //SET BASE

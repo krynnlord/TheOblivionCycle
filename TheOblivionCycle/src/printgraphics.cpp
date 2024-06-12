@@ -334,6 +334,7 @@ void print_preparecombat(bool display_fight_symbol, int color)
     if (color == 2) { newcolor = 9; }
     if (color == 3) { newcolor = 5; }
     if (color == 4) { newcolor = 6; }
+    if (color == 5) { newcolor = 7; }
     if (display_fight_symbol == false) { return; }
     else
     {
