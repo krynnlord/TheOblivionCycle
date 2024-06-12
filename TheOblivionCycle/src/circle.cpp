@@ -53,6 +53,24 @@ int circleofstones(int i)
         }
         cout << endl;
     }
+    if (hero_player.quest_level == 6)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "3"; Color(7); cout << ") "; Color(5); cout << "[PURPLE GATE] "; Color(7); cout << "LVL 9-12"; Color(11); cout << "  [sealed]" << endl; Color(7);
+    }
+    if (hero_player.quest_level == 7)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "3"; Color(7); cout << ") "; Color(5); cout << "[PURPLE GATE] "; Color(7); cout << "LVL 9-12"; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "4"; Color(7); cout << ") "; Color(6); cout << "[YELLOW GATE] "; Color(7); cout << "LVL 13-16";
+        if (prism_yellow == true and hero_player.level >= 16)
+        {
+            Color(11); cout << " [can be sealed with prism]"; Color(7);
+        }
+        cout << endl;
+    }
     
     cout << "("; Color(6); cout << "0"; Color(7); cout << ") Back" << endl;
 
@@ -67,9 +85,19 @@ int circleofstones(int i)
         battle_loop(1);
         if (resent_rez == 1) { return 1; }
     }
-    if (ans == "2" and hero_player.quest_level >= 3 and hero_player.level >=8)
+    if (ans == "2" and hero_player.quest_level >= 3 and hero_player.level >=5)
     {
         battle_loop(2);
+        if (resent_rez == 1) { return 1; }
+    }
+    if (ans == "3" and hero_player.quest_level >= 5 and hero_player.level >= 9)
+    {
+        battle_loop(3);
+        if (resent_rez == 1) { return 1; }
+    }
+    if (ans == "4" and hero_player.quest_level >= 7 and hero_player.level >= 13)
+    {
+        battle_loop(4);
         if (resent_rez == 1) { return 1; }
     }
     if (ans == "0" or ans == "\033")
@@ -133,12 +161,41 @@ void battle_loop(int gate)
 
         if (hero_player.level > 8)
         {
-            battle_sim(monster_generator(8, gate), 1);
+            battle_sim(monster_generator(8, gate), 2);
             return;
         }
 
     }
+    if (gate == 3)
+    {
+        if (hero_player.level <= 12)
+        {
+            battle_sim(monster_generator(hero_player.level, gate), 3);
+            return;
+        }
 
+        if (hero_player.level > 12)
+        {
+            battle_sim(monster_generator(12, gate), 3);
+            return;
+        }
+
+    }
+    if (gate == 4)
+    {
+        if (hero_player.level <= 16)
+        {
+            battle_sim(monster_generator(hero_player.level, gate), 4);
+            return;
+        }
+
+        if (hero_player.level > 16)
+        {
+            battle_sim(monster_generator(16, gate), 4);
+            return;
+        }
+
+    }
     
 
 
