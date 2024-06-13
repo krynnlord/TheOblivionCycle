@@ -54,6 +54,7 @@ void battle_sim(monster enemy, int gate)
 		{ break; }
 
 		magic_persistent_damage(hero_combat_string);  // Hero Persistant Damage Check
+		magic_persistent_healing(hero_combat_string); // Hero Persistant Healing Check
 
 
 		system("cls");
@@ -164,7 +165,7 @@ void battle_sim(monster enemy, int gate)
 				if (heal_amount > hero_player.hp_max - hero_player.hp)
 				{ heal_amount = hero_player.hp_max - hero_player.hp; }
 
-				magic_aid(c1_spell, c2_spell, c3_spell);
+				magic_aid(c1_spell, c2_spell, c3_spell, heal);
 				hero_combat_string = "casts Heal and gains "+ to_string(heal_amount) + " HP!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
@@ -172,7 +173,7 @@ void battle_sim(monster enemy, int gate)
 			}
 			if (cure.ready == 1)
 			{
-				magic_aid(c1_spell, c2_spell, c3_spell);
+				magic_aid(c1_spell, c2_spell, c3_spell, cure);
 				hero_combat_string = "casts Cure on themself!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
@@ -180,7 +181,7 @@ void battle_sim(monster enemy, int gate)
 			}
 			if (magic_missile.ready == 1)
 			{
-				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell);
+				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell, magic_missile);
 				hero_combat_string = "casts Magic Missile at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
@@ -189,7 +190,7 @@ void battle_sim(monster enemy, int gate)
 
 			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask < 3)
 			{
-				magic_aid(c1_spell, c2_spell, c3_spell);
+				magic_aid(c1_spell, c2_spell, c3_spell, conjure_elixir);
 				hero_combat_string = "casts Conjure Exilir and refills 1 flask charge!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
@@ -209,7 +210,54 @@ void battle_sim(monster enemy, int gate)
 				enemy.hp -= hero_total_atk;
 			}
 		}
+
+		if (ans == "b" and c2_spell == 1)
+		{
+			if (greater_heal.ready == 1)
+			{
+				
+				int heal_amount = hero_player.hp_max - hero_player.hp;
+				
+				magic_aid(c1_spell, c2_spell, c3_spell, greater_heal);
+				hero_combat_string = "casts Greater Heal and gains " + to_string(heal_amount) + " HP!";
+				c2_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
+			}
+			
+			if (skip_hero_atk != 1)
+			{
+				enemy.hp -= hero_total_atk;
+			}
+		}
 		
+		if (ans == "c" and c3_spell == 1)
+		{
+			
+			if (regeneration.ready == 1)
+			{
+
+				int heal_amount = int(round(hero_player.hp_max * .20)) + 1;
+				if (heal_amount > hero_player.hp_max - hero_player.hp)
+				{
+					heal_amount = hero_player.hp_max - hero_player.hp;
+				}
+
+				magic_aid(c1_spell, c2_spell, c3_spell, regeneration);
+				hero_combat_string = "casts Regeneration and gains " + to_string(heal_amount) + " HP!";
+				c3_spell = 0;
+				regen_ticker = 4;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
+			}
+
+			if (skip_hero_atk != 1)
+			{
+				enemy.hp -= hero_total_atk;
+			}
+		}
+
+
 		if (ans == "i" or ans == "I")
 		{ monster_display(enemy); }
 
@@ -343,6 +391,7 @@ void player_death()
 	if (min_exp < (hero_player.exp - temp_exp_loss)) { hero_player.exp -= temp_exp_loss; }
 	
 	hero_player.hp = hero_player.hp_max;
+	hero_player.stat = 1;
 	hero_player.flask = 3;
 	
 	cout << hero_player.name << " has died!" << endl << endl;

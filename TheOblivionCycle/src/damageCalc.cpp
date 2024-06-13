@@ -8,8 +8,9 @@ void hero_display()
 	string hero_line2 = "";
 
 	cout << "Hero ";
-	if (hero_player.stat == 2) { Color(10); cout << ">>>POISONED<<<"; Color(7); }
-	if (hero_player.stat == 3) { Color(12); cout << ">>>BURNING<<<"; Color(7); }
+	if (hero_player.stat == 2) { Color(10); cout << ">>>POISONED<<< "; Color(7); }
+	if (hero_player.stat == 3) { Color(12); cout << ">>>BURNING<<< "; Color(7); }
+	if (regen_ticker != 0) { Color(5); cout << ">>>REGEN<<< "; Color(7); }
 	cout << endl;
 	for (int a = 0; a < 70; a++) { cout << "-"; }
 
@@ -336,20 +337,20 @@ void trinket_cleanup()
 
 }
 
-int magic_attack(int c1_spell, int c2_spell, int c3_spell)
+int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
 {
     int spell_damage = 0;
-    if (magic_missile.ready == 1 and c1_spell == 1)
+    if (magic_missile.ready == 1 and c1_spell == 1 and magic_spell.name == magic_missile.name)
     {
         spell_damage = hero_player.prof * 3;
     }
 
-    if (fireball.ready == 1 and c2_spell == 1)
+    if (fireball.ready == 1 and c2_spell == 1 and magic_spell.name == fireball.name)
     {
         spell_damage = hero_player.prof * 5;
     }
 
-    if (immolation.ready == 1 and c3_spell == 1)
+    if (immolation.ready == 1 and c3_spell == 1 and magic_spell.name == immolation.name)
     {
         spell_damage = hero_player.prof * 3;
     }
@@ -357,16 +358,16 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell)
     return spell_damage;
 }
 
-void magic_aid(int c1_spell, int c2_spell, int c3_spell)
+void magic_aid(int c1_spell, int c2_spell, int c3_spell, spell spell_cast)
 {
-	if (conjure_elixir.ready == 1 and c1_spell == 1)
+	if (conjure_elixir.ready == 1 and c1_spell == 1 and spell_cast.name == conjure_elixir.name)
 	{
 		if (hero_player.flask < 3)
 		{
 			hero_player.flask += 1;
 		}
 	}
-	if (heal.ready == 1 and c1_spell == 1)
+	if (heal.ready == 1 and c1_spell == 1 and spell_cast.name == heal.name)
 	{
 		hero_player.hp += int(round(hero_player.hp_max * .50)) + 1;
 		if (hero_player.hp > hero_player.hp_max)
@@ -374,10 +375,14 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell)
 			hero_player.hp = hero_player.hp_max;
 		}
 	}
-	if (cure.ready == 1 and c1_spell == 1)
+	if (cure.ready == 1 and c1_spell == 1 and spell_cast.name == cure.name)
 	{
 		hero_player.stat = 1;
 		poison_ticker = 0;
+	}
+	if (greater_heal.ready == 1 and c2_spell == 1 and spell_cast.name == greater_heal.name)
+	{
+		hero_player.hp = hero_player.hp_max; // FULL HEAL
 	}
 
 }
@@ -393,7 +398,32 @@ void magic_persistent_damage(string& hero_combat_string)
 		if (poison_ticker <= 0) { poison_ticker = 0; hero_player.stat = 1; }
 	}
 }
+void magic_persistent_healing(string& hero_combat_string)
+{
+	if (regen_ticker == 4) { regen_ticker -= 1; return; }
+	if (regen_ticker != 0)
+	{
+		int heal_amount = int(round(hero_player.hp_max * .20)) + 1;
+		if (heal_amount > hero_player.hp_max - hero_player.hp)
+		{
+			heal_amount = hero_player.hp_max - hero_player.hp;
+		}
+		
+		hero_player.hp += int(round(hero_player.hp_max * .20)) + 1;
+		if (hero_player.hp > hero_player.hp_max)
+		{
+			hero_player.hp = hero_player.hp_max;
+		}
 
+		if (hero_player.hp > hero_player.hp_max) { hero_player.hp = hero_player.hp_max; }
+		if (regen_ticker != 4)
+		{
+			hero_combat_string.append(" You regen for " + to_string(heal_amount) + " health!");
+		}
+		regen_ticker -= 1;
+		
+	}
+}
 
 void magic_persistent_attack(int att_magic_round)
 {
