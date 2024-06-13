@@ -185,7 +185,8 @@ void battle_sim(monster enemy, int gate)
 				hero_combat_string = "casts Magic Missile at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
-				skip_hero_atk = 1;
+				skip_hero_atk = 0;
+				
 			}
 
 			if (conjure_elixir.ready == 1 and c1_spell == 1 and hero_player.flask < 3)
@@ -208,11 +209,13 @@ void battle_sim(monster enemy, int gate)
 			if (skip_hero_atk != 1) 
 			{
 				enemy.hp -= hero_total_atk;
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
 			}
 		}
 
 		if (ans == "b" and c2_spell == 1)
 		{
+			
 			if (greater_heal.ready == 1)
 			{
 				
@@ -224,10 +227,28 @@ void battle_sim(monster enemy, int gate)
 				skip_enemy_atk = 0;
 				skip_hero_atk = 1;
 			}
-			
+			if (barrier.ready == 1)
+			{
+
+				magic_aid(c1_spell, c2_spell, c3_spell, barrier);
+				hero_combat_string = "casts Barrier and gains a magic shield!";
+				c2_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
+			}
+			if (escape.ready == 1) { loop = 1; }
+			if (fireball.ready == 1)
+			{
+				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell, fireball);
+				hero_combat_string = "casts Fireball at " + enemy.name + " for " + to_string(hero_total_atk) + " damage!";
+				c2_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 0;
+			}
 			if (skip_hero_atk != 1)
 			{
 				enemy.hp -= hero_total_atk;
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
 			}
 		}
 		

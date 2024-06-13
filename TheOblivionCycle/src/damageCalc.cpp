@@ -239,7 +239,11 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 	enemy_total_atk = total;
 
 	if (enemy.hp == 0) { hero_player.hp = hero_player.hp; }  //FIX for hitting Hero on Death
-	else { hero_player.hp -= enemy_total_atk; }
+	else 
+	{ 
+		if (immo_ticker != 0) { hero_player.hp -= enemy_total_atk; }
+		else { immo_ticker -= 1; hero_player.hp = hero_player.hp; }
+	}
 
 	if (enemy.adj == "Poisonous" or enemy.adj == "Rotten")
 	{
@@ -342,17 +346,18 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
     int spell_damage = 0;
     if (magic_missile.ready == 1 and c1_spell == 1 and magic_spell.name == magic_missile.name)
     {
-        spell_damage = hero_player.prof * 3;
+        spell_damage = hero_player.prof * 10;
     }
 
     if (fireball.ready == 1 and c2_spell == 1 and magic_spell.name == fireball.name)
     {
-        spell_damage = hero_player.prof * 5;
+        spell_damage = hero_player.prof * 25;
     }
 
     if (immolation.ready == 1 and c3_spell == 1 and magic_spell.name == immolation.name)
     {
-        spell_damage = hero_player.prof * 3;
+        spell_damage = hero_player.prof * 10;
+		immo_ticker = 2;
     }
 
     return spell_damage;
