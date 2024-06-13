@@ -198,7 +198,7 @@ void king_ressurect()
         cout << "but your renewed spirit urges you to continue on!" << endl;
         for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
 
-        resent_rez = 1;
+        recent_rez = 1;
         system("pause");
 
     }
@@ -211,7 +211,7 @@ void king_ressurect()
         cout << "Please be careful in the future, for I cannot return what has been lost!" << endl;
         for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
 
-        resent_rez = 1;
+        recent_rez = 1;
         system("pause");
     }
 }

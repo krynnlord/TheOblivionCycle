@@ -4,7 +4,12 @@
 
 // Tickers
 int poison_ticker = 0;
-int resent_rez = 0;
+int recent_rez = 0;
+int regen_ticker = 0;   
+int hg_ticker = 0;       
+int barrier_ticker = 0;  
+int immo_ticker = 0;
+int double_ticker = 0;
 
 // Stats
 int total_kills = 0;

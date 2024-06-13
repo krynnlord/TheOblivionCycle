@@ -368,7 +368,7 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell)
 	}
 	if (heal.ready == 1 and c1_spell == 1)
 	{
-		hero_player.hp += 50;
+		hero_player.hp += int(round(hero_player.hp_max * .50)) + 1;
 		if (hero_player.hp > hero_player.hp_max)
 		{
 			hero_player.hp = hero_player.hp_max;

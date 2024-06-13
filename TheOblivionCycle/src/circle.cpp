@@ -2,7 +2,7 @@
 
 int circleofstones(int i)
 {
-    resent_rez = 0;
+    recent_rez = 0;
     display_fight_symbol = true;
 
     if (hero_player.quest_level == 0)
@@ -96,27 +96,27 @@ int circleofstones(int i)
     if (ans == "1" and hero_player.quest_level >= 1)
     {
         battle_loop(1);
-        if (resent_rez == 1) { return 1; }
+        if (recent_rez == 1) { return 1; }
     }
     if (ans == "2" and hero_player.quest_level >= 3 and hero_player.level >=5)
     {
         battle_loop(2);
-        if (resent_rez == 1) { return 1; }
+        if (recent_rez == 1) { return 1; }
     }
     if (ans == "3" and hero_player.quest_level >= 5 and hero_player.level >= 9)
     {
         battle_loop(3);
-        if (resent_rez == 1) { return 1; }
+        if (recent_rez == 1) { return 1; }
     }
     if (ans == "4" and hero_player.quest_level >= 7 and hero_player.level >= 13)
     {
         battle_loop(4);
-        if (resent_rez == 1) { return 1; }
+        if (recent_rez == 1) { return 1; }
     }
     if (ans == "5" and hero_player.quest_level >= 8 and hero_player.level >= 17)
     {
         battle_loop(5);
-        if (resent_rez == 1) { return 1; }
+        if (recent_rez == 1) { return 1; }
     }
 
 

@@ -160,8 +160,12 @@ void battle_sim(monster enemy, int gate)
 		{
 			if (heal.ready == 1)
 			{
+				int heal_amount = int(round(hero_player.hp_max * .50)) + 1;
+				if (heal_amount > hero_player.hp_max - hero_player.hp)
+				{ heal_amount = hero_player.hp_max - hero_player.hp; }
+
 				magic_aid(c1_spell, c2_spell, c3_spell);
-				hero_combat_string = "casts Heal and gains 50 HP!";
+				hero_combat_string = "casts Heal and gains "+ to_string(heal_amount) + " HP!";
 				c1_spell = 0;
 				skip_enemy_atk = 0;
 				skip_hero_atk = 1;

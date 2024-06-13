@@ -10,7 +10,13 @@ extern int crit_result0;    // Battle Seq
 extern int min_exp;         // Min Experience for level for Death
 extern int gold_vault;      // Gold in Vault
 extern int poison_ticker;   // Poison ticker countdown for Battle
-extern int resent_rez;      // Recently been resurrected 
+extern int recent_rez;      // Recently been resurrected 
+extern int regen_ticker;    // Regeneration ticker for battle
+extern int hg_ticker;       // Holy Ground Ticker for battle
+extern int barrier_ticker;  // Barrier Ticker for battle
+extern int immo_ticker;     // Immolate ticker for battle
+extern int double_ticker;   // Double ticker for battle
+
 extern int skip_enemy_atk;  // skip Enemy Attack
 extern int total_kills;     // Stats tracking for Player Total Kills
 extern int total_deaths;    // Stats tracking for Player Total Deaths
