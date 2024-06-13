@@ -24,6 +24,7 @@ void battle_sim(monster enemy, int gate)
 	int skip_hero_atk = 0;
 	int skip_enemy_atk = 1;
 	int heal_run = 0;
+	int immo_ticker = 0;
 
 	// Magic Vars
 	int spell_damage = 0;
@@ -53,8 +54,12 @@ void battle_sim(monster enemy, int gate)
 		if (endcombat == true && hero_player.hp != 0)
 		{ break; }
 
+
 		magic_persistent_damage(hero_combat_string);  // Hero Persistant Damage Check
 		magic_persistent_healing(hero_combat_string); // Hero Persistant Healing Check
+		if (immo_ticker == 0) { enemy.stat = 1; }
+		enemy.hp -= magic_persistent_attack();
+		if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
 
 
 		system("cls");
@@ -151,13 +156,13 @@ void battle_sim(monster enemy, int gate)
 		ans = _getch();
 		
 		// Magic Cast
-		if (ans == "a" and c1_spell == 0)
+		if (ans == "a" or ans == "A" and c1_spell == 0)
 		{
 			hero_combat_string = "casts a spell, but it fails!";
 			enemy_combat_string = "flinches!";	
 		}
 		
-		if (ans == "a" and c1_spell == 1)
+		if (ans == "a" or ans == "A" and c1_spell == 1)
 		{
 			if (heal.ready == 1)
 			{
@@ -213,7 +218,7 @@ void battle_sim(monster enemy, int gate)
 			}
 		}
 
-		if (ans == "b" and c2_spell == 1)
+		if (ans == "b" or ans == "B" and c2_spell == 1)
 		{
 			
 			if (greater_heal.ready == 1)
@@ -231,7 +236,7 @@ void battle_sim(monster enemy, int gate)
 			{
 
 				magic_aid(c1_spell, c2_spell, c3_spell, barrier);
-				hero_combat_string = "casts Barrier and gains a magic shield!";
+				hero_combat_string = "casts Barrier and gains a magic shield and negates all damage!";
 				c2_spell = 0;
 				skip_enemy_atk = 0;
 				skip_hero_atk = 1;
@@ -252,7 +257,7 @@ void battle_sim(monster enemy, int gate)
 			}
 		}
 		
-		if (ans == "c" and c3_spell == 1)
+		if (ans == "c" or ans == "C" and c3_spell == 1)
 		{
 			
 			if (regeneration.ready == 1)
@@ -271,11 +276,44 @@ void battle_sim(monster enemy, int gate)
 				skip_enemy_atk = 0;
 				skip_hero_atk = 1;
 			}
+			if (holy_ground.ready == 1)
+			{
 
+				magic_aid(c1_spell, c2_spell, c3_spell, holy_ground);
+				hero_combat_string = "casts Holy Ground and gains full HP and recieves cure!";
+				c3_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 1;
+			}
 			if (skip_hero_atk != 1)
 			{
 				enemy.hp -= hero_total_atk;
 			}
+			if (doubleme.ready == 1)
+			{
+				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell, doubleme);
+				hero_combat_string = "casts Double attacking twice!";
+				c3_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 0;
+			}
+			if (immolation.ready == 1)
+			{
+				hero_total_atk = magic_attack(c1_spell, c2_spell, c3_spell, immolation);
+				hero_combat_string = "casts Immolation burning the enemy!";
+				c3_spell = 0;
+				skip_enemy_atk = 0;
+				skip_hero_atk = 0;
+				enemy.stat = 3;
+			}
+			
+			if (skip_hero_atk != 1)
+			{
+				enemy.hp -= hero_total_atk;
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
+			}
+
+
 		}
 
 

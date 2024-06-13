@@ -357,9 +357,13 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
     if (immolation.ready == 1 and c3_spell == 1 and magic_spell.name == immolation.name)
     {
         spell_damage = hero_player.prof * 10;
-		immo_ticker = 2;
-    }
-
+		immo_ticker = 3;
+		
+	}
+	if (doubleme.ready == 1 and c3_spell == 1 and magic_spell.name == doubleme.name)
+	{
+		spell_damage = (hero_weapon.damage * hero_player.prof) * 2;
+	}
     return spell_damage;
 }
 
@@ -389,7 +393,16 @@ void magic_aid(int c1_spell, int c2_spell, int c3_spell, spell spell_cast)
 	{
 		hero_player.hp = hero_player.hp_max; // FULL HEAL
 	}
-
+	if (barrier.ready == 1 and c2_spell == 1 and spell_cast.name == barrier.name)
+	{
+		hero_player.hp = hero_player.hp;
+	}
+	if (holy_ground.ready == 1 and c3_spell == 1 and spell_cast.name == holy_ground.name)
+	{
+		hero_player.hp = hero_player.hp_max;
+		hero_player.stat = 1;
+		poison_ticker = 0;
+	}
 }
 
 void magic_persistent_damage(string& hero_combat_string)
@@ -430,8 +443,17 @@ void magic_persistent_healing(string& hero_combat_string)
 	}
 }
 
-void magic_persistent_attack(int att_magic_round)
+int magic_persistent_attack()
 {
-
-    return;
+	if (immo_ticker == 3)
+	{
+		immo_ticker -= 1;
+		return 0;
+	}
+	if (immo_ticker != 0)
+	{
+		return hero_player.prof * 10;
+		immo_ticker -= 1;
+	}
+	return 0;
 }
