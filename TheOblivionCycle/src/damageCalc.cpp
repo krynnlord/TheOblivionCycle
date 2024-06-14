@@ -258,6 +258,19 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 		}
 
 	}
+	if (enemy.adj == "Shimmering")
+	{
+		uniform_int_distribution<int> rng_range(1, 15);
+		random_device rd;
+		mt19937 rng(rd());
+		int roll = rng_range(rng);
+		if (roll == 13)
+		{
+			poison_ticker = 10;
+			hero_player.stat = 2;
+		}
+
+	}
 
 
 	if (hero_player.hp <= 0)
