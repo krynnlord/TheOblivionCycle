@@ -77,6 +77,14 @@ int circleofstones(int i)
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
         cout << "("; Color(6); cout << "3"; Color(7); cout << ") "; Color(5); cout << "[PURPLE GATE] "; Color(7); cout << "LVL 9-12"; Color(11); cout << "  [sealed]" << endl; Color(7);
         cout << "("; Color(6); cout << "4"; Color(7); cout << ") "; Color(6); cout << "[YELLOW GATE] "; Color(7); cout << "LVL 13-16"; Color(11); cout << " [sealed]" << endl; Color(7);
+        cout << endl;
+    }
+    if (hero_player.quest_level == 9)
+    {
+        cout << "("; Color(6); cout << "1"; Color(7); cout << ") "; Color(12); cout << "[RED GATE]   "; Color(7); cout << " LVL 1-4 "; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "2"; Color(7); cout << ") "; Color(9); cout << "[BLUE GATE]   "; Color(7); cout << "LVL 5-8 ";  Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "3"; Color(7); cout << ") "; Color(5); cout << "[PURPLE GATE] "; Color(7); cout << "LVL 9-12"; Color(11); cout << "  [sealed]" << endl; Color(7);
+        cout << "("; Color(6); cout << "4"; Color(7); cout << ") "; Color(6); cout << "[YELLOW GATE] "; Color(7); cout << "LVL 13-16"; Color(11); cout << " [sealed]" << endl; Color(7);
         cout << "("; Color(6); cout << "5"; Color(7); cout << ") "; Color(7); cout << "[FINAL GATE]  "; Color(7); cout << "LVL 17-20";
         if (prism_shimmering == true and hero_player.level >= 20)
         {

@@ -432,6 +432,23 @@ void print_king()
     cout << line16 << endl << line17 << endl << line18 << endl << line19 << endl << line20 << endl;
     Color(7);
 }
+void print_no_king()
+{
+
+    system("cls");
+    Color(6);
+    string line1 = R"(    \+/         \+/        \+/         \+/)";
+    string line2 = R"(   _<=>_       _<=>_      _<=>_       _<=>_ )";
+    string line3 = R"(  / / \ \     / / \ \    / / \ \     / / \ \)";
+    string line4 = R"( //\ ^ /\\   //\ ^ /\\  //\ ^ /\\   //\ ^ /\\)";
+    string line5 = R"( 0 /_^_\ 0   0 /_^_\ 0  0 /_^_\ 0   0 /_^_\ 0)";
+    string line6 = R"(   || ||       || ||      || ||       || ||)";
+    string line7 = R"(   d| |b       d| |b      d| |b       d| |b)";
+    
+    cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl;
+    cout << line6 << endl << line7 << endl;
+    Color(7);
+}
 
 void print_flask()
 {

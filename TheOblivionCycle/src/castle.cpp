@@ -21,9 +21,9 @@ int castle(int i)
     if (ans == "1")
     {
         string ans2 = "";
-        if (hero_player.quest_level == 8)
-        { 
-            system("cls");
+        if (hero_player.quest_level == 9 or hero_player.quest_level == 8)
+        {
+            print_no_king();
             for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
             conversation_king();
             for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
@@ -86,21 +86,45 @@ void conversation_king()
         hero_player.quest_level = 3;
         return;
     }
-    if (hero_player.quest_level == 3)
+    if (hero_player.quest_level == 4)
+    {
+        printf("Thank you for sealing the blue gate. I am recieving reports that a new gate\n");
+        printf("has opened in front of another stone, this time purple in color.\n");
+        printf("Can you find out why this gate appeared suddenly after closing the blue one?\n");
+        hero_player.quest_level = 5;
+        return;
+    }
+    if (hero_player.quest_level == 6)
+    {
+        printf("Thank you for sealing the purple gate. I am recieving reports that a new gate\n");
+        printf("has opened in front of another stone, this time yellow in color.\n");
+        printf("Can you find out why this gate appeared suddenly after closing the purple one?\n");
+        hero_player.quest_level = 7;
+        return;
+    }
+    if (hero_player.quest_level == 3 or hero_player.quest_level == 5 or hero_player.quest_level == 7)
     {
         uniform_int_distribution<int> rng_range(0, 3);
         random_device rd;
         mt19937 rng(rd());
         int speakroll = rng_range(rng);
         if (speakroll == 0) { printf("I have comissioned you on an important mission. Please hurry!\n"); }
-        if (speakroll == 1) { printf("I wonder why this new gate is blue in color. Any ideas?\n"); }
+        if (speakroll == 1) { printf("I wonder why this new gate has arrived. Any ideas?\n"); }
         if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
         if (speakroll == 3) { printf("The sense of dread is causing unrest withing the kingdom.\n"); }
         return;
     }
     if (hero_player.quest_level == 8)
     {
-        printf("The King is not here!\n");
+        printf("Help us! The king has disappeared. We fear he may have been taken to\n");
+        printf("the circle of stones as a sacrifice. A new gate has once again appeared,\n");
+        printf("however, this time it has no color other than a shimmering white glow.\n");
+        hero_player.quest_level = 9;
+        return;
+    }
+    if (hero_player.quest_level == 9)
+    {
+        printf("The King is not here! Please rescue him.\n");
         return;
     }
 }
@@ -189,7 +213,7 @@ void vault()
 
 void king_ressurect()
 {
-    if (hero_player.quest_level == 8)
+    if (hero_player.quest_level == 8 or hero_player.quest_level == 9)
     {
         
         int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";

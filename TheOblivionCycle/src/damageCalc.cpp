@@ -452,5 +452,5 @@ int magic_persistent_attack(spell spellname)
 
 		return (hero_player.prof * 10) + roll;
 	}
-
+	return 0;
 }

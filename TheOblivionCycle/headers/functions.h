@@ -106,6 +106,7 @@ void print_infoscreen();
 void print_preparecombat(bool, int);
 void print_help();
 void print_king();
+void print_no_king();
 void print_gambling();
 void print_flask();
 void print_portal(monster);
