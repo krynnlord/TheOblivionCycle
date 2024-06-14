@@ -51,8 +51,8 @@ void enemy_display(monster enemy)
 	string enemy_line2 = "";
 	
 	cout << "Enemy   ";
-	if (enemy.stat == 2) { Color(10); cout << ">>>POISONED<<<"; Color(7); }
-	if (enemy.stat == 3) { Color(12); cout << ">>>BURNING<<<"; Color(7); }
+	if (enemy.stat == 2) { Color(10); cout << ">>>POISONED<<< "; Color(7); }
+	if (enemy.stat == 3) { Color(12); cout << ">>>BURNING<<< "; Color(7); }
 	cout << endl;
 	for (int a = 0; a < 70; a++) { cout << "-"; }
 
@@ -356,9 +356,7 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
 
     if (immolation.ready == 1 and c3_spell == 1 and magic_spell.name == immolation.name)
     {
-        spell_damage = hero_player.prof * 10;
-		immo_ticker = 3;
-		
+        spell_damage = hero_player.prof * 10;	
 	}
 	if (doubleme.ready == 1 and c3_spell == 1 and magic_spell.name == doubleme.name)
 	{
@@ -443,17 +441,16 @@ void magic_persistent_healing(string& hero_combat_string)
 	}
 }
 
-int magic_persistent_attack()
+int magic_persistent_attack(spell spellname)
 {
-	if (immo_ticker == 3)
+	if (spellname.name == "IMMOLATION")
 	{
-		immo_ticker -= 1;
-		return 0;
+		uniform_int_distribution<int> rng_range(1, 15);
+		random_device rd;
+		mt19937 rng(rd());
+		int roll = rng_range(rng);
+
+		return (hero_player.prof * 10) + roll;
 	}
-	if (immo_ticker != 0)
-	{
-		return hero_player.prof * 10;
-		immo_ticker -= 1;
-	}
-	return 0;
+
 }

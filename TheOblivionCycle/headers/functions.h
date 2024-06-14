@@ -21,7 +21,7 @@ void enemy_turn(monster&, string&, bool&);
 int trinket_run(int&);
 int magic_attack(int, int, int, spell);
 void magic_aid(int, int, int, spell);
-int magic_persistent_attack();
+int magic_persistent_attack(spell);
 void magic_persistent_damage(string&);
 void magic_persistent_healing(string&);
 void trinket_start();

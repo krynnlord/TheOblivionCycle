@@ -24,8 +24,7 @@ void battle_sim(monster enemy, int gate)
 	int skip_hero_atk = 0;
 	int skip_enemy_atk = 1;
 	int heal_run = 0;
-	int immo_ticker = 0;
-
+	
 	// Magic Vars
 	int spell_damage = 0;
 	int att_magic_round = 0;
@@ -57,8 +56,16 @@ void battle_sim(monster enemy, int gate)
 
 		magic_persistent_damage(hero_combat_string);  // Hero Persistant Damage Check
 		magic_persistent_healing(hero_combat_string); // Hero Persistant Healing Check
+		if (immo_ticker == 2 or immo_ticker == 1)
+		{
+			int magic_damage = 0;
+			magic_damage = magic_persistent_attack(immolation);
+			enemy.hp -= magic_damage;
+			immo_ticker -= 1;
+			enemy_combat_string.append(" Suffers " + to_string(magic_damage) + " burning damage.");
+		}
+		if (immo_ticker == 3) { immo_ticker -= 1; }
 		if (immo_ticker == 0) { enemy.stat = 1; }
-		enemy.hp -= magic_persistent_attack();
 		if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
 
 
@@ -304,6 +311,7 @@ void battle_sim(monster enemy, int gate)
 				c3_spell = 0;
 				skip_enemy_atk = 0;
 				skip_hero_atk = 0;
+				immo_ticker = 3;
 				enemy.stat = 3;
 			}
 			
@@ -327,11 +335,11 @@ void battle_sim(monster enemy, int gate)
 			skip_hero_atk = 1;
 			heal_run = 2;
 			ans = "1";
-			uniform_int_distribution<int> rng_range(1, 4);
+			uniform_int_distribution<int> rng_range(1, 6);
 			random_device rd;
 			mt19937 rng(rd());
 			int runroll = rng_range(rng);
-			if (runroll == 4) { loop = 1; }
+			if (runroll == 6) { enemy.stat = 1; loop = 1; }
 		}
 
 		if (ans == "2")
