@@ -87,6 +87,7 @@ void monster_display(monster enemy)
     Color(14); cout << "Level: ";Color(7); cout << enemy.level << endl;
     Color(14); cout << "HP: ";Color(7); cout << enemy.hp << "/" << left << setw(3); cout << enemy.hp_max << endl;
     Color(14); cout << "Damage: ";Color(7); cout << left << setw(3); cout << enemy.damage << endl;
+    Color(14); cout << "AC: ";Color(7); cout << left << setw(3); cout << enemy.ac << endl;
     Color(14); cout << "Status: ";Color(7); cout << left << setw(3); 
     if (enemy.stat == 1) { cout << "Normal"; }
     if (enemy.stat == 2) { cout << "Poisoned"; }

@@ -15,8 +15,8 @@ int temple(int i);
 // Battle
 void hero_display();
 void enemy_display(monster enemy);
-void battle_log(monster, string, string, int);
-void hero_turn(monster&, string&, int&, int&, int, int&);
+void battle_log(monster, string, string, bool);
+void hero_turn(monster&, string&, bool&, int&, int, int&);
 void enemy_turn(monster&, string&, bool&);
 int trinket_run(int&);
 int magic_attack(int, int, int, spell);

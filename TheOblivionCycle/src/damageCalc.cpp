@@ -83,18 +83,18 @@ void enemy_display(monster enemy)
 	cout << endl << endl;
 }
 
-void battle_log(monster enemy, string hero_combat_string, string enemy_combat_string, int trigger)
+void battle_log(monster enemy, string hero_combat_string, string enemy_combat_string, bool trigger)
 {
 	cout << "Battle Log" << endl;
 	for (int a = 0; a < 70; a++) { cout << "-"; }
 	cout << endl;
 	Color(2); cout << hero_player.name << ": "; Color(7); cout << hero_combat_string << endl;
 	Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl;
-	if (trigger == 1) { Color(5); cout << "*** Trinket triggered ***"; Color(7); }
+	if (trigger == true) { Color(5); cout << "*** Trinket triggered ***"; Color(7); }
 	cout << endl << endl;
 }
 
-void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& skip_hero_atk, int heal_run, int& hero_total_atk)
+void hero_turn(monster& enemy, string& hero_combat_string, bool& trigger,int& skip_hero_atk, int heal_run, int& hero_total_atk)
 {
 	int hero_final = 0;
 	int hero_crit = 0;
@@ -122,7 +122,7 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 	// add modifiers
 	if (crit == 1)
 	{
-		total = (final * hero_player.prof) * 2;
+		total = (final * hero_player.prof);
 	}
 	else if (crit == 2)
 	{
@@ -130,18 +130,19 @@ void hero_turn(monster& enemy, string& hero_combat_string, int& trigger,int& ski
 	}
 	else
 	{
-		total = (final * hero_player.prof);
+		total = (final * ( hero_player.prof / 2 ));
 	}
 	hero_final = final;
 	hero_crit = crit;
 	hero_total_atk = total;
 
-
-	trigger = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
-
 	if (skip_hero_atk == 0)
 	{
-		int temp_enemy_ac_atk;
+		if (hero_total_atk > 0)
+		{
+			hero_total_atk = trinket_run(hero_total_atk);   //Check Trinket Attack Mod
+		}
+		int temp_enemy_ac_atk = 0;
 		temp_enemy_ac_atk = hero_total_atk - enemy.ac;
 		if (temp_enemy_ac_atk < 0) { temp_enemy_ac_atk = 0; }
 		enemy.hp -= temp_enemy_ac_atk;
@@ -323,21 +324,34 @@ void trinket_start()
 // Trinket Calculator
 int trinket_run(int& hero_total_atk)
 {
-    int trigger = 0;
+    trigger = false;
     int trinket_modded_atk = 0;
 
-    if (hero_player.trinket == 2) // Stick Man
+    if (hero_player.trinket == 2) // Dragon Talon
     { 
-    
-    }
+		uniform_int_distribution<int> rng_range(1, 10);
+		random_device rd;
+		mt19937 rng(rd());
+		int rand_chance = rng_range(rng);
 
-    if (hero_player.trinket == 0) // Stick Man
+		if (rand_chance > 8)
+		{
+			trinket_modded_atk = int(round(hero_total_atk * 1.5));
+			trigger = true;
+		}
+		else
+		{
+			trinket_modded_atk = hero_total_atk;
+		}
+    }
+	
+    if (hero_player.trinket == 0) // None
     {
         trinket_modded_atk = hero_total_atk;
     }
     
 	//hero_total_atk = trinket_modded_atk;
-    return trigger;
+    return trinket_modded_atk;
 }
 
 void trinket_cleanup()

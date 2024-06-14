@@ -24,6 +24,7 @@ extern int total_deaths;    // Stats tracking for Player Total Deaths
 extern bool display_fight_symbol; // Battle Screen Toggle
 
 // Trinket Battle Vars
+extern bool trigger;
 extern bool rabbit_foot_trigger;
 
 // Classes

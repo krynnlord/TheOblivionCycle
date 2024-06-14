@@ -19,7 +19,6 @@ void battle_sim(monster enemy, int gate)
 	exit_mode = 0;
 
 	// VARS for Battle System
-	int trigger = 0;
 	int hero_total_atk = 0;
 	int skip_hero_atk = 0;
 	int skip_enemy_atk = 1;
@@ -39,6 +38,7 @@ void battle_sim(monster enemy, int gate)
 	
 	while (loop != 1)
 	{
+		skip_hero_atk = 0;
 		if (exit_mode == 1) 
 		{ 
 			cout << endl << "You can not exit during a battle!" << endl;
@@ -339,7 +339,7 @@ void battle_sim(monster enemy, int gate)
 			random_device rd;
 			mt19937 rng(rd());
 			int runroll = rng_range(rng);
-			if (runroll == 6) { enemy.stat = 1; loop = 1; }
+			if (runroll == 5) { enemy.stat = 1; loop = 1; }
 		}
 
 		if (ans == "2")
@@ -379,7 +379,8 @@ void battle_sim(monster enemy, int gate)
 		{
 			
 			skip_enemy_atk = 0;
-			hero_turn(enemy, hero_combat_string, trigger, skip_hero_atk, heal_run, hero_total_atk);// HERO TURN
+			hero_turn(enemy, hero_combat_string, trigger, skip_hero_atk, heal_run, hero_total_atk); // HERO TURN
+	
 		}
 
 		if (skip_enemy_atk != 1)
@@ -442,7 +443,7 @@ void loot(monster enemy)
 
 		Color(7);
 	}
-
+	trigger = false;
 	cout << endl;
 	system("pause");
 	
@@ -456,6 +457,7 @@ void player_death()
 	hero_player.gold = 0;
 	int temp_exp_loss = 0;
 	int hero_exp_before = hero_player.exp;
+	trigger = false;
 
 	// Update Stats
 	total_deaths += 1;

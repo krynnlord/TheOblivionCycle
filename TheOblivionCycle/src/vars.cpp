@@ -27,6 +27,7 @@ bool prism_shimmering = false;
 
 // Trinket Battle Vars
 bool rabbit_foot_trigger = false;
+bool trigger = false;
 
 // GOLD VAULT
 int gold_vault = 0;
@@ -75,18 +76,18 @@ vector<spell> spells_all = { heal, cure, conjure_elixir, magic_missile, greater_
 weapon hands = { 1, "Hands", "BLUNT", 0, 2,"Your bare hands", 1 };
 
 // Blunt
-weapon club = { 2, "Club", "BLUNT", 100, 6, "",0 };
-weapon mace = { 3, "Mace", "BLUNT", 500, 7, "",0 };
-weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, 9, "",0 };
-weapon warhammer = { 5, "Warhammer", "BLUNT", 5000, 16, "",0 };
-weapon maul = { 6, "Maul", "BLUNT", 8000, 18, "",0 };
+weapon club = { 2, "Club", "BLUNT", 100, 4, "",0 };
+weapon mace = { 3, "Mace", "BLUNT", 500, 5, "",0 };
+weapon lighthammer = { 4, "Light Hammer", "BLUNT", 1000, 7, "",0 };
+weapon warhammer = { 5, "Warhammer", "BLUNT", 5000, 10, "",0 };
+weapon maul = { 6, "Maul", "BLUNT", 8000, 11, "",0 };
 
 // Slashing
-weapon dagger = { 7, "Dagger", "SLASHING", 50, 5, "",0 };
-weapon handaxe = { 8, "Handaxe", "SLASHING", 800, 8, "",0 };
-weapon shortsword = { 9, "Short Sword", "SLASHING", 2000, 10, "",0 };
-weapon longsword = { 10, "Long Sword", "SLASHING", 5000, 15, "",0 };
-weapon greatsword = { 11, "Great Sword", "SLASHING", 10000, 20, "",0 };
+weapon dagger = { 7, "Dagger", "SLASHING", 50, 3, "",0 };
+weapon handaxe = { 8, "Handaxe", "SLASHING", 800, 6, "",0 };
+weapon shortsword = { 9, "Short Sword", "SLASHING", 2000, 8, "",0 };
+weapon longsword = { 10, "Long Sword", "SLASHING", 5000, 9, "",0 };
+weapon greatsword = { 11, "Great Sword", "SLASHING", 10000, 12, "",0 };
 
 /////////////////////////////////////////
 // Armor ////////////////////////////////
