@@ -66,7 +66,7 @@ void battle_sim(monster enemy, int gate)
 		}
 		if (immo_ticker == 3) { immo_ticker -= 1; }
 		if (immo_ticker == 0) { enemy.stat = 1; }
-		if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
+		if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); return; }
 
 
 		system("cls");
@@ -221,7 +221,7 @@ void battle_sim(monster enemy, int gate)
 			if (skip_hero_atk != 1) 
 			{
 				enemy.hp -= hero_total_atk;
-				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); return; }
 			}
 		}
 
@@ -260,7 +260,7 @@ void battle_sim(monster enemy, int gate)
 			if (skip_hero_atk != 1)
 			{
 				enemy.hp -= hero_total_atk;
-				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); return; }
 			}
 		}
 		
@@ -318,7 +318,7 @@ void battle_sim(monster enemy, int gate)
 			if (skip_hero_atk != 1)
 			{
 				enemy.hp -= hero_total_atk;
-				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); }
+				if (enemy.hp < 0) { enemy.hp = 0; loot(enemy); return; }
 			}
 
 
@@ -397,6 +397,7 @@ void loot(monster enemy)
 {
 	int old_level = 0;
 	bool diplay_levelup = false;
+	immo_ticker = 0;
 
 	system("cls");
 	hero_player.exp += enemy.exp;  // gives exp to player
@@ -426,6 +427,12 @@ void loot(monster enemy)
 	Color(10); cout << enemy.exp; Color(7); cout << " Experience" << endl;
 	Color(9); cout << enemy.essence; Color(7); cout << " Essence" << endl;
 	Color(14); cout << money_gained; Color(7); cout << " Gold" << endl;
+
+	// Check if Boss
+	if (enemy.name == "Kilthar the Unbreakable") { hero_player.quest_level = 2; }
+	if (enemy.name == "Rotting King Thomas") { hero_player.quest_level = 4; }
+	if (enemy.name == "Undead Princess Zethla") { hero_player.quest_level = 6; }
+	if (enemy.name == "Proto-Drake Ithlyius") { hero_player.quest_level = 8; }
 
 	if (diplay_levelup == true)
 	{
