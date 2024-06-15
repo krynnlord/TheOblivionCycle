@@ -216,8 +216,9 @@ void king_ressurect()
     if (hero_player.quest_level == 8 or hero_player.quest_level == 9)
     {
         
-        int bar2; for (bar2 = 0; bar2 < 5; bar2++) { cout << "-"; }; cout << " The King ";
-        for (bar2 = 0; bar2 < 60; bar2++) { cout << "-"; } cout << endl;
+        system("cls");
+        int bar2; 
+        for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
         cout << "A strange force has brought you back to life. You have lost all your gold," << endl;
         cout << "but your renewed spirit urges you to continue on!" << endl;
         for (bar2 = 0; bar2 < 75; bar2++) { cout << "-"; } cout << endl;
