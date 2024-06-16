@@ -55,6 +55,8 @@ txtOut << "AZURENECKLACE:" << azure_neclace.have << endl;
 txtOut << "WITCHEFFEGY:" << witch_effegy.have << endl;
 txtOut << "VIALBLOOD:" << vial_blood.have << endl;
 txtOut << "FROZENTEAR:" << frozen_tear.have << endl;
+txtOut << "UNHOLYPENTAGRAM:" << unholy_pentagram.have << endl;
+txtOut << "BONECALTROPS:" << bone_caltrops.have << endl;
 txtOut << "*** PRISMS ***" << endl;
 txtOut << "RED:" << prism_red << endl;
 txtOut << "BLUE:" << prism_blue << endl;
@@ -134,6 +136,8 @@ while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); ist
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vial_blood.have;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s88(emptyline); s88 >> unholy_pentagram.have;
+while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s89(emptyline); s89 >> bone_caltrops.have;
 getline(txtIn, emptyline); // PRISMS
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s29(emptyline); s29 >> prism_red;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s30(emptyline); s30 >> prism_blue;

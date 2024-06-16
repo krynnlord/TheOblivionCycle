@@ -336,7 +336,7 @@ int trinket_run(int& hero_total_atk)
 
 		if (rand_chance > 8)
 		{
-			trinket_modded_atk = int(round(hero_total_atk * 1.5));
+			trinket_modded_atk = int(round(hero_total_atk * 1.1));
 			trigger = true;
 		}
 		else

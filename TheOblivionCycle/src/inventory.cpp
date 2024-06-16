@@ -71,6 +71,10 @@ void trinkets()
         else { ; }
         if (frozen_tear.have == 1) { trinket_checker(frozen_tear); }
         else { ; }
+        if (unholy_pentagram.have == 1) { trinket_checker(unholy_pentagram); }
+        else { ; }
+        if (bone_caltrops.have == 1) { trinket_checker(bone_caltrops); }
+        else { ; }
         cout << endl;
         cout << "---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---~~~---" << endl;
         cout << " Press [ESC] to return or [R] to change " << endl;

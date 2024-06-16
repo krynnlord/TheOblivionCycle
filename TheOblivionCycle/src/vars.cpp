@@ -39,6 +39,8 @@ int gold_vault = 0;
 // OFFENSIVE
 trinket rabbit_foot = { 1, "RABBIT FOOT", "A rabbit foot on a chain", 1000, 1, 0};
 trinket dragon_talon = { 2, "DRAGON TALON", "A dark talon of a dragon", 5000, 1, 0 };
+trinket unholy_pentagram = { 3, "UNHOLY PENTAGRAM", "A Pentagram made of iron", 6000, 1, 0 };
+trinket bone_caltrops = { 4, "BONE CALTROPS", "A pile of bone caltrops", 4000, 1, 0 };
 
 //DEFENSIVE
 trinket azure_neclace = { 21, "AZURE NECKLACE", "A blue necklace of divine power", 1500, 2, 0 };

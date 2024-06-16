@@ -131,6 +131,8 @@ extern bool prism_shimmering;
 // OFFENSIVE
 extern trinket rabbit_foot;
 extern trinket dragon_talon;
+extern trinket unholy_pentagram;
+extern trinket bone_caltrops;
 
 // DEFENSIVE
 extern trinket azure_neclace;

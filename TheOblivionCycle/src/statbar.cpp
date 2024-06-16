@@ -16,6 +16,8 @@ void show_statbar()
     if (hero_player.trinket == 0) { cout << "NONE"; }
     if (hero_player.trinket == 1) { cout << "FOOT"; }
     if (hero_player.trinket == 2) { cout << "TALON"; }
+    if (hero_player.trinket == 3) { cout << "PENTAGRAM"; }
+    if (hero_player.trinket == 4) { cout << "CALTROPS"; }
     if (hero_player.trinket == 21) { cout << "NECKLACE"; }
     if (hero_player.trinket == 22) { cout << "EFFEGY"; }
     if (hero_player.trinket == 23) { cout << "BLOOD"; }
