@@ -4,7 +4,7 @@ void trinket_checker(trinket temp_trinket)
 {
     if (temp_trinket.have == 1)
     {
-        cout << " ["; Color(14);
+        cout << "["; Color(14);
         if (hero_player.trinket == temp_trinket.id)
         {
             cout << "E"; Color(7); cout << "] " << temp_trinket.name << endl;
@@ -21,7 +21,7 @@ void weapon_checker(weapon temp_weapon)
 {
     if (temp_weapon.have == 1)
     {
-        cout << " ["; Color(14);
+        cout << "["; Color(14);
         if (hero_weapon.id == temp_weapon.id)
         {
             cout << "E"; Color(7); cout << "] " << temp_weapon.name << endl;
@@ -38,7 +38,7 @@ void armor_checker(armor temp_armor)
 {
     if (temp_armor.have == 1)
     {
-        cout << " ["; Color(14);
+        cout << "["; Color(14);
         if (hero_armor.id == temp_armor.id)
         {
             cout << "E"; Color(7); cout << "] " << temp_armor.name << endl;
@@ -63,14 +63,14 @@ void trinkets()
         else { ; }
         if (dragon_talon.have == 1) { trinket_checker(dragon_talon); }
         else { ; }
-        if (azure_neclace.have == 1) { trinket_checker(azure_neclace); }
-        else { ; }
-        if (witch_effegy.have == 1) { trinket_checker(witch_effegy); }
-        else { ; }
-        if (vial_blood.have == 1) { trinket_checker(vial_blood); }
-        else { ; }
-        if (frozen_tear.have == 1) { trinket_checker(frozen_tear); }
-        else { ; }
+        //if (azure_neclace.have == 1) { trinket_checker(azure_neclace); }
+        //else { ; }
+        //if (witch_effegy.have == 1) { trinket_checker(witch_effegy); }
+        //else { ; }
+        //if (vial_blood.have == 1) { trinket_checker(vial_blood); }
+        //else { ; }
+        //if (frozen_tear.have == 1) { trinket_checker(frozen_tear); }
+        //else { ; }
         if (unholy_pentagram.have == 1) { trinket_checker(unholy_pentagram); }
         else { ; }
         if (bone_caltrops.have == 1) { trinket_checker(bone_caltrops); }

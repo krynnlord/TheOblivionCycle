@@ -65,7 +65,7 @@ void buy_trinket()
             cout << left << setw(10) << dragon_talon.cost;
             cout << dragon_talon.desc << endl;
         }
-        if (azure_neclace.have == 0)
+        /*if (azure_neclace.have == 0)
         {
             cout << "["; Color(6); cout << "3" << left << setw(23); Color(7); cout << "] Azure Necklace";
             cout << "Cost: ";
@@ -92,17 +92,17 @@ void buy_trinket()
             cout << "Cost: ";
             cout << left << setw(10) << frozen_tear.cost;
             cout << frozen_tear.desc << endl;
-        }
+        }*/
         if (unholy_pentagram.have == 0)
         {
-            cout << "["; Color(6); cout << "7" << left << setw(23); Color(7); cout << "] Unholy Pentagram";
+            cout << "["; Color(6); cout << "3" << left << setw(23); Color(7); cout << "] Unholy Pentagram";
             cout << "Cost: ";
             cout << left << setw(10) << unholy_pentagram.cost;
             cout << unholy_pentagram.desc << endl;
         }
         if (bone_caltrops.have == 0)
         {
-            cout << "["; Color(6); cout << "8" << left << setw(23); Color(7); cout << "] Bone Caltrops";
+            cout << "["; Color(6); cout << "4" << left << setw(23); Color(7); cout << "] Bone Caltrops";
             cout << "Cost: ";
             cout << left << setw(10) << bone_caltrops.cost;
             cout << bone_caltrops.desc << endl;
@@ -126,18 +126,18 @@ void buy_trinket()
         if (ansr == "1" and rabbit_foot.have != 1) { check_trinket_purchase(rabbit_foot); }
         if (ansr == "2" and dragon_talon.have == 1) { ; }
         if (ansr == "2" and dragon_talon.have != 1) { check_trinket_purchase(dragon_talon); }
-        if (ansr == "3" and azure_neclace.have == 1) { ; }
+        /*if (ansr == "3" and azure_neclace.have == 1) { ; }
         if (ansr == "3" and azure_neclace.have != 1) { check_trinket_purchase(azure_neclace); }
         if (ansr == "4" and witch_effegy.have == 1) { ; }
         if (ansr == "4" and witch_effegy.have != 1) { check_trinket_purchase(witch_effegy); }
         if (ansr == "5" and vial_blood.have == 1) { ; }
         if (ansr == "5" and vial_blood.have != 1) { check_trinket_purchase(vial_blood); }
         if (ansr == "6" and frozen_tear.have == 1) { ; }
-        if (ansr == "6" and frozen_tear.have != 1) { check_trinket_purchase(frozen_tear); }
-        if (ansr == "7" and unholy_pentagram.have == 1) { ; }
-        if (ansr == "7" and unholy_pentagram.have != 1) { check_trinket_purchase(unholy_pentagram); }
-        if (ansr == "8" and bone_caltrops.have == 1) { ; }
-        if (ansr == "8" and bone_caltrops.have != 1) { check_trinket_purchase(bone_caltrops); }
+        if (ansr == "6" and frozen_tear.have != 1) { check_trinket_purchase(frozen_tear); }*/
+        if (ansr == "3" and unholy_pentagram.have == 1) { ; }
+        if (ansr == "3" and unholy_pentagram.have != 1) { check_trinket_purchase(unholy_pentagram); }
+        if (ansr == "4" and bone_caltrops.have == 1) { ; }
+        if (ansr == "4" and bone_caltrops.have != 1) { check_trinket_purchase(bone_caltrops); }
     }
 
 }
@@ -183,7 +183,7 @@ void change_trinket()
             if (hero_player.trinket == dragon_talon.id) { Color(2); cout << "Equipped"; Color(7); }
             cout << endl;
         }
-        if (azure_neclace.have == 1)
+        /*if (azure_neclace.have == 1)
         {
             cout << "[3] "; cout << left << setw(20) << azure_neclace.name;
             cout << "Desc: " << left << setw(35) << azure_neclace.desc;
@@ -210,17 +210,17 @@ void change_trinket()
             cout << "Desc: " << left << setw(35) << frozen_tear.desc;
             if (hero_player.trinket == frozen_tear.id) { Color(2); cout << "Equipped"; Color(7); }
             cout << endl;
-        }
+        }*/
         if (unholy_pentagram.have == 1)
         {
-            cout << "[7] "; cout << left << setw(20) << unholy_pentagram.name;
+            cout << "[3] "; cout << left << setw(20) << unholy_pentagram.name;
             cout << "Desc: " << left << setw(35) << unholy_pentagram.desc;
             if (hero_player.trinket == unholy_pentagram.id) { Color(2); cout << "Equipped"; Color(7); }
             cout << endl;
         }
         if (bone_caltrops.have == 1)
         {
-            cout << "[8] "; cout << left << setw(20) << bone_caltrops.name;
+            cout << "[4] "; cout << left << setw(20) << bone_caltrops.name;
             cout << "Desc: " << left << setw(35) << bone_caltrops.desc;
             if (hero_player.trinket == bone_caltrops.id) { Color(2); cout << "Equipped"; Color(7); }
             cout << endl;
@@ -236,12 +236,12 @@ void change_trinket()
         if (ansr == "\033" or ansr == "0") { i = 1; }
         if (ansr == "1") { trinket_equipper(rabbit_foot); }
         if (ansr == "2") { trinket_equipper(dragon_talon); }
-        if (ansr == "3") { trinket_equipper(azure_neclace); }
+  /*    if (ansr == "3") { trinket_equipper(azure_neclace); }
         if (ansr == "4") { trinket_equipper(witch_effegy); }
         if (ansr == "5") { trinket_equipper(vial_blood); }
-        if (ansr == "6") { trinket_equipper(frozen_tear); }
-        if (ansr == "7") { trinket_equipper(unholy_pentagram); }
-        if (ansr == "8") { trinket_equipper(bone_caltrops); }
+        if (ansr == "6") { trinket_equipper(frozen_tear); }*/
+        if (ansr == "3") { trinket_equipper(unholy_pentagram); }
+        if (ansr == "4") { trinket_equipper(bone_caltrops); }
 
     }
 }

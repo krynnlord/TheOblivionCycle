@@ -334,8 +334,7 @@ int trinket_run(int& hero_total_atk)
 		
 		trinket_modded_atk = hero_total_atk;
 	}
-	if (hero_player.trinket == 0 or hero_player.trinket == 1 or hero_player.trinket == 3 or hero_player.trinket == 21
-		or hero_player.trinket == 22 or hero_player.trinket == 23 or hero_player.trinket == 24) // None
+	if (hero_player.trinket == 0 or hero_player.trinket == 1 or hero_player.trinket == 3) // Other
 	{
 		trinket_modded_atk = hero_total_atk;
 	}

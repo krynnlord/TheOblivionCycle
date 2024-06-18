@@ -51,10 +51,10 @@ txtOut << "TRACK:" << music_track << endl;
 txtOut << "*** TRINKETS ***" << endl;
 txtOut << "RABBITFOOT:" << rabbit_foot.have << endl;
 txtOut << "DRAGONTALON:" << dragon_talon.have << endl;
-txtOut << "AZURENECKLACE:" << azure_neclace.have << endl;
-txtOut << "WITCHEFFEGY:" << witch_effegy.have << endl;
-txtOut << "VIALBLOOD:" << vial_blood.have << endl;
-txtOut << "FROZENTEAR:" << frozen_tear.have << endl;
+//txtOut << "AZURENECKLACE:" << azure_neclace.have << endl;
+//txtOut << "WITCHEFFEGY:" << witch_effegy.have << endl;
+//txtOut << "VIALBLOOD:" << vial_blood.have << endl;
+//txtOut << "FROZENTEAR:" << frozen_tear.have << endl;
 txtOut << "UNHOLYPENTAGRAM:" << unholy_pentagram.have << endl;
 txtOut << "BONECALTROPS:" << bone_caltrops.have << endl;
 txtOut << "*** PRISMS ***" << endl;
@@ -132,10 +132,10 @@ while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); ist
 getline(txtIn, emptyline); // TRINKETS
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s23(emptyline); s23 >> rabbit_foot.have;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s24(emptyline); s24 >> dragon_talon.have;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s25(emptyline); s25 >> azure_neclace.have;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vial_blood.have;
-while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
+//while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s25(emptyline); s25 >> azure_neclace.have;
+//while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s26(emptyline); s26 >> witch_effegy.have;
+//while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s27(emptyline); s27 >> vial_blood.have;
+//while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s28(emptyline); s28 >> frozen_tear.have;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s88(emptyline); s88 >> unholy_pentagram.have;
 while (txtIn >> temp) { if (temp == ':') break; } getline(txtIn, emptyline); istringstream s89(emptyline); s89 >> bone_caltrops.have;
 getline(txtIn, emptyline); // PRISMS

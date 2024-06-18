@@ -18,10 +18,10 @@ void show_statbar()
     if (hero_player.trinket == 2) { cout << "TALON"; }
     if (hero_player.trinket == 3) { cout << "PENTAGRAM"; }
     if (hero_player.trinket == 4) { cout << "CALTROPS"; }
-    if (hero_player.trinket == 21) { cout << "NECKLACE"; }
-    if (hero_player.trinket == 22) { cout << "EFFEGY"; }
-    if (hero_player.trinket == 23) { cout << "BLOOD"; }
-    if (hero_player.trinket == 24) { cout << "TEAR"; }
+    //if (hero_player.trinket == 21) { cout << "NECKLACE"; }
+    //if (hero_player.trinket == 22) { cout << "EFFEGY"; }
+    //if (hero_player.trinket == 23) { cout << "BLOOD"; }
+    //if (hero_player.trinket == 24) { cout << "TEAR"; }
     Color(7);
     cout << "Prisms:";
     if (prism_red == true) { Color(4); cout << "*"; }

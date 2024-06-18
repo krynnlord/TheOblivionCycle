@@ -38,16 +38,16 @@ int gold_vault = 0;
 /////////////////////////////////////////
  
 // OFFENSIVE
-trinket rabbit_foot = { 1, "RABBIT FOOT", "A rabbit foot on a chain", 1000, 1, 0};
-trinket dragon_talon = { 2, "DRAGON TALON", "A dark talon of a dragon", 5000, 1, 0 };
-trinket unholy_pentagram = { 3, "UNHOLY PENTAGRAM", "A Pentagram made of iron", 6000, 1, 0 };
-trinket bone_caltrops = { 4, "BONE CALTROPS", "A pile of bone caltrops", 4000, 1, 0 };
+trinket rabbit_foot = { 1, "RABBIT FOOT", "Rabbit foot on a chain", 1000, 1, 0};
+trinket dragon_talon = { 2, "DRAGON TALON", "Dark talon of a dragon", 4000, 1, 0 };
+trinket unholy_pentagram = { 3, "UNHOLY PENTAGRAM", "Pentagram made of iron", 6000, 1, 0 };
+trinket bone_caltrops = { 4, "BONE CALTROPS", "Pile of bone caltrops", 8000, 1, 0 };
 
 //DEFENSIVE
-trinket azure_neclace = { 21, "AZURE NECKLACE", "A blue necklace of divine power", 1500, 2, 0 };
-trinket witch_effegy = { 22, "WITCH EFFEGY", "A crude stick figure shaped like a man", 2000,2, 0 };
-trinket vial_blood = { 23, "VAIL OF BLOOD", "A small vial filled with blood", 4000, 2, 0 };
-trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 6000, 2, 0 };
+//trinket azure_neclace = { 21, "AZURE NECKLACE", "A blue necklace of divine power", 1500, 2, 0 };
+//trinket witch_effegy = { 22, "WITCH EFFEGY", "A crude stick figure shaped like a man", 2000,2, 0 };
+//trinket vial_blood = { 23, "VAIL OF BLOOD", "A small vial filled with blood", 4000, 2, 0 };
+//trinket frozen_tear = { 24, "FROZEN TEAR", "A frozen tear of a fairy", 6000, 2, 0 };
 
 /////////////////////////////////////////
 // Spells ///////////////////////////////
