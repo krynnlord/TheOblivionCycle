@@ -51,3 +51,30 @@ void intro()
 	ShowConsoleCursor(true);
 	return;
 }
+
+void credits()
+{
+	ShowConsoleCursor(false);
+	system("cls");
+	Sleep(2000);
+	print_title();
+	Sleep(4000);
+
+	string storytext = "Thank you for playing The Oblivion Cycle\n\n";
+	typer(storytext, 30);
+	storytext = "Credits:\n\n";
+	typer(storytext, 30);
+	Sleep(1000);
+	storytext = "Game Design: Richard Miller\n";
+	typer(storytext, 30);
+	Sleep(1000);
+	storytext = "Music: Richard Miller\n";
+	typer(storytext, 30);
+	Sleep(1000);
+	storytext = "Artwork: Richard Miller and the internet\n";
+	typer(storytext, 30);
+	Sleep(4000);
+
+	ShowConsoleCursor(true);
+	return;
+}

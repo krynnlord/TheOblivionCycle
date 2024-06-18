@@ -21,6 +21,17 @@ int castle(int i)
     if (ans == "1")
     {
         string ans2 = "";
+        if (hero_player.quest_level == 10)
+        {
+            print_no_king();
+            for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+            conversation_king();
+            for (int bar2 = 0;bar2 < 75;bar2++) { cout << "-"; } cout << endl;
+            ans2 = _getch();
+            credits();
+            save_game();
+            exit(1);
+        }
         if (hero_player.quest_level == 9 or hero_player.quest_level == 8)
         {
             print_no_king();
@@ -125,6 +136,14 @@ void conversation_king()
     if (hero_player.quest_level == 9)
     {
         printf("The King is not here! Please rescue him.\n");
+        return;
+    }
+    if (hero_player.quest_level == 10)
+    {
+        printf("Thank you for helping our kingdom. It was shocking knowing that the King\n");
+        printf("was a demon this whole time, and was torturing our people. Please go in\n");
+        printf("peace knowing we are now safe.\n\n");
+        printf("Congratulations, you have finished the game!\n");
         return;
     }
 }

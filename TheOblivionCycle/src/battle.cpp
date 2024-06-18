@@ -434,6 +434,7 @@ void loot(monster enemy)
 	if (enemy.name == "Rotting King Thomas") { hero_player.quest_level = 4; }
 	if (enemy.name == "Undead Princess Zethla") { hero_player.quest_level = 6; }
 	if (enemy.name == "Proto-Drake Ithlyius") { hero_player.quest_level = 8; }
+	if (enemy.name == "Demon King Azuleus") { hero_player.quest_level = 10; }
 
 	if (diplay_levelup == true)
 	{

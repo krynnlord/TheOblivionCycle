@@ -49,6 +49,7 @@ void craft_prism();
 void Color(int color);
 void CreateHero();
 void intro();
+void credits();
 void king_ressurect();
 void checklevelup();
 int options(int i);
