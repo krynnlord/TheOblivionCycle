@@ -15,6 +15,7 @@ int temple(int i);
 // Battle
 void hero_display();
 void enemy_display(monster enemy);
+int rand_roller(int, int);
 void battle_log(monster, string, string, bool);
 void hero_turn(monster&, string&, bool&, int&, int, int&);
 void enemy_turn(monster&, string&, bool&);

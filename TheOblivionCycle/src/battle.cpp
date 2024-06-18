@@ -335,10 +335,7 @@ void battle_sim(monster enemy, int gate)
 			skip_hero_atk = 1;
 			heal_run = 2;
 			ans = "1";
-			uniform_int_distribution<int> rng_range(1, 6);
-			random_device rd;
-			mt19937 rng(rd());
-			int runroll = rng_range(rng);
+			int runroll = rand_roller(1,6);
 			if (runroll == 5) { enemy.stat = 1; loop = 1; }
 		}
 
@@ -407,10 +404,7 @@ void loot(monster enemy)
 	//money roller
 	int money_roll = 0;
 	int money_gained = 0;
-	uniform_int_distribution<int> rng_range(5, 10);
-	random_device rd;
-	mt19937 rng(rd());
-	money_roll = rng_range(rng);
+	money_roll = rand_roller(5,10);
 	money_gained = enemy.level * money_roll;
 	hero_player.gold += money_gained; // Show me the money!!!
 

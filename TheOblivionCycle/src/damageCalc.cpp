@@ -103,19 +103,12 @@ void hero_turn(monster& enemy, string& hero_combat_string, bool& trigger,int& sk
 
 	// Crit role
 	int	crit = 0;
-	uniform_int_distribution<int> rng_range(1, 20);
-	random_device rd;
-	mt19937 rng(rd());
-	int critroll = rng_range(rng);
+	int critroll = rand_roller(1,20);
 	if (critroll >= 20 - hero_player.luck) { crit = 1; } //crit
 	else if (critroll == 1) { crit = 2; } //miss
 	else { crit = 0; } // normal
 
-
-	uniform_int_distribution<int> rng_range2(1, 5);
-	random_device rd2;
-	mt19937 rng2(rd2());
-	int roll = rng_range2(rng2);
+	int roll = rand_roller(1,5);
 	final += hero_weapon.damage + roll;
 	roll = 0;
 
@@ -205,20 +198,14 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 	// Crit role
 	int crit = 0;
-	uniform_int_distribution<int> rng_range(1, 20);
-	random_device rd;
-	mt19937 rng(rd());
-	int critroll = rng_range(rng);
+	int critroll = rand_roller(1,20);
 	if (critroll >= 20 - enemy.luck) { crit = 1; } //crit
 	else if (critroll == 1) { crit = 2; } //miss
 	else { crit = 0; } // normal
 
 	// Dice Roll
 	int final = 0;
-	uniform_int_distribution<int> rng_range2(1, 5);
-	random_device rd2;
-	mt19937 rng2(rd2());
-	int roll = rng_range2(rng2);
+	int roll = rand_roller(1,5);
 	final += enemy.damage + roll;
 	roll = 0;
 
@@ -248,10 +235,7 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 
 	if (enemy.adj == "Poisonous" or enemy.adj == "Rotten")
 	{
-		uniform_int_distribution<int> rng_range(1, 5);
-		random_device rd;
-		mt19937 rng(rd());
-		int roll = rng_range(rng);
+		int roll = rand_roller(1,5);
 		if (roll == 5)
 		{
 			poison_ticker = 10;
@@ -261,10 +245,7 @@ void enemy_turn(monster& enemy, string& enemy_combat_string, bool& endcombat)
 	}
 	if (enemy.adj == "Shimmering")
 	{
-		uniform_int_distribution<int> rng_range(1, 15);
-		random_device rd;
-		mt19937 rng(rd());
-		int roll = rng_range(rng);
+		int roll = rand_roller(1,15);
 		if (roll == 13)
 		{
 			poison_ticker = 10;
@@ -304,10 +285,7 @@ void trinket_start()
 {
 	if (hero_player.trinket == 1) // Rabbit's Foot
 	{
-		uniform_int_distribution<int> rng_range(1, 10);
-		random_device rd;
-		mt19937 rng(rd());
-		int rand_chance = rng_range(rng);
+		int rand_chance = rand_roller(1,10);
 
 		if (rand_chance > 8)
 		{
@@ -329,10 +307,7 @@ int trinket_run(int& hero_total_atk)
 
     if (hero_player.trinket == 2) // Dragon Talon
     { 
-		uniform_int_distribution<int> rng_range(1, 10);
-		random_device rd;
-		mt19937 rng(rd());
-		int rand_chance = rng_range(rng);
+		int rand_chance = rand_roller(1,10);
 
 		if (rand_chance > 8)
 		{
@@ -347,10 +322,7 @@ int trinket_run(int& hero_total_atk)
     }
 	if (hero_player.trinket == 4) // Bone Caltrops
 	{
-		uniform_int_distribution<int> rng_range(1, 10);
-		random_device rd;
-		mt19937 rng(rd());
-		int rand_chance = rng_range(rng);
+		int rand_chance = rand_roller(1,10);
 
 		if (rand_chance > 8)
 		{
@@ -400,10 +372,7 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
     {
 		if (hero_player.trinket == 3)
 		{
-			uniform_int_distribution<int> rng_range(1, 4);
-			random_device rd;
-			mt19937 rng(rd());
-			int rand_chance = rng_range(rng);
+			int rand_chance = rand_roller(1,4);
 			if (rand_chance == 2)
 			{
 				spell_damage = (hero_player.prof * 25) * 2;
@@ -512,12 +481,17 @@ int magic_persistent_attack(spell spellname)
 {
 	if (spellname.name == "IMMOLATION")
 	{
-		uniform_int_distribution<int> rng_range(1, 15);
-		random_device rd;
-		mt19937 rng(rd());
-		int roll = rng_range(rng);
+		int roll = rand_roller(1,15);
 
 		return (hero_player.prof * 10) + roll;
 	}
 	return 0;
+}
+
+int rand_roller(int start, int end)
+{
+	uniform_int_distribution<int> rng_range(start, end);
+	random_device rd;
+	mt19937 rng(rd());
+	return rng_range(rng);
 }

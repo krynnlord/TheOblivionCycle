@@ -324,14 +324,11 @@ void gambling()
 					roll3 = 0;
 
 					int rollresult = 0;
-					uniform_int_distribution<int> rng_range(2, 10);
-					random_device rd;
-					mt19937 rng(rd());
-					rollresult = rng_range(rng);
+					rollresult = rand_roller(2,10);
 					roll1 = rollresult;
-					rollresult = rng_range(rng);
+					rollresult = rand_roller(2, 10);
 					roll2 = rollresult;
-					rollresult = rng_range(rng);
+					rollresult = rand_roller(2, 10);
 					roll3 = rollresult;
 
 					cout << endl;

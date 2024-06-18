@@ -79,10 +79,7 @@ void conversation_king()
     }
     if (hero_player.quest_level == 1)
     {
-        uniform_int_distribution<int> rng_range(0, 3);
-        random_device rd;
-        mt19937 rng(rd());
-        int speakroll = rng_range(rng);
+        int speakroll = rand_roller(0,3);
         if (speakroll == 0) { printf("Have you discovered why this gate has appeared?\n"); }
         if (speakroll == 1) { printf("The gate that has appeared is strange, is it not?\n"); }
         if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
@@ -115,10 +112,7 @@ void conversation_king()
     }
     if (hero_player.quest_level == 3 or hero_player.quest_level == 5 or hero_player.quest_level == 7)
     {
-        uniform_int_distribution<int> rng_range(0, 3);
-        random_device rd;
-        mt19937 rng(rd());
-        int speakroll = rng_range(rng);
+        int speakroll = rand_roller(0,3);
         if (speakroll == 0) { printf("I have comissioned you on an important mission. Please hurry!\n"); }
         if (speakroll == 1) { printf("I wonder why this new gate has arrived. Any ideas?\n"); }
         if (speakroll == 2) { printf("I was under the impression you where helping. Was I wrong?\n"); }
