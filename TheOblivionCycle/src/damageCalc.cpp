@@ -90,7 +90,7 @@ void battle_log(monster enemy, string hero_combat_string, string enemy_combat_st
 	cout << endl;
 	Color(2); cout << hero_player.name << ": "; Color(7); cout << hero_combat_string << endl;
 	Color(4); cout << enemy.name << ": "; Color(7); cout << enemy_combat_string << endl;
-	if (trigger == true) { Color(5); cout << "*** Trinket triggered ***"; Color(7); }
+	if (trigger == true) { Color(5); cout << "*** Trinket triggered ***"; Color(7); cout << " Added Damage: " << trinket_damage_value; }
 	cout << endl << endl;
 }
 
@@ -338,20 +338,40 @@ int trinket_run(int& hero_total_atk)
 		{
 			trinket_modded_atk = int(round(hero_total_atk * 1.1));
 			trigger = true;
+			trinket_damage_value = int(round(hero_total_atk * .1));
 		}
 		else
 		{
 			trinket_modded_atk = hero_total_atk;
 		}
     }
-	
-    if (hero_player.trinket == 0) // None
-    {
-        trinket_modded_atk = hero_total_atk;
-    }
+	if (hero_player.trinket == 4) // Bone Caltrops
+	{
+		uniform_int_distribution<int> rng_range(1, 10);
+		random_device rd;
+		mt19937 rng(rd());
+		int rand_chance = rng_range(rng);
+
+		if (rand_chance > 8)
+		{
+			trinket_modded_atk = hero_total_atk + (hero_player.level * 2) + rand_chance;
+			trinket_damage_value = (hero_player.level * 2) + rand_chance;
+			trigger = true;
+		}
+		
+		
+		trinket_modded_atk = hero_total_atk;
+	}
+	if (hero_player.trinket == 0 or hero_player.trinket == 1 or hero_player.trinket == 3 or hero_player.trinket == 21
+		or hero_player.trinket == 22 or hero_player.trinket == 23 or hero_player.trinket == 24) // None
+	{
+		trinket_modded_atk = hero_total_atk;
+	}
+
     
 	//hero_total_atk = trinket_modded_atk;
-    return trinket_modded_atk;
+	trinket_modded_atk = hero_total_atk;
+	return trinket_modded_atk;
 }
 
 void trinket_cleanup()
@@ -378,7 +398,27 @@ int magic_attack(int c1_spell, int c2_spell, int c3_spell, spell magic_spell)
 
     if (fireball.ready == 1 and c2_spell == 1 and magic_spell.name == fireball.name)
     {
-        spell_damage = hero_player.prof * 25;
+		if (hero_player.trinket == 3)
+		{
+			uniform_int_distribution<int> rng_range(1, 4);
+			random_device rd;
+			mt19937 rng(rd());
+			int rand_chance = rng_range(rng);
+			if (rand_chance == 2)
+			{
+				spell_damage = (hero_player.prof * 25) * 2;
+				trinket_damage_value = (hero_player.prof * 25);
+				trigger = true;
+			}
+			else 
+			{ 
+				spell_damage = hero_player.prof * 25; 
+			}
+		}
+		else
+		{
+			spell_damage = hero_player.prof * 25;
+		}
     }
 
     if (immolation.ready == 1 and c3_spell == 1 and magic_spell.name == immolation.name)

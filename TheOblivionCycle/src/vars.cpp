@@ -28,6 +28,7 @@ bool prism_shimmering = false;
 // Trinket Battle Vars
 bool rabbit_foot_trigger = false;
 bool trigger = false;
+int trinket_damage_value = 0;
 
 // GOLD VAULT
 int gold_vault = 0;

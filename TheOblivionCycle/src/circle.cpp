@@ -251,7 +251,7 @@ void battle_loop(int gate)
             return;
         }
 
-        if (hero_player.level > 4 and hero_player.quest_level >=2)
+        if (hero_player.level > 4 and hero_player.quest_level >=1)
         {
             battle_sim(monster_generator(4, gate), 1);
             return;
