@@ -125,7 +125,7 @@ string line6 = R"(                                                              
 
 cout << line1 << endl << line2 << endl << line3 << endl << line4 << endl << line5 << endl << line6 << endl ;
 // cout << "                          Part I: The Shimmering Gate" << endl << endl << endl;
-Color(7); cout << endl;
+Color(7); cout << "Game Version: " << game_version << endl<< endl;
 }
 
 void print_options()

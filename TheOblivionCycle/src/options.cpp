@@ -69,7 +69,7 @@ int options(int i)
         { 
         print_gameinfo();
         Color(6); cout  << "\n\nGame:"; Color(7); cout << " The Oblivion Cycle" << endl;
-        Color(6); cout << "Version:"; Color(7); cout<< " .05" << endl;
+        Color(6); cout << "Version: "; Color(7); cout << game_version << endl;
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
         Color(6); cout << "Music:"; Color(7); cout << " Richard Miller"; cout << endl;

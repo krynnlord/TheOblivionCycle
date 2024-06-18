@@ -1,6 +1,7 @@
 #include "../headers/functions.h"
 
 // Variables
+double game_version = .01;
 
 // Tickers
 int poison_ticker = 0;

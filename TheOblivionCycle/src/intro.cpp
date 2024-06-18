@@ -10,11 +10,11 @@ void intro()
 	typer(rlmtext, 100);
 	Sleep(4000);
 
-	system("cls");
-	cout << "Skip Intro? (Y/N)";
-	string ans;
-	ans = _getch();
-	if (ans == "y" or ans == "Y") { return; }
+	//system("cls");
+	//cout << "Skip Intro? (Y/N)";
+	//string ans;
+	//ans = _getch();
+	//if (ans == "y" or ans == "Y") { return; }
 	
 	system("cls");
 	string storytext = "\n\n     The most merciful thing in the world, I think, is the inability \n";
