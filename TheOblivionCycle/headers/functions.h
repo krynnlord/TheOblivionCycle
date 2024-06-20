@@ -54,6 +54,7 @@ void credits();
 void king_ressurect();
 void checklevelup();
 int options(int i);
+void changelog();
 void check_music_vol();
 void stream_music(int);
 void music_player();

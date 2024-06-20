@@ -73,9 +73,16 @@ int options(int i)
         Color(6); cout << "Copyright:"; Color(7); cout << " RLM Productions"; cout << endl;
         Color(6); cout << "Author:" ; Color(7); cout << " Richard Miller"; cout << endl;
         Color(6); cout << "Music:"; Color(7); cout << " Richard Miller"; cout << endl;
+        cout << endl;
+        cout << "["; Color(6); cout << "C"; Color(7); cout << "] Changelog" << endl;
 
             string temp;
             temp = _getch();
+
+            if(temp == "c" or temp == "C")
+            {
+                changelog();
+            }
         }
 
     //music Vol
@@ -463,4 +470,14 @@ void stream_music(int music_selected)
     }
 
     check_music_vol(); // last step
+}
+
+void changelog()
+{
+    system("cls");
+    cout << "Changelog" << endl;
+    cout << "-----------" << endl << endl;
+    cout << "v.02" << endl;
+
+    system("pause");
 }

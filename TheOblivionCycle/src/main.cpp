@@ -152,7 +152,6 @@ int main()
         cout << "("; Color(6); cout << "2"; Color(7); cout << ") New Game" << endl; //To be NewGame
         cout << "("; Color(6); cout << "3"; Color(7); cout << ") Game Options" << endl;
         cout << "("; Color(6); cout << "4"; Color(7); cout << ") Quit & Save Game" << endl;
-
         ShowConsoleCursor(false);
         ans = _getch();
         
